@@ -17,12 +17,9 @@
 #if BIND_InitOptions_INITIALIZE
 mrb_value
 mrb_UI_InitOptions_initialize(mrb_state* mrb, mrb_value self) {
-  mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
-/* 
   uiInitOptions* native_object = (uiInitOptions*)calloc(1, sizeof(uiInitOptions));
   mruby_gift_uiInitOptions_data_ptr(self, native_object);
   return self;
-*/
 }
 #endif
 /* MRUBY_BINDING_END */
