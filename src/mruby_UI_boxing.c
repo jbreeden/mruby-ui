@@ -39,9 +39,9 @@
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiArea_boxing */
-/* sha: e5d5a8b4105f2b9feede5438c14170a181b675558ff9b4e8297e32a36dcb875e */
-#if BIND_UiArea_TYPE
+/* MRUBY_BINDING: Area_boxing */
+/* sha: 43315910e7ec52a96f51419ff4d5639dd05e202f1c03ce670bf508086d7f88f3 */
+#if BIND_Area_TYPE
 /*
  * Boxing implementation for uiArea
  */
@@ -66,7 +66,7 @@ mruby_box_uiArea(mrb_state* mrb, uiArea *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiArea_class(mrb), &uiArea_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Area_class(mrb), &uiArea_data_type, box));
 }
 
 mrb_value
@@ -74,7 +74,7 @@ mruby_giftwrap_uiArea(mrb_state* mrb, uiArea *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiArea_class(mrb), &uiArea_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Area_class(mrb), &uiArea_data_type, box));
 }
 
 void
@@ -100,9 +100,9 @@ mruby_unbox_uiArea(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaDrawParams_boxing */
-/* sha: bbd9ade78cbddcbdf6d178d076da92585685a0e3e53720413de956454055818c */
-#if BIND_UiAreaDrawParams_TYPE
+/* MRUBY_BINDING: AreaDrawParams_boxing */
+/* sha: 6a03be5fea86ffc1f4e493395d7cf6d97dc7afb7e9d390f4f1c7a7c8e4ecafab */
+#if BIND_AreaDrawParams_TYPE
 /*
  * Boxing implementation for uiAreaDrawParams
  */
@@ -127,7 +127,7 @@ mruby_box_uiAreaDrawParams(mrb_state* mrb, uiAreaDrawParams *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaDrawParams_class(mrb), &uiAreaDrawParams_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, AreaDrawParams_class(mrb), &uiAreaDrawParams_data_type, box));
 }
 
 mrb_value
@@ -135,7 +135,7 @@ mruby_giftwrap_uiAreaDrawParams(mrb_state* mrb, uiAreaDrawParams *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaDrawParams_class(mrb), &uiAreaDrawParams_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, AreaDrawParams_class(mrb), &uiAreaDrawParams_data_type, box));
 }
 
 void
@@ -161,9 +161,9 @@ mruby_unbox_uiAreaDrawParams(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler_boxing */
-/* sha: 4ec99d6e01a67f953f71445128e3ac1480e7cbeb73afa8d760e2d250315653e7 */
-#if BIND_UiAreaHandler_TYPE
+/* MRUBY_BINDING: AreaHandler_boxing */
+/* sha: 6311c59e01e0adfdc23ece314dffbcf2bddacc20102be55559048bc5a9434daf */
+#if BIND_AreaHandler_TYPE
 /*
  * Boxing implementation for uiAreaHandler
  */
@@ -188,7 +188,7 @@ mruby_box_uiAreaHandler(mrb_state* mrb, uiAreaHandler *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaHandler_class(mrb), &uiAreaHandler_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, AreaHandler_class(mrb), &uiAreaHandler_data_type, box));
 }
 
 mrb_value
@@ -196,7 +196,7 @@ mruby_giftwrap_uiAreaHandler(mrb_state* mrb, uiAreaHandler *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaHandler_class(mrb), &uiAreaHandler_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, AreaHandler_class(mrb), &uiAreaHandler_data_type, box));
 }
 
 void
@@ -222,9 +222,9 @@ mruby_unbox_uiAreaHandler(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent_boxing */
-/* sha: b3285dc924b7b737c07dea58c33557ba18353228bdadb09b0a589edb76101360 */
-#if BIND_UiAreaKeyEvent_TYPE
+/* MRUBY_BINDING: AreaKeyEvent_boxing */
+/* sha: fe504d5c478863a71498cebbcbb997addb8ab55f7e73a2fc721e17cd1000cffb */
+#if BIND_AreaKeyEvent_TYPE
 /*
  * Boxing implementation for uiAreaKeyEvent
  */
@@ -249,7 +249,7 @@ mruby_box_uiAreaKeyEvent(mrb_state* mrb, uiAreaKeyEvent *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaKeyEvent_class(mrb), &uiAreaKeyEvent_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, AreaKeyEvent_class(mrb), &uiAreaKeyEvent_data_type, box));
 }
 
 mrb_value
@@ -257,7 +257,7 @@ mruby_giftwrap_uiAreaKeyEvent(mrb_state* mrb, uiAreaKeyEvent *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaKeyEvent_class(mrb), &uiAreaKeyEvent_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, AreaKeyEvent_class(mrb), &uiAreaKeyEvent_data_type, box));
 }
 
 void
@@ -283,9 +283,9 @@ mruby_unbox_uiAreaKeyEvent(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent_boxing */
-/* sha: b8cc54d2463e59092fed3e518870a9df0f918ef371d01f53c3de2ebd4292d2d4 */
-#if BIND_UiAreaMouseEvent_TYPE
+/* MRUBY_BINDING: AreaMouseEvent_boxing */
+/* sha: 3eb8f1b8b0082f3ee075b6a62cf34190fd7a23bd9f9c5aff799277c4f41df26d */
+#if BIND_AreaMouseEvent_TYPE
 /*
  * Boxing implementation for uiAreaMouseEvent
  */
@@ -310,7 +310,7 @@ mruby_box_uiAreaMouseEvent(mrb_state* mrb, uiAreaMouseEvent *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaMouseEvent_class(mrb), &uiAreaMouseEvent_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, AreaMouseEvent_class(mrb), &uiAreaMouseEvent_data_type, box));
 }
 
 mrb_value
@@ -318,7 +318,7 @@ mruby_giftwrap_uiAreaMouseEvent(mrb_state* mrb, uiAreaMouseEvent *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiAreaMouseEvent_class(mrb), &uiAreaMouseEvent_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, AreaMouseEvent_class(mrb), &uiAreaMouseEvent_data_type, box));
 }
 
 void
@@ -344,9 +344,9 @@ mruby_unbox_uiAreaMouseEvent(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiBox_boxing */
-/* sha: 36bee9c5dd6e39d48c477c1da6dcfdf27b485535f690452d02154960d3fd0afc */
-#if BIND_UiBox_TYPE
+/* MRUBY_BINDING: Box_boxing */
+/* sha: c384af47541ead1f6383a568f3330d5382aef56db4e2ce09b00a531da9ac0db8 */
+#if BIND_Box_TYPE
 /*
  * Boxing implementation for uiBox
  */
@@ -371,7 +371,7 @@ mruby_box_uiBox(mrb_state* mrb, uiBox *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiBox_class(mrb), &uiBox_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Box_class(mrb), &uiBox_data_type, box));
 }
 
 mrb_value
@@ -379,7 +379,7 @@ mruby_giftwrap_uiBox(mrb_state* mrb, uiBox *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiBox_class(mrb), &uiBox_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Box_class(mrb), &uiBox_data_type, box));
 }
 
 void
@@ -405,9 +405,9 @@ mruby_unbox_uiBox(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiButton_boxing */
-/* sha: 2db49f6d07cbc9370295f4e00291bd94688e5e4d7d4e24aa83820af19c0ba787 */
-#if BIND_UiButton_TYPE
+/* MRUBY_BINDING: Button_boxing */
+/* sha: 11f64f47b52ad792af256f0e441d3aa95203673aa39e883692872bd654e75e79 */
+#if BIND_Button_TYPE
 /*
  * Boxing implementation for uiButton
  */
@@ -432,7 +432,7 @@ mruby_box_uiButton(mrb_state* mrb, uiButton *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiButton_class(mrb), &uiButton_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Button_class(mrb), &uiButton_data_type, box));
 }
 
 mrb_value
@@ -440,7 +440,7 @@ mruby_giftwrap_uiButton(mrb_state* mrb, uiButton *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiButton_class(mrb), &uiButton_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Button_class(mrb), &uiButton_data_type, box));
 }
 
 void
@@ -466,9 +466,9 @@ mruby_unbox_uiButton(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiCheckbox_boxing */
-/* sha: a7361dfdda2de55aab86f4d7906334fc73bc5d30bec90327b6ae93cfcd031128 */
-#if BIND_UiCheckbox_TYPE
+/* MRUBY_BINDING: Checkbox_boxing */
+/* sha: c1b21cbede44b00670224d132c793b99a84a066e9285b83e302ea58d93614c15 */
+#if BIND_Checkbox_TYPE
 /*
  * Boxing implementation for uiCheckbox
  */
@@ -493,7 +493,7 @@ mruby_box_uiCheckbox(mrb_state* mrb, uiCheckbox *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiCheckbox_class(mrb), &uiCheckbox_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Checkbox_class(mrb), &uiCheckbox_data_type, box));
 }
 
 mrb_value
@@ -501,7 +501,7 @@ mruby_giftwrap_uiCheckbox(mrb_state* mrb, uiCheckbox *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiCheckbox_class(mrb), &uiCheckbox_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Checkbox_class(mrb), &uiCheckbox_data_type, box));
 }
 
 void
@@ -527,9 +527,9 @@ mruby_unbox_uiCheckbox(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiColorButton_boxing */
-/* sha: 65fc2313d57781af419b6d72546cf413fb9f53d4f38c2a26f51dc8e900198fbe */
-#if BIND_UiColorButton_TYPE
+/* MRUBY_BINDING: ColorButton_boxing */
+/* sha: 5a60bfdfee3148f8e2adc02981ac93d5b12f4e3b31a872a0942681e9ae942dbc */
+#if BIND_ColorButton_TYPE
 /*
  * Boxing implementation for uiColorButton
  */
@@ -554,7 +554,7 @@ mruby_box_uiColorButton(mrb_state* mrb, uiColorButton *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiColorButton_class(mrb), &uiColorButton_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, ColorButton_class(mrb), &uiColorButton_data_type, box));
 }
 
 mrb_value
@@ -562,7 +562,7 @@ mruby_giftwrap_uiColorButton(mrb_state* mrb, uiColorButton *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiColorButton_class(mrb), &uiColorButton_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, ColorButton_class(mrb), &uiColorButton_data_type, box));
 }
 
 void
@@ -588,9 +588,9 @@ mruby_unbox_uiColorButton(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiCombobox_boxing */
-/* sha: a90d435d59e1f6c7097d52d138f54931880b23e76cf4dc1f8400144c4d61dea9 */
-#if BIND_UiCombobox_TYPE
+/* MRUBY_BINDING: Combobox_boxing */
+/* sha: 72c242fa46f43f532aa8b3f209eba90368fb91841f79bfa5aa07758d893e9e25 */
+#if BIND_Combobox_TYPE
 /*
  * Boxing implementation for uiCombobox
  */
@@ -615,7 +615,7 @@ mruby_box_uiCombobox(mrb_state* mrb, uiCombobox *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiCombobox_class(mrb), &uiCombobox_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Combobox_class(mrb), &uiCombobox_data_type, box));
 }
 
 mrb_value
@@ -623,7 +623,7 @@ mruby_giftwrap_uiCombobox(mrb_state* mrb, uiCombobox *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiCombobox_class(mrb), &uiCombobox_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Combobox_class(mrb), &uiCombobox_data_type, box));
 }
 
 void
@@ -649,9 +649,9 @@ mruby_unbox_uiCombobox(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiControl_boxing */
-/* sha: 896431a2c7a6b71566080e0419b82c45768e871939f827d75cc79997820097ec */
-#if BIND_UiControl_TYPE
+/* MRUBY_BINDING: Control_boxing */
+/* sha: f74545f4c19c2b6cb458d82741b9884faa44b8188b8d1388360f257e9c5660ca */
+#if BIND_Control_TYPE
 /*
  * Boxing implementation for uiControl
  */
@@ -676,7 +676,7 @@ mruby_box_uiControl(mrb_state* mrb, uiControl *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiControl_class(mrb), &uiControl_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Control_class(mrb), &uiControl_data_type, box));
 }
 
 mrb_value
@@ -684,7 +684,7 @@ mruby_giftwrap_uiControl(mrb_state* mrb, uiControl *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiControl_class(mrb), &uiControl_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Control_class(mrb), &uiControl_data_type, box));
 }
 
 void
@@ -710,9 +710,9 @@ mruby_unbox_uiControl(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDateTimePicker_boxing */
-/* sha: ae67cddda8a2febdc5a09679266e6d8b974cb2c4c844abdb619c82266f2e9166 */
-#if BIND_UiDateTimePicker_TYPE
+/* MRUBY_BINDING: DateTimePicker_boxing */
+/* sha: 4793ce81aecd13afd3725499728fe3dce70ccefd1b4df5c8c4addd767266c5fa */
+#if BIND_DateTimePicker_TYPE
 /*
  * Boxing implementation for uiDateTimePicker
  */
@@ -737,7 +737,7 @@ mruby_box_uiDateTimePicker(mrb_state* mrb, uiDateTimePicker *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDateTimePicker_class(mrb), &uiDateTimePicker_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DateTimePicker_class(mrb), &uiDateTimePicker_data_type, box));
 }
 
 mrb_value
@@ -745,7 +745,7 @@ mruby_giftwrap_uiDateTimePicker(mrb_state* mrb, uiDateTimePicker *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDateTimePicker_class(mrb), &uiDateTimePicker_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DateTimePicker_class(mrb), &uiDateTimePicker_data_type, box));
 }
 
 void
@@ -771,9 +771,9 @@ mruby_unbox_uiDateTimePicker(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush_boxing */
-/* sha: 3f954b3acc769df0b97ef2456444fd15b5315265b9d49ed0d147270280543f5c */
-#if BIND_UiDrawBrush_TYPE
+/* MRUBY_BINDING: DrawBrush_boxing */
+/* sha: 107db1dd5065e196dc6d2b782875fd5d630daf2d67a7e7f45c0083278e118d0b */
+#if BIND_DrawBrush_TYPE
 /*
  * Boxing implementation for uiDrawBrush
  */
@@ -798,7 +798,7 @@ mruby_box_uiDrawBrush(mrb_state* mrb, uiDrawBrush *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawBrush_class(mrb), &uiDrawBrush_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawBrush_class(mrb), &uiDrawBrush_data_type, box));
 }
 
 mrb_value
@@ -806,7 +806,7 @@ mruby_giftwrap_uiDrawBrush(mrb_state* mrb, uiDrawBrush *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawBrush_class(mrb), &uiDrawBrush_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawBrush_class(mrb), &uiDrawBrush_data_type, box));
 }
 
 void
@@ -832,9 +832,9 @@ mruby_unbox_uiDrawBrush(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop_boxing */
-/* sha: ab34801c035e548136046b6bfd0a09e2d444245c18a95d40649a7365bf2d80dc */
-#if BIND_UiDrawBrushGradientStop_TYPE
+/* MRUBY_BINDING: DrawBrushGradientStop_boxing */
+/* sha: 0776d148335e10151c3e06c5e612370a91c8efe8be9d407c2327008f5b664298 */
+#if BIND_DrawBrushGradientStop_TYPE
 /*
  * Boxing implementation for uiDrawBrushGradientStop
  */
@@ -859,7 +859,7 @@ mruby_box_uiDrawBrushGradientStop(mrb_state* mrb, uiDrawBrushGradientStop *unbox
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawBrushGradientStop_class(mrb), &uiDrawBrushGradientStop_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawBrushGradientStop_class(mrb), &uiDrawBrushGradientStop_data_type, box));
 }
 
 mrb_value
@@ -867,7 +867,7 @@ mruby_giftwrap_uiDrawBrushGradientStop(mrb_state* mrb, uiDrawBrushGradientStop *
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawBrushGradientStop_class(mrb), &uiDrawBrushGradientStop_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawBrushGradientStop_class(mrb), &uiDrawBrushGradientStop_data_type, box));
 }
 
 void
@@ -893,9 +893,9 @@ mruby_unbox_uiDrawBrushGradientStop(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawContext_boxing */
-/* sha: 4a9f9533a086ed12b1ab3997b941a47919acc38848724e5bdcd6859e1ed4cf00 */
-#if BIND_UiDrawContext_TYPE
+/* MRUBY_BINDING: DrawContext_boxing */
+/* sha: 9b07677c5f8f383cae44a4a48f420c60984dcfd92a0c0ca355499bdba22c7a25 */
+#if BIND_DrawContext_TYPE
 /*
  * Boxing implementation for uiDrawContext
  */
@@ -920,7 +920,7 @@ mruby_box_uiDrawContext(mrb_state* mrb, uiDrawContext *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawContext_class(mrb), &uiDrawContext_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawContext_class(mrb), &uiDrawContext_data_type, box));
 }
 
 mrb_value
@@ -928,7 +928,7 @@ mruby_giftwrap_uiDrawContext(mrb_state* mrb, uiDrawContext *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawContext_class(mrb), &uiDrawContext_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawContext_class(mrb), &uiDrawContext_data_type, box));
 }
 
 void
@@ -954,9 +954,9 @@ mruby_unbox_uiDrawContext(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawFontFamilies_boxing */
-/* sha: 9d825f40639a702f52939b160933e6caef9d927c759cdb11bd16c867a7b617b7 */
-#if BIND_UiDrawFontFamilies_TYPE
+/* MRUBY_BINDING: DrawFontFamilies_boxing */
+/* sha: 3f257010f9afb81dbda4f17298f444f17b5cf56ab0d6ad99b3dd2506b565dd6a */
+#if BIND_DrawFontFamilies_TYPE
 /*
  * Boxing implementation for uiDrawFontFamilies
  */
@@ -981,7 +981,7 @@ mruby_box_uiDrawFontFamilies(mrb_state* mrb, uiDrawFontFamilies *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawFontFamilies_class(mrb), &uiDrawFontFamilies_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawFontFamilies_class(mrb), &uiDrawFontFamilies_data_type, box));
 }
 
 mrb_value
@@ -989,7 +989,7 @@ mruby_giftwrap_uiDrawFontFamilies(mrb_state* mrb, uiDrawFontFamilies *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawFontFamilies_class(mrb), &uiDrawFontFamilies_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawFontFamilies_class(mrb), &uiDrawFontFamilies_data_type, box));
 }
 
 void
@@ -1015,9 +1015,9 @@ mruby_unbox_uiDrawFontFamilies(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawMatrix_boxing */
-/* sha: 8ade48a8c86d1b0121ba4d7716640039738dbe1811a12ce9d323bf23510fb539 */
-#if BIND_UiDrawMatrix_TYPE
+/* MRUBY_BINDING: DrawMatrix_boxing */
+/* sha: abbb3f630f75ced671da558f8ed82edff92bbaa9661ef361b8c891ac98a2fd6c */
+#if BIND_DrawMatrix_TYPE
 /*
  * Boxing implementation for uiDrawMatrix
  */
@@ -1042,7 +1042,7 @@ mruby_box_uiDrawMatrix(mrb_state* mrb, uiDrawMatrix *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawMatrix_class(mrb), &uiDrawMatrix_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawMatrix_class(mrb), &uiDrawMatrix_data_type, box));
 }
 
 mrb_value
@@ -1050,7 +1050,7 @@ mruby_giftwrap_uiDrawMatrix(mrb_state* mrb, uiDrawMatrix *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawMatrix_class(mrb), &uiDrawMatrix_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawMatrix_class(mrb), &uiDrawMatrix_data_type, box));
 }
 
 void
@@ -1076,9 +1076,9 @@ mruby_unbox_uiDrawMatrix(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawPath_boxing */
-/* sha: 93a22a4f8941add94d5e7930c4882d93e23361e9e45fdb9bd4a6bccaf1c52d24 */
-#if BIND_UiDrawPath_TYPE
+/* MRUBY_BINDING: DrawPath_boxing */
+/* sha: ded85ebbf5c4cbcecd531f4c8fec9133dd41c79436296ede28c293f71d317af0 */
+#if BIND_DrawPath_TYPE
 /*
  * Boxing implementation for uiDrawPath
  */
@@ -1103,7 +1103,7 @@ mruby_box_uiDrawPath(mrb_state* mrb, uiDrawPath *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawPath_class(mrb), &uiDrawPath_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawPath_class(mrb), &uiDrawPath_data_type, box));
 }
 
 mrb_value
@@ -1111,7 +1111,7 @@ mruby_giftwrap_uiDrawPath(mrb_state* mrb, uiDrawPath *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawPath_class(mrb), &uiDrawPath_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawPath_class(mrb), &uiDrawPath_data_type, box));
 }
 
 void
@@ -1137,9 +1137,9 @@ mruby_unbox_uiDrawPath(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams_boxing */
-/* sha: ea6a24f73e2b9e7ec7782e3b00893146520d92473ca770c7292d65de53c02d58 */
-#if BIND_UiDrawStrokeParams_TYPE
+/* MRUBY_BINDING: DrawStrokeParams_boxing */
+/* sha: 466c55097887f11bc445b09338c6ff70f8e33cb88bd84a38192c99115c0a4c40 */
+#if BIND_DrawStrokeParams_TYPE
 /*
  * Boxing implementation for uiDrawStrokeParams
  */
@@ -1164,7 +1164,7 @@ mruby_box_uiDrawStrokeParams(mrb_state* mrb, uiDrawStrokeParams *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawStrokeParams_class(mrb), &uiDrawStrokeParams_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawStrokeParams_class(mrb), &uiDrawStrokeParams_data_type, box));
 }
 
 mrb_value
@@ -1172,7 +1172,7 @@ mruby_giftwrap_uiDrawStrokeParams(mrb_state* mrb, uiDrawStrokeParams *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawStrokeParams_class(mrb), &uiDrawStrokeParams_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawStrokeParams_class(mrb), &uiDrawStrokeParams_data_type, box));
 }
 
 void
@@ -1198,9 +1198,9 @@ mruby_unbox_uiDrawStrokeParams(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFont_boxing */
-/* sha: dc7c909d7cfd1e224b8662401cb356cfca9cb9bcb48e332fbbb8ef3ad2745008 */
-#if BIND_UiDrawTextFont_TYPE
+/* MRUBY_BINDING: DrawTextFont_boxing */
+/* sha: f40895848e4aec8c8bf38bc48737ec1efb1dc6b022e766af2da56bdd4e1d5626 */
+#if BIND_DrawTextFont_TYPE
 /*
  * Boxing implementation for uiDrawTextFont
  */
@@ -1225,7 +1225,7 @@ mruby_box_uiDrawTextFont(mrb_state* mrb, uiDrawTextFont *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextFont_class(mrb), &uiDrawTextFont_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextFont_class(mrb), &uiDrawTextFont_data_type, box));
 }
 
 mrb_value
@@ -1233,7 +1233,7 @@ mruby_giftwrap_uiDrawTextFont(mrb_state* mrb, uiDrawTextFont *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextFont_class(mrb), &uiDrawTextFont_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextFont_class(mrb), &uiDrawTextFont_data_type, box));
 }
 
 void
@@ -1259,9 +1259,9 @@ mruby_unbox_uiDrawTextFont(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFontDescriptor_boxing */
-/* sha: 9349ecb7bafa4fa0757d479a5e38855e1149f828b5ac620228cd998bd39a850e */
-#if BIND_UiDrawTextFontDescriptor_TYPE
+/* MRUBY_BINDING: DrawTextFontDescriptor_boxing */
+/* sha: 12ea41012a132d729f79ca94475001a72f1a73f08c29ac34540908a92dbf87ed */
+#if BIND_DrawTextFontDescriptor_TYPE
 /*
  * Boxing implementation for uiDrawTextFontDescriptor
  */
@@ -1286,7 +1286,7 @@ mruby_box_uiDrawTextFontDescriptor(mrb_state* mrb, uiDrawTextFontDescriptor *unb
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextFontDescriptor_class(mrb), &uiDrawTextFontDescriptor_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextFontDescriptor_class(mrb), &uiDrawTextFontDescriptor_data_type, box));
 }
 
 mrb_value
@@ -1294,7 +1294,7 @@ mruby_giftwrap_uiDrawTextFontDescriptor(mrb_state* mrb, uiDrawTextFontDescriptor
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextFontDescriptor_class(mrb), &uiDrawTextFontDescriptor_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextFontDescriptor_class(mrb), &uiDrawTextFontDescriptor_data_type, box));
 }
 
 void
@@ -1320,9 +1320,9 @@ mruby_unbox_uiDrawTextFontDescriptor(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFontMetrics_boxing */
-/* sha: bbc77b249756e22d94943f214223658126eaf1e824c5cc1c0501f76881b7faf9 */
-#if BIND_UiDrawTextFontMetrics_TYPE
+/* MRUBY_BINDING: DrawTextFontMetrics_boxing */
+/* sha: b5b997a20f300b86975ff20f039b345b5311e47827b944edeb8ae818ede3e2e5 */
+#if BIND_DrawTextFontMetrics_TYPE
 /*
  * Boxing implementation for uiDrawTextFontMetrics
  */
@@ -1347,7 +1347,7 @@ mruby_box_uiDrawTextFontMetrics(mrb_state* mrb, uiDrawTextFontMetrics *unboxed) 
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextFontMetrics_class(mrb), &uiDrawTextFontMetrics_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextFontMetrics_class(mrb), &uiDrawTextFontMetrics_data_type, box));
 }
 
 mrb_value
@@ -1355,7 +1355,7 @@ mruby_giftwrap_uiDrawTextFontMetrics(mrb_state* mrb, uiDrawTextFontMetrics *unbo
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextFontMetrics_class(mrb), &uiDrawTextFontMetrics_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextFontMetrics_class(mrb), &uiDrawTextFontMetrics_data_type, box));
 }
 
 void
@@ -1381,9 +1381,9 @@ mruby_unbox_uiDrawTextFontMetrics(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextLayout_boxing */
-/* sha: d4d17afc68682dc01c348e5fa33d17911116e30d9d9dcd27114c46d04645193c */
-#if BIND_UiDrawTextLayout_TYPE
+/* MRUBY_BINDING: DrawTextLayout_boxing */
+/* sha: 2fb2b079bc4e0e7a3c379d3647a37a704db4e1fedff1455ce74d74ee01458c0f */
+#if BIND_DrawTextLayout_TYPE
 /*
  * Boxing implementation for uiDrawTextLayout
  */
@@ -1408,7 +1408,7 @@ mruby_box_uiDrawTextLayout(mrb_state* mrb, uiDrawTextLayout *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextLayout_class(mrb), &uiDrawTextLayout_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextLayout_class(mrb), &uiDrawTextLayout_data_type, box));
 }
 
 mrb_value
@@ -1416,7 +1416,7 @@ mruby_giftwrap_uiDrawTextLayout(mrb_state* mrb, uiDrawTextLayout *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiDrawTextLayout_class(mrb), &uiDrawTextLayout_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, DrawTextLayout_class(mrb), &uiDrawTextLayout_data_type, box));
 }
 
 void
@@ -1442,9 +1442,9 @@ mruby_unbox_uiDrawTextLayout(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEditableCombobox_boxing */
-/* sha: 017d97d4cd22925fb7cfb5870f7314b6e3c91477b10bcd240369da71756ff7bb */
-#if BIND_UiEditableCombobox_TYPE
+/* MRUBY_BINDING: EditableCombobox_boxing */
+/* sha: 99fa1c3e52dc6eb360ef3cd59957bab35e13f60480f4e071ad8af19058c91a6d */
+#if BIND_EditableCombobox_TYPE
 /*
  * Boxing implementation for uiEditableCombobox
  */
@@ -1469,7 +1469,7 @@ mruby_box_uiEditableCombobox(mrb_state* mrb, uiEditableCombobox *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiEditableCombobox_class(mrb), &uiEditableCombobox_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, EditableCombobox_class(mrb), &uiEditableCombobox_data_type, box));
 }
 
 mrb_value
@@ -1477,7 +1477,7 @@ mruby_giftwrap_uiEditableCombobox(mrb_state* mrb, uiEditableCombobox *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiEditableCombobox_class(mrb), &uiEditableCombobox_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, EditableCombobox_class(mrb), &uiEditableCombobox_data_type, box));
 }
 
 void
@@ -1503,9 +1503,9 @@ mruby_unbox_uiEditableCombobox(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEntry_boxing */
-/* sha: a7c3b26a5c1607d9051a8b3fc12835cf0cd70dfe7e46c4f8153486cb9b343a3d */
-#if BIND_UiEntry_TYPE
+/* MRUBY_BINDING: Entry_boxing */
+/* sha: 6d6635331a117f6e8ce451e57bcc736d4251027f25298b64b7ea0a4288091da6 */
+#if BIND_Entry_TYPE
 /*
  * Boxing implementation for uiEntry
  */
@@ -1530,7 +1530,7 @@ mruby_box_uiEntry(mrb_state* mrb, uiEntry *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiEntry_class(mrb), &uiEntry_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Entry_class(mrb), &uiEntry_data_type, box));
 }
 
 mrb_value
@@ -1538,7 +1538,7 @@ mruby_giftwrap_uiEntry(mrb_state* mrb, uiEntry *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiEntry_class(mrb), &uiEntry_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Entry_class(mrb), &uiEntry_data_type, box));
 }
 
 void
@@ -1564,9 +1564,9 @@ mruby_unbox_uiEntry(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiFontButton_boxing */
-/* sha: bf742f73b757073b6da312855422702dddc21c67190e8ffc3b5d5d1f95fc8ce8 */
-#if BIND_UiFontButton_TYPE
+/* MRUBY_BINDING: FontButton_boxing */
+/* sha: 1e4aad4d5485b74cdb9ca4c9ce81847d0545a9a4f2efbe3f0e02de36fa398ad2 */
+#if BIND_FontButton_TYPE
 /*
  * Boxing implementation for uiFontButton
  */
@@ -1591,7 +1591,7 @@ mruby_box_uiFontButton(mrb_state* mrb, uiFontButton *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiFontButton_class(mrb), &uiFontButton_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, FontButton_class(mrb), &uiFontButton_data_type, box));
 }
 
 mrb_value
@@ -1599,7 +1599,7 @@ mruby_giftwrap_uiFontButton(mrb_state* mrb, uiFontButton *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiFontButton_class(mrb), &uiFontButton_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, FontButton_class(mrb), &uiFontButton_data_type, box));
 }
 
 void
@@ -1625,9 +1625,9 @@ mruby_unbox_uiFontButton(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiForm_boxing */
-/* sha: 6c588e59b4f8d0d814e9dfc57f92e1949e1a35159eadf8a63320692d7fde7df2 */
-#if BIND_UiForm_TYPE
+/* MRUBY_BINDING: Form_boxing */
+/* sha: 3d0be99627543cab4e411c633c20614f8c0fb33bb5c74a9896925f2cfeface81 */
+#if BIND_Form_TYPE
 /*
  * Boxing implementation for uiForm
  */
@@ -1652,7 +1652,7 @@ mruby_box_uiForm(mrb_state* mrb, uiForm *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiForm_class(mrb), &uiForm_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Form_class(mrb), &uiForm_data_type, box));
 }
 
 mrb_value
@@ -1660,7 +1660,7 @@ mruby_giftwrap_uiForm(mrb_state* mrb, uiForm *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiForm_class(mrb), &uiForm_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Form_class(mrb), &uiForm_data_type, box));
 }
 
 void
@@ -1686,9 +1686,9 @@ mruby_unbox_uiForm(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGrid_boxing */
-/* sha: 7738f5c0c5512d73b124124035d90a3c62ada381d6d4aae4c8758c8865a8941a */
-#if BIND_UiGrid_TYPE
+/* MRUBY_BINDING: Grid_boxing */
+/* sha: 96438c73f977e47ce2004192126f487837248631fc7649672b55e52f4e23e807 */
+#if BIND_Grid_TYPE
 /*
  * Boxing implementation for uiGrid
  */
@@ -1713,7 +1713,7 @@ mruby_box_uiGrid(mrb_state* mrb, uiGrid *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiGrid_class(mrb), &uiGrid_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Grid_class(mrb), &uiGrid_data_type, box));
 }
 
 mrb_value
@@ -1721,7 +1721,7 @@ mruby_giftwrap_uiGrid(mrb_state* mrb, uiGrid *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiGrid_class(mrb), &uiGrid_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Grid_class(mrb), &uiGrid_data_type, box));
 }
 
 void
@@ -1747,9 +1747,9 @@ mruby_unbox_uiGrid(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGroup_boxing */
-/* sha: a98bbd037416e857045f92b450de881634081b306bec0a6561ca0aa070418df3 */
-#if BIND_UiGroup_TYPE
+/* MRUBY_BINDING: Group_boxing */
+/* sha: 97bea19b3b30186eaae300de189cbe9341db6cd4d52b3de731842559cc3a3816 */
+#if BIND_Group_TYPE
 /*
  * Boxing implementation for uiGroup
  */
@@ -1774,7 +1774,7 @@ mruby_box_uiGroup(mrb_state* mrb, uiGroup *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiGroup_class(mrb), &uiGroup_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Group_class(mrb), &uiGroup_data_type, box));
 }
 
 mrb_value
@@ -1782,7 +1782,7 @@ mruby_giftwrap_uiGroup(mrb_state* mrb, uiGroup *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiGroup_class(mrb), &uiGroup_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Group_class(mrb), &uiGroup_data_type, box));
 }
 
 void
@@ -1808,9 +1808,9 @@ mruby_unbox_uiGroup(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions_boxing */
-/* sha: e3ccd746efa8807d2d5724cc79fa2272ebcc131de00b03928ecb0af9a1f6bc36 */
-#if BIND_UiInitOptions_TYPE
+/* MRUBY_BINDING: InitOptions_boxing */
+/* sha: b5fafcc84a5041306eb523476ca380a75950ea8b55f6358d8410614672552f14 */
+#if BIND_InitOptions_TYPE
 /*
  * Boxing implementation for uiInitOptions
  */
@@ -1835,7 +1835,7 @@ mruby_box_uiInitOptions(mrb_state* mrb, uiInitOptions *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiInitOptions_class(mrb), &uiInitOptions_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, InitOptions_class(mrb), &uiInitOptions_data_type, box));
 }
 
 mrb_value
@@ -1843,7 +1843,7 @@ mruby_giftwrap_uiInitOptions(mrb_state* mrb, uiInitOptions *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiInitOptions_class(mrb), &uiInitOptions_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, InitOptions_class(mrb), &uiInitOptions_data_type, box));
 }
 
 void
@@ -1869,9 +1869,9 @@ mruby_unbox_uiInitOptions(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiLabel_boxing */
-/* sha: 1614dab10070e3d84a78f5ad078b9801ca41d39e81a45b8ad9a2c2f5ee55813f */
-#if BIND_UiLabel_TYPE
+/* MRUBY_BINDING: Label_boxing */
+/* sha: f49fd80f4c38ac4662e6dfe02fcb8f0d8049ac183050b3d64e996df537c730db */
+#if BIND_Label_TYPE
 /*
  * Boxing implementation for uiLabel
  */
@@ -1896,7 +1896,7 @@ mruby_box_uiLabel(mrb_state* mrb, uiLabel *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiLabel_class(mrb), &uiLabel_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Label_class(mrb), &uiLabel_data_type, box));
 }
 
 mrb_value
@@ -1904,7 +1904,7 @@ mruby_giftwrap_uiLabel(mrb_state* mrb, uiLabel *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiLabel_class(mrb), &uiLabel_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Label_class(mrb), &uiLabel_data_type, box));
 }
 
 void
@@ -1930,9 +1930,9 @@ mruby_unbox_uiLabel(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenu_boxing */
-/* sha: 79ec33786b2a3e8585c829b4c8316a3bd52005dbed9f99e3e5a8274f4e85e501 */
-#if BIND_UiMenu_TYPE
+/* MRUBY_BINDING: Menu_boxing */
+/* sha: 30ff78861ef417b5e7249c7356c303d0edac91595d643c516d140104fe8f7c4f */
+#if BIND_Menu_TYPE
 /*
  * Boxing implementation for uiMenu
  */
@@ -1957,7 +1957,7 @@ mruby_box_uiMenu(mrb_state* mrb, uiMenu *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiMenu_class(mrb), &uiMenu_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Menu_class(mrb), &uiMenu_data_type, box));
 }
 
 mrb_value
@@ -1965,7 +1965,7 @@ mruby_giftwrap_uiMenu(mrb_state* mrb, uiMenu *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiMenu_class(mrb), &uiMenu_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Menu_class(mrb), &uiMenu_data_type, box));
 }
 
 void
@@ -1991,9 +1991,9 @@ mruby_unbox_uiMenu(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenuItem_boxing */
-/* sha: 9922518d6fb17fa696354c5a426d460a1bd736f27d08b95b5340c0ee34995899 */
-#if BIND_UiMenuItem_TYPE
+/* MRUBY_BINDING: MenuItem_boxing */
+/* sha: fe1be735ca7f175ce118c09909f967e6a3f69d3dfc763292967615c5ac58fc28 */
+#if BIND_MenuItem_TYPE
 /*
  * Boxing implementation for uiMenuItem
  */
@@ -2018,7 +2018,7 @@ mruby_box_uiMenuItem(mrb_state* mrb, uiMenuItem *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiMenuItem_class(mrb), &uiMenuItem_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, MenuItem_class(mrb), &uiMenuItem_data_type, box));
 }
 
 mrb_value
@@ -2026,7 +2026,7 @@ mruby_giftwrap_uiMenuItem(mrb_state* mrb, uiMenuItem *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiMenuItem_class(mrb), &uiMenuItem_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, MenuItem_class(mrb), &uiMenuItem_data_type, box));
 }
 
 void
@@ -2052,9 +2052,9 @@ mruby_unbox_uiMenuItem(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMultilineEntry_boxing */
-/* sha: 19d6b7139b895f4e85547259309f8a23c9b098d8a95e796ed24c36d58af4de6d */
-#if BIND_UiMultilineEntry_TYPE
+/* MRUBY_BINDING: MultilineEntry_boxing */
+/* sha: 8b4b656f5deb51fb447d882c84a35e84c8a7d90036323c428f40770ad3176bc2 */
+#if BIND_MultilineEntry_TYPE
 /*
  * Boxing implementation for uiMultilineEntry
  */
@@ -2079,7 +2079,7 @@ mruby_box_uiMultilineEntry(mrb_state* mrb, uiMultilineEntry *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiMultilineEntry_class(mrb), &uiMultilineEntry_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, MultilineEntry_class(mrb), &uiMultilineEntry_data_type, box));
 }
 
 mrb_value
@@ -2087,7 +2087,7 @@ mruby_giftwrap_uiMultilineEntry(mrb_state* mrb, uiMultilineEntry *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiMultilineEntry_class(mrb), &uiMultilineEntry_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, MultilineEntry_class(mrb), &uiMultilineEntry_data_type, box));
 }
 
 void
@@ -2113,9 +2113,9 @@ mruby_unbox_uiMultilineEntry(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiProgressBar_boxing */
-/* sha: 825ae73bdcbc0d0e2217c30efe5196411859c2fba491a7a804c8215125d09753 */
-#if BIND_UiProgressBar_TYPE
+/* MRUBY_BINDING: ProgressBar_boxing */
+/* sha: 4dcc6df41544d05c1d7bb8cb5dd73e7e5a81060353ee82220f0419f67c9304e8 */
+#if BIND_ProgressBar_TYPE
 /*
  * Boxing implementation for uiProgressBar
  */
@@ -2140,7 +2140,7 @@ mruby_box_uiProgressBar(mrb_state* mrb, uiProgressBar *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiProgressBar_class(mrb), &uiProgressBar_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, ProgressBar_class(mrb), &uiProgressBar_data_type, box));
 }
 
 mrb_value
@@ -2148,7 +2148,7 @@ mruby_giftwrap_uiProgressBar(mrb_state* mrb, uiProgressBar *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiProgressBar_class(mrb), &uiProgressBar_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, ProgressBar_class(mrb), &uiProgressBar_data_type, box));
 }
 
 void
@@ -2174,9 +2174,9 @@ mruby_unbox_uiProgressBar(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiRadioButtons_boxing */
-/* sha: e0a722d917ae184a66a0b53a22dbc95e491fb73d003ce9a8115d9c1a4095cb0f */
-#if BIND_UiRadioButtons_TYPE
+/* MRUBY_BINDING: RadioButtons_boxing */
+/* sha: 504bb0ac884b9092177816011d9b349d40fae916990bec1ff5c4a19ef48b5c2f */
+#if BIND_RadioButtons_TYPE
 /*
  * Boxing implementation for uiRadioButtons
  */
@@ -2201,7 +2201,7 @@ mruby_box_uiRadioButtons(mrb_state* mrb, uiRadioButtons *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiRadioButtons_class(mrb), &uiRadioButtons_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, RadioButtons_class(mrb), &uiRadioButtons_data_type, box));
 }
 
 mrb_value
@@ -2209,7 +2209,7 @@ mruby_giftwrap_uiRadioButtons(mrb_state* mrb, uiRadioButtons *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiRadioButtons_class(mrb), &uiRadioButtons_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, RadioButtons_class(mrb), &uiRadioButtons_data_type, box));
 }
 
 void
@@ -2235,9 +2235,9 @@ mruby_unbox_uiRadioButtons(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSeparator_boxing */
-/* sha: 56d8977f4030e3cc2adb3e3e25ad2009f6285f49c1f3b1a69b853eedb6491941 */
-#if BIND_UiSeparator_TYPE
+/* MRUBY_BINDING: Separator_boxing */
+/* sha: 61bd03d4154a9c4af69b41f52bee7f120041077ffdd42c4546547c8fc3fde283 */
+#if BIND_Separator_TYPE
 /*
  * Boxing implementation for uiSeparator
  */
@@ -2262,7 +2262,7 @@ mruby_box_uiSeparator(mrb_state* mrb, uiSeparator *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiSeparator_class(mrb), &uiSeparator_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Separator_class(mrb), &uiSeparator_data_type, box));
 }
 
 mrb_value
@@ -2270,7 +2270,7 @@ mruby_giftwrap_uiSeparator(mrb_state* mrb, uiSeparator *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiSeparator_class(mrb), &uiSeparator_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Separator_class(mrb), &uiSeparator_data_type, box));
 }
 
 void
@@ -2296,9 +2296,9 @@ mruby_unbox_uiSeparator(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSlider_boxing */
-/* sha: fa3a0b8d224deb441ac12ccb93d8674f4d02a97fe592b7a65e91e275fbc66ee7 */
-#if BIND_UiSlider_TYPE
+/* MRUBY_BINDING: Slider_boxing */
+/* sha: 9dab7b61e271de0eaf572b3d060419d40642a1f46034337d91549fcc40b44dde */
+#if BIND_Slider_TYPE
 /*
  * Boxing implementation for uiSlider
  */
@@ -2323,7 +2323,7 @@ mruby_box_uiSlider(mrb_state* mrb, uiSlider *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiSlider_class(mrb), &uiSlider_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Slider_class(mrb), &uiSlider_data_type, box));
 }
 
 mrb_value
@@ -2331,7 +2331,7 @@ mruby_giftwrap_uiSlider(mrb_state* mrb, uiSlider *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiSlider_class(mrb), &uiSlider_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Slider_class(mrb), &uiSlider_data_type, box));
 }
 
 void
@@ -2357,9 +2357,9 @@ mruby_unbox_uiSlider(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSpinbox_boxing */
-/* sha: e257b461c8d13bdf3ee56a59ea200c7f61c13ac534015946e8366c6058ddd8a0 */
-#if BIND_UiSpinbox_TYPE
+/* MRUBY_BINDING: Spinbox_boxing */
+/* sha: 45d23e76dd26e78c27e66c5247e8dffabeaf7f815207d56d6c5542795cee7022 */
+#if BIND_Spinbox_TYPE
 /*
  * Boxing implementation for uiSpinbox
  */
@@ -2384,7 +2384,7 @@ mruby_box_uiSpinbox(mrb_state* mrb, uiSpinbox *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiSpinbox_class(mrb), &uiSpinbox_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Spinbox_class(mrb), &uiSpinbox_data_type, box));
 }
 
 mrb_value
@@ -2392,7 +2392,7 @@ mruby_giftwrap_uiSpinbox(mrb_state* mrb, uiSpinbox *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiSpinbox_class(mrb), &uiSpinbox_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Spinbox_class(mrb), &uiSpinbox_data_type, box));
 }
 
 void
@@ -2418,9 +2418,9 @@ mruby_unbox_uiSpinbox(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiTab_boxing */
-/* sha: 870f43f70177441da6e93b403b439be4955a62e92594365d4c35818a5b796b46 */
-#if BIND_UiTab_TYPE
+/* MRUBY_BINDING: Tab_boxing */
+/* sha: 8869dcc18a3b285444ddcf9c4a446506939c68b09f0cce9f1cdcb1be0b856309 */
+#if BIND_Tab_TYPE
 /*
  * Boxing implementation for uiTab
  */
@@ -2445,7 +2445,7 @@ mruby_box_uiTab(mrb_state* mrb, uiTab *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiTab_class(mrb), &uiTab_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Tab_class(mrb), &uiTab_data_type, box));
 }
 
 mrb_value
@@ -2453,7 +2453,7 @@ mruby_giftwrap_uiTab(mrb_state* mrb, uiTab *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiTab_class(mrb), &uiTab_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Tab_class(mrb), &uiTab_data_type, box));
 }
 
 void
@@ -2479,9 +2479,9 @@ mruby_unbox_uiTab(mrb_value boxed) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiWindow_boxing */
-/* sha: 7e517ffae05498603e46fa5d79d842ef56fa2945152757a99e6d17cf572ae9a9 */
-#if BIND_UiWindow_TYPE
+/* MRUBY_BINDING: Window_boxing */
+/* sha: f420039551ab627e36e857e7455f992be9f3f3a6aa50cd9270e68596dfc34c81 */
+#if BIND_Window_TYPE
 /*
  * Boxing implementation for uiWindow
  */
@@ -2506,7 +2506,7 @@ mruby_box_uiWindow(mrb_state* mrb, uiWindow *unboxed) {
   mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
   box->belongs_to_ruby = FALSE;
   box->obj = unboxed;
-  return mrb_obj_value(Data_Wrap_Struct(mrb, UiWindow_class(mrb), &uiWindow_data_type, box));
+  return mrb_obj_value(Data_Wrap_Struct(mrb, Window_class(mrb), &uiWindow_data_type, box));
 }
 
 mrb_value
@@ -2514,7 +2514,7 @@ mruby_giftwrap_uiWindow(mrb_state* mrb, uiWindow *unboxed) {
    mruby_to_native_ref* box = (mruby_to_native_ref*)malloc(sizeof(mruby_to_native_ref));
    box->belongs_to_ruby = TRUE;
    box->obj = unboxed;
-   return mrb_obj_value(Data_Wrap_Struct(mrb, UiWindow_class(mrb), &uiWindow_data_type, box));
+   return mrb_obj_value(Data_Wrap_Struct(mrb, Window_class(mrb), &uiWindow_data_type, box));
 }
 
 void

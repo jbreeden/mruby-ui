@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiAreaHandler_TYPE
+#if BIND_AreaHandler_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::initialize */
-/* sha: 0c6e559fb6d0d5b6bc1024fd6260fbe85fc8749102114d0e4134998c76b2ae7b */
-#if BIND_UiAreaHandler_INITIALIZE
+/* MRUBY_BINDING: AreaHandler::initialize */
+/* sha: d8910cd1bec0ddfb605db6b7565550b229df64bf438e10aed947b8b7dab503dd */
+#if BIND_AreaHandler_INITIALIZE
 mrb_value
-mrb_UI_UiAreaHandler_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiAreaHandler* native_object = (uiAreaHandler*)calloc(1, sizeof(uiAreaHandler));
@@ -31,11 +31,11 @@ mrb_UI_UiAreaHandler_initialize(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-/* MRUBY_BINDING: UiAreaHandler::Draw_reader */
-/* sha: 6fdd9eb3163607be77b7ecc3259688809b530452439a0ce7872c3617d30f5284 */
-#if BIND_UiAreaHandler_Draw_FIELD_READER
+/* MRUBY_BINDING: AreaHandler::Draw_reader */
+/* sha: ed0504b0fbe663e5c139b54ad0923bcefb8119c195268fdfabe471d86dfc2ef9 */
+#if BIND_AreaHandler_Draw_FIELD_READER
 mrb_value
-mrb_UI_UiAreaHandler_get_Draw(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_get_Draw(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
 
   void (*)(uiAreaHandler *, uiArea *, uiAreaDrawParams *) native_Draw = native_self->Draw;
@@ -47,11 +47,11 @@ mrb_UI_UiAreaHandler_get_Draw(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::Draw_writer */
-/* sha: 20876525b081a37e2390b4a8604a1cd4bb08a1b61f4484c391c49edc45d6c73c */
-#if BIND_UiAreaHandler_Draw_FIELD_WRITER
+/* MRUBY_BINDING: AreaHandler::Draw_writer */
+/* sha: bdf7dd0784c6b5c6449c5084809a622b0f98c5a8999afee3b7ab58bf3f16b214 */
+#if BIND_AreaHandler_Draw_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaHandler_set_Draw(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_set_Draw(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
   mrb_value Draw;
 
@@ -71,11 +71,11 @@ mrb_UI_UiAreaHandler_set_Draw(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::MouseEvent_reader */
-/* sha: 679829fde1fa20a4892d2a87c34a75286450769b77fc31eb4e38cbebbeb2d445 */
-#if BIND_UiAreaHandler_MouseEvent_FIELD_READER
+/* MRUBY_BINDING: AreaHandler::MouseEvent_reader */
+/* sha: 5d0912f79c26578893fa26bbd82900a41866fcd701b86e23bf7046ba96424c6c */
+#if BIND_AreaHandler_MouseEvent_FIELD_READER
 mrb_value
-mrb_UI_UiAreaHandler_get_MouseEvent(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_get_MouseEvent(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
 
   void (*)(uiAreaHandler *, uiArea *, uiAreaMouseEvent *) native_MouseEvent = native_self->MouseEvent;
@@ -87,11 +87,11 @@ mrb_UI_UiAreaHandler_get_MouseEvent(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::MouseEvent_writer */
-/* sha: 38a4395035d3cd928320a19ebac943bab2abfc6696e29652e431bbf867d8c83e */
-#if BIND_UiAreaHandler_MouseEvent_FIELD_WRITER
+/* MRUBY_BINDING: AreaHandler::MouseEvent_writer */
+/* sha: 2d1ea9695b584847e26007a3873434a24f6a75d4387ae60d6b255a0e8d33b984 */
+#if BIND_AreaHandler_MouseEvent_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaHandler_set_MouseEvent(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_set_MouseEvent(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
   mrb_value MouseEvent;
 
@@ -111,11 +111,11 @@ mrb_UI_UiAreaHandler_set_MouseEvent(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::MouseCrossed_reader */
-/* sha: f64c638402b9a29dbf4ae062dfe579915d4bf4de190cf9e5f7a3b7d734e57cd3 */
-#if BIND_UiAreaHandler_MouseCrossed_FIELD_READER
+/* MRUBY_BINDING: AreaHandler::MouseCrossed_reader */
+/* sha: 8ccdc11df223096de7e8f7e4f53ab7261cd80a9bfb2eed49a47c8ea7e4363ca4 */
+#if BIND_AreaHandler_MouseCrossed_FIELD_READER
 mrb_value
-mrb_UI_UiAreaHandler_get_MouseCrossed(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_get_MouseCrossed(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
 
   void (*)(uiAreaHandler *, uiArea *, int) native_MouseCrossed = native_self->MouseCrossed;
@@ -127,11 +127,11 @@ mrb_UI_UiAreaHandler_get_MouseCrossed(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::MouseCrossed_writer */
-/* sha: 8cd452fb472855132ffc1bd3adf4ac5a40ebc9b635db502fa37ee6eb4e4cbdb1 */
-#if BIND_UiAreaHandler_MouseCrossed_FIELD_WRITER
+/* MRUBY_BINDING: AreaHandler::MouseCrossed_writer */
+/* sha: 478e58d10c2e9ed7155abff57358e56c7f75e00a7829801c7c151c21eb77d4ef */
+#if BIND_AreaHandler_MouseCrossed_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaHandler_set_MouseCrossed(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_set_MouseCrossed(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
   mrb_value MouseCrossed;
 
@@ -151,11 +151,11 @@ mrb_UI_UiAreaHandler_set_MouseCrossed(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::DragBroken_reader */
-/* sha: 1affcba2fd7e7569354bfb2f328c77ae87ff4db880e7d622e82f9ca0550486a8 */
-#if BIND_UiAreaHandler_DragBroken_FIELD_READER
+/* MRUBY_BINDING: AreaHandler::DragBroken_reader */
+/* sha: 7e261e81d484c13d61c6476e31b8bba09578b4eba4e55cbf0c0221ae71a722db */
+#if BIND_AreaHandler_DragBroken_FIELD_READER
 mrb_value
-mrb_UI_UiAreaHandler_get_DragBroken(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_get_DragBroken(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
 
   void (*)(uiAreaHandler *, uiArea *) native_DragBroken = native_self->DragBroken;
@@ -167,11 +167,11 @@ mrb_UI_UiAreaHandler_get_DragBroken(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::DragBroken_writer */
-/* sha: d9fee2b60bcb7919571f202c7550ac46ce55ea287b910e20b2d34d62c293d46c */
-#if BIND_UiAreaHandler_DragBroken_FIELD_WRITER
+/* MRUBY_BINDING: AreaHandler::DragBroken_writer */
+/* sha: 705e45d74a89a75e830653e5be45bcfdeec6a9092237bebfc0022238b5cb017f */
+#if BIND_AreaHandler_DragBroken_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaHandler_set_DragBroken(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_set_DragBroken(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
   mrb_value DragBroken;
 
@@ -191,11 +191,11 @@ mrb_UI_UiAreaHandler_set_DragBroken(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::KeyEvent_reader */
-/* sha: cdb3a5d2f9a0b1b47fc2c92b512c6d6bf6918934d7e10d539790298cb7afe485 */
-#if BIND_UiAreaHandler_KeyEvent_FIELD_READER
+/* MRUBY_BINDING: AreaHandler::KeyEvent_reader */
+/* sha: 27226629a5a667f46211fccc67259747b943ef5896e3abcb10bdb2b79d34bf86 */
+#if BIND_AreaHandler_KeyEvent_FIELD_READER
 mrb_value
-mrb_UI_UiAreaHandler_get_KeyEvent(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_get_KeyEvent(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
 
   int (*)(uiAreaHandler *, uiArea *, uiAreaKeyEvent *) native_KeyEvent = native_self->KeyEvent;
@@ -207,11 +207,11 @@ mrb_UI_UiAreaHandler_get_KeyEvent(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::KeyEvent_writer */
-/* sha: e74f83c76400d2a90c474d39dd7e0150bb60d7c4ba6cbd6f02e75f668f39aae9 */
-#if BIND_UiAreaHandler_KeyEvent_FIELD_WRITER
+/* MRUBY_BINDING: AreaHandler::KeyEvent_writer */
+/* sha: 5e239d4192c1723335532201e8cec015fb94cb13e55f89097680cb383956a94a */
+#if BIND_AreaHandler_KeyEvent_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaHandler_set_KeyEvent(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaHandler_set_KeyEvent(mrb_state* mrb, mrb_value self) {
   uiAreaHandler * native_self = mruby_unbox_uiAreaHandler(self);
   mrb_value KeyEvent;
 
@@ -232,7 +232,7 @@ mrb_UI_UiAreaHandler_set_KeyEvent(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiAreaHandler_init(mrb_state* mrb) {
+void mrb_UI_AreaHandler_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -242,68 +242,68 @@ void mrb_UI_UiAreaHandler_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::class_definition */
-/* sha: eadd674eead6dbab16234c179abd7d9c6da45a0a5feaa626975e5eb5b6038cb9 */
-  struct RClass* UiAreaHandler_class = mrb_define_class_under(mrb, UI_module(mrb), "UiAreaHandler", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiAreaHandler_class, MRB_TT_DATA);
+/* MRUBY_BINDING: AreaHandler::class_definition */
+/* sha: 7445038ea77b4cba84bef03dace0c38e645ef5e3852eff4bf6cc97781233ef5d */
+  struct RClass* AreaHandler_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaHandler", mrb->object_class);
+  MRB_SET_INSTANCE_TT(AreaHandler_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::pre_class_method_definitions */
+/* MRUBY_BINDING: AreaHandler::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::class_method_definitions */
-/* sha: a1c94063936102aeb4ed66c8eec2c3990f73877e77ef165900780dd24225663d */
-#if BIND_UiAreaHandler_INITIALIZE
-  mrb_define_method(mrb, UiAreaHandler_class, "initialize", mrb_UI_UiAreaHandler_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: AreaHandler::class_method_definitions */
+/* sha: fdc7781367a80f213a32956460b0589b66c102980086090b876f2d33a1c7c29b */
+#if BIND_AreaHandler_INITIALIZE
+  mrb_define_method(mrb, AreaHandler_class, "initialize", mrb_UI_AreaHandler_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::pre_attr_definitions */
+/* MRUBY_BINDING: AreaHandler::pre_attr_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::attr_definitions */
-/* sha: 72384ed56bd0e6d0038dfbd7a392fa01c5314799924abb7f413081dfefda3f92 */
+/* MRUBY_BINDING: AreaHandler::attr_definitions */
+/* sha: c0514e73c592e007f465f3920b188d203956ed8f21befecb54cf9ea09db070e5 */
   /*
    * Fields
    */
-#if BIND_UiAreaHandler_Draw_FIELD_READER
-  mrb_define_method(mrb, UiAreaHandler_class, "Draw", mrb_UI_UiAreaHandler_get_Draw, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaHandler_Draw_FIELD_READER
+  mrb_define_method(mrb, AreaHandler_class, "Draw", mrb_UI_AreaHandler_get_Draw, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaHandler_Draw_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaHandler_class, "Draw=", mrb_UI_UiAreaHandler_set_Draw, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaHandler_Draw_FIELD_WRITER
+  mrb_define_method(mrb, AreaHandler_class, "Draw=", mrb_UI_AreaHandler_set_Draw, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaHandler_MouseEvent_FIELD_READER
-  mrb_define_method(mrb, UiAreaHandler_class, "MouseEvent", mrb_UI_UiAreaHandler_get_MouseEvent, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaHandler_MouseEvent_FIELD_READER
+  mrb_define_method(mrb, AreaHandler_class, "MouseEvent", mrb_UI_AreaHandler_get_MouseEvent, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaHandler_MouseEvent_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaHandler_class, "MouseEvent=", mrb_UI_UiAreaHandler_set_MouseEvent, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaHandler_MouseEvent_FIELD_WRITER
+  mrb_define_method(mrb, AreaHandler_class, "MouseEvent=", mrb_UI_AreaHandler_set_MouseEvent, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaHandler_MouseCrossed_FIELD_READER
-  mrb_define_method(mrb, UiAreaHandler_class, "MouseCrossed", mrb_UI_UiAreaHandler_get_MouseCrossed, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaHandler_MouseCrossed_FIELD_READER
+  mrb_define_method(mrb, AreaHandler_class, "MouseCrossed", mrb_UI_AreaHandler_get_MouseCrossed, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaHandler_MouseCrossed_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaHandler_class, "MouseCrossed=", mrb_UI_UiAreaHandler_set_MouseCrossed, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaHandler_MouseCrossed_FIELD_WRITER
+  mrb_define_method(mrb, AreaHandler_class, "MouseCrossed=", mrb_UI_AreaHandler_set_MouseCrossed, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaHandler_DragBroken_FIELD_READER
-  mrb_define_method(mrb, UiAreaHandler_class, "DragBroken", mrb_UI_UiAreaHandler_get_DragBroken, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaHandler_DragBroken_FIELD_READER
+  mrb_define_method(mrb, AreaHandler_class, "DragBroken", mrb_UI_AreaHandler_get_DragBroken, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaHandler_DragBroken_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaHandler_class, "DragBroken=", mrb_UI_UiAreaHandler_set_DragBroken, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaHandler_DragBroken_FIELD_WRITER
+  mrb_define_method(mrb, AreaHandler_class, "DragBroken=", mrb_UI_AreaHandler_set_DragBroken, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaHandler_KeyEvent_FIELD_READER
-  mrb_define_method(mrb, UiAreaHandler_class, "KeyEvent", mrb_UI_UiAreaHandler_get_KeyEvent, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaHandler_KeyEvent_FIELD_READER
+  mrb_define_method(mrb, AreaHandler_class, "KeyEvent", mrb_UI_AreaHandler_get_KeyEvent, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaHandler_KeyEvent_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaHandler_class, "KeyEvent=", mrb_UI_UiAreaHandler_set_KeyEvent, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaHandler_KeyEvent_FIELD_WRITER
+  mrb_define_method(mrb, AreaHandler_class, "KeyEvent=", mrb_UI_AreaHandler_set_KeyEvent, MRB_ARGS_ARG(1, 0));
 #endif
 /* MRUBY_BINDING_END */
 
 
-/* MRUBY_BINDING: UiAreaHandler::post_class_definition */
+/* MRUBY_BINDING: AreaHandler::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

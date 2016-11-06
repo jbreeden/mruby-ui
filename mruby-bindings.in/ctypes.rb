@@ -19,16 +19,17 @@
 # end
 
 ## This block is called to determine the Ruby class name to use for a C type.
-# CTypes.translate_type_names do |name|
-#   MRubyBindings.type_name_to_rb_class(name)
-# end
+CTypes.translate_type_names do |name|
+  MRubyBindings.type_name_to_rb_class(name.sub(/^ui(_?)/i, ''))
+end
 
 ## This block is called to determine the Ruby method name to use for a C function.
-# CTypes.translate_fn_names do |name|
-#   name
-# end
+CTypes.translate_fn_names do |name|
+  trimmed = name.sub(/^ui(_?)/i, '')
+  trimmed[0].downcase + trimmed[1..-1]
+end
 
 ## This block is called to determine the Ruby constant name to use for a C enum value.
-# CTypes.translate_enum_names do |name|
-#   name
-# end
+CTypes.translate_enum_names do |name|
+  MRubyBindings.to_rb_const(name.sub(/^ui(_?)/i, ''))
+end

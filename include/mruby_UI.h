@@ -57,49 +57,49 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: class_macros */
-/* sha: bcad52bbb80064f866595ceae121b6ec1fbec6ff971e8ee637683cc8386f24a4 */
+/* sha: 199195b5dacfc307eef2436ea04ab6ab47494a0a73d53856bebb56993af97d15 */
 #define UI_module(mrb) mrb_module_get(mrb, "UI")
-#define UiArea_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiArea")
-#define UiAreaDrawParams_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiAreaDrawParams")
-#define UiAreaHandler_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiAreaHandler")
-#define UiAreaKeyEvent_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiAreaKeyEvent")
-#define UiAreaMouseEvent_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiAreaMouseEvent")
-#define UiBox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiBox")
-#define UiButton_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiButton")
-#define UiCheckbox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiCheckbox")
-#define UiColorButton_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiColorButton")
-#define UiCombobox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiCombobox")
-#define UiControl_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiControl")
-#define UiDateTimePicker_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDateTimePicker")
-#define UiDrawBrush_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawBrush")
-#define UiDrawBrushGradientStop_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawBrushGradientStop")
-#define UiDrawContext_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawContext")
-#define UiDrawFontFamilies_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawFontFamilies")
-#define UiDrawMatrix_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawMatrix")
-#define UiDrawPath_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawPath")
-#define UiDrawStrokeParams_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawStrokeParams")
-#define UiDrawTextFont_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawTextFont")
-#define UiDrawTextFontDescriptor_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawTextFontDescriptor")
-#define UiDrawTextFontMetrics_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawTextFontMetrics")
-#define UiDrawTextLayout_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiDrawTextLayout")
-#define UiEditableCombobox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiEditableCombobox")
-#define UiEntry_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiEntry")
-#define UiFontButton_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiFontButton")
-#define UiForm_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiForm")
-#define UiGrid_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiGrid")
-#define UiGroup_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiGroup")
-#define UiInitOptions_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiInitOptions")
-#define UiLabel_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiLabel")
-#define UiMenu_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiMenu")
-#define UiMenuItem_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiMenuItem")
-#define UiMultilineEntry_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiMultilineEntry")
-#define UiProgressBar_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiProgressBar")
-#define UiRadioButtons_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiRadioButtons")
-#define UiSeparator_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiSeparator")
-#define UiSlider_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiSlider")
-#define UiSpinbox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiSpinbox")
-#define UiTab_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiTab")
-#define UiWindow_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "UiWindow")
+#define Area_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Area")
+#define AreaDrawParams_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "AreaDrawParams")
+#define AreaHandler_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "AreaHandler")
+#define AreaKeyEvent_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "AreaKeyEvent")
+#define AreaMouseEvent_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "AreaMouseEvent")
+#define Box_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Box")
+#define Button_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Button")
+#define Checkbox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Checkbox")
+#define ColorButton_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "ColorButton")
+#define Combobox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Combobox")
+#define Control_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Control")
+#define DateTimePicker_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DateTimePicker")
+#define DrawBrush_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawBrush")
+#define DrawBrushGradientStop_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawBrushGradientStop")
+#define DrawContext_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawContext")
+#define DrawFontFamilies_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawFontFamilies")
+#define DrawMatrix_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawMatrix")
+#define DrawPath_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawPath")
+#define DrawStrokeParams_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawStrokeParams")
+#define DrawTextFont_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawTextFont")
+#define DrawTextFontDescriptor_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawTextFontDescriptor")
+#define DrawTextFontMetrics_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawTextFontMetrics")
+#define DrawTextLayout_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "DrawTextLayout")
+#define EditableCombobox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "EditableCombobox")
+#define Entry_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Entry")
+#define FontButton_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "FontButton")
+#define Form_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Form")
+#define Grid_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Grid")
+#define Group_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Group")
+#define InitOptions_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "InitOptions")
+#define Label_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Label")
+#define Menu_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Menu")
+#define MenuItem_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "MenuItem")
+#define MultilineEntry_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "MultilineEntry")
+#define ProgressBar_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "ProgressBar")
+#define RadioButtons_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "RadioButtons")
+#define Separator_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Separator")
+#define Slider_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Slider")
+#define Spinbox_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Spinbox")
+#define Tab_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Tab")
+#define Window_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Window")
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: post_class_macros */
@@ -118,129 +118,129 @@
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: pre_class_init_decls */
-/* sha: 55f2999944c3474d11ee8c3df797c4a5ca9ec288f49c22fd64da00bc70b31665 */
-#if BIND_UiArea_TYPE
-void mrb_UI_UiArea_init(mrb_state* mrb);
+/* sha: a88ed8890d42ded4ab9a1413a23655c785e487c158df2b01e8896ca0055e128d */
+#if BIND_Area_TYPE
+void mrb_UI_Area_init(mrb_state* mrb);
 #endif
-#if BIND_UiAreaDrawParams_TYPE
-void mrb_UI_UiAreaDrawParams_init(mrb_state* mrb);
+#if BIND_AreaDrawParams_TYPE
+void mrb_UI_AreaDrawParams_init(mrb_state* mrb);
 #endif
-#if BIND_UiAreaHandler_TYPE
-void mrb_UI_UiAreaHandler_init(mrb_state* mrb);
+#if BIND_AreaHandler_TYPE
+void mrb_UI_AreaHandler_init(mrb_state* mrb);
 #endif
-#if BIND_UiAreaKeyEvent_TYPE
-void mrb_UI_UiAreaKeyEvent_init(mrb_state* mrb);
+#if BIND_AreaKeyEvent_TYPE
+void mrb_UI_AreaKeyEvent_init(mrb_state* mrb);
 #endif
-#if BIND_UiAreaMouseEvent_TYPE
-void mrb_UI_UiAreaMouseEvent_init(mrb_state* mrb);
+#if BIND_AreaMouseEvent_TYPE
+void mrb_UI_AreaMouseEvent_init(mrb_state* mrb);
 #endif
-#if BIND_UiBox_TYPE
-void mrb_UI_UiBox_init(mrb_state* mrb);
+#if BIND_Box_TYPE
+void mrb_UI_Box_init(mrb_state* mrb);
 #endif
-#if BIND_UiButton_TYPE
-void mrb_UI_UiButton_init(mrb_state* mrb);
+#if BIND_Button_TYPE
+void mrb_UI_Button_init(mrb_state* mrb);
 #endif
-#if BIND_UiCheckbox_TYPE
-void mrb_UI_UiCheckbox_init(mrb_state* mrb);
+#if BIND_Checkbox_TYPE
+void mrb_UI_Checkbox_init(mrb_state* mrb);
 #endif
-#if BIND_UiColorButton_TYPE
-void mrb_UI_UiColorButton_init(mrb_state* mrb);
+#if BIND_ColorButton_TYPE
+void mrb_UI_ColorButton_init(mrb_state* mrb);
 #endif
-#if BIND_UiCombobox_TYPE
-void mrb_UI_UiCombobox_init(mrb_state* mrb);
+#if BIND_Combobox_TYPE
+void mrb_UI_Combobox_init(mrb_state* mrb);
 #endif
-#if BIND_UiControl_TYPE
-void mrb_UI_UiControl_init(mrb_state* mrb);
+#if BIND_Control_TYPE
+void mrb_UI_Control_init(mrb_state* mrb);
 #endif
-#if BIND_UiDateTimePicker_TYPE
-void mrb_UI_UiDateTimePicker_init(mrb_state* mrb);
+#if BIND_DateTimePicker_TYPE
+void mrb_UI_DateTimePicker_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawBrush_TYPE
-void mrb_UI_UiDrawBrush_init(mrb_state* mrb);
+#if BIND_DrawBrush_TYPE
+void mrb_UI_DrawBrush_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawBrushGradientStop_TYPE
-void mrb_UI_UiDrawBrushGradientStop_init(mrb_state* mrb);
+#if BIND_DrawBrushGradientStop_TYPE
+void mrb_UI_DrawBrushGradientStop_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawContext_TYPE
-void mrb_UI_UiDrawContext_init(mrb_state* mrb);
+#if BIND_DrawContext_TYPE
+void mrb_UI_DrawContext_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawFontFamilies_TYPE
-void mrb_UI_UiDrawFontFamilies_init(mrb_state* mrb);
+#if BIND_DrawFontFamilies_TYPE
+void mrb_UI_DrawFontFamilies_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawMatrix_TYPE
-void mrb_UI_UiDrawMatrix_init(mrb_state* mrb);
+#if BIND_DrawMatrix_TYPE
+void mrb_UI_DrawMatrix_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawPath_TYPE
-void mrb_UI_UiDrawPath_init(mrb_state* mrb);
+#if BIND_DrawPath_TYPE
+void mrb_UI_DrawPath_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawStrokeParams_TYPE
-void mrb_UI_UiDrawStrokeParams_init(mrb_state* mrb);
+#if BIND_DrawStrokeParams_TYPE
+void mrb_UI_DrawStrokeParams_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawTextFont_TYPE
-void mrb_UI_UiDrawTextFont_init(mrb_state* mrb);
+#if BIND_DrawTextFont_TYPE
+void mrb_UI_DrawTextFont_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawTextFontDescriptor_TYPE
-void mrb_UI_UiDrawTextFontDescriptor_init(mrb_state* mrb);
+#if BIND_DrawTextFontDescriptor_TYPE
+void mrb_UI_DrawTextFontDescriptor_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawTextFontMetrics_TYPE
-void mrb_UI_UiDrawTextFontMetrics_init(mrb_state* mrb);
+#if BIND_DrawTextFontMetrics_TYPE
+void mrb_UI_DrawTextFontMetrics_init(mrb_state* mrb);
 #endif
-#if BIND_UiDrawTextLayout_TYPE
-void mrb_UI_UiDrawTextLayout_init(mrb_state* mrb);
+#if BIND_DrawTextLayout_TYPE
+void mrb_UI_DrawTextLayout_init(mrb_state* mrb);
 #endif
-#if BIND_UiEditableCombobox_TYPE
-void mrb_UI_UiEditableCombobox_init(mrb_state* mrb);
+#if BIND_EditableCombobox_TYPE
+void mrb_UI_EditableCombobox_init(mrb_state* mrb);
 #endif
-#if BIND_UiEntry_TYPE
-void mrb_UI_UiEntry_init(mrb_state* mrb);
+#if BIND_Entry_TYPE
+void mrb_UI_Entry_init(mrb_state* mrb);
 #endif
-#if BIND_UiFontButton_TYPE
-void mrb_UI_UiFontButton_init(mrb_state* mrb);
+#if BIND_FontButton_TYPE
+void mrb_UI_FontButton_init(mrb_state* mrb);
 #endif
-#if BIND_UiForm_TYPE
-void mrb_UI_UiForm_init(mrb_state* mrb);
+#if BIND_Form_TYPE
+void mrb_UI_Form_init(mrb_state* mrb);
 #endif
-#if BIND_UiGrid_TYPE
-void mrb_UI_UiGrid_init(mrb_state* mrb);
+#if BIND_Grid_TYPE
+void mrb_UI_Grid_init(mrb_state* mrb);
 #endif
-#if BIND_UiGroup_TYPE
-void mrb_UI_UiGroup_init(mrb_state* mrb);
+#if BIND_Group_TYPE
+void mrb_UI_Group_init(mrb_state* mrb);
 #endif
-#if BIND_UiInitOptions_TYPE
-void mrb_UI_UiInitOptions_init(mrb_state* mrb);
+#if BIND_InitOptions_TYPE
+void mrb_UI_InitOptions_init(mrb_state* mrb);
 #endif
-#if BIND_UiLabel_TYPE
-void mrb_UI_UiLabel_init(mrb_state* mrb);
+#if BIND_Label_TYPE
+void mrb_UI_Label_init(mrb_state* mrb);
 #endif
-#if BIND_UiMenu_TYPE
-void mrb_UI_UiMenu_init(mrb_state* mrb);
+#if BIND_Menu_TYPE
+void mrb_UI_Menu_init(mrb_state* mrb);
 #endif
-#if BIND_UiMenuItem_TYPE
-void mrb_UI_UiMenuItem_init(mrb_state* mrb);
+#if BIND_MenuItem_TYPE
+void mrb_UI_MenuItem_init(mrb_state* mrb);
 #endif
-#if BIND_UiMultilineEntry_TYPE
-void mrb_UI_UiMultilineEntry_init(mrb_state* mrb);
+#if BIND_MultilineEntry_TYPE
+void mrb_UI_MultilineEntry_init(mrb_state* mrb);
 #endif
-#if BIND_UiProgressBar_TYPE
-void mrb_UI_UiProgressBar_init(mrb_state* mrb);
+#if BIND_ProgressBar_TYPE
+void mrb_UI_ProgressBar_init(mrb_state* mrb);
 #endif
-#if BIND_UiRadioButtons_TYPE
-void mrb_UI_UiRadioButtons_init(mrb_state* mrb);
+#if BIND_RadioButtons_TYPE
+void mrb_UI_RadioButtons_init(mrb_state* mrb);
 #endif
-#if BIND_UiSeparator_TYPE
-void mrb_UI_UiSeparator_init(mrb_state* mrb);
+#if BIND_Separator_TYPE
+void mrb_UI_Separator_init(mrb_state* mrb);
 #endif
-#if BIND_UiSlider_TYPE
-void mrb_UI_UiSlider_init(mrb_state* mrb);
+#if BIND_Slider_TYPE
+void mrb_UI_Slider_init(mrb_state* mrb);
 #endif
-#if BIND_UiSpinbox_TYPE
-void mrb_UI_UiSpinbox_init(mrb_state* mrb);
+#if BIND_Spinbox_TYPE
+void mrb_UI_Spinbox_init(mrb_state* mrb);
 #endif
-#if BIND_UiTab_TYPE
-void mrb_UI_UiTab_init(mrb_state* mrb);
+#if BIND_Tab_TYPE
+void mrb_UI_Tab_init(mrb_state* mrb);
 #endif
-#if BIND_UiWindow_TYPE
-void mrb_UI_UiWindow_init(mrb_state* mrb);
+#if BIND_Window_TYPE
+void mrb_UI_Window_init(mrb_state* mrb);
 #endif
 /* MRUBY_BINDING_END */
 

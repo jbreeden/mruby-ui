@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiAreaMouseEvent_TYPE
+#if BIND_AreaMouseEvent_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::initialize */
-/* sha: 1f196ddffc3e7c1a0f5f199c695506a1356b92317042cfc81c82c792affb919d */
-#if BIND_UiAreaMouseEvent_INITIALIZE
+/* MRUBY_BINDING: AreaMouseEvent::initialize */
+/* sha: ea2f59d4422032e32c6888beb00956053a7e6a7337c8814d2730ad76c8aaef07 */
+#if BIND_AreaMouseEvent_INITIALIZE
 mrb_value
-mrb_UI_UiAreaMouseEvent_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiAreaMouseEvent* native_object = (uiAreaMouseEvent*)calloc(1, sizeof(uiAreaMouseEvent));
@@ -31,11 +31,11 @@ mrb_UI_UiAreaMouseEvent_initialize(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::X_reader */
-/* sha: f622b4af0f870cd736964a53f06fd3836e700948c77d2c6d470015aa77a6eea8 */
-#if BIND_UiAreaMouseEvent_X_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::X_reader */
+/* sha: f74142f8dc9a104c50eccce9f116e5e3513b751b2f682661f6940f8dc26e73b7 */
+#if BIND_AreaMouseEvent_X_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_X(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_X(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   double native_X = native_self->X;
@@ -47,11 +47,11 @@ mrb_UI_UiAreaMouseEvent_get_X(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::X_writer */
-/* sha: 79babbb811d8f2ce1fa652026ddf616ba7c24ce3eeceb8fbabe0eb56767a27c1 */
-#if BIND_UiAreaMouseEvent_X_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::X_writer */
+/* sha: fb96abed3fff09ac7c8877dc435b60e3dc3fb538f95a8db470c07d8761134407 */
+#if BIND_AreaMouseEvent_X_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_X(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_X(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_float native_X;
 
@@ -66,11 +66,11 @@ mrb_UI_UiAreaMouseEvent_set_X(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Y_reader */
-/* sha: 903f887681524daffc93d90db160cc321a3ba2232e8fa4b5cda8be02fed4091e */
-#if BIND_UiAreaMouseEvent_Y_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::Y_reader */
+/* sha: 39ec57cdabb299bf7eb7878f22b02a6de465b907adfb9845363a0e020e552c72 */
+#if BIND_AreaMouseEvent_Y_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_Y(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_Y(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   double native_Y = native_self->Y;
@@ -82,11 +82,11 @@ mrb_UI_UiAreaMouseEvent_get_Y(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Y_writer */
-/* sha: 9194b784b211a5667c5e4c00097a2bb1e452d0012b862b5c556b9d2ce19cf7ea */
-#if BIND_UiAreaMouseEvent_Y_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::Y_writer */
+/* sha: 221bcb350a3073af53eca057cacdd2778539d110061b28fd801a2713e5eca67d */
+#if BIND_AreaMouseEvent_Y_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_Y(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_Y(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_float native_Y;
 
@@ -101,11 +101,11 @@ mrb_UI_UiAreaMouseEvent_set_Y(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::AreaWidth_reader */
-/* sha: 8fb8f84ef4e6c91ad6b057d9047dc09cae1d437917ed5fbc8ff1105b2353f4be */
-#if BIND_UiAreaMouseEvent_AreaWidth_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::AreaWidth_reader */
+/* sha: 8204a3c7d4e125ab956f396df98fff48b511f6956d2a5f5c2350a17b4574065c */
+#if BIND_AreaMouseEvent_AreaWidth_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_AreaWidth(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_AreaWidth(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   double native_AreaWidth = native_self->AreaWidth;
@@ -117,11 +117,11 @@ mrb_UI_UiAreaMouseEvent_get_AreaWidth(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::AreaWidth_writer */
-/* sha: 1e14d67a76ebab7d9e64827be30dbacaeaa08a3dd5650fd6676c8c70055c30ce */
-#if BIND_UiAreaMouseEvent_AreaWidth_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::AreaWidth_writer */
+/* sha: 4272b1ca82c40fd979afc55fffd84e777f534fbf05c2718cb447252166820f43 */
+#if BIND_AreaMouseEvent_AreaWidth_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_AreaWidth(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_AreaWidth(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_float native_AreaWidth;
 
@@ -136,11 +136,11 @@ mrb_UI_UiAreaMouseEvent_set_AreaWidth(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::AreaHeight_reader */
-/* sha: 3702c49c3d4a73d3cc4a487346761f8db4957b97f8da853cc6bb1a27670a6706 */
-#if BIND_UiAreaMouseEvent_AreaHeight_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::AreaHeight_reader */
+/* sha: 7be444f09d1ccbcb9673134bd191c2c6d4aaf1a92303bc1b05900628489e0435 */
+#if BIND_AreaMouseEvent_AreaHeight_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_AreaHeight(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_AreaHeight(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   double native_AreaHeight = native_self->AreaHeight;
@@ -152,11 +152,11 @@ mrb_UI_UiAreaMouseEvent_get_AreaHeight(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::AreaHeight_writer */
-/* sha: 7214bf8d650b98ed0f0f0756d4676c767ca7ff1eebf75cfdea1a93cc7b1e5027 */
-#if BIND_UiAreaMouseEvent_AreaHeight_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::AreaHeight_writer */
+/* sha: 97a8080727d6fc4ca863f1fa3ad6d2490fea62229c7e242ac32f408185fca8dc */
+#if BIND_AreaMouseEvent_AreaHeight_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_AreaHeight(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_AreaHeight(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_float native_AreaHeight;
 
@@ -171,11 +171,11 @@ mrb_UI_UiAreaMouseEvent_set_AreaHeight(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Down_reader */
-/* sha: 6db668e39fa16c8325cb02c3b41d14d1ba79404cae1d2e77b29d70826d5a69f7 */
-#if BIND_UiAreaMouseEvent_Down_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::Down_reader */
+/* sha: 5d91647da8c124891fce7f8fc22b70abb22f6e0de90dee9a4a33f62411a46f3b */
+#if BIND_AreaMouseEvent_Down_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_Down(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_Down(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   int native_Down = native_self->Down;
@@ -187,11 +187,11 @@ mrb_UI_UiAreaMouseEvent_get_Down(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Down_writer */
-/* sha: 78274ea2be3ec8da060b1df7b814bc8fbdfd83ba77d4a82a73859686b595fec4 */
-#if BIND_UiAreaMouseEvent_Down_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::Down_writer */
+/* sha: 2656e41812dc0573341c1a6f2ec5172abb52dde14bdf1ca98bef0e3a3aa8d8de */
+#if BIND_AreaMouseEvent_Down_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_Down(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_Down(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_int native_Down;
 
@@ -206,11 +206,11 @@ mrb_UI_UiAreaMouseEvent_set_Down(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Up_reader */
-/* sha: 5bce07dfc11f48b4d47ae7905c753a4b6c31300893871b661e9e348ec86dbf18 */
-#if BIND_UiAreaMouseEvent_Up_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::Up_reader */
+/* sha: 4a16f7d64ebfc3dbccfd59d4b617d739bd40ee61dd250b82c65abfbb48ed6fe4 */
+#if BIND_AreaMouseEvent_Up_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_Up(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_Up(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   int native_Up = native_self->Up;
@@ -222,11 +222,11 @@ mrb_UI_UiAreaMouseEvent_get_Up(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Up_writer */
-/* sha: 9ba6e091283ffd7edbd824fb5a92b8c417d7398148c701a0b466db545791fbd0 */
-#if BIND_UiAreaMouseEvent_Up_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::Up_writer */
+/* sha: af936f61d312d45a3cf5a1be9f227aac618ce7d666a04588b71090747074d702 */
+#if BIND_AreaMouseEvent_Up_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_Up(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_Up(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_int native_Up;
 
@@ -241,11 +241,11 @@ mrb_UI_UiAreaMouseEvent_set_Up(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Count_reader */
-/* sha: 520483636b8932d1a6a33cf96384607efe83e39451a81640ffb83aecbb6ce40b */
-#if BIND_UiAreaMouseEvent_Count_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::Count_reader */
+/* sha: a773e58d4ee75a2559a131a5143bfeab4042c420bcde7fbf1f2c50ac71e9c0a7 */
+#if BIND_AreaMouseEvent_Count_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_Count(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_Count(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   int native_Count = native_self->Count;
@@ -257,11 +257,11 @@ mrb_UI_UiAreaMouseEvent_get_Count(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Count_writer */
-/* sha: 266079ba86e7f23bf82eb6e481adb915892eb1438070444771a276cb4b30183e */
-#if BIND_UiAreaMouseEvent_Count_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::Count_writer */
+/* sha: 87dc3c66e963181d94a401c5165e1c8450f83a43086039f6038ec5713ea35481 */
+#if BIND_AreaMouseEvent_Count_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_Count(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_Count(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_int native_Count;
 
@@ -276,11 +276,11 @@ mrb_UI_UiAreaMouseEvent_set_Count(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Modifiers_reader */
-/* sha: 6dfd0f0bf424af37818af9ce8effe1052cecd2329e9bc34c8a98fd24e741d5ce */
-#if BIND_UiAreaMouseEvent_Modifiers_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::Modifiers_reader */
+/* sha: ffd830664adb9ea8672e8cac69bbfee6535ded126b28ede0b7d99094dad876f1 */
+#if BIND_AreaMouseEvent_Modifiers_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_Modifiers(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_Modifiers(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   uiModifiers native_Modifiers = native_self->Modifiers;
@@ -292,11 +292,11 @@ mrb_UI_UiAreaMouseEvent_get_Modifiers(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Modifiers_writer */
-/* sha: 5f074363f32ae89c8f594b75c569589c86fe8535b3afe00338ccac24d179cfcd */
-#if BIND_UiAreaMouseEvent_Modifiers_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::Modifiers_writer */
+/* sha: a8a3bfec2d0834b006b239f8788c6523fc8d9158c948f1b91c0512182fd76fe0 */
+#if BIND_AreaMouseEvent_Modifiers_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_Modifiers(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_Modifiers(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_value Modifiers;
 
@@ -316,11 +316,11 @@ mrb_UI_UiAreaMouseEvent_set_Modifiers(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Held1To64_reader */
-/* sha: 9d21b2b5038cabe70cad3eb2c9af60ac229262a6dcc8b3d7d5383d78c04431a7 */
-#if BIND_UiAreaMouseEvent_Held1To64_FIELD_READER
+/* MRUBY_BINDING: AreaMouseEvent::Held1To64_reader */
+/* sha: 1c768248f6a3c1a641418d75d367612e9f0da4dd6156efc73aac0ba0524d7216 */
+#if BIND_AreaMouseEvent_Held1To64_FIELD_READER
 mrb_value
-mrb_UI_UiAreaMouseEvent_get_Held1To64(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_get_Held1To64(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
 
   uint64_t native_Held1To64 = native_self->Held1To64;
@@ -332,11 +332,11 @@ mrb_UI_UiAreaMouseEvent_get_Held1To64(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::Held1To64_writer */
-/* sha: 5a67c81f8f04edf62d62ca3a7079bad01f998b7a66c019fd43a8b751264f4089 */
-#if BIND_UiAreaMouseEvent_Held1To64_FIELD_WRITER
+/* MRUBY_BINDING: AreaMouseEvent::Held1To64_writer */
+/* sha: 0c1e2147047544f2fcb9b98ab68b614cd8f620ad782ab3c0e212525f62b852a5 */
+#if BIND_AreaMouseEvent_Held1To64_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaMouseEvent_set_Held1To64(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaMouseEvent_set_Held1To64(mrb_state* mrb, mrb_value self) {
   uiAreaMouseEvent * native_self = mruby_unbox_uiAreaMouseEvent(self);
   mrb_value Held1To64;
 
@@ -357,7 +357,7 @@ mrb_UI_UiAreaMouseEvent_set_Held1To64(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiAreaMouseEvent_init(mrb_state* mrb) {
+void mrb_UI_AreaMouseEvent_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -367,92 +367,92 @@ void mrb_UI_UiAreaMouseEvent_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::class_definition */
-/* sha: 8b20808c32930abb2a061653a66cdd3667bd0786ef7e73991495cc28843b978e */
-  struct RClass* UiAreaMouseEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "UiAreaMouseEvent", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiAreaMouseEvent_class, MRB_TT_DATA);
+/* MRUBY_BINDING: AreaMouseEvent::class_definition */
+/* sha: 5e2a75e08e4a455361ac95fa380c4c743daaa3adf7e3c06b5dfb962562346b9a */
+  struct RClass* AreaMouseEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaMouseEvent", mrb->object_class);
+  MRB_SET_INSTANCE_TT(AreaMouseEvent_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::pre_class_method_definitions */
+/* MRUBY_BINDING: AreaMouseEvent::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::class_method_definitions */
-/* sha: 33f9500226bf351ff41493e1f6040786e62d3dd0af525f528370e55ba781d355 */
-#if BIND_UiAreaMouseEvent_INITIALIZE
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "initialize", mrb_UI_UiAreaMouseEvent_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: AreaMouseEvent::class_method_definitions */
+/* sha: 9a40d109a3a9339a582c939fea32e10c86330415a984924c882121b3353e7984 */
+#if BIND_AreaMouseEvent_INITIALIZE
+  mrb_define_method(mrb, AreaMouseEvent_class, "initialize", mrb_UI_AreaMouseEvent_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::pre_attr_definitions */
+/* MRUBY_BINDING: AreaMouseEvent::pre_attr_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::attr_definitions */
-/* sha: cf4563c3aee0916e3d993b49924efbbc64e30f83c65af587e3a4dba00bde10cc */
+/* MRUBY_BINDING: AreaMouseEvent::attr_definitions */
+/* sha: 6ff1475a58205ef2c26af52cd8893f6a09a982d85c9833678de229e1e8f3b9dc */
   /*
    * Fields
    */
-#if BIND_UiAreaMouseEvent_X_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "X", mrb_UI_UiAreaMouseEvent_get_X, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_X_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "X", mrb_UI_AreaMouseEvent_get_X, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_X_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "X=", mrb_UI_UiAreaMouseEvent_set_X, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_X_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "X=", mrb_UI_AreaMouseEvent_set_X, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Y_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Y", mrb_UI_UiAreaMouseEvent_get_Y, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_Y_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Y", mrb_UI_AreaMouseEvent_get_Y, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Y_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Y=", mrb_UI_UiAreaMouseEvent_set_Y, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_Y_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Y=", mrb_UI_AreaMouseEvent_set_Y, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_AreaWidth_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "AreaWidth", mrb_UI_UiAreaMouseEvent_get_AreaWidth, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_AreaWidth_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "AreaWidth", mrb_UI_AreaMouseEvent_get_AreaWidth, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_AreaWidth_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "AreaWidth=", mrb_UI_UiAreaMouseEvent_set_AreaWidth, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_AreaWidth_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "AreaWidth=", mrb_UI_AreaMouseEvent_set_AreaWidth, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_AreaHeight_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "AreaHeight", mrb_UI_UiAreaMouseEvent_get_AreaHeight, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_AreaHeight_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "AreaHeight", mrb_UI_AreaMouseEvent_get_AreaHeight, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_AreaHeight_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "AreaHeight=", mrb_UI_UiAreaMouseEvent_set_AreaHeight, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_AreaHeight_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "AreaHeight=", mrb_UI_AreaMouseEvent_set_AreaHeight, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Down_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Down", mrb_UI_UiAreaMouseEvent_get_Down, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_Down_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Down", mrb_UI_AreaMouseEvent_get_Down, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Down_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Down=", mrb_UI_UiAreaMouseEvent_set_Down, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_Down_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Down=", mrb_UI_AreaMouseEvent_set_Down, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Up_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Up", mrb_UI_UiAreaMouseEvent_get_Up, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_Up_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Up", mrb_UI_AreaMouseEvent_get_Up, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Up_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Up=", mrb_UI_UiAreaMouseEvent_set_Up, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_Up_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Up=", mrb_UI_AreaMouseEvent_set_Up, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Count_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Count", mrb_UI_UiAreaMouseEvent_get_Count, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_Count_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Count", mrb_UI_AreaMouseEvent_get_Count, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Count_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Count=", mrb_UI_UiAreaMouseEvent_set_Count, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_Count_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Count=", mrb_UI_AreaMouseEvent_set_Count, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Modifiers_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Modifiers", mrb_UI_UiAreaMouseEvent_get_Modifiers, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_Modifiers_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Modifiers", mrb_UI_AreaMouseEvent_get_Modifiers, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Modifiers_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Modifiers=", mrb_UI_UiAreaMouseEvent_set_Modifiers, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_Modifiers_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Modifiers=", mrb_UI_AreaMouseEvent_set_Modifiers, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Held1To64_FIELD_READER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Held1To64", mrb_UI_UiAreaMouseEvent_get_Held1To64, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaMouseEvent_Held1To64_FIELD_READER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Held1To64", mrb_UI_AreaMouseEvent_get_Held1To64, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaMouseEvent_Held1To64_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaMouseEvent_class, "Held1To64=", mrb_UI_UiAreaMouseEvent_set_Held1To64, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaMouseEvent_Held1To64_FIELD_WRITER
+  mrb_define_method(mrb, AreaMouseEvent_class, "Held1To64=", mrb_UI_AreaMouseEvent_set_Held1To64, MRB_ARGS_ARG(1, 0));
 #endif
 /* MRUBY_BINDING_END */
 
 
-/* MRUBY_BINDING: UiAreaMouseEvent::post_class_definition */
+/* MRUBY_BINDING: AreaMouseEvent::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

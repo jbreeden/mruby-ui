@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiMenu_TYPE
+#if BIND_Menu_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenu::initialize */
-/* sha: 7702f280176e3e7b802524bd30cca4c2de13c9a9c71c353affe81a00b59a49ce */
-#if BIND_UiMenu_INITIALIZE
+/* MRUBY_BINDING: Menu::initialize */
+/* sha: e236155da467bc9c57bf635bf999608186f2cc9b706c05fecafa5b770d5f080c */
+#if BIND_Menu_INITIALIZE
 mrb_value
-mrb_UI_UiMenu_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_Menu_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiMenu* native_object = (uiMenu*)calloc(1, sizeof(uiMenu));
@@ -28,7 +28,7 @@ mrb_UI_UiMenu_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiMenu_init(mrb_state* mrb) {
+void mrb_UI_Menu_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiMenu_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenu::class_definition */
-/* sha: 0a0cb92a7c6d87c534d6b8e3127c1779f3b7b34b610c1175262acebf1c8bf799 */
-  struct RClass* UiMenu_class = mrb_define_class_under(mrb, UI_module(mrb), "UiMenu", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiMenu_class, MRB_TT_DATA);
+/* MRUBY_BINDING: Menu::class_definition */
+/* sha: 096861aa3831e78bd772c3a8360f2b7c37d280f525afe08023bf3c55a6636da2 */
+  struct RClass* Menu_class = mrb_define_class_under(mrb, UI_module(mrb), "Menu", mrb->object_class);
+  MRB_SET_INSTANCE_TT(Menu_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenu::pre_class_method_definitions */
+/* MRUBY_BINDING: Menu::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenu::class_method_definitions */
-/* sha: 836d1a7b7d7540848a32c134a8cd06dd2cae42766b9e0dfae099289a49a89271 */
-#if BIND_UiMenu_INITIALIZE
-  mrb_define_method(mrb, UiMenu_class, "initialize", mrb_UI_UiMenu_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: Menu::class_method_definitions */
+/* sha: cc9fbd08734d6d27ab09ed351088a5656d62f7550b52b00034e8e7b34f1d6e92 */
+#if BIND_Menu_INITIALIZE
+  mrb_define_method(mrb, Menu_class, "initialize", mrb_UI_Menu_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiMenu::post_class_definition */
+/* MRUBY_BINDING: Menu::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

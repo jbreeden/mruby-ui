@@ -41,9 +41,9 @@ typedef struct mruby_to_native_ref_ {
   void* data;
 } mruby_to_native_ref;
 
-/* MRUBY_BINDING: UiArea::boxing_decls */
-/* sha: cb9beef04d625926f7ed47bc5800f433ae6d316dd3528c1fc51026679d54a101 */
-#if BIND_UiArea_TYPE
+/* MRUBY_BINDING: Area::boxing_decls */
+/* sha: c7e1bffabda9ae9142018212a4d168ac7b01bb1279bfde625c7b109f6b674b97 */
+#if BIND_Area_TYPE
 mrb_value
 mruby_box_uiArea(mrb_state* mrb, uiArea *unboxed);
 
@@ -61,9 +61,9 @@ mruby_unbox_uiArea(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaDrawParams::boxing_decls */
-/* sha: fc479a4f44b07a843231f7ec5c7b00a84f750a79ede565277b15190a8b12a126 */
-#if BIND_UiAreaDrawParams_TYPE
+/* MRUBY_BINDING: AreaDrawParams::boxing_decls */
+/* sha: 75100a520bc1566d5207757f877281a5c55e37390d2b8b2b3ebaf73a6f9bb45a */
+#if BIND_AreaDrawParams_TYPE
 mrb_value
 mruby_box_uiAreaDrawParams(mrb_state* mrb, uiAreaDrawParams *unboxed);
 
@@ -81,9 +81,9 @@ mruby_unbox_uiAreaDrawParams(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaHandler::boxing_decls */
-/* sha: 97e1278da30c449d378714d397c68c6cb30890fb760c566ebc9d1550c75db605 */
-#if BIND_UiAreaHandler_TYPE
+/* MRUBY_BINDING: AreaHandler::boxing_decls */
+/* sha: 94477087b740c56adab9295555080d2d4db9c750c65e5a859b214422e9a5840e */
+#if BIND_AreaHandler_TYPE
 mrb_value
 mruby_box_uiAreaHandler(mrb_state* mrb, uiAreaHandler *unboxed);
 
@@ -101,9 +101,9 @@ mruby_unbox_uiAreaHandler(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::boxing_decls */
-/* sha: a99072e6aebe236cd3e43c72519040a6a6c091b49241c9c22b8ef83112157d68 */
-#if BIND_UiAreaKeyEvent_TYPE
+/* MRUBY_BINDING: AreaKeyEvent::boxing_decls */
+/* sha: 9c5733abda6f5a5b6864a41b243a4aefa03ee00258f9172f50e442acbb71664d */
+#if BIND_AreaKeyEvent_TYPE
 mrb_value
 mruby_box_uiAreaKeyEvent(mrb_state* mrb, uiAreaKeyEvent *unboxed);
 
@@ -121,9 +121,9 @@ mruby_unbox_uiAreaKeyEvent(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaMouseEvent::boxing_decls */
-/* sha: 960e4cae5dd4d5ef994a3cddc8459726cef3e43aaf1caa1a2fa01f876bd26f30 */
-#if BIND_UiAreaMouseEvent_TYPE
+/* MRUBY_BINDING: AreaMouseEvent::boxing_decls */
+/* sha: fe5c4a1d53123f1d44e4577c1614312ae5213fcd4dc597d90bf0f52a0d7868cb */
+#if BIND_AreaMouseEvent_TYPE
 mrb_value
 mruby_box_uiAreaMouseEvent(mrb_state* mrb, uiAreaMouseEvent *unboxed);
 
@@ -141,9 +141,9 @@ mruby_unbox_uiAreaMouseEvent(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiBox::boxing_decls */
-/* sha: b90c1d27c4ae7ab548a1d130863cdb6dcabcce68b269199071e771e3f7cd533c */
-#if BIND_UiBox_TYPE
+/* MRUBY_BINDING: Box::boxing_decls */
+/* sha: 626956a31c9aa8919bfbbc68ba42105df8019a9d91b041cdf4257815b5e25dd9 */
+#if BIND_Box_TYPE
 mrb_value
 mruby_box_uiBox(mrb_state* mrb, uiBox *unboxed);
 
@@ -161,9 +161,9 @@ mruby_unbox_uiBox(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiButton::boxing_decls */
-/* sha: 15b56bcd48d3e3da18341b1805189f211ac6ff49b18f875e94e321d854571ece */
-#if BIND_UiButton_TYPE
+/* MRUBY_BINDING: Button::boxing_decls */
+/* sha: 5a2cfdf8a49b56b570a7ef6d1b40f270e91f624b9e5a5b9d331b2af99edcc281 */
+#if BIND_Button_TYPE
 mrb_value
 mruby_box_uiButton(mrb_state* mrb, uiButton *unboxed);
 
@@ -181,9 +181,9 @@ mruby_unbox_uiButton(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiCheckbox::boxing_decls */
-/* sha: ee3e6b3fd88010b8b7ea73e6d27b1f6582167d1af00f9b17ab3403613f7fbfe0 */
-#if BIND_UiCheckbox_TYPE
+/* MRUBY_BINDING: Checkbox::boxing_decls */
+/* sha: c4143190b61fa230629ff60485dcbf69522da56b82a6e065960041610fdc902e */
+#if BIND_Checkbox_TYPE
 mrb_value
 mruby_box_uiCheckbox(mrb_state* mrb, uiCheckbox *unboxed);
 
@@ -201,9 +201,9 @@ mruby_unbox_uiCheckbox(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiColorButton::boxing_decls */
-/* sha: 0dc74a3fe93e9cdaab69b24a6f6bfaf18edc67c9c517a30b4deca864cb75304f */
-#if BIND_UiColorButton_TYPE
+/* MRUBY_BINDING: ColorButton::boxing_decls */
+/* sha: 7238597255804e6203ba00b680a5357b999e719d0175911cad28b76c4cfdcba8 */
+#if BIND_ColorButton_TYPE
 mrb_value
 mruby_box_uiColorButton(mrb_state* mrb, uiColorButton *unboxed);
 
@@ -221,9 +221,9 @@ mruby_unbox_uiColorButton(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiCombobox::boxing_decls */
-/* sha: 8e5c277c1012cbd8c6748a8b070f910606ea90609bd1dad81fd039058afb9f31 */
-#if BIND_UiCombobox_TYPE
+/* MRUBY_BINDING: Combobox::boxing_decls */
+/* sha: c0e2800d7b7dffb07730ce5948666c139563f22849964324d2f1b415e5f549af */
+#if BIND_Combobox_TYPE
 mrb_value
 mruby_box_uiCombobox(mrb_state* mrb, uiCombobox *unboxed);
 
@@ -241,9 +241,9 @@ mruby_unbox_uiCombobox(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiControl::boxing_decls */
-/* sha: 4180334c368dcba0d24bab5d733eb0617cdf1882ed6b3c39108d9c8cb4b6ed17 */
-#if BIND_UiControl_TYPE
+/* MRUBY_BINDING: Control::boxing_decls */
+/* sha: d3c3a24cfdb6b64b5f4388c80c19cb9450b7afd3c5fbd5199c287be81280a242 */
+#if BIND_Control_TYPE
 mrb_value
 mruby_box_uiControl(mrb_state* mrb, uiControl *unboxed);
 
@@ -261,9 +261,9 @@ mruby_unbox_uiControl(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDateTimePicker::boxing_decls */
-/* sha: a880237489f7c06d3b3d2dc36a3bc94438bc793874d929c3a0af6f40dd97e4dc */
-#if BIND_UiDateTimePicker_TYPE
+/* MRUBY_BINDING: DateTimePicker::boxing_decls */
+/* sha: d0dd98639dc525f57ec45236eb30a57790106c0b670bcc08776c04bc303c750f */
+#if BIND_DateTimePicker_TYPE
 mrb_value
 mruby_box_uiDateTimePicker(mrb_state* mrb, uiDateTimePicker *unboxed);
 
@@ -281,9 +281,9 @@ mruby_unbox_uiDateTimePicker(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::boxing_decls */
-/* sha: 48c0411539d60f7cb82ea1c49bfc0bc09b564d64d04cbfeb191e60925165e858 */
-#if BIND_UiDrawBrush_TYPE
+/* MRUBY_BINDING: DrawBrush::boxing_decls */
+/* sha: d66618705304b0463a5eaa73f59722c243db73e99de75eecb9852b7be2c9c1a5 */
+#if BIND_DrawBrush_TYPE
 mrb_value
 mruby_box_uiDrawBrush(mrb_state* mrb, uiDrawBrush *unboxed);
 
@@ -301,9 +301,9 @@ mruby_unbox_uiDrawBrush(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::boxing_decls */
-/* sha: 55deddf565cceca41931a5c7771fb196eb3008005e695150aabb33291598a9f0 */
-#if BIND_UiDrawBrushGradientStop_TYPE
+/* MRUBY_BINDING: DrawBrushGradientStop::boxing_decls */
+/* sha: 5dc8c73fee26a9a82668d2923dd9f372130b054f5b08415b330cb505a73f7594 */
+#if BIND_DrawBrushGradientStop_TYPE
 mrb_value
 mruby_box_uiDrawBrushGradientStop(mrb_state* mrb, uiDrawBrushGradientStop *unboxed);
 
@@ -321,9 +321,9 @@ mruby_unbox_uiDrawBrushGradientStop(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawContext::boxing_decls */
-/* sha: 840c253d9cf9aa804d9d6e5abc00755df818d5664572ef4389e02de3d90b25b5 */
-#if BIND_UiDrawContext_TYPE
+/* MRUBY_BINDING: DrawContext::boxing_decls */
+/* sha: 21e49df314809d48e774365a233d0f25fd69c7d3747514a7983fb06d52eea31f */
+#if BIND_DrawContext_TYPE
 mrb_value
 mruby_box_uiDrawContext(mrb_state* mrb, uiDrawContext *unboxed);
 
@@ -341,9 +341,9 @@ mruby_unbox_uiDrawContext(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawFontFamilies::boxing_decls */
-/* sha: b822d0dfc29283e257de136c697bf46403a031b8f4763f02c0ba16f69675855c */
-#if BIND_UiDrawFontFamilies_TYPE
+/* MRUBY_BINDING: DrawFontFamilies::boxing_decls */
+/* sha: cd07bf3c27d817174cda284f079f141faeab984e75770c4af53318f3df04e4c3 */
+#if BIND_DrawFontFamilies_TYPE
 mrb_value
 mruby_box_uiDrawFontFamilies(mrb_state* mrb, uiDrawFontFamilies *unboxed);
 
@@ -361,9 +361,9 @@ mruby_unbox_uiDrawFontFamilies(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawMatrix::boxing_decls */
-/* sha: e31402fbe71413f5e4424a7333fcbaf118cd4f08752a41a3f82476825a09d040 */
-#if BIND_UiDrawMatrix_TYPE
+/* MRUBY_BINDING: DrawMatrix::boxing_decls */
+/* sha: 66fb054a5bde22b74e0ed79a46b59af06350b068ddf57e934f40c4cb8192731b */
+#if BIND_DrawMatrix_TYPE
 mrb_value
 mruby_box_uiDrawMatrix(mrb_state* mrb, uiDrawMatrix *unboxed);
 
@@ -381,9 +381,9 @@ mruby_unbox_uiDrawMatrix(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawPath::boxing_decls */
-/* sha: 1295dca9c188bcc15d27f49455103ceb074a6fa8af5c8674e33dfaa52297a2ea */
-#if BIND_UiDrawPath_TYPE
+/* MRUBY_BINDING: DrawPath::boxing_decls */
+/* sha: d65c2569ea986e1b998aaaf631100e63d2c3f23ed2821d5a440f5d5a106f856c */
+#if BIND_DrawPath_TYPE
 mrb_value
 mruby_box_uiDrawPath(mrb_state* mrb, uiDrawPath *unboxed);
 
@@ -401,9 +401,9 @@ mruby_unbox_uiDrawPath(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::boxing_decls */
-/* sha: 6d53ebfa8f5dcb9ee986b3af2b311af546339603323d73f018869733bc82a314 */
-#if BIND_UiDrawStrokeParams_TYPE
+/* MRUBY_BINDING: DrawStrokeParams::boxing_decls */
+/* sha: cc9ee553419515721c5366ffa55d88c261f918459186af3b1db7df597ea67402 */
+#if BIND_DrawStrokeParams_TYPE
 mrb_value
 mruby_box_uiDrawStrokeParams(mrb_state* mrb, uiDrawStrokeParams *unboxed);
 
@@ -421,9 +421,9 @@ mruby_unbox_uiDrawStrokeParams(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFont::boxing_decls */
-/* sha: c8806c022831816da4b2bd6edec8b9e21ed9a6aadca5d931ee7eb0c73272865f */
-#if BIND_UiDrawTextFont_TYPE
+/* MRUBY_BINDING: DrawTextFont::boxing_decls */
+/* sha: 55ec54ed6b307cca83e2438133c858ae7eda4004d8025c9a79f1bd6edee58698 */
+#if BIND_DrawTextFont_TYPE
 mrb_value
 mruby_box_uiDrawTextFont(mrb_state* mrb, uiDrawTextFont *unboxed);
 
@@ -441,9 +441,9 @@ mruby_unbox_uiDrawTextFont(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFontDescriptor::boxing_decls */
-/* sha: 043d60884fc4e8c9cd80fb68eea85ccfcd4e452a7b97b569e9b5cc28862a32b8 */
-#if BIND_UiDrawTextFontDescriptor_TYPE
+/* MRUBY_BINDING: DrawTextFontDescriptor::boxing_decls */
+/* sha: 2f6072c5b2166f30e62cca4c2d6f478746a2ba719962f14f95a7f105a167e1ad */
+#if BIND_DrawTextFontDescriptor_TYPE
 mrb_value
 mruby_box_uiDrawTextFontDescriptor(mrb_state* mrb, uiDrawTextFontDescriptor *unboxed);
 
@@ -461,9 +461,9 @@ mruby_unbox_uiDrawTextFontDescriptor(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFontMetrics::boxing_decls */
-/* sha: 1180b3f0fb29563dd3eee4f8829e01d10b5464064a186c3e364b88964c3c47d4 */
-#if BIND_UiDrawTextFontMetrics_TYPE
+/* MRUBY_BINDING: DrawTextFontMetrics::boxing_decls */
+/* sha: 4792bd7003a04984bf73e5c3dd3918ca94926f1c2ad5a409fe6bac9324108de8 */
+#if BIND_DrawTextFontMetrics_TYPE
 mrb_value
 mruby_box_uiDrawTextFontMetrics(mrb_state* mrb, uiDrawTextFontMetrics *unboxed);
 
@@ -481,9 +481,9 @@ mruby_unbox_uiDrawTextFontMetrics(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextLayout::boxing_decls */
-/* sha: a5a309a196ff14e857dad810051c1fec6c5b0131d91da52d8246d5e00833d49d */
-#if BIND_UiDrawTextLayout_TYPE
+/* MRUBY_BINDING: DrawTextLayout::boxing_decls */
+/* sha: 184280388c7cc5a05f458da615faab27bed7617ece41e63f8c62c9adf9e98312 */
+#if BIND_DrawTextLayout_TYPE
 mrb_value
 mruby_box_uiDrawTextLayout(mrb_state* mrb, uiDrawTextLayout *unboxed);
 
@@ -501,9 +501,9 @@ mruby_unbox_uiDrawTextLayout(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEditableCombobox::boxing_decls */
-/* sha: aefc4fa30bc501448ac680039e82ae3e8b0362422ec255666b820407dd751d12 */
-#if BIND_UiEditableCombobox_TYPE
+/* MRUBY_BINDING: EditableCombobox::boxing_decls */
+/* sha: 4830c977c366215a9301e8dba59d3896ac76a7d5ce05b8d8eb5afd707fe3533e */
+#if BIND_EditableCombobox_TYPE
 mrb_value
 mruby_box_uiEditableCombobox(mrb_state* mrb, uiEditableCombobox *unboxed);
 
@@ -521,9 +521,9 @@ mruby_unbox_uiEditableCombobox(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEntry::boxing_decls */
-/* sha: 4a697b5fd41dc5ce8bb30a1a475fd76dd482dc1b0bbfc6445ed2895b39484c6c */
-#if BIND_UiEntry_TYPE
+/* MRUBY_BINDING: Entry::boxing_decls */
+/* sha: 26fd20b3e5cf253fc359fc1369d3d293bc4d932d0ccc91016b3837d6b1713cae */
+#if BIND_Entry_TYPE
 mrb_value
 mruby_box_uiEntry(mrb_state* mrb, uiEntry *unboxed);
 
@@ -541,9 +541,9 @@ mruby_unbox_uiEntry(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiFontButton::boxing_decls */
-/* sha: b90985215270e595c240ec94ff34ea70f61d19a7f59a71166305a43f42881da3 */
-#if BIND_UiFontButton_TYPE
+/* MRUBY_BINDING: FontButton::boxing_decls */
+/* sha: 91b0deec8edac66a90e697d59cade9477ac625af68c6fa69f88edfa353222ae2 */
+#if BIND_FontButton_TYPE
 mrb_value
 mruby_box_uiFontButton(mrb_state* mrb, uiFontButton *unboxed);
 
@@ -561,9 +561,9 @@ mruby_unbox_uiFontButton(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiForm::boxing_decls */
-/* sha: e3fb9ceb4f5ff364ef337d593272994ebbabd549d54abdac1262e609c2de1d5e */
-#if BIND_UiForm_TYPE
+/* MRUBY_BINDING: Form::boxing_decls */
+/* sha: f61ad0b0b84dff18aa6a4e7a10868b26124c53b3448c8af10ae462a97fa3011b */
+#if BIND_Form_TYPE
 mrb_value
 mruby_box_uiForm(mrb_state* mrb, uiForm *unboxed);
 
@@ -581,9 +581,9 @@ mruby_unbox_uiForm(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGrid::boxing_decls */
-/* sha: df91c8d6c0d7eb7f6b9b2e2335129ef0cee436ab6377ce9c44801bff3aaa3ba9 */
-#if BIND_UiGrid_TYPE
+/* MRUBY_BINDING: Grid::boxing_decls */
+/* sha: 498ddbbeef653af979badc394959bc518eacd4bdc612740441fc658e204e8075 */
+#if BIND_Grid_TYPE
 mrb_value
 mruby_box_uiGrid(mrb_state* mrb, uiGrid *unboxed);
 
@@ -601,9 +601,9 @@ mruby_unbox_uiGrid(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGroup::boxing_decls */
-/* sha: 280f012369bac8cf18908b08eeab1d4485f8fa6d1b712e8f26a9e598d22087b6 */
-#if BIND_UiGroup_TYPE
+/* MRUBY_BINDING: Group::boxing_decls */
+/* sha: b56f0a40bbaf5332dedc043b8f441521c50a6ae8c454f965a87cd1bf588e28e6 */
+#if BIND_Group_TYPE
 mrb_value
 mruby_box_uiGroup(mrb_state* mrb, uiGroup *unboxed);
 
@@ -621,9 +621,9 @@ mruby_unbox_uiGroup(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::boxing_decls */
-/* sha: 7f6b21d0c1c519b840556f7891738871b6e880ac8c482fe3630b8b4d04beb69d */
-#if BIND_UiInitOptions_TYPE
+/* MRUBY_BINDING: InitOptions::boxing_decls */
+/* sha: bdaddb7fbd3c236c973fa9b4dbb134a481de1a9910c318a4152a6ec4b706b0d0 */
+#if BIND_InitOptions_TYPE
 mrb_value
 mruby_box_uiInitOptions(mrb_state* mrb, uiInitOptions *unboxed);
 
@@ -641,9 +641,9 @@ mruby_unbox_uiInitOptions(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiLabel::boxing_decls */
-/* sha: 9b164378ce75d64651a1d5f7124e3fe9f727c24030b468a585fca32dac03bb2e */
-#if BIND_UiLabel_TYPE
+/* MRUBY_BINDING: Label::boxing_decls */
+/* sha: 94db056a7b1d42f976e894e1aa5adc0f044d0bdb0597fbc1e283d1470e0bffbc */
+#if BIND_Label_TYPE
 mrb_value
 mruby_box_uiLabel(mrb_state* mrb, uiLabel *unboxed);
 
@@ -661,9 +661,9 @@ mruby_unbox_uiLabel(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenu::boxing_decls */
-/* sha: 99dba0ebd66396d301704b5fe2da98846779c378b73b55aa19b605d1967a4f6e */
-#if BIND_UiMenu_TYPE
+/* MRUBY_BINDING: Menu::boxing_decls */
+/* sha: e21fb040de83da54c2b1367ab820f75ac970ab82dd620422257cc21f4af927af */
+#if BIND_Menu_TYPE
 mrb_value
 mruby_box_uiMenu(mrb_state* mrb, uiMenu *unboxed);
 
@@ -681,9 +681,9 @@ mruby_unbox_uiMenu(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenuItem::boxing_decls */
-/* sha: 353e286ce851ae8d0da7f723fbf010cee109abd36961e51418489ff904b60873 */
-#if BIND_UiMenuItem_TYPE
+/* MRUBY_BINDING: MenuItem::boxing_decls */
+/* sha: 6247c182ed7c3ee1e1f3c0c8d9db0d6173f1e4bac3e05167b9822a76b1076d3c */
+#if BIND_MenuItem_TYPE
 mrb_value
 mruby_box_uiMenuItem(mrb_state* mrb, uiMenuItem *unboxed);
 
@@ -701,9 +701,9 @@ mruby_unbox_uiMenuItem(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMultilineEntry::boxing_decls */
-/* sha: 8a1a88da6bcacfaf8152d073dbdfdd64682b608de2188a55709e234437b5bab7 */
-#if BIND_UiMultilineEntry_TYPE
+/* MRUBY_BINDING: MultilineEntry::boxing_decls */
+/* sha: 073d3e76ab5aaa8e2c972c10bfc1d89e4178ac9e29b39c657e3ca88fc90a46c6 */
+#if BIND_MultilineEntry_TYPE
 mrb_value
 mruby_box_uiMultilineEntry(mrb_state* mrb, uiMultilineEntry *unboxed);
 
@@ -721,9 +721,9 @@ mruby_unbox_uiMultilineEntry(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiProgressBar::boxing_decls */
-/* sha: 49467d0a974f5f35b26bd0c273809c4e1bffecd78bd0d9f20a8e8d8ab0969a16 */
-#if BIND_UiProgressBar_TYPE
+/* MRUBY_BINDING: ProgressBar::boxing_decls */
+/* sha: 92b5c7187c67437181c532710e88c531ac4bf5eab1d9740ffb0151d912fa41eb */
+#if BIND_ProgressBar_TYPE
 mrb_value
 mruby_box_uiProgressBar(mrb_state* mrb, uiProgressBar *unboxed);
 
@@ -741,9 +741,9 @@ mruby_unbox_uiProgressBar(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiRadioButtons::boxing_decls */
-/* sha: 3afad8f657f0d6c5f2537e0a24659406ada26e878054164e1de0c12f75bdcaf0 */
-#if BIND_UiRadioButtons_TYPE
+/* MRUBY_BINDING: RadioButtons::boxing_decls */
+/* sha: 5301dbd54fc6dbe7b43f92719ae98a755b5c932791872b9d73af0964067e6a26 */
+#if BIND_RadioButtons_TYPE
 mrb_value
 mruby_box_uiRadioButtons(mrb_state* mrb, uiRadioButtons *unboxed);
 
@@ -761,9 +761,9 @@ mruby_unbox_uiRadioButtons(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSeparator::boxing_decls */
-/* sha: a8a2445f7cee52585fbb5e4f5a724e86ac88ad2abb2d66746a1dbba8acc526a6 */
-#if BIND_UiSeparator_TYPE
+/* MRUBY_BINDING: Separator::boxing_decls */
+/* sha: 012b578da6299a43735697eab72288df2f67287fad3485888e3fb0a5a474e310 */
+#if BIND_Separator_TYPE
 mrb_value
 mruby_box_uiSeparator(mrb_state* mrb, uiSeparator *unboxed);
 
@@ -781,9 +781,9 @@ mruby_unbox_uiSeparator(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSlider::boxing_decls */
-/* sha: 1adc656627cd2345172cba2220f9067ffc6eb4c530bf12cfb93885c31eb09122 */
-#if BIND_UiSlider_TYPE
+/* MRUBY_BINDING: Slider::boxing_decls */
+/* sha: d96c9cc07439e489cadcd44a535ad7a5f0a796f79d8421234e7e028dfbe18021 */
+#if BIND_Slider_TYPE
 mrb_value
 mruby_box_uiSlider(mrb_state* mrb, uiSlider *unboxed);
 
@@ -801,9 +801,9 @@ mruby_unbox_uiSlider(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSpinbox::boxing_decls */
-/* sha: df40e12de60086a9dc967bc9104e371b0685c7c259eed459e682933373f8b9d1 */
-#if BIND_UiSpinbox_TYPE
+/* MRUBY_BINDING: Spinbox::boxing_decls */
+/* sha: 2ac993e973e9698b506464fac82c907455f1a36b4afc2f375fb69b8458b45366 */
+#if BIND_Spinbox_TYPE
 mrb_value
 mruby_box_uiSpinbox(mrb_state* mrb, uiSpinbox *unboxed);
 
@@ -821,9 +821,9 @@ mruby_unbox_uiSpinbox(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiTab::boxing_decls */
-/* sha: d30749337ae6795c6f4e08208c87da88941b26de044dfb5c7d34c0872a3c20f7 */
-#if BIND_UiTab_TYPE
+/* MRUBY_BINDING: Tab::boxing_decls */
+/* sha: 5283f0fc4462e2c35916cd5c10074a2168e90ed902251e48134f07324a698ac9 */
+#if BIND_Tab_TYPE
 mrb_value
 mruby_box_uiTab(mrb_state* mrb, uiTab *unboxed);
 
@@ -841,9 +841,9 @@ mruby_unbox_uiTab(mrb_value boxed);
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiWindow::boxing_decls */
-/* sha: 290aaa629800cc7b9d0deff6de0a78f26da0213908e08bf4bdab200a0b605ab2 */
-#if BIND_UiWindow_TYPE
+/* MRUBY_BINDING: Window::boxing_decls */
+/* sha: beb7358f72b138b2182c11867d5f89dcf5d129a2e90f7230957d305b54e9e4b8 */
+#if BIND_Window_TYPE
 mrb_value
 mruby_box_uiWindow(mrb_state* mrb, uiWindow *unboxed);
 

@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiLabel_TYPE
+#if BIND_Label_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiLabel::initialize */
-/* sha: 4e71956663740888bd8412786076006019509e68b80de1574655e3fc496c3ae2 */
-#if BIND_UiLabel_INITIALIZE
+/* MRUBY_BINDING: Label::initialize */
+/* sha: cf959fdde285c1ebf4675dff54e6517a342abc454f53fb0fc178b2462b327271 */
+#if BIND_Label_INITIALIZE
 mrb_value
-mrb_UI_UiLabel_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_Label_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiLabel* native_object = (uiLabel*)calloc(1, sizeof(uiLabel));
@@ -28,7 +28,7 @@ mrb_UI_UiLabel_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiLabel_init(mrb_state* mrb) {
+void mrb_UI_Label_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiLabel_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiLabel::class_definition */
-/* sha: 697c85563bbf11e6227fcff1c6a1cbe507c1fbedc1080f76d901c0efa9cd43fc */
-  struct RClass* UiLabel_class = mrb_define_class_under(mrb, UI_module(mrb), "UiLabel", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiLabel_class, MRB_TT_DATA);
+/* MRUBY_BINDING: Label::class_definition */
+/* sha: 03aa2f8cce9ba6fb47ea21fceddc6cf96f5cfabd36b9df7599bb7e70d9078cb7 */
+  struct RClass* Label_class = mrb_define_class_under(mrb, UI_module(mrb), "Label", mrb->object_class);
+  MRB_SET_INSTANCE_TT(Label_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiLabel::pre_class_method_definitions */
+/* MRUBY_BINDING: Label::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiLabel::class_method_definitions */
-/* sha: 2eb3a7ed2473b1acd9f7e947ad8d5212f9f7131fd0c739a113dbf4379c4cc73c */
-#if BIND_UiLabel_INITIALIZE
-  mrb_define_method(mrb, UiLabel_class, "initialize", mrb_UI_UiLabel_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: Label::class_method_definitions */
+/* sha: 7567b60098663c91082e008b4125c54f296581c850dec505d40ab81dcdb0e5af */
+#if BIND_Label_INITIALIZE
+  mrb_define_method(mrb, Label_class, "initialize", mrb_UI_Label_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiLabel::post_class_definition */
+/* MRUBY_BINDING: Label::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

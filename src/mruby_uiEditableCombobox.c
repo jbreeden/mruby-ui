@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiEditableCombobox_TYPE
+#if BIND_EditableCombobox_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEditableCombobox::initialize */
-/* sha: 8a2d1c1ba1305957c4a8f30e47a7b954d741213071ca9f92fff1661aaa82a5ab */
-#if BIND_UiEditableCombobox_INITIALIZE
+/* MRUBY_BINDING: EditableCombobox::initialize */
+/* sha: 1d0c95e4b2b39443077ef229068c02b8bc86fdb9ed0fce79997cdd6ffeee816e */
+#if BIND_EditableCombobox_INITIALIZE
 mrb_value
-mrb_UI_UiEditableCombobox_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_EditableCombobox_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiEditableCombobox* native_object = (uiEditableCombobox*)calloc(1, sizeof(uiEditableCombobox));
@@ -28,7 +28,7 @@ mrb_UI_UiEditableCombobox_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiEditableCombobox_init(mrb_state* mrb) {
+void mrb_UI_EditableCombobox_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiEditableCombobox_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEditableCombobox::class_definition */
-/* sha: 2e2dce29d32a534c65cfae22e5837b4de7add84fd38af6f3ec28a9901dbf3615 */
-  struct RClass* UiEditableCombobox_class = mrb_define_class_under(mrb, UI_module(mrb), "UiEditableCombobox", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiEditableCombobox_class, MRB_TT_DATA);
+/* MRUBY_BINDING: EditableCombobox::class_definition */
+/* sha: e5ae32de5ff5c834f4e28b7c3f8b86ad3950842f4196c7daa4361d1f1e2babe9 */
+  struct RClass* EditableCombobox_class = mrb_define_class_under(mrb, UI_module(mrb), "EditableCombobox", mrb->object_class);
+  MRB_SET_INSTANCE_TT(EditableCombobox_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEditableCombobox::pre_class_method_definitions */
+/* MRUBY_BINDING: EditableCombobox::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiEditableCombobox::class_method_definitions */
-/* sha: 952e7efa88aa0bb24cffc58787be20e073968a4fd8addf26711491df7ce5eb02 */
-#if BIND_UiEditableCombobox_INITIALIZE
-  mrb_define_method(mrb, UiEditableCombobox_class, "initialize", mrb_UI_UiEditableCombobox_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: EditableCombobox::class_method_definitions */
+/* sha: e7717593edad2bc16da0f967ce4439da1bf8faee83db217f63c0d54e70a07cea */
+#if BIND_EditableCombobox_INITIALIZE
+  mrb_define_method(mrb, EditableCombobox_class, "initialize", mrb_UI_EditableCombobox_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiEditableCombobox::post_class_definition */
+/* MRUBY_BINDING: EditableCombobox::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

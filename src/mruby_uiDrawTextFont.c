@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiDrawTextFont_TYPE
+#if BIND_DrawTextFont_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFont::initialize */
-/* sha: 9cbe1ee8f30b833e127fde5350e638da532ecee7bbcde54a8890d1eeeff998dc */
-#if BIND_UiDrawTextFont_INITIALIZE
+/* MRUBY_BINDING: DrawTextFont::initialize */
+/* sha: ddb315ae484a86685841cfce744b2217e38dd8ddb9009632312046743dba8709 */
+#if BIND_DrawTextFont_INITIALIZE
 mrb_value
-mrb_UI_UiDrawTextFont_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawTextFont_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiDrawTextFont* native_object = (uiDrawTextFont*)calloc(1, sizeof(uiDrawTextFont));
@@ -28,7 +28,7 @@ mrb_UI_UiDrawTextFont_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiDrawTextFont_init(mrb_state* mrb) {
+void mrb_UI_DrawTextFont_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiDrawTextFont_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFont::class_definition */
-/* sha: 5cdcd285fa8f7849585691f98637ca4a2ad482c18decf0c1ac50c8ea3acc49ab */
-  struct RClass* UiDrawTextFont_class = mrb_define_class_under(mrb, UI_module(mrb), "UiDrawTextFont", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiDrawTextFont_class, MRB_TT_DATA);
+/* MRUBY_BINDING: DrawTextFont::class_definition */
+/* sha: b71e6514c5983a3ed2e9a45dcda9ba3b435b8bc9e66ae27885f56a17f25174ac */
+  struct RClass* DrawTextFont_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextFont", mrb->object_class);
+  MRB_SET_INSTANCE_TT(DrawTextFont_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFont::pre_class_method_definitions */
+/* MRUBY_BINDING: DrawTextFont::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawTextFont::class_method_definitions */
-/* sha: bf9b34982924bc69b73a53f42c1236348daf7cd740c1a4e27c9d668046bd4bbb */
-#if BIND_UiDrawTextFont_INITIALIZE
-  mrb_define_method(mrb, UiDrawTextFont_class, "initialize", mrb_UI_UiDrawTextFont_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: DrawTextFont::class_method_definitions */
+/* sha: f2bf2675d6ac66b250d3e06c977cd7a64d5120f3634eb88df0d3b8c32504a418 */
+#if BIND_DrawTextFont_INITIALIZE
+  mrb_define_method(mrb, DrawTextFont_class, "initialize", mrb_UI_DrawTextFont_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiDrawTextFont::post_class_definition */
+/* MRUBY_BINDING: DrawTextFont::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

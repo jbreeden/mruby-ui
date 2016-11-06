@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiProgressBar_TYPE
+#if BIND_ProgressBar_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiProgressBar::initialize */
-/* sha: 01ad8806c831213e4e83b31894209056406cc8ae530f3c411af0196ce2604df5 */
-#if BIND_UiProgressBar_INITIALIZE
+/* MRUBY_BINDING: ProgressBar::initialize */
+/* sha: ef2da5431d690d26e789367bf6073cac30f8306732fd6a91ec9dd9bc5ca6e422 */
+#if BIND_ProgressBar_INITIALIZE
 mrb_value
-mrb_UI_UiProgressBar_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_ProgressBar_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiProgressBar* native_object = (uiProgressBar*)calloc(1, sizeof(uiProgressBar));
@@ -28,7 +28,7 @@ mrb_UI_UiProgressBar_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiProgressBar_init(mrb_state* mrb) {
+void mrb_UI_ProgressBar_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiProgressBar_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiProgressBar::class_definition */
-/* sha: 99688a0a51c496c6e43c82f686b98c97b8e49705b4edb9a51f2e3458ba81f2c2 */
-  struct RClass* UiProgressBar_class = mrb_define_class_under(mrb, UI_module(mrb), "UiProgressBar", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiProgressBar_class, MRB_TT_DATA);
+/* MRUBY_BINDING: ProgressBar::class_definition */
+/* sha: 4ffb961dd02d4e544662defc1fa266a03a0fe59acdb3ab9d58b9ee2d26cb3275 */
+  struct RClass* ProgressBar_class = mrb_define_class_under(mrb, UI_module(mrb), "ProgressBar", mrb->object_class);
+  MRB_SET_INSTANCE_TT(ProgressBar_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiProgressBar::pre_class_method_definitions */
+/* MRUBY_BINDING: ProgressBar::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiProgressBar::class_method_definitions */
-/* sha: 7d5c4dc1a4595db3dda93c9b0057e98d8e4096f4413de3b81e8ead623481ce15 */
-#if BIND_UiProgressBar_INITIALIZE
-  mrb_define_method(mrb, UiProgressBar_class, "initialize", mrb_UI_UiProgressBar_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: ProgressBar::class_method_definitions */
+/* sha: 5dbf02450c4c07ef65b3acd4e738e89a99f7ca0b1185db57e0eb3224e8fc1a9d */
+#if BIND_ProgressBar_INITIALIZE
+  mrb_define_method(mrb, ProgressBar_class, "initialize", mrb_UI_ProgressBar_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiProgressBar::post_class_definition */
+/* MRUBY_BINDING: ProgressBar::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

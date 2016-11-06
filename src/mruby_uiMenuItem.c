@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiMenuItem_TYPE
+#if BIND_MenuItem_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenuItem::initialize */
-/* sha: f7cc957dd55f9a29447f4242d966def1232d48eec32251aa3d8e6d1ae224adb8 */
-#if BIND_UiMenuItem_INITIALIZE
+/* MRUBY_BINDING: MenuItem::initialize */
+/* sha: 5e622b6776fb097bc9d3e8da11ff23ea4cc8caccf270fadb2061a577317d56bf */
+#if BIND_MenuItem_INITIALIZE
 mrb_value
-mrb_UI_UiMenuItem_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_MenuItem_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiMenuItem* native_object = (uiMenuItem*)calloc(1, sizeof(uiMenuItem));
@@ -28,7 +28,7 @@ mrb_UI_UiMenuItem_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiMenuItem_init(mrb_state* mrb) {
+void mrb_UI_MenuItem_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiMenuItem_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenuItem::class_definition */
-/* sha: 9631d49bcfb4c7a364adf39671df95789b2de932f9851a0e3a873101809325bd */
-  struct RClass* UiMenuItem_class = mrb_define_class_under(mrb, UI_module(mrb), "UiMenuItem", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiMenuItem_class, MRB_TT_DATA);
+/* MRUBY_BINDING: MenuItem::class_definition */
+/* sha: 07015d8a19336c9e01483185be45bcf17525c42d13529e95f2bbb6df6ff221d5 */
+  struct RClass* MenuItem_class = mrb_define_class_under(mrb, UI_module(mrb), "MenuItem", mrb->object_class);
+  MRB_SET_INSTANCE_TT(MenuItem_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenuItem::pre_class_method_definitions */
+/* MRUBY_BINDING: MenuItem::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiMenuItem::class_method_definitions */
-/* sha: 75ba15d8bd5f20edf89720236b0256d578103feba39f212e682ea1e43ebcac83 */
-#if BIND_UiMenuItem_INITIALIZE
-  mrb_define_method(mrb, UiMenuItem_class, "initialize", mrb_UI_UiMenuItem_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: MenuItem::class_method_definitions */
+/* sha: 3a4f097c13fea7575b0056245a79af0f523ff236ced6b960e207c60a084a8df6 */
+#if BIND_MenuItem_INITIALIZE
+  mrb_define_method(mrb, MenuItem_class, "initialize", mrb_UI_MenuItem_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiMenuItem::post_class_definition */
+/* MRUBY_BINDING: MenuItem::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

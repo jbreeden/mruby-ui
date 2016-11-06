@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiForm_TYPE
+#if BIND_Form_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiForm::initialize */
-/* sha: 60a7939191bc56e1bcbe7cd003a4a3f60455b82c337cc36ad80a462c01dc03a7 */
-#if BIND_UiForm_INITIALIZE
+/* MRUBY_BINDING: Form::initialize */
+/* sha: 6f043533d005926685f04de191e96539bf6cf14ea96246b5d979922c3797f95b */
+#if BIND_Form_INITIALIZE
 mrb_value
-mrb_UI_UiForm_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_Form_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiForm* native_object = (uiForm*)calloc(1, sizeof(uiForm));
@@ -28,7 +28,7 @@ mrb_UI_UiForm_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiForm_init(mrb_state* mrb) {
+void mrb_UI_Form_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiForm_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiForm::class_definition */
-/* sha: 780ebfb4376d686ad9aa7baf25ed3d78af6026c0f4f288643a56da9a2dd2d738 */
-  struct RClass* UiForm_class = mrb_define_class_under(mrb, UI_module(mrb), "UiForm", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiForm_class, MRB_TT_DATA);
+/* MRUBY_BINDING: Form::class_definition */
+/* sha: a3aec8bdef4f83c873d5b42ddd55c617b192ce8b81a09d6e915e1268d9b3e3c7 */
+  struct RClass* Form_class = mrb_define_class_under(mrb, UI_module(mrb), "Form", mrb->object_class);
+  MRB_SET_INSTANCE_TT(Form_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiForm::pre_class_method_definitions */
+/* MRUBY_BINDING: Form::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiForm::class_method_definitions */
-/* sha: c5a7809112533dc9914d4eae9424cd4ef98d38e2ad43a2e5bee8a2c41ac63554 */
-#if BIND_UiForm_INITIALIZE
-  mrb_define_method(mrb, UiForm_class, "initialize", mrb_UI_UiForm_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: Form::class_method_definitions */
+/* sha: e777039f9a07e0206ae61d32390360c33a5e9e027a8dff7867caeaf3c72899f1 */
+#if BIND_Form_INITIALIZE
+  mrb_define_method(mrb, Form_class, "initialize", mrb_UI_Form_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiForm::post_class_definition */
+/* MRUBY_BINDING: Form::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

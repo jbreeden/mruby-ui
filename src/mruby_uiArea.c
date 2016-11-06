@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiArea_TYPE
+#if BIND_Area_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiArea::initialize */
-/* sha: 4b7048ac895dbfb6e6ea3240dc1b4ce5c632d19c7a43b9c806305982ca10bcdd */
-#if BIND_UiArea_INITIALIZE
+/* MRUBY_BINDING: Area::initialize */
+/* sha: 3a97a00f860495ba750acb0d987d0aa4ddd550e56d64294ae8015a82d7891dd4 */
+#if BIND_Area_INITIALIZE
 mrb_value
-mrb_UI_UiArea_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_Area_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiArea* native_object = (uiArea*)calloc(1, sizeof(uiArea));
@@ -28,7 +28,7 @@ mrb_UI_UiArea_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiArea_init(mrb_state* mrb) {
+void mrb_UI_Area_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiArea_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiArea::class_definition */
-/* sha: c6751fb2097ac0af174d5f5e2b54ad5fa7eac86fac83e0f2ea3496905007408d */
-  struct RClass* UiArea_class = mrb_define_class_under(mrb, UI_module(mrb), "UiArea", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiArea_class, MRB_TT_DATA);
+/* MRUBY_BINDING: Area::class_definition */
+/* sha: d25977bcededf1b553e3eb0d512f52ecde5fa576c02e26a6d2a03546c03f8e92 */
+  struct RClass* Area_class = mrb_define_class_under(mrb, UI_module(mrb), "Area", mrb->object_class);
+  MRB_SET_INSTANCE_TT(Area_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiArea::pre_class_method_definitions */
+/* MRUBY_BINDING: Area::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiArea::class_method_definitions */
-/* sha: b370cd51f11dc0fd656cdaa6bf7c0d694d8517242d052036cc2c8e0decf50a7a */
-#if BIND_UiArea_INITIALIZE
-  mrb_define_method(mrb, UiArea_class, "initialize", mrb_UI_UiArea_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: Area::class_method_definitions */
+/* sha: 852347e3bd3d330f5a3f7adacf94962435f59fa8f805ceb268ab29046bf2e7ff */
+#if BIND_Area_INITIALIZE
+  mrb_define_method(mrb, Area_class, "initialize", mrb_UI_Area_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiArea::post_class_definition */
+/* MRUBY_BINDING: Area::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

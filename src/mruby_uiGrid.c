@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiGrid_TYPE
+#if BIND_Grid_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGrid::initialize */
-/* sha: bab524e80dfd5ce599cdf085599d3b9b9a49d88c9cfb68e81ae6dd88d94e6c5d */
-#if BIND_UiGrid_INITIALIZE
+/* MRUBY_BINDING: Grid::initialize */
+/* sha: a58448dea7d4bf4680899f2a5a28749591e60d9e9001081f4f748a19f9e05c38 */
+#if BIND_Grid_INITIALIZE
 mrb_value
-mrb_UI_UiGrid_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_Grid_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiGrid* native_object = (uiGrid*)calloc(1, sizeof(uiGrid));
@@ -28,7 +28,7 @@ mrb_UI_UiGrid_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiGrid_init(mrb_state* mrb) {
+void mrb_UI_Grid_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiGrid_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGrid::class_definition */
-/* sha: 0675f833d0097203f194ee4f7c54d5052b5097cff96c9e70afe63bc41348f7a7 */
-  struct RClass* UiGrid_class = mrb_define_class_under(mrb, UI_module(mrb), "UiGrid", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiGrid_class, MRB_TT_DATA);
+/* MRUBY_BINDING: Grid::class_definition */
+/* sha: c4e4828669ca82c92b16cc17eeae3f086556013025b5f9d14d032d26c8ee9068 */
+  struct RClass* Grid_class = mrb_define_class_under(mrb, UI_module(mrb), "Grid", mrb->object_class);
+  MRB_SET_INSTANCE_TT(Grid_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGrid::pre_class_method_definitions */
+/* MRUBY_BINDING: Grid::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiGrid::class_method_definitions */
-/* sha: 91e2a1ab9ecc257369a9dcc55683ef5e9cfa1efd664f07a77252d409638a5693 */
-#if BIND_UiGrid_INITIALIZE
-  mrb_define_method(mrb, UiGrid_class, "initialize", mrb_UI_UiGrid_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: Grid::class_method_definitions */
+/* sha: 022a7e58530bf8513c01291bf95bd449b8fd3d4cc13e4fb05386b822ce986fe9 */
+#if BIND_Grid_INITIALIZE
+  mrb_define_method(mrb, Grid_class, "initialize", mrb_UI_Grid_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiGrid::post_class_definition */
+/* MRUBY_BINDING: Grid::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

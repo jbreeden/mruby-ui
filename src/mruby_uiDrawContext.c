@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiDrawContext_TYPE
+#if BIND_DrawContext_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawContext::initialize */
-/* sha: ffb4a95e9ba9e4cab01f31a5ba543233025d5b4ae4a6881b1682c94841851cab */
-#if BIND_UiDrawContext_INITIALIZE
+/* MRUBY_BINDING: DrawContext::initialize */
+/* sha: fa3d98aa0fe13fbf1b9248b14cf34c98741eb255f8d5743f418b994a28b258a2 */
+#if BIND_DrawContext_INITIALIZE
 mrb_value
-mrb_UI_UiDrawContext_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawContext_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiDrawContext* native_object = (uiDrawContext*)calloc(1, sizeof(uiDrawContext));
@@ -28,7 +28,7 @@ mrb_UI_UiDrawContext_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiDrawContext_init(mrb_state* mrb) {
+void mrb_UI_DrawContext_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiDrawContext_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawContext::class_definition */
-/* sha: 39a9c6a486bace856dce06ebd1bfc4710c00698c084572ddea49bbbfba4a8189 */
-  struct RClass* UiDrawContext_class = mrb_define_class_under(mrb, UI_module(mrb), "UiDrawContext", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiDrawContext_class, MRB_TT_DATA);
+/* MRUBY_BINDING: DrawContext::class_definition */
+/* sha: 6b1b49cf4bcdbd80eea8a2c8409088893c2474a2afd5aadcbfc94a00feee0868 */
+  struct RClass* DrawContext_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawContext", mrb->object_class);
+  MRB_SET_INSTANCE_TT(DrawContext_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawContext::pre_class_method_definitions */
+/* MRUBY_BINDING: DrawContext::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawContext::class_method_definitions */
-/* sha: 21436d7e602be9b4d33b99c7ec0b1725e4ee8edaaae6805105fa330363968abd */
-#if BIND_UiDrawContext_INITIALIZE
-  mrb_define_method(mrb, UiDrawContext_class, "initialize", mrb_UI_UiDrawContext_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: DrawContext::class_method_definitions */
+/* sha: a017e3495ca22949bef2eb8ad14e42f482e12c5c8f2fbecbd17c5ae276ac7dc6 */
+#if BIND_DrawContext_INITIALIZE
+  mrb_define_method(mrb, DrawContext_class, "initialize", mrb_UI_DrawContext_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiDrawContext::post_class_definition */
+/* MRUBY_BINDING: DrawContext::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

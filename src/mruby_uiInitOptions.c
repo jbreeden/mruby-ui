@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiInitOptions_TYPE
+#if BIND_InitOptions_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::initialize */
-/* sha: c0da80a600f844f0369737365879329114751e0a81de649f25a302692b8621e6 */
-#if BIND_UiInitOptions_INITIALIZE
+/* MRUBY_BINDING: InitOptions::initialize */
+/* sha: d075e68bd3b8e82c6a4b540c55c5ee4a575a00a923cc4f10175f0a0f98c208f1 */
+#if BIND_InitOptions_INITIALIZE
 mrb_value
-mrb_UI_UiInitOptions_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_InitOptions_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiInitOptions* native_object = (uiInitOptions*)calloc(1, sizeof(uiInitOptions));
@@ -31,11 +31,11 @@ mrb_UI_UiInitOptions_initialize(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-/* MRUBY_BINDING: UiInitOptions::Size_reader */
-/* sha: 8a9b0d0932e35cfae0f304a368f3368dd1952ed1e49896907ea4b3eefad917c9 */
-#if BIND_UiInitOptions_Size_FIELD_READER
+/* MRUBY_BINDING: InitOptions::Size_reader */
+/* sha: 730ee404fa71654e57309bbacee7569aff76314495b010597f1839514b3acf57 */
+#if BIND_InitOptions_Size_FIELD_READER
 mrb_value
-mrb_UI_UiInitOptions_get_Size(mrb_state* mrb, mrb_value self) {
+mrb_UI_InitOptions_get_Size(mrb_state* mrb, mrb_value self) {
   uiInitOptions * native_self = mruby_unbox_uiInitOptions(self);
 
   int native_Size = native_self->Size;
@@ -47,11 +47,11 @@ mrb_UI_UiInitOptions_get_Size(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::Size_writer */
-/* sha: 37fee5b2af8e05f1bca2c0a191df5c8dd5b712f0046b9a0af4b501c554397076 */
-#if BIND_UiInitOptions_Size_FIELD_WRITER
+/* MRUBY_BINDING: InitOptions::Size_writer */
+/* sha: 04879b763dc4209c4548ebdcdcf80a524f0925f1596c84cd31a6db0014f410a4 */
+#if BIND_InitOptions_Size_FIELD_WRITER
 mrb_value
-mrb_UI_UiInitOptions_set_Size(mrb_state* mrb, mrb_value self) {
+mrb_UI_InitOptions_set_Size(mrb_state* mrb, mrb_value self) {
   uiInitOptions * native_self = mruby_unbox_uiInitOptions(self);
   mrb_int native_Size;
 
@@ -67,7 +67,7 @@ mrb_UI_UiInitOptions_set_Size(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiInitOptions_init(mrb_state* mrb) {
+void mrb_UI_InitOptions_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -77,44 +77,44 @@ void mrb_UI_UiInitOptions_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::class_definition */
-/* sha: 7e1b0f1cb5481e8457f21a6623a7962901ec03841c3d9afb810e099db48393bb */
-  struct RClass* UiInitOptions_class = mrb_define_class_under(mrb, UI_module(mrb), "UiInitOptions", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiInitOptions_class, MRB_TT_DATA);
+/* MRUBY_BINDING: InitOptions::class_definition */
+/* sha: f0626ad93b92b42113f82f27909dbd268d779920c0ac8bc75be6084d4ce49af9 */
+  struct RClass* InitOptions_class = mrb_define_class_under(mrb, UI_module(mrb), "InitOptions", mrb->object_class);
+  MRB_SET_INSTANCE_TT(InitOptions_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::pre_class_method_definitions */
+/* MRUBY_BINDING: InitOptions::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::class_method_definitions */
-/* sha: 7e9943e5375fce074b38230dcef9818827fcc4e21b76c1f60c5ce21765963d9e */
-#if BIND_UiInitOptions_INITIALIZE
-  mrb_define_method(mrb, UiInitOptions_class, "initialize", mrb_UI_UiInitOptions_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: InitOptions::class_method_definitions */
+/* sha: 9119d9c68674b81dd8bf144a964f5b287ada62392ff46c25a88d6f117a3e9b90 */
+#if BIND_InitOptions_INITIALIZE
+  mrb_define_method(mrb, InitOptions_class, "initialize", mrb_UI_InitOptions_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::pre_attr_definitions */
+/* MRUBY_BINDING: InitOptions::pre_attr_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiInitOptions::attr_definitions */
-/* sha: 5551cd8d0f132d841fcb7cfed9787061f99da4881b7f9d458db0fe33f517b5aa */
+/* MRUBY_BINDING: InitOptions::attr_definitions */
+/* sha: 719a65e41ab4fd3f1c5f815ebce568a553aa58872250a7610cbc120033d3e2bc */
   /*
    * Fields
    */
-#if BIND_UiInitOptions_Size_FIELD_READER
-  mrb_define_method(mrb, UiInitOptions_class, "Size", mrb_UI_UiInitOptions_get_Size, MRB_ARGS_ARG(0, 0));
+#if BIND_InitOptions_Size_FIELD_READER
+  mrb_define_method(mrb, InitOptions_class, "Size", mrb_UI_InitOptions_get_Size, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiInitOptions_Size_FIELD_WRITER
-  mrb_define_method(mrb, UiInitOptions_class, "Size=", mrb_UI_UiInitOptions_set_Size, MRB_ARGS_ARG(1, 0));
+#if BIND_InitOptions_Size_FIELD_WRITER
+  mrb_define_method(mrb, InitOptions_class, "Size=", mrb_UI_InitOptions_set_Size, MRB_ARGS_ARG(1, 0));
 #endif
 /* MRUBY_BINDING_END */
 
 
-/* MRUBY_BINDING: UiInitOptions::post_class_definition */
+/* MRUBY_BINDING: InitOptions::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

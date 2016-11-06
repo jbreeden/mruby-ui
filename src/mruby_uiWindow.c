@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiWindow_TYPE
+#if BIND_Window_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiWindow::initialize */
-/* sha: ca50b2dc9c9b56b28ffde11a976483eb59e1f10226bfb54423a8f51b928f2da6 */
-#if BIND_UiWindow_INITIALIZE
+/* MRUBY_BINDING: Window::initialize */
+/* sha: 3b5a2fc7cf8eb9c5d7a13ef62ea98aeb3077ef62b4e2fca3835321010fe75ab7 */
+#if BIND_Window_INITIALIZE
 mrb_value
-mrb_UI_UiWindow_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_Window_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiWindow* native_object = (uiWindow*)calloc(1, sizeof(uiWindow));
@@ -28,7 +28,7 @@ mrb_UI_UiWindow_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiWindow_init(mrb_state* mrb) {
+void mrb_UI_Window_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiWindow_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiWindow::class_definition */
-/* sha: c846e21b9d81a09b65d60f652c52d234cb629970f9272a76954dd305d4416aa1 */
-  struct RClass* UiWindow_class = mrb_define_class_under(mrb, UI_module(mrb), "UiWindow", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiWindow_class, MRB_TT_DATA);
+/* MRUBY_BINDING: Window::class_definition */
+/* sha: 0fd19380d9c1561a5976301c00dd63ee2c1c7f720d72c0eaf1f6eb9de5c4e078 */
+  struct RClass* Window_class = mrb_define_class_under(mrb, UI_module(mrb), "Window", mrb->object_class);
+  MRB_SET_INSTANCE_TT(Window_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiWindow::pre_class_method_definitions */
+/* MRUBY_BINDING: Window::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiWindow::class_method_definitions */
-/* sha: 06bee52f2dedff1a537079386109e6ce930f0ce212111c70a9f5faad42ccf3ef */
-#if BIND_UiWindow_INITIALIZE
-  mrb_define_method(mrb, UiWindow_class, "initialize", mrb_UI_UiWindow_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: Window::class_method_definitions */
+/* sha: 7c2ac03e3e54b60fda6098bea641079e49c90e670c8e2d34b50afa6e8334841c */
+#if BIND_Window_INITIALIZE
+  mrb_define_method(mrb, Window_class, "initialize", mrb_UI_Window_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiWindow::post_class_definition */
+/* MRUBY_BINDING: Window::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

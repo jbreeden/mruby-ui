@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiSlider_TYPE
+#if BIND_Slider_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSlider::initialize */
-/* sha: efe3e70ee7d230781105e2eb0bb31f5a3f24ec65930e7c90610181418fb96ce3 */
-#if BIND_UiSlider_INITIALIZE
+/* MRUBY_BINDING: Slider::initialize */
+/* sha: abbce539ec513ad6b9865ad72e82b9bc3aba0403290f3bd916664abf40c5e400 */
+#if BIND_Slider_INITIALIZE
 mrb_value
-mrb_UI_UiSlider_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_Slider_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiSlider* native_object = (uiSlider*)calloc(1, sizeof(uiSlider));
@@ -28,7 +28,7 @@ mrb_UI_UiSlider_initialize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiSlider_init(mrb_state* mrb) {
+void mrb_UI_Slider_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -38,27 +38,27 @@ void mrb_UI_UiSlider_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSlider::class_definition */
-/* sha: aa698f9a65d90a300fd1fba96be25ee30258a7868b05134a11b360b9e9490be3 */
-  struct RClass* UiSlider_class = mrb_define_class_under(mrb, UI_module(mrb), "UiSlider", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiSlider_class, MRB_TT_DATA);
+/* MRUBY_BINDING: Slider::class_definition */
+/* sha: 0a889ea91e369b44cc672d5dab92c514cabc6a720e5e1de139177c69cd5ba9f1 */
+  struct RClass* Slider_class = mrb_define_class_under(mrb, UI_module(mrb), "Slider", mrb->object_class);
+  MRB_SET_INSTANCE_TT(Slider_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSlider::pre_class_method_definitions */
+/* MRUBY_BINDING: Slider::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiSlider::class_method_definitions */
-/* sha: 20a062901d1a4e9772e88b14adb674920fd8cb029e652d7748c6e5fb2a2bce6c */
-#if BIND_UiSlider_INITIALIZE
-  mrb_define_method(mrb, UiSlider_class, "initialize", mrb_UI_UiSlider_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: Slider::class_method_definitions */
+/* sha: 836a95479df53409fbc9610136c6f580d749b842399063268bc08d215ea77841 */
+#if BIND_Slider_INITIALIZE
+  mrb_define_method(mrb, Slider_class, "initialize", mrb_UI_Slider_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
 
 
-/* MRUBY_BINDING: UiSlider::post_class_definition */
+/* MRUBY_BINDING: Slider::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

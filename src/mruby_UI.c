@@ -47,7 +47,7 @@ mrb_UI_uiAllocControl(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiAreaBeginUserWindowMove */
-/* sha: 672836d1e1eb720e0e5979fad7f9c05ba8d3d21c14fa2c258121636c4284f4a4 */
+/* sha: a1fbf48925209f407a1111294372e5cb8c6e55cbc00ec288b138930c8298c27d */
 #if BIND_uiAreaBeginUserWindowMove_FUNCTION
 #define uiAreaBeginUserWindowMove_REQUIRED_ARGC 1
 #define uiAreaBeginUserWindowMove_OPTIONAL_ARGC 0
@@ -60,8 +60,8 @@ mrb_UI_uiAreaBeginUserWindowMove(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UiArea_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiArea expected");
+  if (!mrb_obj_is_kind_of(mrb, a, Area_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
 
@@ -77,7 +77,7 @@ mrb_UI_uiAreaBeginUserWindowMove(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiAreaBeginUserWindowResize */
-/* sha: 870f28dda85ae93d66b03eb5d62050384b1775e48433a3306c04a5e92936a66d */
+/* sha: c771d26276d880f4a28fc78b074062da09bff24dd1aa794edc6f595a44c70b84 */
 #if BIND_uiAreaBeginUserWindowResize_FUNCTION
 #define uiAreaBeginUserWindowResize_REQUIRED_ARGC 2
 #define uiAreaBeginUserWindowResize_OPTIONAL_ARGC 0
@@ -91,8 +91,8 @@ mrb_UI_uiAreaBeginUserWindowResize(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &a, &edge);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UiArea_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiArea expected");
+  if (!mrb_obj_is_kind_of(mrb, a, Area_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
   TODO_type_check_uiWindowResizeEdge(edge);
@@ -112,7 +112,7 @@ mrb_UI_uiAreaBeginUserWindowResize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiAreaQueueRedrawAll */
-/* sha: 7d7e7031d020b0619e5d0a667d28ac138bf8c9789d54bcb0fc474ed8c6b2cc0f */
+/* sha: aa9ce1b40020e92544406ba09c024ed8f82db01d05bc27e030fa792c6193048b */
 #if BIND_uiAreaQueueRedrawAll_FUNCTION
 #define uiAreaQueueRedrawAll_REQUIRED_ARGC 1
 #define uiAreaQueueRedrawAll_OPTIONAL_ARGC 0
@@ -125,8 +125,8 @@ mrb_UI_uiAreaQueueRedrawAll(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UiArea_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiArea expected");
+  if (!mrb_obj_is_kind_of(mrb, a, Area_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
 
@@ -142,7 +142,7 @@ mrb_UI_uiAreaQueueRedrawAll(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiAreaScrollTo */
-/* sha: e9bc45d0ba9310c39c662388662550558ac59ab994785d9acc61e2304747aafb */
+/* sha: 65feef98dbc90ff697e35c95db9d633dfae3801cf412cce76c5812174ce3dfaf */
 #if BIND_uiAreaScrollTo_FUNCTION
 #define uiAreaScrollTo_REQUIRED_ARGC 5
 #define uiAreaScrollTo_OPTIONAL_ARGC 0
@@ -159,8 +159,8 @@ mrb_UI_uiAreaScrollTo(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offff", &a, &native_x, &native_y, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UiArea_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiArea expected");
+  if (!mrb_obj_is_kind_of(mrb, a, Area_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
 
@@ -176,7 +176,7 @@ mrb_UI_uiAreaScrollTo(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiAreaSetSize */
-/* sha: 1d62e3193f619edd3554b5e006888368a88d800958c6a1daba8705eb21ebe703 */
+/* sha: c5866c7150b7fc49b1e11125ce77ac87478f5767620be1d18b36814a41301005 */
 #if BIND_uiAreaSetSize_FUNCTION
 #define uiAreaSetSize_REQUIRED_ARGC 3
 #define uiAreaSetSize_OPTIONAL_ARGC 0
@@ -191,8 +191,8 @@ mrb_UI_uiAreaSetSize(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oii", &a, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UiArea_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiArea expected");
+  if (!mrb_obj_is_kind_of(mrb, a, Area_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
 
@@ -208,7 +208,7 @@ mrb_UI_uiAreaSetSize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiBoxAppend */
-/* sha: 3a2ba0d2b38255276e7a549cae1bc7bd4778becfcd2e9f09f3564ff57cbbe0f5 */
+/* sha: e51f110df70b3949c9c0246771d936f4a73474d804baca3820e38fcec6478350 */
 #if BIND_uiBoxAppend_FUNCTION
 #define uiBoxAppend_REQUIRED_ARGC 3
 #define uiBoxAppend_OPTIONAL_ARGC 0
@@ -223,12 +223,12 @@ mrb_UI_uiBoxAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooi", &b, &child, &native_stretchy);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiBox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiBox expected");
+  if (!mrb_obj_is_kind_of(mrb, b, Box_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, child, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, child, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -247,7 +247,7 @@ mrb_UI_uiBoxAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiBoxDelete */
-/* sha: be17b2cedc1c626ed2adfbc9e993af26a65c0546eeea794b411b50fd5eed13ef */
+/* sha: a4e2e9f1feeb1f16efa7de7d90d441066637a672a39f080bd4288a14a0f1937b */
 #if BIND_uiBoxDelete_FUNCTION
 #define uiBoxDelete_REQUIRED_ARGC 2
 #define uiBoxDelete_OPTIONAL_ARGC 0
@@ -261,8 +261,8 @@ mrb_UI_uiBoxDelete(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &b, &native_index);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiBox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiBox expected");
+  if (!mrb_obj_is_kind_of(mrb, b, Box_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
 
@@ -278,7 +278,7 @@ mrb_UI_uiBoxDelete(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiBoxPadded */
-/* sha: 632e3915f3a41ab857f1eeb2834d5c1d153a484e5d275a8f8825673456311cdc */
+/* sha: a44af2301fbcf79139235a1a710241fdf2c2837d8b6d2df4f0097118cb963271 */
 #if BIND_uiBoxPadded_FUNCTION
 #define uiBoxPadded_REQUIRED_ARGC 1
 #define uiBoxPadded_OPTIONAL_ARGC 0
@@ -291,8 +291,8 @@ mrb_UI_uiBoxPadded(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiBox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiBox expected");
+  if (!mrb_obj_is_kind_of(mrb, b, Box_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
 
@@ -311,7 +311,7 @@ mrb_UI_uiBoxPadded(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiBoxSetPadded */
-/* sha: 7f2dded6de4aad06973bd5872958205a0fb11edf63ee6e254bab854dd473ce42 */
+/* sha: 54ad78e6aef61c1440b5985b81d5b13088719b984b8003a10d6e61077d9003c7 */
 #if BIND_uiBoxSetPadded_FUNCTION
 #define uiBoxSetPadded_REQUIRED_ARGC 2
 #define uiBoxSetPadded_OPTIONAL_ARGC 0
@@ -325,8 +325,8 @@ mrb_UI_uiBoxSetPadded(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &b, &native_padded);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiBox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiBox expected");
+  if (!mrb_obj_is_kind_of(mrb, b, Box_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
 
@@ -342,7 +342,7 @@ mrb_UI_uiBoxSetPadded(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiButtonOnClicked */
-/* sha: 06fec2a7fe5b49053703e199d3e4ff46a79d29a39a894e7948c6485d56742794 */
+/* sha: 71fc1748e2726bb1d1840ffadb071e3fda918fa57044346628b76dde2e26305a */
 #if BIND_uiButtonOnClicked_FUNCTION
 #define uiButtonOnClicked_REQUIRED_ARGC 3
 #define uiButtonOnClicked_OPTIONAL_ARGC 0
@@ -357,8 +357,8 @@ mrb_UI_uiButtonOnClicked(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &b, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, Button_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Button expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiButton_PTR_COMMA_void_PTR_RPAREN(f);
@@ -382,7 +382,7 @@ mrb_UI_uiButtonOnClicked(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiButtonSetText */
-/* sha: 31ddb50aacef79b3da27a92623d3880d7327856710c4c01e33e736e11d650471 */
+/* sha: 0d1153266cc36ea2537d9e1e008b38cd09a6503f64a049a2d28758d79024241a */
 #if BIND_uiButtonSetText_FUNCTION
 #define uiButtonSetText_REQUIRED_ARGC 2
 #define uiButtonSetText_OPTIONAL_ARGC 0
@@ -396,8 +396,8 @@ mrb_UI_uiButtonSetText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &b, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, Button_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Button expected");
     return mrb_nil_value();
   }
 
@@ -413,7 +413,7 @@ mrb_UI_uiButtonSetText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiButtonText */
-/* sha: 650cd5775bbdf7543e60ecea3f6c19397e94b71b282dfd6cc44db708d8edee38 */
+/* sha: 1e9832b6d732e41a767eafa9b35a9fb1b4d6a20e2423564633d2653081fee987 */
 #if BIND_uiButtonText_FUNCTION
 #define uiButtonText_REQUIRED_ARGC 1
 #define uiButtonText_OPTIONAL_ARGC 0
@@ -426,8 +426,8 @@ mrb_UI_uiButtonText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, Button_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Button expected");
     return mrb_nil_value();
   }
 
@@ -446,7 +446,7 @@ mrb_UI_uiButtonText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiCheckboxChecked */
-/* sha: e7ae1dc375bbcf190639066bff317e051d5b24afdb3b609536fcad9f60d96190 */
+/* sha: f33aadcaa33eed147c50b931f7f1baaa46de7ce47ea9a298f180ffc3bdf4c0eb */
 #if BIND_uiCheckboxChecked_FUNCTION
 #define uiCheckboxChecked_REQUIRED_ARGC 1
 #define uiCheckboxChecked_OPTIONAL_ARGC 0
@@ -459,8 +459,8 @@ mrb_UI_uiCheckboxChecked(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCheckbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCheckbox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Checkbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
 
@@ -479,7 +479,7 @@ mrb_UI_uiCheckboxChecked(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiCheckboxOnToggled */
-/* sha: e75da908eaa99817cfa781d28922f37b608b6e3e50b06cffe2da5b783623a5e4 */
+/* sha: 389d321c44177642769305bd405bacfd4bfb6b5044f1835fdc009650f28fad60 */
 #if BIND_uiCheckboxOnToggled_FUNCTION
 #define uiCheckboxOnToggled_REQUIRED_ARGC 3
 #define uiCheckboxOnToggled_OPTIONAL_ARGC 0
@@ -494,8 +494,8 @@ mrb_UI_uiCheckboxOnToggled(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &c, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCheckbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCheckbox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Checkbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiCheckbox_PTR_COMMA_void_PTR_RPAREN(f);
@@ -519,7 +519,7 @@ mrb_UI_uiCheckboxOnToggled(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiCheckboxSetChecked */
-/* sha: 2255b38e2c96c7baa2b30571ac62b32d2e7eeeefa075dcddb7fbe57ff79aef80 */
+/* sha: 8a7cdbca7cad8dea390b84b341b59617ea7000753115063b4abf44b23c8ab438 */
 #if BIND_uiCheckboxSetChecked_FUNCTION
 #define uiCheckboxSetChecked_REQUIRED_ARGC 2
 #define uiCheckboxSetChecked_OPTIONAL_ARGC 0
@@ -533,8 +533,8 @@ mrb_UI_uiCheckboxSetChecked(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &c, &native_checked);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCheckbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCheckbox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Checkbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
 
@@ -550,7 +550,7 @@ mrb_UI_uiCheckboxSetChecked(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiCheckboxSetText */
-/* sha: fd5a19b600100b8fc8420676f5ee68a9e2cc69249c54755c722067051cb1de9b */
+/* sha: a99385625134f61df34538ac8a5138532ba83922541e22f0c07edbb881fcf012 */
 #if BIND_uiCheckboxSetText_FUNCTION
 #define uiCheckboxSetText_REQUIRED_ARGC 2
 #define uiCheckboxSetText_OPTIONAL_ARGC 0
@@ -564,8 +564,8 @@ mrb_UI_uiCheckboxSetText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCheckbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCheckbox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Checkbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
 
@@ -581,7 +581,7 @@ mrb_UI_uiCheckboxSetText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiCheckboxText */
-/* sha: 3b1d280f3c7dcd10cd254eb519bcbc97cb324d620e7e59732b924a7620be695d */
+/* sha: 84e16ca481ff65e2c82fc16860597fe6685e84a548443c0c8c055586887b2236 */
 #if BIND_uiCheckboxText_FUNCTION
 #define uiCheckboxText_REQUIRED_ARGC 1
 #define uiCheckboxText_OPTIONAL_ARGC 0
@@ -594,8 +594,8 @@ mrb_UI_uiCheckboxText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCheckbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCheckbox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Checkbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
 
@@ -614,7 +614,7 @@ mrb_UI_uiCheckboxText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiColorButtonColor */
-/* sha: 510b7e7c61d370fc0ebe11dc9fb470fb5fa83a23f7dfa6644bca3d5e35bd922b */
+/* sha: e223810cdb740f626f700857082975eee217f407ab3afdba4ddc1486ae2fcc61 */
 #if BIND_uiColorButtonColor_FUNCTION
 #define uiColorButtonColor_REQUIRED_ARGC 5
 #define uiColorButtonColor_OPTIONAL_ARGC 0
@@ -631,8 +631,8 @@ mrb_UI_uiColorButtonColor(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooooo", &b, &r, &g, &bl, &a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiColorButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiColorButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, ColorButton_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
     return mrb_nil_value();
   }
   TODO_type_check_double_PTR(r);
@@ -664,7 +664,7 @@ mrb_UI_uiColorButtonColor(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiColorButtonOnChanged */
-/* sha: 747edcc9eac0ddb2ffabe33d897b5f9482e7aff82986e3c82171cb6072be2593 */
+/* sha: 471bba5e0ecc3730d8c9df7d6ec3dcb4e08e02b8bd19bf7dade24cad2fc6b54b */
 #if BIND_uiColorButtonOnChanged_FUNCTION
 #define uiColorButtonOnChanged_REQUIRED_ARGC 3
 #define uiColorButtonOnChanged_OPTIONAL_ARGC 0
@@ -679,8 +679,8 @@ mrb_UI_uiColorButtonOnChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &b, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiColorButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiColorButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, ColorButton_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiColorButton_PTR_COMMA_void_PTR_RPAREN(f);
@@ -704,7 +704,7 @@ mrb_UI_uiColorButtonOnChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiColorButtonSetColor */
-/* sha: 776c0f6662c7e4bbf7e198870e3bca72a02da1d9d8751c1215bea45ebe9b35b8 */
+/* sha: 2cc30a4871f5f95daaa25ce43174553d7ffa5ed47fe23553ed454d155ea1cd3c */
 #if BIND_uiColorButtonSetColor_FUNCTION
 #define uiColorButtonSetColor_REQUIRED_ARGC 5
 #define uiColorButtonSetColor_OPTIONAL_ARGC 0
@@ -721,8 +721,8 @@ mrb_UI_uiColorButtonSetColor(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offff", &b, &native_r, &native_g, &native_bl, &native_a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiColorButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiColorButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, ColorButton_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
     return mrb_nil_value();
   }
 
@@ -738,7 +738,7 @@ mrb_UI_uiColorButtonSetColor(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiComboboxAppend */
-/* sha: 1960e2edd64bcd8999551ddaa2ee328d180d5eed1547b5e7fe47f62d9da171f4 */
+/* sha: d6285612017229583cc307687beb31a9691424c89fea13a00e9caa704bc6d3e3 */
 #if BIND_uiComboboxAppend_FUNCTION
 #define uiComboboxAppend_REQUIRED_ARGC 2
 #define uiComboboxAppend_OPTIONAL_ARGC 0
@@ -752,8 +752,8 @@ mrb_UI_uiComboboxAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Combobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
 
@@ -769,7 +769,7 @@ mrb_UI_uiComboboxAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiComboboxOnSelected */
-/* sha: 11f0d07d64403dfdab06c725aa1e703cb9229a37a8088290635373f93ca1cb21 */
+/* sha: 7a564a85b5242abb6c171acc8f248d328d6f65a1a787b98daa95104d2a5e241b */
 #if BIND_uiComboboxOnSelected_FUNCTION
 #define uiComboboxOnSelected_REQUIRED_ARGC 3
 #define uiComboboxOnSelected_OPTIONAL_ARGC 0
@@ -784,8 +784,8 @@ mrb_UI_uiComboboxOnSelected(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &c, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Combobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiCombobox_PTR_COMMA_void_PTR_RPAREN(f);
@@ -809,7 +809,7 @@ mrb_UI_uiComboboxOnSelected(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiComboboxSelected */
-/* sha: 7b7ce9a265128e4aeaacd6b1a7c2c4bd2ddf910b072748eaa3061609e408c128 */
+/* sha: 67fcc7437fb406d59163c175cbbdc2f731534270a3a0a540864d64803da62556 */
 #if BIND_uiComboboxSelected_FUNCTION
 #define uiComboboxSelected_REQUIRED_ARGC 1
 #define uiComboboxSelected_OPTIONAL_ARGC 0
@@ -822,8 +822,8 @@ mrb_UI_uiComboboxSelected(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Combobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
 
@@ -842,7 +842,7 @@ mrb_UI_uiComboboxSelected(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiComboboxSetSelected */
-/* sha: 9e3dc9ef76ca1e3061602fbdb548492284ffa10e5a48ad289992b70e909eafdb */
+/* sha: 10cb69f979ceba1eb5956bc4331b50c21ad4d100fa2c429e2b057aeb4cf22879 */
 #if BIND_uiComboboxSetSelected_FUNCTION
 #define uiComboboxSetSelected_REQUIRED_ARGC 2
 #define uiComboboxSetSelected_OPTIONAL_ARGC 0
@@ -856,8 +856,8 @@ mrb_UI_uiComboboxSetSelected(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &c, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Combobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
 
@@ -873,7 +873,7 @@ mrb_UI_uiComboboxSetSelected(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlDestroy */
-/* sha: a2bb7e23f8a754a2bc1a10326cb76d8b2da572149ec8b6a224f4f4d357cb28ee */
+/* sha: 1a97a011233fa2009b5d215cad08af6dd8c5f38e06786e11ab506b83989271c9 */
 #if BIND_uiControlDestroy_FUNCTION
 #define uiControlDestroy_REQUIRED_ARGC 1
 #define uiControlDestroy_OPTIONAL_ARGC 0
@@ -886,8 +886,8 @@ mrb_UI_uiControlDestroy(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -903,7 +903,7 @@ mrb_UI_uiControlDestroy(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlDisable */
-/* sha: 9123ca69e765905b9401313e4ee6e293976c7ade3bffc127af231136ae39b488 */
+/* sha: b82d86eb80501bd63af966316b6766ede00c0bc150ddac520e5a9df9fa338a2a */
 #if BIND_uiControlDisable_FUNCTION
 #define uiControlDisable_REQUIRED_ARGC 1
 #define uiControlDisable_OPTIONAL_ARGC 0
@@ -916,8 +916,8 @@ mrb_UI_uiControlDisable(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -933,7 +933,7 @@ mrb_UI_uiControlDisable(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlEnable */
-/* sha: 2e6c975ebd9b28e7d06c86fcc5f569b4fa6fb977c5af22688470a87a44dff8a9 */
+/* sha: 740f53beba93d87f5876b377bb6aa1851b242bb525ea14497ae43936bfbc1a81 */
 #if BIND_uiControlEnable_FUNCTION
 #define uiControlEnable_REQUIRED_ARGC 1
 #define uiControlEnable_OPTIONAL_ARGC 0
@@ -946,8 +946,8 @@ mrb_UI_uiControlEnable(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -963,7 +963,7 @@ mrb_UI_uiControlEnable(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlEnabled */
-/* sha: 47b200ad69e877b570f0297856e9214e57150414420e40d80702de9b2b714407 */
+/* sha: 975db4fb8b40debdf0fcc82c5609661cf32b6bc323a9432b77c50d4069bf5b94 */
 #if BIND_uiControlEnabled_FUNCTION
 #define uiControlEnabled_REQUIRED_ARGC 1
 #define uiControlEnabled_OPTIONAL_ARGC 0
@@ -976,8 +976,8 @@ mrb_UI_uiControlEnabled(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -996,7 +996,7 @@ mrb_UI_uiControlEnabled(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlEnabledToUser */
-/* sha: 4bcc6f96162c5130c104fdfb86c26a22d690d03f69bc9a6b79995332e5b804d5 */
+/* sha: 5c88a454619eea1612a9193576ce76e5b47338543acc62f10f4970c337e0c255 */
 #if BIND_uiControlEnabledToUser_FUNCTION
 #define uiControlEnabledToUser_REQUIRED_ARGC 1
 #define uiControlEnabledToUser_OPTIONAL_ARGC 0
@@ -1009,8 +1009,8 @@ mrb_UI_uiControlEnabledToUser(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1029,7 +1029,7 @@ mrb_UI_uiControlEnabledToUser(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlHandle */
-/* sha: e40d5b77ed1bc4b15cfa9fafcd2dbfba7eeff5e0cc32ef3712695198abcfa34c */
+/* sha: 9ffebb868a08d622e5d6de5ecd5b50058a1ca7cd987a0000e4abbc71833ccd5e */
 #if BIND_uiControlHandle_FUNCTION
 #define uiControlHandle_REQUIRED_ARGC 1
 #define uiControlHandle_OPTIONAL_ARGC 0
@@ -1042,8 +1042,8 @@ mrb_UI_uiControlHandle(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1062,7 +1062,7 @@ mrb_UI_uiControlHandle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlHide */
-/* sha: 50d8b01e7933de7e59175711aac08fa9e8758881e9ed9036ddda5032c144384c */
+/* sha: 64ba7b28b7a9e70dc8eb09ac808e6cdb28f2a77e7d0b34e7874d5a16d8f836b4 */
 #if BIND_uiControlHide_FUNCTION
 #define uiControlHide_REQUIRED_ARGC 1
 #define uiControlHide_OPTIONAL_ARGC 0
@@ -1075,8 +1075,8 @@ mrb_UI_uiControlHide(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1092,7 +1092,7 @@ mrb_UI_uiControlHide(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlParent */
-/* sha: 161aa77eaeb64ef755e8be02ae218d26897a1f956bc8636fae0a6b4915e4d609 */
+/* sha: 5a42d025d97618f86c92e3db473e65115b04ee8248097401c0d7266b4c78acb3 */
 #if BIND_uiControlParent_FUNCTION
 #define uiControlParent_REQUIRED_ARGC 1
 #define uiControlParent_OPTIONAL_ARGC 0
@@ -1105,8 +1105,8 @@ mrb_UI_uiControlParent(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1125,7 +1125,7 @@ mrb_UI_uiControlParent(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlSetParent */
-/* sha: f36ca2656f873516df653128f48957234a1c6540f5c013dc8794306cd6cb6038 */
+/* sha: 6b36e0c8b72478b07594e681e9b3148e871d3734839be5dbd63397c3fd13cfdb */
 #if BIND_uiControlSetParent_FUNCTION
 #define uiControlSetParent_REQUIRED_ARGC 2
 #define uiControlSetParent_OPTIONAL_ARGC 0
@@ -1139,12 +1139,12 @@ mrb_UI_uiControlSetParent(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &arg1, &arg2);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, arg2, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg2, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1163,7 +1163,7 @@ mrb_UI_uiControlSetParent(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlShow */
-/* sha: 27320ecf3b3931e061621b7ec3240e851ebb8bf19d6717b6dcd070ca7ed2a0ca */
+/* sha: b9bc0984e3d5d19b93b17df81a1d877e6ea5f3065117d4a70cf62d278d6ea895 */
 #if BIND_uiControlShow_FUNCTION
 #define uiControlShow_REQUIRED_ARGC 1
 #define uiControlShow_OPTIONAL_ARGC 0
@@ -1176,8 +1176,8 @@ mrb_UI_uiControlShow(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1193,7 +1193,7 @@ mrb_UI_uiControlShow(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlToplevel */
-/* sha: cc51812928d6b471d986af23628f9a0d1d8e12a66824d69955c65cf500d26674 */
+/* sha: ef3ac7578f952ab5c1715ba8d68fe6fd93ed39cba8430283c7de57ca1a6270ce */
 #if BIND_uiControlToplevel_FUNCTION
 #define uiControlToplevel_REQUIRED_ARGC 1
 #define uiControlToplevel_OPTIONAL_ARGC 0
@@ -1206,8 +1206,8 @@ mrb_UI_uiControlToplevel(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1226,7 +1226,7 @@ mrb_UI_uiControlToplevel(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlVerifySetParent */
-/* sha: df8094dc14d36d0c6a84b0d096cc01ca96467aa9e01c7d432096f63e1d07fdc3 */
+/* sha: 9a3d1e13c9c32961cd7f4092941b91048a3298a02640c58bc6538931a42e81c2 */
 #if BIND_uiControlVerifySetParent_FUNCTION
 #define uiControlVerifySetParent_REQUIRED_ARGC 2
 #define uiControlVerifySetParent_OPTIONAL_ARGC 0
@@ -1240,12 +1240,12 @@ mrb_UI_uiControlVerifySetParent(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &arg1, &arg2);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, arg2, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg2, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1264,7 +1264,7 @@ mrb_UI_uiControlVerifySetParent(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiControlVisible */
-/* sha: 5392f5a9221c2fea0cbe1885e06e324c3ef2d7187756c05b4a2a3cafd0a1ea20 */
+/* sha: 18e1a39b96d4413117f9e1fa53a5bbda8506e6539f56f9575dd24731e8bb9a4e */
 #if BIND_uiControlVisible_FUNCTION
 #define uiControlVisible_REQUIRED_ARGC 1
 #define uiControlVisible_OPTIONAL_ARGC 0
@@ -1277,8 +1277,8 @@ mrb_UI_uiControlVisible(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -1297,7 +1297,7 @@ mrb_UI_uiControlVisible(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawClip */
-/* sha: 229416c53eebbda7bdfd5d724a4de52454a4aad236d6c30f902301b9c375aef2 */
+/* sha: 4e2a9ad93663647f77e175258f153d60fdb33610c6cbb80e8fa65d2cac179bb6 */
 #if BIND_uiDrawClip_FUNCTION
 #define uiDrawClip_REQUIRED_ARGC 2
 #define uiDrawClip_OPTIONAL_ARGC 0
@@ -1311,12 +1311,12 @@ mrb_UI_uiDrawClip(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &c, &path);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiDrawContext_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawContext expected");
+  if (!mrb_obj_is_kind_of(mrb, c, DrawContext_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, path, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, path, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -1335,7 +1335,7 @@ mrb_UI_uiDrawClip(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawFill */
-/* sha: fa8a573842592f6e938a5f6bc8151a4ceb4e670511c4f618625ec8c146ff2990 */
+/* sha: 8e93e46043f0f58007519e9f60bf5a934dcaf49da03ae45e5590a028fa77b44c */
 #if BIND_uiDrawFill_FUNCTION
 #define uiDrawFill_REQUIRED_ARGC 3
 #define uiDrawFill_OPTIONAL_ARGC 0
@@ -1350,16 +1350,16 @@ mrb_UI_uiDrawFill(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &c, &path, &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiDrawContext_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawContext expected");
+  if (!mrb_obj_is_kind_of(mrb, c, DrawContext_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, path, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, path, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, b, UiDrawBrush_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawBrush expected");
+  if (!mrb_obj_is_kind_of(mrb, b, DrawBrush_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawBrush expected");
     return mrb_nil_value();
   }
 
@@ -1381,7 +1381,7 @@ mrb_UI_uiDrawFill(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawFontFamiliesFamily */
-/* sha: 714fa79320c57bd89f6edd3cc7a4712e282d9d9d36112acbac16c024bf4f4539 */
+/* sha: 411ab4b0dfd61811a8ca78484638bc7e7ff804fec8dc22954de2442bcfbea2f0 */
 #if BIND_uiDrawFontFamiliesFamily_FUNCTION
 #define uiDrawFontFamiliesFamily_REQUIRED_ARGC 2
 #define uiDrawFontFamiliesFamily_OPTIONAL_ARGC 0
@@ -1395,8 +1395,8 @@ mrb_UI_uiDrawFontFamiliesFamily(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &ff, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ff, UiDrawFontFamilies_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawFontFamilies expected");
+  if (!mrb_obj_is_kind_of(mrb, ff, DrawFontFamilies_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawFontFamilies expected");
     return mrb_nil_value();
   }
 
@@ -1415,7 +1415,7 @@ mrb_UI_uiDrawFontFamiliesFamily(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawFontFamiliesNumFamilies */
-/* sha: 5b0a86c62c0dae0e55068d2b84f5db2ad0237e61e29f3941841c12a773479a20 */
+/* sha: 47cd8db5f6f83c87d9f7737f6fda9df49a629fb72cee77d488177915a07a5786 */
 #if BIND_uiDrawFontFamiliesNumFamilies_FUNCTION
 #define uiDrawFontFamiliesNumFamilies_REQUIRED_ARGC 1
 #define uiDrawFontFamiliesNumFamilies_OPTIONAL_ARGC 0
@@ -1428,8 +1428,8 @@ mrb_UI_uiDrawFontFamiliesNumFamilies(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ff);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ff, UiDrawFontFamilies_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawFontFamilies expected");
+  if (!mrb_obj_is_kind_of(mrb, ff, DrawFontFamilies_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawFontFamilies expected");
     return mrb_nil_value();
   }
 
@@ -1448,7 +1448,7 @@ mrb_UI_uiDrawFontFamiliesNumFamilies(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawFreeFontFamilies */
-/* sha: c7875568e4dcb9d0a586eba888ce19258a181b13755772cfdb6a4b74316fa406 */
+/* sha: 7398702d7338fb7bbe8bd5978b87c94cd0715828dea00025c541ffbe8b21d000 */
 #if BIND_uiDrawFreeFontFamilies_FUNCTION
 #define uiDrawFreeFontFamilies_REQUIRED_ARGC 1
 #define uiDrawFreeFontFamilies_OPTIONAL_ARGC 0
@@ -1461,8 +1461,8 @@ mrb_UI_uiDrawFreeFontFamilies(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ff);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ff, UiDrawFontFamilies_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawFontFamilies expected");
+  if (!mrb_obj_is_kind_of(mrb, ff, DrawFontFamilies_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawFontFamilies expected");
     return mrb_nil_value();
   }
 
@@ -1478,7 +1478,7 @@ mrb_UI_uiDrawFreeFontFamilies(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawFreePath */
-/* sha: 634009c9faeef95c901c325f2bc2f99bdceba1a71ebdfddd8a508d05feafd944 */
+/* sha: bd98229aa7b103a631ab37fbbff92b835b6792240d06f8c44c07358a3bdc2465 */
 #if BIND_uiDrawFreePath_FUNCTION
 #define uiDrawFreePath_REQUIRED_ARGC 1
 #define uiDrawFreePath_OPTIONAL_ARGC 0
@@ -1491,8 +1491,8 @@ mrb_UI_uiDrawFreePath(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -1508,7 +1508,7 @@ mrb_UI_uiDrawFreePath(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawFreeTextFont */
-/* sha: 8acd13e2b12de136fb2ade36df7c6016147f8e2573dce64ab32227c4f61d0f5b */
+/* sha: 6979bc6cc0675f2badce8753589bd8df42ae7344e59adb815494b16183183064 */
 #if BIND_uiDrawFreeTextFont_FUNCTION
 #define uiDrawFreeTextFont_REQUIRED_ARGC 1
 #define uiDrawFreeTextFont_OPTIONAL_ARGC 0
@@ -1521,8 +1521,8 @@ mrb_UI_uiDrawFreeTextFont(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &font);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, font, UiDrawTextFont_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFont expected");
+  if (!mrb_obj_is_kind_of(mrb, font, DrawTextFont_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
 
@@ -1538,7 +1538,7 @@ mrb_UI_uiDrawFreeTextFont(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawFreeTextLayout */
-/* sha: c05bebcb3c98d5c2481a97e35dcfff8c7dfd68104de6c02ba628c4a026ac9443 */
+/* sha: ca2b1be285001a544428b9b474812d3e4248f1759ce22e615f88ed2f7c081ca2 */
 #if BIND_uiDrawFreeTextLayout_FUNCTION
 #define uiDrawFreeTextLayout_REQUIRED_ARGC 1
 #define uiDrawFreeTextLayout_OPTIONAL_ARGC 0
@@ -1551,8 +1551,8 @@ mrb_UI_uiDrawFreeTextLayout(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &layout);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UiDrawTextLayout_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextLayout expected");
+  if (!mrb_obj_is_kind_of(mrb, layout, DrawTextLayout_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
 
@@ -1587,7 +1587,7 @@ mrb_UI_uiDrawListFontFamilies(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawLoadClosestFont */
-/* sha: 8a1871781e9d6d5d83f637d58896076a4008e675bf0f674bf1f1bb8b06bc641b */
+/* sha: b724fa4bbacc6a16630e875e05d0e7ff8046951cd846eb481979ca971694ab96 */
 #if BIND_uiDrawLoadClosestFont_FUNCTION
 #define uiDrawLoadClosestFont_REQUIRED_ARGC 1
 #define uiDrawLoadClosestFont_OPTIONAL_ARGC 0
@@ -1600,8 +1600,8 @@ mrb_UI_uiDrawLoadClosestFont(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &desc);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, desc, UiDrawTextFontDescriptor_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFontDescriptor expected");
+  if (!mrb_obj_is_kind_of(mrb, desc, DrawTextFontDescriptor_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFontDescriptor expected");
     return mrb_nil_value();
   }
 
@@ -1620,7 +1620,7 @@ mrb_UI_uiDrawLoadClosestFont(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixInvert */
-/* sha: a93ad88177eca6fc7a00b10200b6cafaa772e91d06248d2335763694ce75225d */
+/* sha: f4ab4b16b99716e0cd92114206f406dc9658cab73d97f50e44fa8fc03a2cce54 */
 #if BIND_uiDrawMatrixInvert_FUNCTION
 #define uiDrawMatrixInvert_REQUIRED_ARGC 1
 #define uiDrawMatrixInvert_OPTIONAL_ARGC 0
@@ -1633,8 +1633,8 @@ mrb_UI_uiDrawMatrixInvert(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1653,7 +1653,7 @@ mrb_UI_uiDrawMatrixInvert(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixInvertible */
-/* sha: 2780e92f0e7c80b5c9b878e626dd8173cce07b0dbda3d40fb3e4b838c74e290e */
+/* sha: bce780bb42067cbb7cb60b439898fc68d90d6794e3e540b54c26c82fb2c1a995 */
 #if BIND_uiDrawMatrixInvertible_FUNCTION
 #define uiDrawMatrixInvertible_REQUIRED_ARGC 1
 #define uiDrawMatrixInvertible_OPTIONAL_ARGC 0
@@ -1666,8 +1666,8 @@ mrb_UI_uiDrawMatrixInvertible(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1686,7 +1686,7 @@ mrb_UI_uiDrawMatrixInvertible(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixMultiply */
-/* sha: 8f2e46f01fb70744e227933a9c706b27ea1ee9b6351273028c8b578d102d0062 */
+/* sha: e9c4c559fab7190c569a0aef1178f94850d448e18d24932ccd311c8da453a4b7 */
 #if BIND_uiDrawMatrixMultiply_FUNCTION
 #define uiDrawMatrixMultiply_REQUIRED_ARGC 2
 #define uiDrawMatrixMultiply_OPTIONAL_ARGC 0
@@ -1700,12 +1700,12 @@ mrb_UI_uiDrawMatrixMultiply(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &dest, &src);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, dest, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, dest, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, src, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, src, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1724,7 +1724,7 @@ mrb_UI_uiDrawMatrixMultiply(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixRotate */
-/* sha: 31825e36788a5525f925b133f571eda658fe3d8a6fefa563a8c32b678145c13a */
+/* sha: aff00acaf9366c68820c2dd0f4ee1233510f6f0b597d5ee5a9812c904ce3794b */
 #if BIND_uiDrawMatrixRotate_FUNCTION
 #define uiDrawMatrixRotate_REQUIRED_ARGC 4
 #define uiDrawMatrixRotate_OPTIONAL_ARGC 0
@@ -1740,8 +1740,8 @@ mrb_UI_uiDrawMatrixRotate(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offf", &m, &native_x, &native_y, &native_amount);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1757,7 +1757,7 @@ mrb_UI_uiDrawMatrixRotate(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixScale */
-/* sha: 0d73a14f60cf4621ffd5230f2feedbfb230f38d34a8f4308fc89d3f3f226266a */
+/* sha: 74b8288f300d1b0b6011f123abb740fd71e9651a4b4a3896c7fda79339d52291 */
 #if BIND_uiDrawMatrixScale_FUNCTION
 #define uiDrawMatrixScale_REQUIRED_ARGC 5
 #define uiDrawMatrixScale_OPTIONAL_ARGC 0
@@ -1774,8 +1774,8 @@ mrb_UI_uiDrawMatrixScale(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offff", &m, &native_xCenter, &native_yCenter, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1791,7 +1791,7 @@ mrb_UI_uiDrawMatrixScale(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixSetIdentity */
-/* sha: ec3f92b55bce8553db0f05e26def2345bb75d990a41758fbb16b00bde4dc04a9 */
+/* sha: 1a35e546cf80f62e6662956347d99dbbfc8cfd9663f2492f823869a4deeeb86b */
 #if BIND_uiDrawMatrixSetIdentity_FUNCTION
 #define uiDrawMatrixSetIdentity_REQUIRED_ARGC 1
 #define uiDrawMatrixSetIdentity_OPTIONAL_ARGC 0
@@ -1804,8 +1804,8 @@ mrb_UI_uiDrawMatrixSetIdentity(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1821,7 +1821,7 @@ mrb_UI_uiDrawMatrixSetIdentity(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixSkew */
-/* sha: c3760eedb727d082680165ca988c90ad47fe5592dae1de48a8014a850a1f7825 */
+/* sha: 0b0319884a71378736aca2b8b44812408515a78fa24c676b48be2cea9c2082a6 */
 #if BIND_uiDrawMatrixSkew_FUNCTION
 #define uiDrawMatrixSkew_REQUIRED_ARGC 5
 #define uiDrawMatrixSkew_OPTIONAL_ARGC 0
@@ -1838,8 +1838,8 @@ mrb_UI_uiDrawMatrixSkew(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offff", &m, &native_x, &native_y, &native_xamount, &native_yamount);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1855,7 +1855,7 @@ mrb_UI_uiDrawMatrixSkew(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixTransformPoint */
-/* sha: 0000d243bbc7544e4120d3d8445298e7720e57b70ccc740ec4847e9b3f6edbbc */
+/* sha: 57c24a143dd14ac74ae276ed67041716ed7bd280850d6de6816f6338922da1b9 */
 #if BIND_uiDrawMatrixTransformPoint_FUNCTION
 #define uiDrawMatrixTransformPoint_REQUIRED_ARGC 3
 #define uiDrawMatrixTransformPoint_OPTIONAL_ARGC 0
@@ -1870,8 +1870,8 @@ mrb_UI_uiDrawMatrixTransformPoint(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &m, &x, &y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
   TODO_type_check_double_PTR(x);
@@ -1895,7 +1895,7 @@ mrb_UI_uiDrawMatrixTransformPoint(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixTransformSize */
-/* sha: a84a0dfe09aae5dbf81c3242247c794264a86c3b8d60c1b397e4a3ad35de278f */
+/* sha: 50e0133e32aff3726d659027100bd333af2ed079085cec20deff81cc39611c0c */
 #if BIND_uiDrawMatrixTransformSize_FUNCTION
 #define uiDrawMatrixTransformSize_REQUIRED_ARGC 3
 #define uiDrawMatrixTransformSize_OPTIONAL_ARGC 0
@@ -1910,8 +1910,8 @@ mrb_UI_uiDrawMatrixTransformSize(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &m, &x, &y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
   TODO_type_check_double_PTR(x);
@@ -1935,7 +1935,7 @@ mrb_UI_uiDrawMatrixTransformSize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawMatrixTranslate */
-/* sha: c6f571aa1ba2bad29394ae5c7ce4efa62e50f5a6217b94df281b164d34d42298 */
+/* sha: e36153def76c65946522f56978104bab27880dd27af22f5e4bba94f1340fd985 */
 #if BIND_uiDrawMatrixTranslate_FUNCTION
 #define uiDrawMatrixTranslate_REQUIRED_ARGC 3
 #define uiDrawMatrixTranslate_OPTIONAL_ARGC 0
@@ -1950,8 +1950,8 @@ mrb_UI_uiDrawMatrixTranslate(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "off", &m, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -1997,7 +1997,7 @@ mrb_UI_uiDrawNewPath(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawNewTextLayout */
-/* sha: 7a47d9880b62cf903901fb3b9050bc68854e1d5b6dea3f0f707084305478f7a8 */
+/* sha: 9178df7829ada538d6081974b5e1f12da189dff62b4d876c5116acf9e1dc6104 */
 #if BIND_uiDrawNewTextLayout_FUNCTION
 #define uiDrawNewTextLayout_REQUIRED_ARGC 3
 #define uiDrawNewTextLayout_OPTIONAL_ARGC 0
@@ -2012,8 +2012,8 @@ mrb_UI_uiDrawNewTextLayout(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "zof", &native_text, &defaultFont, &native_width);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, defaultFont, UiDrawTextFont_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFont expected");
+  if (!mrb_obj_is_kind_of(mrb, defaultFont, DrawTextFont_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
 
@@ -2032,7 +2032,7 @@ mrb_UI_uiDrawNewTextLayout(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathAddRectangle */
-/* sha: cf5c434d9a61b5862f82558b4be02445df5d705f150bb98f74f301c36039500d */
+/* sha: f5195458366a07567a19b7032f5288bde0afef1bb75cdddea153bf760d36155e */
 #if BIND_uiDrawPathAddRectangle_FUNCTION
 #define uiDrawPathAddRectangle_REQUIRED_ARGC 5
 #define uiDrawPathAddRectangle_OPTIONAL_ARGC 0
@@ -2049,8 +2049,8 @@ mrb_UI_uiDrawPathAddRectangle(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offff", &p, &native_x, &native_y, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2066,7 +2066,7 @@ mrb_UI_uiDrawPathAddRectangle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathArcTo */
-/* sha: b161a8f7fb4919d1c1081b80ab41016924149b3985ac750bb9d8792791ea30b3 */
+/* sha: c646210d5192e627de7a5314d1812af69c45c360a818e911d25e44d036db3c03 */
 #if BIND_uiDrawPathArcTo_FUNCTION
 #define uiDrawPathArcTo_REQUIRED_ARGC 7
 #define uiDrawPathArcTo_OPTIONAL_ARGC 0
@@ -2085,8 +2085,8 @@ mrb_UI_uiDrawPathArcTo(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offfffi", &p, &native_xCenter, &native_yCenter, &native_radius, &native_startAngle, &native_sweep, &native_negative);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2102,7 +2102,7 @@ mrb_UI_uiDrawPathArcTo(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathBezierTo */
-/* sha: 99f22873d99c70e02fcc7958afa6f86ac4dd88c80adaae630e9c11044a0527fe */
+/* sha: 45c4a20be69404ab0a360da53c9e8db43d0d6342052d1f0c0722fd286bab9054 */
 #if BIND_uiDrawPathBezierTo_FUNCTION
 #define uiDrawPathBezierTo_REQUIRED_ARGC 7
 #define uiDrawPathBezierTo_OPTIONAL_ARGC 0
@@ -2121,8 +2121,8 @@ mrb_UI_uiDrawPathBezierTo(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offffff", &p, &native_c1x, &native_c1y, &native_c2x, &native_c2y, &native_endX, &native_endY);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2138,7 +2138,7 @@ mrb_UI_uiDrawPathBezierTo(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathCloseFigure */
-/* sha: d41fdba315035570d8d9ae0c7653796c76058bde02609eb67f2ebabd4e2ae4e1 */
+/* sha: 4088de05586ba521e4c47bf6342310e0b861d5f141e0bbd524f6440b639270cb */
 #if BIND_uiDrawPathCloseFigure_FUNCTION
 #define uiDrawPathCloseFigure_REQUIRED_ARGC 1
 #define uiDrawPathCloseFigure_OPTIONAL_ARGC 0
@@ -2151,8 +2151,8 @@ mrb_UI_uiDrawPathCloseFigure(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2168,7 +2168,7 @@ mrb_UI_uiDrawPathCloseFigure(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathEnd */
-/* sha: 331e65d5909356d7d4b105fbe8b229b00ef452703355f016caa9af679173cf60 */
+/* sha: 158e05ed2075ee6060a79538b0d90c6e23bb75b3f5ff8be14b2acd93666b8462 */
 #if BIND_uiDrawPathEnd_FUNCTION
 #define uiDrawPathEnd_REQUIRED_ARGC 1
 #define uiDrawPathEnd_OPTIONAL_ARGC 0
@@ -2181,8 +2181,8 @@ mrb_UI_uiDrawPathEnd(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2198,7 +2198,7 @@ mrb_UI_uiDrawPathEnd(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathLineTo */
-/* sha: d839751b08d57092bb7398b598743d2d32316260871af0eb207acaf1b878d1a7 */
+/* sha: 014ab1f71a280ea4c2b9a58264108a43fb73ad2d97e182baec828d71404939b9 */
 #if BIND_uiDrawPathLineTo_FUNCTION
 #define uiDrawPathLineTo_REQUIRED_ARGC 3
 #define uiDrawPathLineTo_OPTIONAL_ARGC 0
@@ -2213,8 +2213,8 @@ mrb_UI_uiDrawPathLineTo(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "off", &p, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2230,7 +2230,7 @@ mrb_UI_uiDrawPathLineTo(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathNewFigure */
-/* sha: 33362b11490ce152a6003f373f6430e96bb3540208d5cb4a052a552f0685d9ef */
+/* sha: 1060506c3035e2f1b159ff154335be675c457ad0b39988c08b023a3c3a38dd49 */
 #if BIND_uiDrawPathNewFigure_FUNCTION
 #define uiDrawPathNewFigure_REQUIRED_ARGC 3
 #define uiDrawPathNewFigure_OPTIONAL_ARGC 0
@@ -2245,8 +2245,8 @@ mrb_UI_uiDrawPathNewFigure(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "off", &p, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2262,7 +2262,7 @@ mrb_UI_uiDrawPathNewFigure(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawPathNewFigureWithArc */
-/* sha: 5543a6d779fea2eed14a0f63874a6debaf738b5210757ae574796a0a8ce65c37 */
+/* sha: c3d48e606da5237a89d98ee4320167c704b51b9d0a46a4846d68ed8da07b0098 */
 #if BIND_uiDrawPathNewFigureWithArc_FUNCTION
 #define uiDrawPathNewFigureWithArc_REQUIRED_ARGC 7
 #define uiDrawPathNewFigureWithArc_OPTIONAL_ARGC 0
@@ -2281,8 +2281,8 @@ mrb_UI_uiDrawPathNewFigureWithArc(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offfffi", &p, &native_xCenter, &native_yCenter, &native_radius, &native_startAngle, &native_sweep, &native_negative);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
 
@@ -2298,7 +2298,7 @@ mrb_UI_uiDrawPathNewFigureWithArc(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawRestore */
-/* sha: 69084f349e77d610bdfb383c2d2370c1762c81c579dc4c046bfad036c6182552 */
+/* sha: 98157a42ec5b8d47d5977bdd583644189cc3b60b321f1da02ca1f3a57559509d */
 #if BIND_uiDrawRestore_FUNCTION
 #define uiDrawRestore_REQUIRED_ARGC 1
 #define uiDrawRestore_OPTIONAL_ARGC 0
@@ -2311,8 +2311,8 @@ mrb_UI_uiDrawRestore(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiDrawContext_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawContext expected");
+  if (!mrb_obj_is_kind_of(mrb, c, DrawContext_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
 
@@ -2328,7 +2328,7 @@ mrb_UI_uiDrawRestore(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawSave */
-/* sha: 57e5e81a0241e2f0c3bbccca86ecc8804fefada5fafded18bd27509ff6bc9926 */
+/* sha: 959dd1b3c92fa8c559df789c2fa665f98c79c05d172ef8dec5372c64939a10e5 */
 #if BIND_uiDrawSave_FUNCTION
 #define uiDrawSave_REQUIRED_ARGC 1
 #define uiDrawSave_OPTIONAL_ARGC 0
@@ -2341,8 +2341,8 @@ mrb_UI_uiDrawSave(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiDrawContext_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawContext expected");
+  if (!mrb_obj_is_kind_of(mrb, c, DrawContext_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
 
@@ -2358,7 +2358,7 @@ mrb_UI_uiDrawSave(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawStroke */
-/* sha: ec193b84ce1936ef8dda75730386d572ffde5dbf162a6916bc9f95909fd235a2 */
+/* sha: ca0342deeff6abf6673bdded0b0a1ee6185967fde7f0d7b9a565f153d628ca0a */
 #if BIND_uiDrawStroke_FUNCTION
 #define uiDrawStroke_REQUIRED_ARGC 4
 #define uiDrawStroke_OPTIONAL_ARGC 0
@@ -2374,20 +2374,20 @@ mrb_UI_uiDrawStroke(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oooo", &c, &path, &b, &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiDrawContext_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawContext expected");
+  if (!mrb_obj_is_kind_of(mrb, c, DrawContext_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, path, UiDrawPath_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawPath expected");
+  if (!mrb_obj_is_kind_of(mrb, path, DrawPath_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, b, UiDrawBrush_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawBrush expected");
+  if (!mrb_obj_is_kind_of(mrb, b, DrawBrush_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawBrush expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, p, UiDrawStrokeParams_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawStrokeParams expected");
+  if (!mrb_obj_is_kind_of(mrb, p, DrawStrokeParams_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawStrokeParams expected");
     return mrb_nil_value();
   }
 
@@ -2412,7 +2412,7 @@ mrb_UI_uiDrawStroke(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawText */
-/* sha: 5d6a9dfce1ac21b20da7eeaefa21043c52b9a1cf0aaf86b44731e347e3a77b9f */
+/* sha: 8cc72cc82a4896d411602e544f13becdba08d386bd6aec03327edd940faf740f */
 #if BIND_uiDrawText_FUNCTION
 #define uiDrawText_REQUIRED_ARGC 4
 #define uiDrawText_OPTIONAL_ARGC 0
@@ -2428,12 +2428,12 @@ mrb_UI_uiDrawText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "offo", &c, &native_x, &native_y, &layout);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiDrawContext_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawContext expected");
+  if (!mrb_obj_is_kind_of(mrb, c, DrawContext_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, layout, UiDrawTextLayout_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextLayout expected");
+  if (!mrb_obj_is_kind_of(mrb, layout, DrawTextLayout_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
 
@@ -2452,7 +2452,7 @@ mrb_UI_uiDrawText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawTextFontDescribe */
-/* sha: 6fd407b07a0e2006cdbf8727d292770162d51888d0ebc9e979307445eb5272c1 */
+/* sha: 887eacbd161e6307f62e780ae6b6e7e3109a8570a06361484995beedd76e788b */
 #if BIND_uiDrawTextFontDescribe_FUNCTION
 #define uiDrawTextFontDescribe_REQUIRED_ARGC 2
 #define uiDrawTextFontDescribe_OPTIONAL_ARGC 0
@@ -2466,12 +2466,12 @@ mrb_UI_uiDrawTextFontDescribe(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &font, &desc);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, font, UiDrawTextFont_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFont expected");
+  if (!mrb_obj_is_kind_of(mrb, font, DrawTextFont_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, desc, UiDrawTextFontDescriptor_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFontDescriptor expected");
+  if (!mrb_obj_is_kind_of(mrb, desc, DrawTextFontDescriptor_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFontDescriptor expected");
     return mrb_nil_value();
   }
 
@@ -2490,7 +2490,7 @@ mrb_UI_uiDrawTextFontDescribe(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawTextFontGetMetrics */
-/* sha: 41e5bdd59a3aaa8ee9d95a06ce2e39c4d64954d74846a9cabf6aaad7071440cf */
+/* sha: 79d4ee959464e92e6943c9a45eb0535faf08b2b8e7e372fa0d29c8395c555d5f */
 #if BIND_uiDrawTextFontGetMetrics_FUNCTION
 #define uiDrawTextFontGetMetrics_REQUIRED_ARGC 2
 #define uiDrawTextFontGetMetrics_OPTIONAL_ARGC 0
@@ -2504,12 +2504,12 @@ mrb_UI_uiDrawTextFontGetMetrics(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &font, &metrics);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, font, UiDrawTextFont_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFont expected");
+  if (!mrb_obj_is_kind_of(mrb, font, DrawTextFont_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, metrics, UiDrawTextFontMetrics_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFontMetrics expected");
+  if (!mrb_obj_is_kind_of(mrb, metrics, DrawTextFontMetrics_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFontMetrics expected");
     return mrb_nil_value();
   }
 
@@ -2528,7 +2528,7 @@ mrb_UI_uiDrawTextFontGetMetrics(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawTextFontHandle */
-/* sha: 248bef0016edc5d81bf8500730bba390e54c6dd49c25b7734247212beeeb54d3 */
+/* sha: 7bb8c3b44ca486b789a64a2d4d7e8abaac83c280d372d4c7a0ddad818a143f5e */
 #if BIND_uiDrawTextFontHandle_FUNCTION
 #define uiDrawTextFontHandle_REQUIRED_ARGC 1
 #define uiDrawTextFontHandle_OPTIONAL_ARGC 0
@@ -2541,8 +2541,8 @@ mrb_UI_uiDrawTextFontHandle(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &font);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, font, UiDrawTextFont_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextFont expected");
+  if (!mrb_obj_is_kind_of(mrb, font, DrawTextFont_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
 
@@ -2561,7 +2561,7 @@ mrb_UI_uiDrawTextFontHandle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawTextLayoutExtents */
-/* sha: e146e5325d4edfd40e6577c1bd030d70ffe93f2c006e810c034aff5f075ff5ce */
+/* sha: 2e82a14107d80f6bb6875d26242a4487135f86c3648f9767c511f32552919e97 */
 #if BIND_uiDrawTextLayoutExtents_FUNCTION
 #define uiDrawTextLayoutExtents_REQUIRED_ARGC 3
 #define uiDrawTextLayoutExtents_OPTIONAL_ARGC 0
@@ -2576,8 +2576,8 @@ mrb_UI_uiDrawTextLayoutExtents(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &layout, &width, &height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UiDrawTextLayout_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextLayout expected");
+  if (!mrb_obj_is_kind_of(mrb, layout, DrawTextLayout_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
   TODO_type_check_double_PTR(width);
@@ -2601,7 +2601,7 @@ mrb_UI_uiDrawTextLayoutExtents(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawTextLayoutSetColor */
-/* sha: 48204cc918db97e056b85c6946f4755eb891d66c7c1a309e15b5b77e615a99d1 */
+/* sha: 0b0877a236af51d79b354dff6625e15c0063b6c202cf5add50a13d33907eb522 */
 #if BIND_uiDrawTextLayoutSetColor_FUNCTION
 #define uiDrawTextLayoutSetColor_REQUIRED_ARGC 7
 #define uiDrawTextLayoutSetColor_OPTIONAL_ARGC 0
@@ -2620,8 +2620,8 @@ mrb_UI_uiDrawTextLayoutSetColor(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oiiffff", &layout, &native_startChar, &native_endChar, &native_r, &native_g, &native_b, &native_a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UiDrawTextLayout_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextLayout expected");
+  if (!mrb_obj_is_kind_of(mrb, layout, DrawTextLayout_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
 
@@ -2637,7 +2637,7 @@ mrb_UI_uiDrawTextLayoutSetColor(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawTextLayoutSetWidth */
-/* sha: f570502edabf54d5a9145e7375661ef9161998ef0213292ad8719b5e49e2b45d */
+/* sha: ac2e6677a0b9d8e0d2cbcd6dd5653031b452374312002be1813f553dfbb74aff */
 #if BIND_uiDrawTextLayoutSetWidth_FUNCTION
 #define uiDrawTextLayoutSetWidth_REQUIRED_ARGC 2
 #define uiDrawTextLayoutSetWidth_OPTIONAL_ARGC 0
@@ -2651,8 +2651,8 @@ mrb_UI_uiDrawTextLayoutSetWidth(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "of", &layout, &native_width);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UiDrawTextLayout_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawTextLayout expected");
+  if (!mrb_obj_is_kind_of(mrb, layout, DrawTextLayout_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
 
@@ -2668,7 +2668,7 @@ mrb_UI_uiDrawTextLayoutSetWidth(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiDrawTransform */
-/* sha: d1c067fea4e137da714c2137c0ea1a80aa7917ea35c289c27701d0918bf36811 */
+/* sha: 9514f3eb63211069591a83108069315d9d6a2cbe8cc4085750c03cefb8a8c7a0 */
 #if BIND_uiDrawTransform_FUNCTION
 #define uiDrawTransform_REQUIRED_ARGC 2
 #define uiDrawTransform_OPTIONAL_ARGC 0
@@ -2682,12 +2682,12 @@ mrb_UI_uiDrawTransform(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &c, &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiDrawContext_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawContext expected");
+  if (!mrb_obj_is_kind_of(mrb, c, DrawContext_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, m, UiDrawMatrix_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawMatrix expected");
+  if (!mrb_obj_is_kind_of(mrb, m, DrawMatrix_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
 
@@ -2706,7 +2706,7 @@ mrb_UI_uiDrawTransform(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEditableComboboxAppend */
-/* sha: 3f255c3306086b34a6b95789b30c2894cdc2d47d50fbf5b993ef58efdd779107 */
+/* sha: 4ef12d53fc238a74089d9da5e33cd8c88b1131d758bcf562e6ab459e300c9186 */
 #if BIND_uiEditableComboboxAppend_FUNCTION
 #define uiEditableComboboxAppend_REQUIRED_ARGC 2
 #define uiEditableComboboxAppend_OPTIONAL_ARGC 0
@@ -2720,8 +2720,8 @@ mrb_UI_uiEditableComboboxAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiEditableCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEditableCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, EditableCombobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
 
@@ -2737,7 +2737,7 @@ mrb_UI_uiEditableComboboxAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEditableComboboxOnChanged */
-/* sha: cdf6aadcb0f69ffd77a6b2270864911a962fb1853d6562f5c58e41573cf469b5 */
+/* sha: f6de95f3b0dc08d27fe2590ad75cfc72225b9f4c13a64a5d793b79255777152d */
 #if BIND_uiEditableComboboxOnChanged_FUNCTION
 #define uiEditableComboboxOnChanged_REQUIRED_ARGC 3
 #define uiEditableComboboxOnChanged_OPTIONAL_ARGC 0
@@ -2752,8 +2752,8 @@ mrb_UI_uiEditableComboboxOnChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &c, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiEditableCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEditableCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, EditableCombobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiEditableCombobox_PTR_COMMA_void_PTR_RPAREN(f);
@@ -2777,7 +2777,7 @@ mrb_UI_uiEditableComboboxOnChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEditableComboboxSetText */
-/* sha: edde6b4eeef72f5d9dc8e767916579f260c68f058c573296dd519d0695812695 */
+/* sha: 16ed9431a5bbd45054e0ce1a76b25bc0e67ecfc0f2aa7f94e0f84b99af197b51 */
 #if BIND_uiEditableComboboxSetText_FUNCTION
 #define uiEditableComboboxSetText_REQUIRED_ARGC 2
 #define uiEditableComboboxSetText_OPTIONAL_ARGC 0
@@ -2791,8 +2791,8 @@ mrb_UI_uiEditableComboboxSetText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiEditableCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEditableCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, EditableCombobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
 
@@ -2808,7 +2808,7 @@ mrb_UI_uiEditableComboboxSetText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEditableComboboxText */
-/* sha: ae20ad79c22e1a35b7a22fd4b5af6e4974cb0975515e7b5a9452905b24e72934 */
+/* sha: c00a497712f490a9778f63402dcb839813feece61f4c5f6ffe447d998e48f4f4 */
 #if BIND_uiEditableComboboxText_FUNCTION
 #define uiEditableComboboxText_REQUIRED_ARGC 1
 #define uiEditableComboboxText_OPTIONAL_ARGC 0
@@ -2821,8 +2821,8 @@ mrb_UI_uiEditableComboboxText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UiEditableCombobox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEditableCombobox expected");
+  if (!mrb_obj_is_kind_of(mrb, c, EditableCombobox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
 
@@ -2841,7 +2841,7 @@ mrb_UI_uiEditableComboboxText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEntryOnChanged */
-/* sha: 25f892aacf72027ca5e76e7cce73800499dfe6507e851176f18dca7da381349c */
+/* sha: bdc5f2780553c434dac6ef2bd83b9b7b952a0f3c42a30463b6a1210928ed7af0 */
 #if BIND_uiEntryOnChanged_FUNCTION
 #define uiEntryOnChanged_REQUIRED_ARGC 3
 #define uiEntryOnChanged_OPTIONAL_ARGC 0
@@ -2856,8 +2856,8 @@ mrb_UI_uiEntryOnChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &e, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, Entry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiEntry_PTR_COMMA_void_PTR_RPAREN(f);
@@ -2881,7 +2881,7 @@ mrb_UI_uiEntryOnChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEntryReadOnly */
-/* sha: 46cefcbc73108bb4c0113130f2b4bed53161085d96164c120e10528f44b92251 */
+/* sha: 6aaeaddf2b4d532424ca15edf2628313773468bb41fa148c7066248adcf8edf6 */
 #if BIND_uiEntryReadOnly_FUNCTION
 #define uiEntryReadOnly_REQUIRED_ARGC 1
 #define uiEntryReadOnly_OPTIONAL_ARGC 0
@@ -2894,8 +2894,8 @@ mrb_UI_uiEntryReadOnly(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, Entry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
 
@@ -2914,7 +2914,7 @@ mrb_UI_uiEntryReadOnly(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEntrySetReadOnly */
-/* sha: 5ab7850a56465c59867e2551d7cf8216e508877e6a1d527d5a2562b25796574d */
+/* sha: 14897e3c5e3afa1d0f957bcad954ff58a86c59cd1db28fcfebd8fa0aa4592590 */
 #if BIND_uiEntrySetReadOnly_FUNCTION
 #define uiEntrySetReadOnly_REQUIRED_ARGC 2
 #define uiEntrySetReadOnly_OPTIONAL_ARGC 0
@@ -2928,8 +2928,8 @@ mrb_UI_uiEntrySetReadOnly(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &e, &native_readonly);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, Entry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
 
@@ -2945,7 +2945,7 @@ mrb_UI_uiEntrySetReadOnly(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEntrySetText */
-/* sha: 54a263adf1465e01b5cf319fd5f4fb547a354e6b5da8bfd775d329d9f249a9da */
+/* sha: 5841f2d6d9ec2bcfe042a76f7f07cfd209cbd382756dcf6a8cc0c7f094e03e07 */
 #if BIND_uiEntrySetText_FUNCTION
 #define uiEntrySetText_REQUIRED_ARGC 2
 #define uiEntrySetText_OPTIONAL_ARGC 0
@@ -2959,8 +2959,8 @@ mrb_UI_uiEntrySetText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &e, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, Entry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
 
@@ -2976,7 +2976,7 @@ mrb_UI_uiEntrySetText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiEntryText */
-/* sha: 35dc9d765f1b4224e385e81124be23f4961e72fb651dcb0deb798e52e76a6f76 */
+/* sha: 6aa7c6952562d3075a3558fbdc0b64da67b6dbdc3a477e6e290f0a05be25e7b3 */
 #if BIND_uiEntryText_FUNCTION
 #define uiEntryText_REQUIRED_ARGC 1
 #define uiEntryText_OPTIONAL_ARGC 0
@@ -2989,8 +2989,8 @@ mrb_UI_uiEntryText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, Entry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
 
@@ -3009,7 +3009,7 @@ mrb_UI_uiEntryText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiFontButtonFont */
-/* sha: 3d219cd06eaca18333dea258cddb7913664afc238f72cf3b79ef0967a2709aaa */
+/* sha: bd20502002f39e96cc647c1616492eda2bbafcdddf88fa2f15a60fca8de16675 */
 #if BIND_uiFontButtonFont_FUNCTION
 #define uiFontButtonFont_REQUIRED_ARGC 1
 #define uiFontButtonFont_OPTIONAL_ARGC 0
@@ -3022,8 +3022,8 @@ mrb_UI_uiFontButtonFont(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiFontButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiFontButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, FontButton_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "FontButton expected");
     return mrb_nil_value();
   }
 
@@ -3042,7 +3042,7 @@ mrb_UI_uiFontButtonFont(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiFontButtonOnChanged */
-/* sha: 6ff6569d12c0f6cbf7bc42324e6c4f45468f86623087e022b82130523c1f6777 */
+/* sha: c200be35f3dbe91b4377ff09b478b3358f8f21ad32ca5933e25b2618bda137b1 */
 #if BIND_uiFontButtonOnChanged_FUNCTION
 #define uiFontButtonOnChanged_REQUIRED_ARGC 3
 #define uiFontButtonOnChanged_OPTIONAL_ARGC 0
@@ -3057,8 +3057,8 @@ mrb_UI_uiFontButtonOnChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &b, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UiFontButton_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiFontButton expected");
+  if (!mrb_obj_is_kind_of(mrb, b, FontButton_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "FontButton expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiFontButton_PTR_COMMA_void_PTR_RPAREN(f);
@@ -3082,7 +3082,7 @@ mrb_UI_uiFontButtonOnChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiFormAppend */
-/* sha: e248831d6dc0229cf3812813af145f363e577c9278a785f129c1a5ad8ad3a46f */
+/* sha: d66eaad2001730395c3f9c98d2220e62b21b01ea7a82bfb6d3a7765156a3ff57 */
 #if BIND_uiFormAppend_FUNCTION
 #define uiFormAppend_REQUIRED_ARGC 4
 #define uiFormAppend_OPTIONAL_ARGC 0
@@ -3098,12 +3098,12 @@ mrb_UI_uiFormAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ozoi", &f, &native_label, &c, &native_stretchy);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UiForm_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiForm expected");
+  if (!mrb_obj_is_kind_of(mrb, f, Form_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -3122,7 +3122,7 @@ mrb_UI_uiFormAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiFormDelete */
-/* sha: 6f2ed1beefb8741316c9cc11b601382a5c1b08cdd4763e7de0f481ca5bfd1a95 */
+/* sha: ee85ebc3059394694d4b0b6ec74441fe2ad11f2505af20e6642a46b226ca9c93 */
 #if BIND_uiFormDelete_FUNCTION
 #define uiFormDelete_REQUIRED_ARGC 2
 #define uiFormDelete_OPTIONAL_ARGC 0
@@ -3136,8 +3136,8 @@ mrb_UI_uiFormDelete(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &f, &native_index);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UiForm_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiForm expected");
+  if (!mrb_obj_is_kind_of(mrb, f, Form_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
 
@@ -3153,7 +3153,7 @@ mrb_UI_uiFormDelete(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiFormPadded */
-/* sha: 091dee61eaec08b4140941c8506322b797c1294c091db4a35a6077cea3e16948 */
+/* sha: b88930b1074d80d5f33ccf21b7d89da5c94f0ddf5bac2a3ceefe3dcc72895a38 */
 #if BIND_uiFormPadded_FUNCTION
 #define uiFormPadded_REQUIRED_ARGC 1
 #define uiFormPadded_OPTIONAL_ARGC 0
@@ -3166,8 +3166,8 @@ mrb_UI_uiFormPadded(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &f);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UiForm_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiForm expected");
+  if (!mrb_obj_is_kind_of(mrb, f, Form_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
 
@@ -3186,7 +3186,7 @@ mrb_UI_uiFormPadded(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiFormSetPadded */
-/* sha: 675b9dd76bfe51ebc023ce4f4e0439542b0e9a644c5961f1adc680569bdcafc6 */
+/* sha: d3664d37a51cad08a86fc17707a2c38824d2f4100eba8fd5c470c4e81ed2b912 */
 #if BIND_uiFormSetPadded_FUNCTION
 #define uiFormSetPadded_REQUIRED_ARGC 2
 #define uiFormSetPadded_OPTIONAL_ARGC 0
@@ -3200,8 +3200,8 @@ mrb_UI_uiFormSetPadded(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &f, &native_padded);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UiForm_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiForm expected");
+  if (!mrb_obj_is_kind_of(mrb, f, Form_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
 
@@ -3217,7 +3217,7 @@ mrb_UI_uiFormSetPadded(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiFreeControl */
-/* sha: 0f9d744d1892e3daa7eefa0cc18d1341a145b607af625c288eba74e197fdafc1 */
+/* sha: 18534cba2690e6dae19a0753f0801439027f5dce55d55d0a0b22239998b5bd58 */
 #if BIND_uiFreeControl_FUNCTION
 #define uiFreeControl_REQUIRED_ARGC 1
 #define uiFreeControl_OPTIONAL_ARGC 0
@@ -3230,8 +3230,8 @@ mrb_UI_uiFreeControl(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, arg1, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -3295,7 +3295,7 @@ mrb_UI_uiFreeText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGridAppend */
-/* sha: 5816aa45af9884b62ab69125401c7108aebcb028d065c69a21d44fa25988ec40 */
+/* sha: f5f1e93caccd62f37a6a46e5f6286898d0f6c6314caf4e58cb5b852b9045fbad */
 #if BIND_uiGridAppend_FUNCTION
 #define uiGridAppend_REQUIRED_ARGC 10
 #define uiGridAppend_OPTIONAL_ARGC 0
@@ -3317,12 +3317,12 @@ mrb_UI_uiGridAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooiiiiioio", &g, &c, &native_left, &native_top, &native_xspan, &native_yspan, &native_hexpand, &halign, &native_vexpand, &valign);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGrid_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGrid expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Grid_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
   TODO_type_check_uiAlign(halign);
@@ -3349,7 +3349,7 @@ mrb_UI_uiGridAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGridInsertAt */
-/* sha: 9a5e186dd42ffb490c1398f50fa6418b3417380ac295a16e31a7b76532b39359 */
+/* sha: f13e7f8ac0de800a02884643ebfa4148d8241f7608a895e643fe2750b08afe96 */
 #if BIND_uiGridInsertAt_FUNCTION
 #define uiGridInsertAt_REQUIRED_ARGC 10
 #define uiGridInsertAt_OPTIONAL_ARGC 0
@@ -3371,16 +3371,16 @@ mrb_UI_uiGridInsertAt(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooooiiioio", &g, &c, &existing, &at, &native_xspan, &native_yspan, &native_hexpand, &halign, &native_vexpand, &valign);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGrid_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGrid expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Grid_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, existing, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, existing, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
   TODO_type_check_uiAt(at);
@@ -3414,7 +3414,7 @@ mrb_UI_uiGridInsertAt(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGridPadded */
-/* sha: e14870de5bcea110e78cc586bc45449f24e1dfbf257ae12ca3e111435f3d0fb5 */
+/* sha: 9afe454d589114304802e3982626bac1cc310244b6ec8d78c37a20a5b8532cf0 */
 #if BIND_uiGridPadded_FUNCTION
 #define uiGridPadded_REQUIRED_ARGC 1
 #define uiGridPadded_OPTIONAL_ARGC 0
@@ -3427,8 +3427,8 @@ mrb_UI_uiGridPadded(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &g);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGrid_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGrid expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Grid_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
 
@@ -3447,7 +3447,7 @@ mrb_UI_uiGridPadded(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGridSetPadded */
-/* sha: f5da03f00029c7546d3b7008935c5ae77184c719fe35184e43fa650250eed9e3 */
+/* sha: ea92ddef81268abe41a986a128a0fdc9ad0b1f7ab756443afd318be8d2e7a208 */
 #if BIND_uiGridSetPadded_FUNCTION
 #define uiGridSetPadded_REQUIRED_ARGC 2
 #define uiGridSetPadded_OPTIONAL_ARGC 0
@@ -3461,8 +3461,8 @@ mrb_UI_uiGridSetPadded(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &g, &native_padded);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGrid_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGrid expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Grid_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
 
@@ -3478,7 +3478,7 @@ mrb_UI_uiGridSetPadded(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGroupMargined */
-/* sha: a65c0bcaac7069afce1d64b7852089a8f38323539ece7ff85bf18a8ed4d31e13 */
+/* sha: c013452a0bd903cf80801bc4738b0057ddb5245b9e8826795859157697249d9b */
 #if BIND_uiGroupMargined_FUNCTION
 #define uiGroupMargined_REQUIRED_ARGC 1
 #define uiGroupMargined_OPTIONAL_ARGC 0
@@ -3491,8 +3491,8 @@ mrb_UI_uiGroupMargined(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &g);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGroup_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGroup expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Group_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
 
@@ -3511,7 +3511,7 @@ mrb_UI_uiGroupMargined(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGroupSetChild */
-/* sha: b4994d72e9fcbaf89ca77d9560795af1cde62dcbbcee5e4b202d27fda0cecbb1 */
+/* sha: 51b058649afedb5ac486ca857abbad70600e1376a2ccd6c446f1a38d1ab8b892 */
 #if BIND_uiGroupSetChild_FUNCTION
 #define uiGroupSetChild_REQUIRED_ARGC 2
 #define uiGroupSetChild_OPTIONAL_ARGC 0
@@ -3525,12 +3525,12 @@ mrb_UI_uiGroupSetChild(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &g, &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGroup_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGroup expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Group_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -3549,7 +3549,7 @@ mrb_UI_uiGroupSetChild(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGroupSetMargined */
-/* sha: 7278e8e8977470bacbed1d6e3f50c5ffb44c1fccf7ef7540592b51b1d232b640 */
+/* sha: dd553d45f957862f7246bd15ab54cb8f439d64206de2c7a03c9ea93f77da3aa7 */
 #if BIND_uiGroupSetMargined_FUNCTION
 #define uiGroupSetMargined_REQUIRED_ARGC 2
 #define uiGroupSetMargined_OPTIONAL_ARGC 0
@@ -3563,8 +3563,8 @@ mrb_UI_uiGroupSetMargined(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &g, &native_margined);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGroup_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGroup expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Group_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
 
@@ -3580,7 +3580,7 @@ mrb_UI_uiGroupSetMargined(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGroupSetTitle */
-/* sha: f593fcec9a6a7a1ecd11b5d58f3977cdf1ee4a226493e3282d463c3d8ba7d2f7 */
+/* sha: c8780b1c9aa491d305af7189b5acde8a95ce3f6236428201d117df19e4bf2b1e */
 #if BIND_uiGroupSetTitle_FUNCTION
 #define uiGroupSetTitle_REQUIRED_ARGC 2
 #define uiGroupSetTitle_OPTIONAL_ARGC 0
@@ -3594,8 +3594,8 @@ mrb_UI_uiGroupSetTitle(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &g, &native_title);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGroup_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGroup expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Group_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
 
@@ -3611,7 +3611,7 @@ mrb_UI_uiGroupSetTitle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiGroupTitle */
-/* sha: 5fc0ba0b3bf41fec548edcb34c6e37f07daee5c7f36c9b4143913d3ee8d69819 */
+/* sha: bf7c917e4eb3f164422f407ea336668396f7c362f7176b44bb4f78793f705d36 */
 #if BIND_uiGroupTitle_FUNCTION
 #define uiGroupTitle_REQUIRED_ARGC 1
 #define uiGroupTitle_OPTIONAL_ARGC 0
@@ -3624,8 +3624,8 @@ mrb_UI_uiGroupTitle(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &g);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UiGroup_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiGroup expected");
+  if (!mrb_obj_is_kind_of(mrb, g, Group_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
 
@@ -3644,7 +3644,7 @@ mrb_UI_uiGroupTitle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiInit */
-/* sha: 60f3de7dce6011e2eed9969d2dad8518b3f9b43fd4041493b60cb2de63b30746 */
+/* sha: 4a07be78bfb6b0e4ee9d697d83d94ca498e2ed535058c7a276526d89ac6287b7 */
 #if BIND_uiInit_FUNCTION
 #define uiInit_REQUIRED_ARGC 1
 #define uiInit_OPTIONAL_ARGC 0
@@ -3657,8 +3657,8 @@ mrb_UI_uiInit(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &options);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, options, UiInitOptions_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiInitOptions expected");
+  if (!mrb_obj_is_kind_of(mrb, options, InitOptions_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "InitOptions expected");
     return mrb_nil_value();
   }
 
@@ -3677,7 +3677,7 @@ mrb_UI_uiInit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiLabelSetText */
-/* sha: 6b21dfa47e4517e0045c404afe570e9cf43c901dda7b43532f4e60faa8f65cbf */
+/* sha: 88b654025c1023c66aa5499b3e3bebe926afd7c6f08b7259a8a4d07bbb657b94 */
 #if BIND_uiLabelSetText_FUNCTION
 #define uiLabelSetText_REQUIRED_ARGC 2
 #define uiLabelSetText_OPTIONAL_ARGC 0
@@ -3691,8 +3691,8 @@ mrb_UI_uiLabelSetText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &l, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, l, UiLabel_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiLabel expected");
+  if (!mrb_obj_is_kind_of(mrb, l, Label_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Label expected");
     return mrb_nil_value();
   }
 
@@ -3708,7 +3708,7 @@ mrb_UI_uiLabelSetText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiLabelText */
-/* sha: 97ce2fb6453b982c397b4aa3dcd9535bc45a3dade34edfcb1c0017020b682258 */
+/* sha: 0cc8a1eb3c654785c881c3d3e3987a8432312203a4360995dd75e79367208cc8 */
 #if BIND_uiLabelText_FUNCTION
 #define uiLabelText_REQUIRED_ARGC 1
 #define uiLabelText_OPTIONAL_ARGC 0
@@ -3721,8 +3721,8 @@ mrb_UI_uiLabelText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &l);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, l, UiLabel_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiLabel expected");
+  if (!mrb_obj_is_kind_of(mrb, l, Label_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Label expected");
     return mrb_nil_value();
   }
 
@@ -3797,7 +3797,7 @@ mrb_UI_uiMainSteps(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuAppendAboutItem */
-/* sha: 36744e84415aa796b5197c9ccafdfb2e0acd7a78053d99b220ccc04161907369 */
+/* sha: f7d72b04cb60163178de7f99057dd9d9334a00e4dfeec819b4d4c08b225ad03e */
 #if BIND_uiMenuAppendAboutItem_FUNCTION
 #define uiMenuAppendAboutItem_REQUIRED_ARGC 1
 #define uiMenuAppendAboutItem_OPTIONAL_ARGC 0
@@ -3810,8 +3810,8 @@ mrb_UI_uiMenuAppendAboutItem(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenu_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenu expected");
+  if (!mrb_obj_is_kind_of(mrb, m, Menu_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
 
@@ -3830,7 +3830,7 @@ mrb_UI_uiMenuAppendAboutItem(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuAppendCheckItem */
-/* sha: 0189039d9962197bf260cf6209733ffab3984603f0059eacfafb55ea47e9861b */
+/* sha: 029d156d1a3d7395d81e340799db7921425e81af481d1f489db23f3bd045adb0 */
 #if BIND_uiMenuAppendCheckItem_FUNCTION
 #define uiMenuAppendCheckItem_REQUIRED_ARGC 2
 #define uiMenuAppendCheckItem_OPTIONAL_ARGC 0
@@ -3844,8 +3844,8 @@ mrb_UI_uiMenuAppendCheckItem(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &m, &native_name);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenu_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenu expected");
+  if (!mrb_obj_is_kind_of(mrb, m, Menu_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
 
@@ -3864,7 +3864,7 @@ mrb_UI_uiMenuAppendCheckItem(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuAppendItem */
-/* sha: 0b4c622d15a209b8f46251f7cd98a67bb7501b82a7b211c37a5393d19dcb0635 */
+/* sha: 54b54ce0c867789005e2eadf07485299e0458ec54fb150759fd9442b5a9690e8 */
 #if BIND_uiMenuAppendItem_FUNCTION
 #define uiMenuAppendItem_REQUIRED_ARGC 2
 #define uiMenuAppendItem_OPTIONAL_ARGC 0
@@ -3878,8 +3878,8 @@ mrb_UI_uiMenuAppendItem(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &m, &native_name);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenu_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenu expected");
+  if (!mrb_obj_is_kind_of(mrb, m, Menu_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
 
@@ -3898,7 +3898,7 @@ mrb_UI_uiMenuAppendItem(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuAppendPreferencesItem */
-/* sha: 39231d293052171601bbe432c55444aed4518a1920f7b5f311bfb31ebeb604cf */
+/* sha: d19f360e98ec08bfc11417d27a9e6b36aaea5b5d635ef4b70f064ca3a5fb4c86 */
 #if BIND_uiMenuAppendPreferencesItem_FUNCTION
 #define uiMenuAppendPreferencesItem_REQUIRED_ARGC 1
 #define uiMenuAppendPreferencesItem_OPTIONAL_ARGC 0
@@ -3911,8 +3911,8 @@ mrb_UI_uiMenuAppendPreferencesItem(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenu_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenu expected");
+  if (!mrb_obj_is_kind_of(mrb, m, Menu_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
 
@@ -3931,7 +3931,7 @@ mrb_UI_uiMenuAppendPreferencesItem(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuAppendQuitItem */
-/* sha: c8b44bec4be099d9d12e814b8ee8049c618daf2b8b3c4b692c0def3f099d2863 */
+/* sha: fba0496efdc438b3813261b1ce33b3e23a63d011c03269d930e70324d9e1bd27 */
 #if BIND_uiMenuAppendQuitItem_FUNCTION
 #define uiMenuAppendQuitItem_REQUIRED_ARGC 1
 #define uiMenuAppendQuitItem_OPTIONAL_ARGC 0
@@ -3944,8 +3944,8 @@ mrb_UI_uiMenuAppendQuitItem(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenu_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenu expected");
+  if (!mrb_obj_is_kind_of(mrb, m, Menu_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
 
@@ -3964,7 +3964,7 @@ mrb_UI_uiMenuAppendQuitItem(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuAppendSeparator */
-/* sha: a2870f413485166bcf618d60c8f74346c9647a2fe61d70a262aac07948cfba79 */
+/* sha: 39f79f69bc0c4b36cc66e581706e1b880b01075545ccd61b0913d21578f94f81 */
 #if BIND_uiMenuAppendSeparator_FUNCTION
 #define uiMenuAppendSeparator_REQUIRED_ARGC 1
 #define uiMenuAppendSeparator_OPTIONAL_ARGC 0
@@ -3977,8 +3977,8 @@ mrb_UI_uiMenuAppendSeparator(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenu_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenu expected");
+  if (!mrb_obj_is_kind_of(mrb, m, Menu_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
 
@@ -3994,7 +3994,7 @@ mrb_UI_uiMenuAppendSeparator(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuItemChecked */
-/* sha: c12c5add85a056c5908392ccad29a76a78a2b8f808f9e34f571b14d8653f4054 */
+/* sha: 943f9f03a056a69764d850548d07a8b0839cf479754136b18e544ff1ac293a87 */
 #if BIND_uiMenuItemChecked_FUNCTION
 #define uiMenuItemChecked_REQUIRED_ARGC 1
 #define uiMenuItemChecked_OPTIONAL_ARGC 0
@@ -4007,8 +4007,8 @@ mrb_UI_uiMenuItemChecked(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenuItem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenuItem expected");
+  if (!mrb_obj_is_kind_of(mrb, m, MenuItem_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
 
@@ -4027,7 +4027,7 @@ mrb_UI_uiMenuItemChecked(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuItemDisable */
-/* sha: 9f49d6498b874e3bfaa2f766e15cbf6e89786b43bda53d260eda576e29e0ea3e */
+/* sha: 56fe6bb7542f7d517fd56b70e0b5aed9ebbd627b824e3af6318eb0d7dc7c536c */
 #if BIND_uiMenuItemDisable_FUNCTION
 #define uiMenuItemDisable_REQUIRED_ARGC 1
 #define uiMenuItemDisable_OPTIONAL_ARGC 0
@@ -4040,8 +4040,8 @@ mrb_UI_uiMenuItemDisable(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenuItem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenuItem expected");
+  if (!mrb_obj_is_kind_of(mrb, m, MenuItem_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
 
@@ -4057,7 +4057,7 @@ mrb_UI_uiMenuItemDisable(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuItemEnable */
-/* sha: 828f8ece6b3dec19f36ea1efcd5784814510b308b3b30d51c9ffd281526ab16c */
+/* sha: 23cdfad9ed011a46c0cfe78beed4a896e99d621bf5261b447da444679605f658 */
 #if BIND_uiMenuItemEnable_FUNCTION
 #define uiMenuItemEnable_REQUIRED_ARGC 1
 #define uiMenuItemEnable_OPTIONAL_ARGC 0
@@ -4070,8 +4070,8 @@ mrb_UI_uiMenuItemEnable(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenuItem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenuItem expected");
+  if (!mrb_obj_is_kind_of(mrb, m, MenuItem_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
 
@@ -4087,7 +4087,7 @@ mrb_UI_uiMenuItemEnable(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuItemOnClicked */
-/* sha: ed52c1d8e4339bd8c5901792d4cce957ff1921ea5a02db482cc68c9dfe626469 */
+/* sha: 857fe60e1d05859b1018744be89bf10fc0b82e4c63bded76874809c115bbffe9 */
 #if BIND_uiMenuItemOnClicked_FUNCTION
 #define uiMenuItemOnClicked_REQUIRED_ARGC 3
 #define uiMenuItemOnClicked_OPTIONAL_ARGC 0
@@ -4102,8 +4102,8 @@ mrb_UI_uiMenuItemOnClicked(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &m, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenuItem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenuItem expected");
+  if (!mrb_obj_is_kind_of(mrb, m, MenuItem_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiMenuItem_PTR_COMMA_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
@@ -4127,7 +4127,7 @@ mrb_UI_uiMenuItemOnClicked(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMenuItemSetChecked */
-/* sha: b05ba08a8214369efd2ab13af8e712c9799020604d4f2eb71035ddf3854ab81d */
+/* sha: 089395cfbdf948121df7ac24183494cb9e685c0360ed510d6b1d1474258e0d11 */
 #if BIND_uiMenuItemSetChecked_FUNCTION
 #define uiMenuItemSetChecked_REQUIRED_ARGC 2
 #define uiMenuItemSetChecked_OPTIONAL_ARGC 0
@@ -4141,8 +4141,8 @@ mrb_UI_uiMenuItemSetChecked(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &m, &native_checked);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UiMenuItem_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMenuItem expected");
+  if (!mrb_obj_is_kind_of(mrb, m, MenuItem_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
 
@@ -4158,7 +4158,7 @@ mrb_UI_uiMenuItemSetChecked(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMsgBox */
-/* sha: 72df0757fb841c4006aa85b196157f0f704cbc445cf7c81160344f87bfc1d26a */
+/* sha: 8d6513d08e9ba480f663e6990c5a5be188cffbfcb477202ad5281057d5d17bd7 */
 #if BIND_uiMsgBox_FUNCTION
 #define uiMsgBox_REQUIRED_ARGC 3
 #define uiMsgBox_OPTIONAL_ARGC 0
@@ -4173,8 +4173,8 @@ mrb_UI_uiMsgBox(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ozz", &parent, &native_title, &native_description);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, parent, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -4190,7 +4190,7 @@ mrb_UI_uiMsgBox(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMsgBoxError */
-/* sha: 066f5d9848898af5003c1eb7b485492e22ace30588e1dccb757c03f5b7fbe203 */
+/* sha: 1c006707385234bd150ac068b9ebd0a350cad8a88f2505cc12e6e4ee67754db1 */
 #if BIND_uiMsgBoxError_FUNCTION
 #define uiMsgBoxError_REQUIRED_ARGC 3
 #define uiMsgBoxError_OPTIONAL_ARGC 0
@@ -4205,8 +4205,8 @@ mrb_UI_uiMsgBoxError(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ozz", &parent, &native_title, &native_description);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, parent, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -4222,7 +4222,7 @@ mrb_UI_uiMsgBoxError(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMultilineEntryAppend */
-/* sha: 0123832c415bdf3b002e20da50d698bdc41324056f7f9df3cef53ff7ecfecab3 */
+/* sha: 889263ef4a7235c6b1ea1779beee92dead711a477e40b2cdc6503f7e75d654d0 */
 #if BIND_uiMultilineEntryAppend_FUNCTION
 #define uiMultilineEntryAppend_REQUIRED_ARGC 2
 #define uiMultilineEntryAppend_OPTIONAL_ARGC 0
@@ -4236,8 +4236,8 @@ mrb_UI_uiMultilineEntryAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &e, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiMultilineEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMultilineEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, MultilineEntry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
 
@@ -4253,7 +4253,7 @@ mrb_UI_uiMultilineEntryAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMultilineEntryOnChanged */
-/* sha: 2358d269280b7dcfdf7467208bbc4b805cf7c9fa5d88e7083810dfb544ea5b1e */
+/* sha: 059b3e36504f99d7c6d58fa80a848761fbaad7e4a8f6747217d0be16fd9c234c */
 #if BIND_uiMultilineEntryOnChanged_FUNCTION
 #define uiMultilineEntryOnChanged_REQUIRED_ARGC 3
 #define uiMultilineEntryOnChanged_OPTIONAL_ARGC 0
@@ -4268,8 +4268,8 @@ mrb_UI_uiMultilineEntryOnChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &e, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiMultilineEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMultilineEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, MultilineEntry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiMultilineEntry_PTR_COMMA_void_PTR_RPAREN(f);
@@ -4293,7 +4293,7 @@ mrb_UI_uiMultilineEntryOnChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMultilineEntryReadOnly */
-/* sha: d67151e743212ef549cd181aa7a2dbcc424fc48483f296b689a303d878edf793 */
+/* sha: 6331974d2ebf32339d2c28c87def365ec09828d932f21cd9c3b620b69c0acb7c */
 #if BIND_uiMultilineEntryReadOnly_FUNCTION
 #define uiMultilineEntryReadOnly_REQUIRED_ARGC 1
 #define uiMultilineEntryReadOnly_OPTIONAL_ARGC 0
@@ -4306,8 +4306,8 @@ mrb_UI_uiMultilineEntryReadOnly(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiMultilineEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMultilineEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, MultilineEntry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
 
@@ -4326,7 +4326,7 @@ mrb_UI_uiMultilineEntryReadOnly(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMultilineEntrySetReadOnly */
-/* sha: 3630e80b7f3d83feb90bc0ef8354feb8bf8f86da559acb96bd6f92e066fc96e6 */
+/* sha: 2a87e03c6ad6f6a75ab9634e652be56d3005d5eb186971137c5c0d5a0bd054b9 */
 #if BIND_uiMultilineEntrySetReadOnly_FUNCTION
 #define uiMultilineEntrySetReadOnly_REQUIRED_ARGC 2
 #define uiMultilineEntrySetReadOnly_OPTIONAL_ARGC 0
@@ -4340,8 +4340,8 @@ mrb_UI_uiMultilineEntrySetReadOnly(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &e, &native_readonly);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiMultilineEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMultilineEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, MultilineEntry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
 
@@ -4357,7 +4357,7 @@ mrb_UI_uiMultilineEntrySetReadOnly(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMultilineEntrySetText */
-/* sha: 73f50313e54e0a5ba97dcd512758a25dd1c02f6732a2e37f8397a70571daf07c */
+/* sha: b97ff30c93674ec9ff021cfe2c17f914ff54882a1c39ad9e83597c2eaaecfebd */
 #if BIND_uiMultilineEntrySetText_FUNCTION
 #define uiMultilineEntrySetText_REQUIRED_ARGC 2
 #define uiMultilineEntrySetText_OPTIONAL_ARGC 0
@@ -4371,8 +4371,8 @@ mrb_UI_uiMultilineEntrySetText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &e, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiMultilineEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMultilineEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, MultilineEntry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
 
@@ -4388,7 +4388,7 @@ mrb_UI_uiMultilineEntrySetText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiMultilineEntryText */
-/* sha: 28863b968363db31904bbd6d9f6332e650138443f63c24a67f7cb7681c284636 */
+/* sha: c905c59a8b296ca488943d10321afd8aa8de9d9a98ac63dc9b3f3441f48ba3dc */
 #if BIND_uiMultilineEntryText_FUNCTION
 #define uiMultilineEntryText_REQUIRED_ARGC 1
 #define uiMultilineEntryText_OPTIONAL_ARGC 0
@@ -4401,8 +4401,8 @@ mrb_UI_uiMultilineEntryText(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UiMultilineEntry_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiMultilineEntry expected");
+  if (!mrb_obj_is_kind_of(mrb, e, MultilineEntry_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
 
@@ -4421,7 +4421,7 @@ mrb_UI_uiMultilineEntryText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiNewArea */
-/* sha: 27fee5d49483b375cc5c15075b3d1c547ec0d4525efe355a7645fd502c360c1d */
+/* sha: a6cf7e4272c0bc09621da0f07519a44abd2a7679d86fe73975e0768cf76df929 */
 #if BIND_uiNewArea_FUNCTION
 #define uiNewArea_REQUIRED_ARGC 1
 #define uiNewArea_OPTIONAL_ARGC 0
@@ -4434,8 +4434,8 @@ mrb_UI_uiNewArea(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &ah);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ah, UiAreaHandler_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiAreaHandler expected");
+  if (!mrb_obj_is_kind_of(mrb, ah, AreaHandler_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "AreaHandler expected");
     return mrb_nil_value();
   }
 
@@ -4878,7 +4878,7 @@ mrb_UI_uiNewRadioButtons(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiNewScrollingArea */
-/* sha: 00587dc89c27f68d6288afbb776283e8d1061e07090726252b3c6d77f5cb0f0d */
+/* sha: e89ee67cfb045da786abe4c107e81279718b6feee057808c98db0381cc61d8bb */
 #if BIND_uiNewScrollingArea_FUNCTION
 #define uiNewScrollingArea_REQUIRED_ARGC 3
 #define uiNewScrollingArea_OPTIONAL_ARGC 0
@@ -4893,8 +4893,8 @@ mrb_UI_uiNewScrollingArea(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oii", &ah, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ah, UiAreaHandler_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiAreaHandler expected");
+  if (!mrb_obj_is_kind_of(mrb, ah, AreaHandler_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "AreaHandler expected");
     return mrb_nil_value();
   }
 
@@ -5117,7 +5117,7 @@ mrb_UI_uiOnShouldQuit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiOpenFile */
-/* sha: b1bc5215ad23e75c95a6f0cc527431ac36dfa28ff34e6c10b583c11e4efedc62 */
+/* sha: 4d03b7872de1b041011a3fd5d8783e892d2600d93d7b1c771ea9281cf23489b9 */
 #if BIND_uiOpenFile_FUNCTION
 #define uiOpenFile_REQUIRED_ARGC 1
 #define uiOpenFile_OPTIONAL_ARGC 0
@@ -5130,8 +5130,8 @@ mrb_UI_uiOpenFile(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &parent);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, parent, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -5150,7 +5150,7 @@ mrb_UI_uiOpenFile(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiProgressBarSetValue */
-/* sha: eb0ac3e76aa3a1645313e2dbb5803691d7bd7f5836b128d9c89a95e517de1dbd */
+/* sha: 0c0146bcf7a0a5de9d207a708df58ab10fb1fe9bf745f1e77b27b5ae3e4da048 */
 #if BIND_uiProgressBarSetValue_FUNCTION
 #define uiProgressBarSetValue_REQUIRED_ARGC 2
 #define uiProgressBarSetValue_OPTIONAL_ARGC 0
@@ -5164,8 +5164,8 @@ mrb_UI_uiProgressBarSetValue(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &p, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiProgressBar_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiProgressBar expected");
+  if (!mrb_obj_is_kind_of(mrb, p, ProgressBar_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "ProgressBar expected");
     return mrb_nil_value();
   }
 
@@ -5181,7 +5181,7 @@ mrb_UI_uiProgressBarSetValue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiProgressBarValue */
-/* sha: 25636957a99bd2e02087232cd6a74e9631ff552b0cd12007532a1ddf05ae17e9 */
+/* sha: c329d92d02b6ccee6157ec97e89fa293c248566ea330e440b5070f09ca02e2fd */
 #if BIND_uiProgressBarValue_FUNCTION
 #define uiProgressBarValue_REQUIRED_ARGC 1
 #define uiProgressBarValue_OPTIONAL_ARGC 0
@@ -5194,8 +5194,8 @@ mrb_UI_uiProgressBarValue(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UiProgressBar_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiProgressBar expected");
+  if (!mrb_obj_is_kind_of(mrb, p, ProgressBar_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "ProgressBar expected");
     return mrb_nil_value();
   }
 
@@ -5262,7 +5262,7 @@ mrb_UI_uiQuit(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiRadioButtonsAppend */
-/* sha: eaf1eec1db0fa2618485b65ff972fdc7426802a79feef054687706a7cd2a57b6 */
+/* sha: bac8535f6f0f281d2d9fb67db5c1adbba3c890b192c84e5b0a25fe5adad04492 */
 #if BIND_uiRadioButtonsAppend_FUNCTION
 #define uiRadioButtonsAppend_REQUIRED_ARGC 2
 #define uiRadioButtonsAppend_OPTIONAL_ARGC 0
@@ -5276,8 +5276,8 @@ mrb_UI_uiRadioButtonsAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &r, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, r, UiRadioButtons_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiRadioButtons expected");
+  if (!mrb_obj_is_kind_of(mrb, r, RadioButtons_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
 
@@ -5293,7 +5293,7 @@ mrb_UI_uiRadioButtonsAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiRadioButtonsOnSelected */
-/* sha: 6d88d657ca2440e71d3c566ffda32c404eeaee16b24c8376a974c228bfb99973 */
+/* sha: 9b4beb8f8f0238a309b9a590ef4e5c6eb6eada4a7f791713afb0808e27743138 */
 #if BIND_uiRadioButtonsOnSelected_FUNCTION
 #define uiRadioButtonsOnSelected_REQUIRED_ARGC 3
 #define uiRadioButtonsOnSelected_OPTIONAL_ARGC 0
@@ -5308,8 +5308,8 @@ mrb_UI_uiRadioButtonsOnSelected(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &r, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, r, UiRadioButtons_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiRadioButtons expected");
+  if (!mrb_obj_is_kind_of(mrb, r, RadioButtons_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiRadioButtons_PTR_COMMA_void_PTR_RPAREN(f);
@@ -5333,7 +5333,7 @@ mrb_UI_uiRadioButtonsOnSelected(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiRadioButtonsSelected */
-/* sha: 3baa9e28c655c33710eefb4a487ff262ec6b7b4653b6516aff134e1327f7fa15 */
+/* sha: 19a9fa273c5d4d1988e38b9ef9055e979182a707819a9c03c41544d9cc3cbf81 */
 #if BIND_uiRadioButtonsSelected_FUNCTION
 #define uiRadioButtonsSelected_REQUIRED_ARGC 1
 #define uiRadioButtonsSelected_OPTIONAL_ARGC 0
@@ -5346,8 +5346,8 @@ mrb_UI_uiRadioButtonsSelected(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &r);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, r, UiRadioButtons_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiRadioButtons expected");
+  if (!mrb_obj_is_kind_of(mrb, r, RadioButtons_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
 
@@ -5366,7 +5366,7 @@ mrb_UI_uiRadioButtonsSelected(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiRadioButtonsSetSelected */
-/* sha: cc30e73dbe67266752ea0fee89663b89e6c06d40321703386ef53c36126a5110 */
+/* sha: 92af1af79460863708c858253a6cdf79fad74892f970ebfcc80153a3beffa6cd */
 #if BIND_uiRadioButtonsSetSelected_FUNCTION
 #define uiRadioButtonsSetSelected_REQUIRED_ARGC 2
 #define uiRadioButtonsSetSelected_OPTIONAL_ARGC 0
@@ -5380,8 +5380,8 @@ mrb_UI_uiRadioButtonsSetSelected(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &r, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, r, UiRadioButtons_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiRadioButtons expected");
+  if (!mrb_obj_is_kind_of(mrb, r, RadioButtons_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
 
@@ -5397,7 +5397,7 @@ mrb_UI_uiRadioButtonsSetSelected(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiSaveFile */
-/* sha: 4cf3637f881c1fd705d45c480bbd989b1b55880fae856b60d35d83b086ab6bcb */
+/* sha: b0fe12cde19694862c92cb0f61fa5c5e58bdfc3bdf3372376caadcc903c91013 */
 #if BIND_uiSaveFile_FUNCTION
 #define uiSaveFile_REQUIRED_ARGC 1
 #define uiSaveFile_OPTIONAL_ARGC 0
@@ -5410,8 +5410,8 @@ mrb_UI_uiSaveFile(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &parent);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, parent, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -5430,7 +5430,7 @@ mrb_UI_uiSaveFile(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiSliderOnChanged */
-/* sha: c6fe6986676987a56d1b228fa5439baab04b6ecb8cee17e24344872e586902e9 */
+/* sha: 90c4f779831aeaf385586100445c73fee214228e16156944707f95fddcaceeb6 */
 #if BIND_uiSliderOnChanged_FUNCTION
 #define uiSliderOnChanged_REQUIRED_ARGC 3
 #define uiSliderOnChanged_OPTIONAL_ARGC 0
@@ -5445,8 +5445,8 @@ mrb_UI_uiSliderOnChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &s, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UiSlider_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiSlider expected");
+  if (!mrb_obj_is_kind_of(mrb, s, Slider_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Slider expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiSlider_PTR_COMMA_void_PTR_RPAREN(f);
@@ -5470,7 +5470,7 @@ mrb_UI_uiSliderOnChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiSliderSetValue */
-/* sha: 886dc1a0d271746c492e109c36abf21d8177f4611ae3d4b6184b706e6ad3ae1d */
+/* sha: 25a9243f210b927a088ef353a69f4e0dbd0c78e67e004e13dae1fa8a680a8136 */
 #if BIND_uiSliderSetValue_FUNCTION
 #define uiSliderSetValue_REQUIRED_ARGC 2
 #define uiSliderSetValue_OPTIONAL_ARGC 0
@@ -5484,8 +5484,8 @@ mrb_UI_uiSliderSetValue(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &s, &native_value);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UiSlider_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiSlider expected");
+  if (!mrb_obj_is_kind_of(mrb, s, Slider_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Slider expected");
     return mrb_nil_value();
   }
 
@@ -5501,7 +5501,7 @@ mrb_UI_uiSliderSetValue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiSliderValue */
-/* sha: 79f10ef2cf2aaf9651fbd82dcbc2120e0e7f30feade4259bd817dc3d6b84273d */
+/* sha: 43ce56de4e9335fe265f5fec320cc19c18640bec86699a1364ac5b4a156d940d */
 #if BIND_uiSliderValue_FUNCTION
 #define uiSliderValue_REQUIRED_ARGC 1
 #define uiSliderValue_OPTIONAL_ARGC 0
@@ -5514,8 +5514,8 @@ mrb_UI_uiSliderValue(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &s);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UiSlider_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiSlider expected");
+  if (!mrb_obj_is_kind_of(mrb, s, Slider_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Slider expected");
     return mrb_nil_value();
   }
 
@@ -5534,7 +5534,7 @@ mrb_UI_uiSliderValue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiSpinboxOnChanged */
-/* sha: 52c73cd5dac1dd766c8ef6cb712141d50050e9b3889c58c8231ae2eb5e067925 */
+/* sha: fc005a75803fd3942a9be463558b5bfc7fa82eca7f2f5e60be802970fd1af61e */
 #if BIND_uiSpinboxOnChanged_FUNCTION
 #define uiSpinboxOnChanged_REQUIRED_ARGC 3
 #define uiSpinboxOnChanged_OPTIONAL_ARGC 0
@@ -5549,8 +5549,8 @@ mrb_UI_uiSpinboxOnChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &s, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UiSpinbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiSpinbox expected");
+  if (!mrb_obj_is_kind_of(mrb, s, Spinbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Spinbox expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiSpinbox_PTR_COMMA_void_PTR_RPAREN(f);
@@ -5574,7 +5574,7 @@ mrb_UI_uiSpinboxOnChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiSpinboxSetValue */
-/* sha: aa237c1d43a9b1d3bb3186bdc6160bba66658b6d5f79e11b5863aa6cb0e7f27b */
+/* sha: 4caa4132fbd0848f7a7a03bb2bfa3818830cdebc7742c4e584a47f549d531c8c */
 #if BIND_uiSpinboxSetValue_FUNCTION
 #define uiSpinboxSetValue_REQUIRED_ARGC 2
 #define uiSpinboxSetValue_OPTIONAL_ARGC 0
@@ -5588,8 +5588,8 @@ mrb_UI_uiSpinboxSetValue(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &s, &native_value);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UiSpinbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiSpinbox expected");
+  if (!mrb_obj_is_kind_of(mrb, s, Spinbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Spinbox expected");
     return mrb_nil_value();
   }
 
@@ -5605,7 +5605,7 @@ mrb_UI_uiSpinboxSetValue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiSpinboxValue */
-/* sha: 13967d702b8f49c577d4abf6d1e31813ba45bbea3ed106bd4f0bfd4fd44e84cc */
+/* sha: ef58a1e2150fc6fd14ebddb9b09ba7705fae82a76112fede3c1557ad3cd3c7b1 */
 #if BIND_uiSpinboxValue_FUNCTION
 #define uiSpinboxValue_REQUIRED_ARGC 1
 #define uiSpinboxValue_OPTIONAL_ARGC 0
@@ -5618,8 +5618,8 @@ mrb_UI_uiSpinboxValue(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &s);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UiSpinbox_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiSpinbox expected");
+  if (!mrb_obj_is_kind_of(mrb, s, Spinbox_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Spinbox expected");
     return mrb_nil_value();
   }
 
@@ -5638,7 +5638,7 @@ mrb_UI_uiSpinboxValue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiTabAppend */
-/* sha: 9cbe1ecddeab29bc2dc46df0da5ad9914a4f0a67d7dc28c3d3014ff83f9b4c3d */
+/* sha: a188706e7c0bc0a1f5886ae2857b5d368c40fdea8b88586445075c3a4c15fcae */
 #if BIND_uiTabAppend_FUNCTION
 #define uiTabAppend_REQUIRED_ARGC 3
 #define uiTabAppend_OPTIONAL_ARGC 0
@@ -5653,12 +5653,12 @@ mrb_UI_uiTabAppend(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ozo", &t, &native_name, &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UiTab_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiTab expected");
+  if (!mrb_obj_is_kind_of(mrb, t, Tab_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -5677,7 +5677,7 @@ mrb_UI_uiTabAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiTabDelete */
-/* sha: be30e0c4ba44a0f23bee22af2b7b48d8d747b7664f7b39a540896ba53cf6543e */
+/* sha: 4d7179bbcc5dd5e70b4e5cc11743f29b761b689aca23bd0490cda4434e7ca86a */
 #if BIND_uiTabDelete_FUNCTION
 #define uiTabDelete_REQUIRED_ARGC 2
 #define uiTabDelete_OPTIONAL_ARGC 0
@@ -5691,8 +5691,8 @@ mrb_UI_uiTabDelete(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &t, &native_index);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UiTab_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiTab expected");
+  if (!mrb_obj_is_kind_of(mrb, t, Tab_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
 
@@ -5708,7 +5708,7 @@ mrb_UI_uiTabDelete(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiTabInsertAt */
-/* sha: 518398cc79382dfb3034fc99b90b7875b4c422bff6776dfe3ac28eb21f93418b */
+/* sha: 1c95980241f605ce42f08c6168a941cd76a2add43c9f14116add06ea6ba24c1e */
 #if BIND_uiTabInsertAt_FUNCTION
 #define uiTabInsertAt_REQUIRED_ARGC 4
 #define uiTabInsertAt_OPTIONAL_ARGC 0
@@ -5724,12 +5724,12 @@ mrb_UI_uiTabInsertAt(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ozio", &t, &native_name, &native_before, &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UiTab_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiTab expected");
+  if (!mrb_obj_is_kind_of(mrb, t, Tab_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, c, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -5748,7 +5748,7 @@ mrb_UI_uiTabInsertAt(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiTabMargined */
-/* sha: 492d6fd258e71bc6387765009213a64d6c4113fbdfb83cb2171fe88d2b757270 */
+/* sha: 0b6c009b7f9f615803bc4c478b4c236f7d3ae03aab3340cb90eff7b146706344 */
 #if BIND_uiTabMargined_FUNCTION
 #define uiTabMargined_REQUIRED_ARGC 2
 #define uiTabMargined_OPTIONAL_ARGC 0
@@ -5762,8 +5762,8 @@ mrb_UI_uiTabMargined(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &t, &native_page);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UiTab_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiTab expected");
+  if (!mrb_obj_is_kind_of(mrb, t, Tab_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
 
@@ -5782,7 +5782,7 @@ mrb_UI_uiTabMargined(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiTabNumPages */
-/* sha: 0720265bcbbf9d396fdd86ce336a8af77b7ec4d0c4c1409c8e5de55739e5b2b2 */
+/* sha: 52d65d560b6846d63dfe5576d32a667b94ab5f0581db347e4d23d0c72cef3b9b */
 #if BIND_uiTabNumPages_FUNCTION
 #define uiTabNumPages_REQUIRED_ARGC 1
 #define uiTabNumPages_OPTIONAL_ARGC 0
@@ -5795,8 +5795,8 @@ mrb_UI_uiTabNumPages(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &t);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UiTab_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiTab expected");
+  if (!mrb_obj_is_kind_of(mrb, t, Tab_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
 
@@ -5815,7 +5815,7 @@ mrb_UI_uiTabNumPages(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiTabSetMargined */
-/* sha: 264e11dacf27e9ac115cda12f896ee79f5691ceedd1be050ef2b91b1a04ba88f */
+/* sha: efde775ddf07b462cee1cd17193a7dcdb5f848c3e469dd950b3433afd0d8b6a2 */
 #if BIND_uiTabSetMargined_FUNCTION
 #define uiTabSetMargined_REQUIRED_ARGC 3
 #define uiTabSetMargined_OPTIONAL_ARGC 0
@@ -5830,8 +5830,8 @@ mrb_UI_uiTabSetMargined(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oii", &t, &native_page, &native_margined);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UiTab_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiTab expected");
+  if (!mrb_obj_is_kind_of(mrb, t, Tab_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
 
@@ -5884,7 +5884,7 @@ mrb_UI_uiUserBugCannotSetParentOnToplevel(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowBorderless */
-/* sha: 3f99598f4cb892af2b1006a0abded51d9a9f44ea749c3b6b0c2b29e6202c7406 */
+/* sha: 62ae32fef0e10e0e8fbec354f35623b878d01a6e3b35bdde0ed55a4672113f6f */
 #if BIND_uiWindowBorderless_FUNCTION
 #define uiWindowBorderless_REQUIRED_ARGC 1
 #define uiWindowBorderless_OPTIONAL_ARGC 0
@@ -5897,8 +5897,8 @@ mrb_UI_uiWindowBorderless(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -5917,7 +5917,7 @@ mrb_UI_uiWindowBorderless(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowContentSize */
-/* sha: 8cd9fbe4ecf37ed4144a84c02bf076cdcb38164caf9e4bd348db1cd34f79942e */
+/* sha: 551ad1d50f32a0fd08c1b153c20a16b648df6a9019719406b6bbc4bd42cd12fe */
 #if BIND_uiWindowContentSize_FUNCTION
 #define uiWindowContentSize_REQUIRED_ARGC 3
 #define uiWindowContentSize_OPTIONAL_ARGC 0
@@ -5932,8 +5932,8 @@ mrb_UI_uiWindowContentSize(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &w, &width, &height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
   TODO_type_check_int_PTR(width);
@@ -5957,7 +5957,7 @@ mrb_UI_uiWindowContentSize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowFullscreen */
-/* sha: f3e8c98b9bebad1250700512499756cdf8d83c90f148659bfd6578be71339bb8 */
+/* sha: d460ba55ec8343b2a3cc9fbddd3346811d8d6a9d9abc763f8e9a83caea3b0e80 */
 #if BIND_uiWindowFullscreen_FUNCTION
 #define uiWindowFullscreen_REQUIRED_ARGC 1
 #define uiWindowFullscreen_OPTIONAL_ARGC 0
@@ -5970,8 +5970,8 @@ mrb_UI_uiWindowFullscreen(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -5990,7 +5990,7 @@ mrb_UI_uiWindowFullscreen(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowMargined */
-/* sha: 604d2920734af38e4c853d9c29587585da08babe9bcae112d3747470cd883f98 */
+/* sha: fcc142278604478f416c3fe25f8777dd572a90726b5c4e7cff5df8025e6f1781 */
 #if BIND_uiWindowMargined_FUNCTION
 #define uiWindowMargined_REQUIRED_ARGC 1
 #define uiWindowMargined_OPTIONAL_ARGC 0
@@ -6003,8 +6003,8 @@ mrb_UI_uiWindowMargined(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -6023,7 +6023,7 @@ mrb_UI_uiWindowMargined(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowOnClosing */
-/* sha: 9fd64f1981431d3775477b9b7e9cbc11d096088e7e723a8fb0080c6f1bb6c12c */
+/* sha: 085447abd748d73e245df45cc50e93ad74c7187f8e9fc40b23922a74c085df58 */
 #if BIND_uiWindowOnClosing_FUNCTION
 #define uiWindowOnClosing_REQUIRED_ARGC 3
 #define uiWindowOnClosing_OPTIONAL_ARGC 0
@@ -6038,8 +6038,8 @@ mrb_UI_uiWindowOnClosing(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &w, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
   TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
@@ -6063,7 +6063,7 @@ mrb_UI_uiWindowOnClosing(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowOnContentSizeChanged */
-/* sha: f6e9b6bda69f9524204e49a40126a1a44676d52c725e6264773bbc54149a1a88 */
+/* sha: 880ea6079aa870b0d4aaa2e365bc4f6c046cd197d3fbaf1391549eab5fc0bf8b */
 #if BIND_uiWindowOnContentSizeChanged_FUNCTION
 #define uiWindowOnContentSizeChanged_REQUIRED_ARGC 3
 #define uiWindowOnContentSizeChanged_OPTIONAL_ARGC 0
@@ -6078,8 +6078,8 @@ mrb_UI_uiWindowOnContentSizeChanged(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "ooo", &w, &f, &data);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
   TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
@@ -6103,7 +6103,7 @@ mrb_UI_uiWindowOnContentSizeChanged(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowSetBorderless */
-/* sha: 9abdb6173dcde5f2b2cb2ea970154ecdb1b081cb870ac336867d907b9507f8a6 */
+/* sha: cd3ac34f9cc2b1646a22493e53217cf4d3ccc29f44834ef35e8f051353a24eac */
 #if BIND_uiWindowSetBorderless_FUNCTION
 #define uiWindowSetBorderless_REQUIRED_ARGC 2
 #define uiWindowSetBorderless_OPTIONAL_ARGC 0
@@ -6117,8 +6117,8 @@ mrb_UI_uiWindowSetBorderless(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &w, &native_borderless);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -6134,7 +6134,7 @@ mrb_UI_uiWindowSetBorderless(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowSetChild */
-/* sha: 17b44f93ba8f7531f2b97d56b22f8af7e6fc5c3a6b945711199ea052b0d81693 */
+/* sha: f7f1d8d3a84e680925c71d10a5398f0b84bb3bee42b22f98df18580d38a14748 */
 #if BIND_uiWindowSetChild_FUNCTION
 #define uiWindowSetChild_REQUIRED_ARGC 2
 #define uiWindowSetChild_OPTIONAL_ARGC 0
@@ -6148,12 +6148,12 @@ mrb_UI_uiWindowSetChild(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oo", &w, &child);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, child, UiControl_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiControl expected");
+  if (!mrb_obj_is_kind_of(mrb, child, Control_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
 
@@ -6172,7 +6172,7 @@ mrb_UI_uiWindowSetChild(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowSetContentSize */
-/* sha: 39439c3b038e98ac292cb756adc06e5c6edf381358f1691431d3957e4ae47bbc */
+/* sha: da6d1957410021818d964ec5b69d28ef1433001c620c302d68d6db3db6ad968c */
 #if BIND_uiWindowSetContentSize_FUNCTION
 #define uiWindowSetContentSize_REQUIRED_ARGC 3
 #define uiWindowSetContentSize_OPTIONAL_ARGC 0
@@ -6187,8 +6187,8 @@ mrb_UI_uiWindowSetContentSize(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oii", &w, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -6204,7 +6204,7 @@ mrb_UI_uiWindowSetContentSize(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowSetFullscreen */
-/* sha: cc96568c81b719d6306f306435b36d4a824d33de84659f1d7f70f20da7ffd6a7 */
+/* sha: dfd2a2ba9040e35b8ea2e41f63c29210284b4ad5ec5f003208aa84606f642e3a */
 #if BIND_uiWindowSetFullscreen_FUNCTION
 #define uiWindowSetFullscreen_REQUIRED_ARGC 2
 #define uiWindowSetFullscreen_OPTIONAL_ARGC 0
@@ -6218,8 +6218,8 @@ mrb_UI_uiWindowSetFullscreen(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &w, &native_fullscreen);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -6235,7 +6235,7 @@ mrb_UI_uiWindowSetFullscreen(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowSetMargined */
-/* sha: d2c1d5d5703edbe9456f9597853e996d8c6f2b48629bd266f6308df9cc826b28 */
+/* sha: fcce81f0ed387a7cc390304a41499a501c0d78e4adcf89b003d390ae6be842fe */
 #if BIND_uiWindowSetMargined_FUNCTION
 #define uiWindowSetMargined_REQUIRED_ARGC 2
 #define uiWindowSetMargined_OPTIONAL_ARGC 0
@@ -6249,8 +6249,8 @@ mrb_UI_uiWindowSetMargined(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oi", &w, &native_margined);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -6266,7 +6266,7 @@ mrb_UI_uiWindowSetMargined(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowSetTitle */
-/* sha: b6a9c74914acc3506cfc115bfd09687fc6f96630c7221be20715bb9fd4a113fa */
+/* sha: f3cad2c1e0f830fed047d022129e9d467de482b58dd2cd3b348695a95b96531d */
 #if BIND_uiWindowSetTitle_FUNCTION
 #define uiWindowSetTitle_REQUIRED_ARGC 2
 #define uiWindowSetTitle_OPTIONAL_ARGC 0
@@ -6280,8 +6280,8 @@ mrb_UI_uiWindowSetTitle(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "oz", &w, &native_title);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -6297,7 +6297,7 @@ mrb_UI_uiWindowSetTitle(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: uiWindowTitle */
-/* sha: d9a74ba87ad24d37925e226851752d3bad87b664e4b8b2ab5995a93e4aa9f2db */
+/* sha: 74bad14eec0e557f79f2717de2a6f17b08efb2727398862129b6c24b0438206a */
 #if BIND_uiWindowTitle_FUNCTION
 #define uiWindowTitle_REQUIRED_ARGC 1
 #define uiWindowTitle_OPTIONAL_ARGC 0
@@ -6310,8 +6310,8 @@ mrb_UI_uiWindowTitle(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UiWindow_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiWindow expected");
+  if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
 
@@ -6346,129 +6346,129 @@ void mrb_mruby_ui_gem_init(mrb_state* mrb) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: class_initializations */
-/* sha: 2a0cfa0f760bf2cb34c5149b8333f037ee04427f507d7bd9a744991d4f646e62 */
-#if BIND_UiArea_TYPE
-  mrb_UI_UiArea_init(mrb);
+/* sha: 93b0c38ef0bab6b6fda418f614fad950ef3c3455d3d94a3d805ab20f3a4e427d */
+#if BIND_Area_TYPE
+  mrb_UI_Area_init(mrb);
 #endif
-#if BIND_UiAreaDrawParams_TYPE
-  mrb_UI_UiAreaDrawParams_init(mrb);
+#if BIND_AreaDrawParams_TYPE
+  mrb_UI_AreaDrawParams_init(mrb);
 #endif
-#if BIND_UiAreaHandler_TYPE
-  mrb_UI_UiAreaHandler_init(mrb);
+#if BIND_AreaHandler_TYPE
+  mrb_UI_AreaHandler_init(mrb);
 #endif
-#if BIND_UiAreaKeyEvent_TYPE
-  mrb_UI_UiAreaKeyEvent_init(mrb);
+#if BIND_AreaKeyEvent_TYPE
+  mrb_UI_AreaKeyEvent_init(mrb);
 #endif
-#if BIND_UiAreaMouseEvent_TYPE
-  mrb_UI_UiAreaMouseEvent_init(mrb);
+#if BIND_AreaMouseEvent_TYPE
+  mrb_UI_AreaMouseEvent_init(mrb);
 #endif
-#if BIND_UiBox_TYPE
-  mrb_UI_UiBox_init(mrb);
+#if BIND_Box_TYPE
+  mrb_UI_Box_init(mrb);
 #endif
-#if BIND_UiButton_TYPE
-  mrb_UI_UiButton_init(mrb);
+#if BIND_Button_TYPE
+  mrb_UI_Button_init(mrb);
 #endif
-#if BIND_UiCheckbox_TYPE
-  mrb_UI_UiCheckbox_init(mrb);
+#if BIND_Checkbox_TYPE
+  mrb_UI_Checkbox_init(mrb);
 #endif
-#if BIND_UiColorButton_TYPE
-  mrb_UI_UiColorButton_init(mrb);
+#if BIND_ColorButton_TYPE
+  mrb_UI_ColorButton_init(mrb);
 #endif
-#if BIND_UiCombobox_TYPE
-  mrb_UI_UiCombobox_init(mrb);
+#if BIND_Combobox_TYPE
+  mrb_UI_Combobox_init(mrb);
 #endif
-#if BIND_UiControl_TYPE
-  mrb_UI_UiControl_init(mrb);
+#if BIND_Control_TYPE
+  mrb_UI_Control_init(mrb);
 #endif
-#if BIND_UiDateTimePicker_TYPE
-  mrb_UI_UiDateTimePicker_init(mrb);
+#if BIND_DateTimePicker_TYPE
+  mrb_UI_DateTimePicker_init(mrb);
 #endif
-#if BIND_UiDrawBrush_TYPE
-  mrb_UI_UiDrawBrush_init(mrb);
+#if BIND_DrawBrush_TYPE
+  mrb_UI_DrawBrush_init(mrb);
 #endif
-#if BIND_UiDrawBrushGradientStop_TYPE
-  mrb_UI_UiDrawBrushGradientStop_init(mrb);
+#if BIND_DrawBrushGradientStop_TYPE
+  mrb_UI_DrawBrushGradientStop_init(mrb);
 #endif
-#if BIND_UiDrawContext_TYPE
-  mrb_UI_UiDrawContext_init(mrb);
+#if BIND_DrawContext_TYPE
+  mrb_UI_DrawContext_init(mrb);
 #endif
-#if BIND_UiDrawFontFamilies_TYPE
-  mrb_UI_UiDrawFontFamilies_init(mrb);
+#if BIND_DrawFontFamilies_TYPE
+  mrb_UI_DrawFontFamilies_init(mrb);
 #endif
-#if BIND_UiDrawMatrix_TYPE
-  mrb_UI_UiDrawMatrix_init(mrb);
+#if BIND_DrawMatrix_TYPE
+  mrb_UI_DrawMatrix_init(mrb);
 #endif
-#if BIND_UiDrawPath_TYPE
-  mrb_UI_UiDrawPath_init(mrb);
+#if BIND_DrawPath_TYPE
+  mrb_UI_DrawPath_init(mrb);
 #endif
-#if BIND_UiDrawStrokeParams_TYPE
-  mrb_UI_UiDrawStrokeParams_init(mrb);
+#if BIND_DrawStrokeParams_TYPE
+  mrb_UI_DrawStrokeParams_init(mrb);
 #endif
-#if BIND_UiDrawTextFont_TYPE
-  mrb_UI_UiDrawTextFont_init(mrb);
+#if BIND_DrawTextFont_TYPE
+  mrb_UI_DrawTextFont_init(mrb);
 #endif
-#if BIND_UiDrawTextFontDescriptor_TYPE
-  mrb_UI_UiDrawTextFontDescriptor_init(mrb);
+#if BIND_DrawTextFontDescriptor_TYPE
+  mrb_UI_DrawTextFontDescriptor_init(mrb);
 #endif
-#if BIND_UiDrawTextFontMetrics_TYPE
-  mrb_UI_UiDrawTextFontMetrics_init(mrb);
+#if BIND_DrawTextFontMetrics_TYPE
+  mrb_UI_DrawTextFontMetrics_init(mrb);
 #endif
-#if BIND_UiDrawTextLayout_TYPE
-  mrb_UI_UiDrawTextLayout_init(mrb);
+#if BIND_DrawTextLayout_TYPE
+  mrb_UI_DrawTextLayout_init(mrb);
 #endif
-#if BIND_UiEditableCombobox_TYPE
-  mrb_UI_UiEditableCombobox_init(mrb);
+#if BIND_EditableCombobox_TYPE
+  mrb_UI_EditableCombobox_init(mrb);
 #endif
-#if BIND_UiEntry_TYPE
-  mrb_UI_UiEntry_init(mrb);
+#if BIND_Entry_TYPE
+  mrb_UI_Entry_init(mrb);
 #endif
-#if BIND_UiFontButton_TYPE
-  mrb_UI_UiFontButton_init(mrb);
+#if BIND_FontButton_TYPE
+  mrb_UI_FontButton_init(mrb);
 #endif
-#if BIND_UiForm_TYPE
-  mrb_UI_UiForm_init(mrb);
+#if BIND_Form_TYPE
+  mrb_UI_Form_init(mrb);
 #endif
-#if BIND_UiGrid_TYPE
-  mrb_UI_UiGrid_init(mrb);
+#if BIND_Grid_TYPE
+  mrb_UI_Grid_init(mrb);
 #endif
-#if BIND_UiGroup_TYPE
-  mrb_UI_UiGroup_init(mrb);
+#if BIND_Group_TYPE
+  mrb_UI_Group_init(mrb);
 #endif
-#if BIND_UiInitOptions_TYPE
-  mrb_UI_UiInitOptions_init(mrb);
+#if BIND_InitOptions_TYPE
+  mrb_UI_InitOptions_init(mrb);
 #endif
-#if BIND_UiLabel_TYPE
-  mrb_UI_UiLabel_init(mrb);
+#if BIND_Label_TYPE
+  mrb_UI_Label_init(mrb);
 #endif
-#if BIND_UiMenu_TYPE
-  mrb_UI_UiMenu_init(mrb);
+#if BIND_Menu_TYPE
+  mrb_UI_Menu_init(mrb);
 #endif
-#if BIND_UiMenuItem_TYPE
-  mrb_UI_UiMenuItem_init(mrb);
+#if BIND_MenuItem_TYPE
+  mrb_UI_MenuItem_init(mrb);
 #endif
-#if BIND_UiMultilineEntry_TYPE
-  mrb_UI_UiMultilineEntry_init(mrb);
+#if BIND_MultilineEntry_TYPE
+  mrb_UI_MultilineEntry_init(mrb);
 #endif
-#if BIND_UiProgressBar_TYPE
-  mrb_UI_UiProgressBar_init(mrb);
+#if BIND_ProgressBar_TYPE
+  mrb_UI_ProgressBar_init(mrb);
 #endif
-#if BIND_UiRadioButtons_TYPE
-  mrb_UI_UiRadioButtons_init(mrb);
+#if BIND_RadioButtons_TYPE
+  mrb_UI_RadioButtons_init(mrb);
 #endif
-#if BIND_UiSeparator_TYPE
-  mrb_UI_UiSeparator_init(mrb);
+#if BIND_Separator_TYPE
+  mrb_UI_Separator_init(mrb);
 #endif
-#if BIND_UiSlider_TYPE
-  mrb_UI_UiSlider_init(mrb);
+#if BIND_Slider_TYPE
+  mrb_UI_Slider_init(mrb);
 #endif
-#if BIND_UiSpinbox_TYPE
-  mrb_UI_UiSpinbox_init(mrb);
+#if BIND_Spinbox_TYPE
+  mrb_UI_Spinbox_init(mrb);
 #endif
-#if BIND_UiTab_TYPE
-  mrb_UI_UiTab_init(mrb);
+#if BIND_Tab_TYPE
+  mrb_UI_Tab_init(mrb);
 #endif
-#if BIND_UiWindow_TYPE
-  mrb_UI_UiWindow_init(mrb);
+#if BIND_Window_TYPE
+  mrb_UI_Window_init(mrb);
 #endif
 /* MRUBY_BINDING_END */
 
@@ -6478,609 +6478,609 @@ void mrb_mruby_ui_gem_init(mrb_state* mrb) {
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: global_function_definitions */
-/* sha: 39ab4a3b79b2450d1c4cd6c5e77630b643cc3c8ed13c97c21f94795714cc2470 */
+/* sha: 71d5b76567af0676ad2a5aeab7189eb12816d400cb7b93734b1ba489615a76f4 */
   /*
    * Global Functions
    */
 #if BIND_uiAllocControl_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiAllocControl", mrb_UI_uiAllocControl, MRB_ARGS_ARG(uiAllocControl_REQUIRED_ARGC, uiAllocControl_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "allocControl", mrb_UI_uiAllocControl, MRB_ARGS_ARG(uiAllocControl_REQUIRED_ARGC, uiAllocControl_OPTIONAL_ARGC));
 #endif
 #if BIND_uiAreaBeginUserWindowMove_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiAreaBeginUserWindowMove", mrb_UI_uiAreaBeginUserWindowMove, MRB_ARGS_ARG(uiAreaBeginUserWindowMove_REQUIRED_ARGC, uiAreaBeginUserWindowMove_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "areaBeginUserWindowMove", mrb_UI_uiAreaBeginUserWindowMove, MRB_ARGS_ARG(uiAreaBeginUserWindowMove_REQUIRED_ARGC, uiAreaBeginUserWindowMove_OPTIONAL_ARGC));
 #endif
 #if BIND_uiAreaBeginUserWindowResize_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiAreaBeginUserWindowResize", mrb_UI_uiAreaBeginUserWindowResize, MRB_ARGS_ARG(uiAreaBeginUserWindowResize_REQUIRED_ARGC, uiAreaBeginUserWindowResize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "areaBeginUserWindowResize", mrb_UI_uiAreaBeginUserWindowResize, MRB_ARGS_ARG(uiAreaBeginUserWindowResize_REQUIRED_ARGC, uiAreaBeginUserWindowResize_OPTIONAL_ARGC));
 #endif
 #if BIND_uiAreaQueueRedrawAll_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiAreaQueueRedrawAll", mrb_UI_uiAreaQueueRedrawAll, MRB_ARGS_ARG(uiAreaQueueRedrawAll_REQUIRED_ARGC, uiAreaQueueRedrawAll_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "areaQueueRedrawAll", mrb_UI_uiAreaQueueRedrawAll, MRB_ARGS_ARG(uiAreaQueueRedrawAll_REQUIRED_ARGC, uiAreaQueueRedrawAll_OPTIONAL_ARGC));
 #endif
 #if BIND_uiAreaScrollTo_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiAreaScrollTo", mrb_UI_uiAreaScrollTo, MRB_ARGS_ARG(uiAreaScrollTo_REQUIRED_ARGC, uiAreaScrollTo_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "areaScrollTo", mrb_UI_uiAreaScrollTo, MRB_ARGS_ARG(uiAreaScrollTo_REQUIRED_ARGC, uiAreaScrollTo_OPTIONAL_ARGC));
 #endif
 #if BIND_uiAreaSetSize_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiAreaSetSize", mrb_UI_uiAreaSetSize, MRB_ARGS_ARG(uiAreaSetSize_REQUIRED_ARGC, uiAreaSetSize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "areaSetSize", mrb_UI_uiAreaSetSize, MRB_ARGS_ARG(uiAreaSetSize_REQUIRED_ARGC, uiAreaSetSize_OPTIONAL_ARGC));
 #endif
 #if BIND_uiBoxAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiBoxAppend", mrb_UI_uiBoxAppend, MRB_ARGS_ARG(uiBoxAppend_REQUIRED_ARGC, uiBoxAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "boxAppend", mrb_UI_uiBoxAppend, MRB_ARGS_ARG(uiBoxAppend_REQUIRED_ARGC, uiBoxAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiBoxDelete_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiBoxDelete", mrb_UI_uiBoxDelete, MRB_ARGS_ARG(uiBoxDelete_REQUIRED_ARGC, uiBoxDelete_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "boxDelete", mrb_UI_uiBoxDelete, MRB_ARGS_ARG(uiBoxDelete_REQUIRED_ARGC, uiBoxDelete_OPTIONAL_ARGC));
 #endif
 #if BIND_uiBoxPadded_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiBoxPadded", mrb_UI_uiBoxPadded, MRB_ARGS_ARG(uiBoxPadded_REQUIRED_ARGC, uiBoxPadded_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "boxPadded", mrb_UI_uiBoxPadded, MRB_ARGS_ARG(uiBoxPadded_REQUIRED_ARGC, uiBoxPadded_OPTIONAL_ARGC));
 #endif
 #if BIND_uiBoxSetPadded_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiBoxSetPadded", mrb_UI_uiBoxSetPadded, MRB_ARGS_ARG(uiBoxSetPadded_REQUIRED_ARGC, uiBoxSetPadded_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "boxSetPadded", mrb_UI_uiBoxSetPadded, MRB_ARGS_ARG(uiBoxSetPadded_REQUIRED_ARGC, uiBoxSetPadded_OPTIONAL_ARGC));
 #endif
 #if BIND_uiButtonOnClicked_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiButtonOnClicked", mrb_UI_uiButtonOnClicked, MRB_ARGS_ARG(uiButtonOnClicked_REQUIRED_ARGC, uiButtonOnClicked_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "buttonOnClicked", mrb_UI_uiButtonOnClicked, MRB_ARGS_ARG(uiButtonOnClicked_REQUIRED_ARGC, uiButtonOnClicked_OPTIONAL_ARGC));
 #endif
 #if BIND_uiButtonSetText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiButtonSetText", mrb_UI_uiButtonSetText, MRB_ARGS_ARG(uiButtonSetText_REQUIRED_ARGC, uiButtonSetText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "buttonSetText", mrb_UI_uiButtonSetText, MRB_ARGS_ARG(uiButtonSetText_REQUIRED_ARGC, uiButtonSetText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiButtonText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiButtonText", mrb_UI_uiButtonText, MRB_ARGS_ARG(uiButtonText_REQUIRED_ARGC, uiButtonText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "buttonText", mrb_UI_uiButtonText, MRB_ARGS_ARG(uiButtonText_REQUIRED_ARGC, uiButtonText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiCheckboxChecked_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiCheckboxChecked", mrb_UI_uiCheckboxChecked, MRB_ARGS_ARG(uiCheckboxChecked_REQUIRED_ARGC, uiCheckboxChecked_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "checkboxChecked", mrb_UI_uiCheckboxChecked, MRB_ARGS_ARG(uiCheckboxChecked_REQUIRED_ARGC, uiCheckboxChecked_OPTIONAL_ARGC));
 #endif
 #if BIND_uiCheckboxOnToggled_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiCheckboxOnToggled", mrb_UI_uiCheckboxOnToggled, MRB_ARGS_ARG(uiCheckboxOnToggled_REQUIRED_ARGC, uiCheckboxOnToggled_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "checkboxOnToggled", mrb_UI_uiCheckboxOnToggled, MRB_ARGS_ARG(uiCheckboxOnToggled_REQUIRED_ARGC, uiCheckboxOnToggled_OPTIONAL_ARGC));
 #endif
 #if BIND_uiCheckboxSetChecked_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiCheckboxSetChecked", mrb_UI_uiCheckboxSetChecked, MRB_ARGS_ARG(uiCheckboxSetChecked_REQUIRED_ARGC, uiCheckboxSetChecked_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "checkboxSetChecked", mrb_UI_uiCheckboxSetChecked, MRB_ARGS_ARG(uiCheckboxSetChecked_REQUIRED_ARGC, uiCheckboxSetChecked_OPTIONAL_ARGC));
 #endif
 #if BIND_uiCheckboxSetText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiCheckboxSetText", mrb_UI_uiCheckboxSetText, MRB_ARGS_ARG(uiCheckboxSetText_REQUIRED_ARGC, uiCheckboxSetText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "checkboxSetText", mrb_UI_uiCheckboxSetText, MRB_ARGS_ARG(uiCheckboxSetText_REQUIRED_ARGC, uiCheckboxSetText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiCheckboxText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiCheckboxText", mrb_UI_uiCheckboxText, MRB_ARGS_ARG(uiCheckboxText_REQUIRED_ARGC, uiCheckboxText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "checkboxText", mrb_UI_uiCheckboxText, MRB_ARGS_ARG(uiCheckboxText_REQUIRED_ARGC, uiCheckboxText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiColorButtonColor_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiColorButtonColor", mrb_UI_uiColorButtonColor, MRB_ARGS_ARG(uiColorButtonColor_REQUIRED_ARGC, uiColorButtonColor_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "colorButtonColor", mrb_UI_uiColorButtonColor, MRB_ARGS_ARG(uiColorButtonColor_REQUIRED_ARGC, uiColorButtonColor_OPTIONAL_ARGC));
 #endif
 #if BIND_uiColorButtonOnChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiColorButtonOnChanged", mrb_UI_uiColorButtonOnChanged, MRB_ARGS_ARG(uiColorButtonOnChanged_REQUIRED_ARGC, uiColorButtonOnChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "colorButtonOnChanged", mrb_UI_uiColorButtonOnChanged, MRB_ARGS_ARG(uiColorButtonOnChanged_REQUIRED_ARGC, uiColorButtonOnChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiColorButtonSetColor_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiColorButtonSetColor", mrb_UI_uiColorButtonSetColor, MRB_ARGS_ARG(uiColorButtonSetColor_REQUIRED_ARGC, uiColorButtonSetColor_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "colorButtonSetColor", mrb_UI_uiColorButtonSetColor, MRB_ARGS_ARG(uiColorButtonSetColor_REQUIRED_ARGC, uiColorButtonSetColor_OPTIONAL_ARGC));
 #endif
 #if BIND_uiComboboxAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiComboboxAppend", mrb_UI_uiComboboxAppend, MRB_ARGS_ARG(uiComboboxAppend_REQUIRED_ARGC, uiComboboxAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "comboboxAppend", mrb_UI_uiComboboxAppend, MRB_ARGS_ARG(uiComboboxAppend_REQUIRED_ARGC, uiComboboxAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiComboboxOnSelected_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiComboboxOnSelected", mrb_UI_uiComboboxOnSelected, MRB_ARGS_ARG(uiComboboxOnSelected_REQUIRED_ARGC, uiComboboxOnSelected_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "comboboxOnSelected", mrb_UI_uiComboboxOnSelected, MRB_ARGS_ARG(uiComboboxOnSelected_REQUIRED_ARGC, uiComboboxOnSelected_OPTIONAL_ARGC));
 #endif
 #if BIND_uiComboboxSelected_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiComboboxSelected", mrb_UI_uiComboboxSelected, MRB_ARGS_ARG(uiComboboxSelected_REQUIRED_ARGC, uiComboboxSelected_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "comboboxSelected", mrb_UI_uiComboboxSelected, MRB_ARGS_ARG(uiComboboxSelected_REQUIRED_ARGC, uiComboboxSelected_OPTIONAL_ARGC));
 #endif
 #if BIND_uiComboboxSetSelected_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiComboboxSetSelected", mrb_UI_uiComboboxSetSelected, MRB_ARGS_ARG(uiComboboxSetSelected_REQUIRED_ARGC, uiComboboxSetSelected_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "comboboxSetSelected", mrb_UI_uiComboboxSetSelected, MRB_ARGS_ARG(uiComboboxSetSelected_REQUIRED_ARGC, uiComboboxSetSelected_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlDestroy_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlDestroy", mrb_UI_uiControlDestroy, MRB_ARGS_ARG(uiControlDestroy_REQUIRED_ARGC, uiControlDestroy_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlDestroy", mrb_UI_uiControlDestroy, MRB_ARGS_ARG(uiControlDestroy_REQUIRED_ARGC, uiControlDestroy_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlDisable_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlDisable", mrb_UI_uiControlDisable, MRB_ARGS_ARG(uiControlDisable_REQUIRED_ARGC, uiControlDisable_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlDisable", mrb_UI_uiControlDisable, MRB_ARGS_ARG(uiControlDisable_REQUIRED_ARGC, uiControlDisable_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlEnable_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlEnable", mrb_UI_uiControlEnable, MRB_ARGS_ARG(uiControlEnable_REQUIRED_ARGC, uiControlEnable_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlEnable", mrb_UI_uiControlEnable, MRB_ARGS_ARG(uiControlEnable_REQUIRED_ARGC, uiControlEnable_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlEnabled_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlEnabled", mrb_UI_uiControlEnabled, MRB_ARGS_ARG(uiControlEnabled_REQUIRED_ARGC, uiControlEnabled_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlEnabled", mrb_UI_uiControlEnabled, MRB_ARGS_ARG(uiControlEnabled_REQUIRED_ARGC, uiControlEnabled_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlEnabledToUser_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlEnabledToUser", mrb_UI_uiControlEnabledToUser, MRB_ARGS_ARG(uiControlEnabledToUser_REQUIRED_ARGC, uiControlEnabledToUser_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlEnabledToUser", mrb_UI_uiControlEnabledToUser, MRB_ARGS_ARG(uiControlEnabledToUser_REQUIRED_ARGC, uiControlEnabledToUser_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlHandle_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlHandle", mrb_UI_uiControlHandle, MRB_ARGS_ARG(uiControlHandle_REQUIRED_ARGC, uiControlHandle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlHandle", mrb_UI_uiControlHandle, MRB_ARGS_ARG(uiControlHandle_REQUIRED_ARGC, uiControlHandle_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlHide_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlHide", mrb_UI_uiControlHide, MRB_ARGS_ARG(uiControlHide_REQUIRED_ARGC, uiControlHide_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlHide", mrb_UI_uiControlHide, MRB_ARGS_ARG(uiControlHide_REQUIRED_ARGC, uiControlHide_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlParent_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlParent", mrb_UI_uiControlParent, MRB_ARGS_ARG(uiControlParent_REQUIRED_ARGC, uiControlParent_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlParent", mrb_UI_uiControlParent, MRB_ARGS_ARG(uiControlParent_REQUIRED_ARGC, uiControlParent_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlSetParent_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlSetParent", mrb_UI_uiControlSetParent, MRB_ARGS_ARG(uiControlSetParent_REQUIRED_ARGC, uiControlSetParent_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlSetParent", mrb_UI_uiControlSetParent, MRB_ARGS_ARG(uiControlSetParent_REQUIRED_ARGC, uiControlSetParent_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlShow_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlShow", mrb_UI_uiControlShow, MRB_ARGS_ARG(uiControlShow_REQUIRED_ARGC, uiControlShow_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlShow", mrb_UI_uiControlShow, MRB_ARGS_ARG(uiControlShow_REQUIRED_ARGC, uiControlShow_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlToplevel_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlToplevel", mrb_UI_uiControlToplevel, MRB_ARGS_ARG(uiControlToplevel_REQUIRED_ARGC, uiControlToplevel_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlToplevel", mrb_UI_uiControlToplevel, MRB_ARGS_ARG(uiControlToplevel_REQUIRED_ARGC, uiControlToplevel_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlVerifySetParent_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlVerifySetParent", mrb_UI_uiControlVerifySetParent, MRB_ARGS_ARG(uiControlVerifySetParent_REQUIRED_ARGC, uiControlVerifySetParent_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlVerifySetParent", mrb_UI_uiControlVerifySetParent, MRB_ARGS_ARG(uiControlVerifySetParent_REQUIRED_ARGC, uiControlVerifySetParent_OPTIONAL_ARGC));
 #endif
 #if BIND_uiControlVisible_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiControlVisible", mrb_UI_uiControlVisible, MRB_ARGS_ARG(uiControlVisible_REQUIRED_ARGC, uiControlVisible_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "controlVisible", mrb_UI_uiControlVisible, MRB_ARGS_ARG(uiControlVisible_REQUIRED_ARGC, uiControlVisible_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawClip_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawClip", mrb_UI_uiDrawClip, MRB_ARGS_ARG(uiDrawClip_REQUIRED_ARGC, uiDrawClip_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawClip", mrb_UI_uiDrawClip, MRB_ARGS_ARG(uiDrawClip_REQUIRED_ARGC, uiDrawClip_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawFill_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawFill", mrb_UI_uiDrawFill, MRB_ARGS_ARG(uiDrawFill_REQUIRED_ARGC, uiDrawFill_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawFill", mrb_UI_uiDrawFill, MRB_ARGS_ARG(uiDrawFill_REQUIRED_ARGC, uiDrawFill_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawFontFamiliesFamily_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawFontFamiliesFamily", mrb_UI_uiDrawFontFamiliesFamily, MRB_ARGS_ARG(uiDrawFontFamiliesFamily_REQUIRED_ARGC, uiDrawFontFamiliesFamily_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawFontFamiliesFamily", mrb_UI_uiDrawFontFamiliesFamily, MRB_ARGS_ARG(uiDrawFontFamiliesFamily_REQUIRED_ARGC, uiDrawFontFamiliesFamily_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawFontFamiliesNumFamilies_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawFontFamiliesNumFamilies", mrb_UI_uiDrawFontFamiliesNumFamilies, MRB_ARGS_ARG(uiDrawFontFamiliesNumFamilies_REQUIRED_ARGC, uiDrawFontFamiliesNumFamilies_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawFontFamiliesNumFamilies", mrb_UI_uiDrawFontFamiliesNumFamilies, MRB_ARGS_ARG(uiDrawFontFamiliesNumFamilies_REQUIRED_ARGC, uiDrawFontFamiliesNumFamilies_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawFreeFontFamilies_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawFreeFontFamilies", mrb_UI_uiDrawFreeFontFamilies, MRB_ARGS_ARG(uiDrawFreeFontFamilies_REQUIRED_ARGC, uiDrawFreeFontFamilies_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawFreeFontFamilies", mrb_UI_uiDrawFreeFontFamilies, MRB_ARGS_ARG(uiDrawFreeFontFamilies_REQUIRED_ARGC, uiDrawFreeFontFamilies_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawFreePath_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawFreePath", mrb_UI_uiDrawFreePath, MRB_ARGS_ARG(uiDrawFreePath_REQUIRED_ARGC, uiDrawFreePath_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawFreePath", mrb_UI_uiDrawFreePath, MRB_ARGS_ARG(uiDrawFreePath_REQUIRED_ARGC, uiDrawFreePath_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawFreeTextFont_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawFreeTextFont", mrb_UI_uiDrawFreeTextFont, MRB_ARGS_ARG(uiDrawFreeTextFont_REQUIRED_ARGC, uiDrawFreeTextFont_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawFreeTextFont", mrb_UI_uiDrawFreeTextFont, MRB_ARGS_ARG(uiDrawFreeTextFont_REQUIRED_ARGC, uiDrawFreeTextFont_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawFreeTextLayout_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawFreeTextLayout", mrb_UI_uiDrawFreeTextLayout, MRB_ARGS_ARG(uiDrawFreeTextLayout_REQUIRED_ARGC, uiDrawFreeTextLayout_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawFreeTextLayout", mrb_UI_uiDrawFreeTextLayout, MRB_ARGS_ARG(uiDrawFreeTextLayout_REQUIRED_ARGC, uiDrawFreeTextLayout_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawListFontFamilies_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawListFontFamilies", mrb_UI_uiDrawListFontFamilies, MRB_ARGS_ARG(uiDrawListFontFamilies_REQUIRED_ARGC, uiDrawListFontFamilies_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawListFontFamilies", mrb_UI_uiDrawListFontFamilies, MRB_ARGS_ARG(uiDrawListFontFamilies_REQUIRED_ARGC, uiDrawListFontFamilies_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawLoadClosestFont_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawLoadClosestFont", mrb_UI_uiDrawLoadClosestFont, MRB_ARGS_ARG(uiDrawLoadClosestFont_REQUIRED_ARGC, uiDrawLoadClosestFont_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawLoadClosestFont", mrb_UI_uiDrawLoadClosestFont, MRB_ARGS_ARG(uiDrawLoadClosestFont_REQUIRED_ARGC, uiDrawLoadClosestFont_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixInvert_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixInvert", mrb_UI_uiDrawMatrixInvert, MRB_ARGS_ARG(uiDrawMatrixInvert_REQUIRED_ARGC, uiDrawMatrixInvert_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixInvert", mrb_UI_uiDrawMatrixInvert, MRB_ARGS_ARG(uiDrawMatrixInvert_REQUIRED_ARGC, uiDrawMatrixInvert_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixInvertible_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixInvertible", mrb_UI_uiDrawMatrixInvertible, MRB_ARGS_ARG(uiDrawMatrixInvertible_REQUIRED_ARGC, uiDrawMatrixInvertible_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixInvertible", mrb_UI_uiDrawMatrixInvertible, MRB_ARGS_ARG(uiDrawMatrixInvertible_REQUIRED_ARGC, uiDrawMatrixInvertible_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixMultiply_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixMultiply", mrb_UI_uiDrawMatrixMultiply, MRB_ARGS_ARG(uiDrawMatrixMultiply_REQUIRED_ARGC, uiDrawMatrixMultiply_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixMultiply", mrb_UI_uiDrawMatrixMultiply, MRB_ARGS_ARG(uiDrawMatrixMultiply_REQUIRED_ARGC, uiDrawMatrixMultiply_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixRotate_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixRotate", mrb_UI_uiDrawMatrixRotate, MRB_ARGS_ARG(uiDrawMatrixRotate_REQUIRED_ARGC, uiDrawMatrixRotate_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixRotate", mrb_UI_uiDrawMatrixRotate, MRB_ARGS_ARG(uiDrawMatrixRotate_REQUIRED_ARGC, uiDrawMatrixRotate_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixScale_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixScale", mrb_UI_uiDrawMatrixScale, MRB_ARGS_ARG(uiDrawMatrixScale_REQUIRED_ARGC, uiDrawMatrixScale_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixScale", mrb_UI_uiDrawMatrixScale, MRB_ARGS_ARG(uiDrawMatrixScale_REQUIRED_ARGC, uiDrawMatrixScale_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixSetIdentity_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixSetIdentity", mrb_UI_uiDrawMatrixSetIdentity, MRB_ARGS_ARG(uiDrawMatrixSetIdentity_REQUIRED_ARGC, uiDrawMatrixSetIdentity_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixSetIdentity", mrb_UI_uiDrawMatrixSetIdentity, MRB_ARGS_ARG(uiDrawMatrixSetIdentity_REQUIRED_ARGC, uiDrawMatrixSetIdentity_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixSkew_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixSkew", mrb_UI_uiDrawMatrixSkew, MRB_ARGS_ARG(uiDrawMatrixSkew_REQUIRED_ARGC, uiDrawMatrixSkew_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixSkew", mrb_UI_uiDrawMatrixSkew, MRB_ARGS_ARG(uiDrawMatrixSkew_REQUIRED_ARGC, uiDrawMatrixSkew_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixTransformPoint_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixTransformPoint", mrb_UI_uiDrawMatrixTransformPoint, MRB_ARGS_ARG(uiDrawMatrixTransformPoint_REQUIRED_ARGC, uiDrawMatrixTransformPoint_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixTransformPoint", mrb_UI_uiDrawMatrixTransformPoint, MRB_ARGS_ARG(uiDrawMatrixTransformPoint_REQUIRED_ARGC, uiDrawMatrixTransformPoint_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixTransformSize_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixTransformSize", mrb_UI_uiDrawMatrixTransformSize, MRB_ARGS_ARG(uiDrawMatrixTransformSize_REQUIRED_ARGC, uiDrawMatrixTransformSize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixTransformSize", mrb_UI_uiDrawMatrixTransformSize, MRB_ARGS_ARG(uiDrawMatrixTransformSize_REQUIRED_ARGC, uiDrawMatrixTransformSize_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawMatrixTranslate_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawMatrixTranslate", mrb_UI_uiDrawMatrixTranslate, MRB_ARGS_ARG(uiDrawMatrixTranslate_REQUIRED_ARGC, uiDrawMatrixTranslate_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawMatrixTranslate", mrb_UI_uiDrawMatrixTranslate, MRB_ARGS_ARG(uiDrawMatrixTranslate_REQUIRED_ARGC, uiDrawMatrixTranslate_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawNewPath_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawNewPath", mrb_UI_uiDrawNewPath, MRB_ARGS_ARG(uiDrawNewPath_REQUIRED_ARGC, uiDrawNewPath_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawNewPath", mrb_UI_uiDrawNewPath, MRB_ARGS_ARG(uiDrawNewPath_REQUIRED_ARGC, uiDrawNewPath_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawNewTextLayout_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawNewTextLayout", mrb_UI_uiDrawNewTextLayout, MRB_ARGS_ARG(uiDrawNewTextLayout_REQUIRED_ARGC, uiDrawNewTextLayout_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawNewTextLayout", mrb_UI_uiDrawNewTextLayout, MRB_ARGS_ARG(uiDrawNewTextLayout_REQUIRED_ARGC, uiDrawNewTextLayout_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathAddRectangle_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathAddRectangle", mrb_UI_uiDrawPathAddRectangle, MRB_ARGS_ARG(uiDrawPathAddRectangle_REQUIRED_ARGC, uiDrawPathAddRectangle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathAddRectangle", mrb_UI_uiDrawPathAddRectangle, MRB_ARGS_ARG(uiDrawPathAddRectangle_REQUIRED_ARGC, uiDrawPathAddRectangle_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathArcTo_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathArcTo", mrb_UI_uiDrawPathArcTo, MRB_ARGS_ARG(uiDrawPathArcTo_REQUIRED_ARGC, uiDrawPathArcTo_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathArcTo", mrb_UI_uiDrawPathArcTo, MRB_ARGS_ARG(uiDrawPathArcTo_REQUIRED_ARGC, uiDrawPathArcTo_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathBezierTo_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathBezierTo", mrb_UI_uiDrawPathBezierTo, MRB_ARGS_ARG(uiDrawPathBezierTo_REQUIRED_ARGC, uiDrawPathBezierTo_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathBezierTo", mrb_UI_uiDrawPathBezierTo, MRB_ARGS_ARG(uiDrawPathBezierTo_REQUIRED_ARGC, uiDrawPathBezierTo_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathCloseFigure_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathCloseFigure", mrb_UI_uiDrawPathCloseFigure, MRB_ARGS_ARG(uiDrawPathCloseFigure_REQUIRED_ARGC, uiDrawPathCloseFigure_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathCloseFigure", mrb_UI_uiDrawPathCloseFigure, MRB_ARGS_ARG(uiDrawPathCloseFigure_REQUIRED_ARGC, uiDrawPathCloseFigure_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathEnd_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathEnd", mrb_UI_uiDrawPathEnd, MRB_ARGS_ARG(uiDrawPathEnd_REQUIRED_ARGC, uiDrawPathEnd_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathEnd", mrb_UI_uiDrawPathEnd, MRB_ARGS_ARG(uiDrawPathEnd_REQUIRED_ARGC, uiDrawPathEnd_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathLineTo_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathLineTo", mrb_UI_uiDrawPathLineTo, MRB_ARGS_ARG(uiDrawPathLineTo_REQUIRED_ARGC, uiDrawPathLineTo_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathLineTo", mrb_UI_uiDrawPathLineTo, MRB_ARGS_ARG(uiDrawPathLineTo_REQUIRED_ARGC, uiDrawPathLineTo_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathNewFigure_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathNewFigure", mrb_UI_uiDrawPathNewFigure, MRB_ARGS_ARG(uiDrawPathNewFigure_REQUIRED_ARGC, uiDrawPathNewFigure_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathNewFigure", mrb_UI_uiDrawPathNewFigure, MRB_ARGS_ARG(uiDrawPathNewFigure_REQUIRED_ARGC, uiDrawPathNewFigure_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawPathNewFigureWithArc_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawPathNewFigureWithArc", mrb_UI_uiDrawPathNewFigureWithArc, MRB_ARGS_ARG(uiDrawPathNewFigureWithArc_REQUIRED_ARGC, uiDrawPathNewFigureWithArc_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawPathNewFigureWithArc", mrb_UI_uiDrawPathNewFigureWithArc, MRB_ARGS_ARG(uiDrawPathNewFigureWithArc_REQUIRED_ARGC, uiDrawPathNewFigureWithArc_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawRestore_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawRestore", mrb_UI_uiDrawRestore, MRB_ARGS_ARG(uiDrawRestore_REQUIRED_ARGC, uiDrawRestore_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawRestore", mrb_UI_uiDrawRestore, MRB_ARGS_ARG(uiDrawRestore_REQUIRED_ARGC, uiDrawRestore_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawSave_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawSave", mrb_UI_uiDrawSave, MRB_ARGS_ARG(uiDrawSave_REQUIRED_ARGC, uiDrawSave_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawSave", mrb_UI_uiDrawSave, MRB_ARGS_ARG(uiDrawSave_REQUIRED_ARGC, uiDrawSave_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawStroke_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawStroke", mrb_UI_uiDrawStroke, MRB_ARGS_ARG(uiDrawStroke_REQUIRED_ARGC, uiDrawStroke_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawStroke", mrb_UI_uiDrawStroke, MRB_ARGS_ARG(uiDrawStroke_REQUIRED_ARGC, uiDrawStroke_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawText", mrb_UI_uiDrawText, MRB_ARGS_ARG(uiDrawText_REQUIRED_ARGC, uiDrawText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawText", mrb_UI_uiDrawText, MRB_ARGS_ARG(uiDrawText_REQUIRED_ARGC, uiDrawText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawTextFontDescribe_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawTextFontDescribe", mrb_UI_uiDrawTextFontDescribe, MRB_ARGS_ARG(uiDrawTextFontDescribe_REQUIRED_ARGC, uiDrawTextFontDescribe_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawTextFontDescribe", mrb_UI_uiDrawTextFontDescribe, MRB_ARGS_ARG(uiDrawTextFontDescribe_REQUIRED_ARGC, uiDrawTextFontDescribe_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawTextFontGetMetrics_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawTextFontGetMetrics", mrb_UI_uiDrawTextFontGetMetrics, MRB_ARGS_ARG(uiDrawTextFontGetMetrics_REQUIRED_ARGC, uiDrawTextFontGetMetrics_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawTextFontGetMetrics", mrb_UI_uiDrawTextFontGetMetrics, MRB_ARGS_ARG(uiDrawTextFontGetMetrics_REQUIRED_ARGC, uiDrawTextFontGetMetrics_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawTextFontHandle_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawTextFontHandle", mrb_UI_uiDrawTextFontHandle, MRB_ARGS_ARG(uiDrawTextFontHandle_REQUIRED_ARGC, uiDrawTextFontHandle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawTextFontHandle", mrb_UI_uiDrawTextFontHandle, MRB_ARGS_ARG(uiDrawTextFontHandle_REQUIRED_ARGC, uiDrawTextFontHandle_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawTextLayoutExtents_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawTextLayoutExtents", mrb_UI_uiDrawTextLayoutExtents, MRB_ARGS_ARG(uiDrawTextLayoutExtents_REQUIRED_ARGC, uiDrawTextLayoutExtents_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawTextLayoutExtents", mrb_UI_uiDrawTextLayoutExtents, MRB_ARGS_ARG(uiDrawTextLayoutExtents_REQUIRED_ARGC, uiDrawTextLayoutExtents_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawTextLayoutSetColor_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawTextLayoutSetColor", mrb_UI_uiDrawTextLayoutSetColor, MRB_ARGS_ARG(uiDrawTextLayoutSetColor_REQUIRED_ARGC, uiDrawTextLayoutSetColor_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawTextLayoutSetColor", mrb_UI_uiDrawTextLayoutSetColor, MRB_ARGS_ARG(uiDrawTextLayoutSetColor_REQUIRED_ARGC, uiDrawTextLayoutSetColor_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawTextLayoutSetWidth_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawTextLayoutSetWidth", mrb_UI_uiDrawTextLayoutSetWidth, MRB_ARGS_ARG(uiDrawTextLayoutSetWidth_REQUIRED_ARGC, uiDrawTextLayoutSetWidth_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawTextLayoutSetWidth", mrb_UI_uiDrawTextLayoutSetWidth, MRB_ARGS_ARG(uiDrawTextLayoutSetWidth_REQUIRED_ARGC, uiDrawTextLayoutSetWidth_OPTIONAL_ARGC));
 #endif
 #if BIND_uiDrawTransform_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiDrawTransform", mrb_UI_uiDrawTransform, MRB_ARGS_ARG(uiDrawTransform_REQUIRED_ARGC, uiDrawTransform_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "drawTransform", mrb_UI_uiDrawTransform, MRB_ARGS_ARG(uiDrawTransform_REQUIRED_ARGC, uiDrawTransform_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEditableComboboxAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEditableComboboxAppend", mrb_UI_uiEditableComboboxAppend, MRB_ARGS_ARG(uiEditableComboboxAppend_REQUIRED_ARGC, uiEditableComboboxAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "editableComboboxAppend", mrb_UI_uiEditableComboboxAppend, MRB_ARGS_ARG(uiEditableComboboxAppend_REQUIRED_ARGC, uiEditableComboboxAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEditableComboboxOnChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEditableComboboxOnChanged", mrb_UI_uiEditableComboboxOnChanged, MRB_ARGS_ARG(uiEditableComboboxOnChanged_REQUIRED_ARGC, uiEditableComboboxOnChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "editableComboboxOnChanged", mrb_UI_uiEditableComboboxOnChanged, MRB_ARGS_ARG(uiEditableComboboxOnChanged_REQUIRED_ARGC, uiEditableComboboxOnChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEditableComboboxSetText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEditableComboboxSetText", mrb_UI_uiEditableComboboxSetText, MRB_ARGS_ARG(uiEditableComboboxSetText_REQUIRED_ARGC, uiEditableComboboxSetText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "editableComboboxSetText", mrb_UI_uiEditableComboboxSetText, MRB_ARGS_ARG(uiEditableComboboxSetText_REQUIRED_ARGC, uiEditableComboboxSetText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEditableComboboxText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEditableComboboxText", mrb_UI_uiEditableComboboxText, MRB_ARGS_ARG(uiEditableComboboxText_REQUIRED_ARGC, uiEditableComboboxText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "editableComboboxText", mrb_UI_uiEditableComboboxText, MRB_ARGS_ARG(uiEditableComboboxText_REQUIRED_ARGC, uiEditableComboboxText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEntryOnChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEntryOnChanged", mrb_UI_uiEntryOnChanged, MRB_ARGS_ARG(uiEntryOnChanged_REQUIRED_ARGC, uiEntryOnChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "entryOnChanged", mrb_UI_uiEntryOnChanged, MRB_ARGS_ARG(uiEntryOnChanged_REQUIRED_ARGC, uiEntryOnChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEntryReadOnly_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEntryReadOnly", mrb_UI_uiEntryReadOnly, MRB_ARGS_ARG(uiEntryReadOnly_REQUIRED_ARGC, uiEntryReadOnly_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "entryReadOnly", mrb_UI_uiEntryReadOnly, MRB_ARGS_ARG(uiEntryReadOnly_REQUIRED_ARGC, uiEntryReadOnly_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEntrySetReadOnly_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEntrySetReadOnly", mrb_UI_uiEntrySetReadOnly, MRB_ARGS_ARG(uiEntrySetReadOnly_REQUIRED_ARGC, uiEntrySetReadOnly_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "entrySetReadOnly", mrb_UI_uiEntrySetReadOnly, MRB_ARGS_ARG(uiEntrySetReadOnly_REQUIRED_ARGC, uiEntrySetReadOnly_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEntrySetText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEntrySetText", mrb_UI_uiEntrySetText, MRB_ARGS_ARG(uiEntrySetText_REQUIRED_ARGC, uiEntrySetText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "entrySetText", mrb_UI_uiEntrySetText, MRB_ARGS_ARG(uiEntrySetText_REQUIRED_ARGC, uiEntrySetText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiEntryText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiEntryText", mrb_UI_uiEntryText, MRB_ARGS_ARG(uiEntryText_REQUIRED_ARGC, uiEntryText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "entryText", mrb_UI_uiEntryText, MRB_ARGS_ARG(uiEntryText_REQUIRED_ARGC, uiEntryText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFontButtonFont_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFontButtonFont", mrb_UI_uiFontButtonFont, MRB_ARGS_ARG(uiFontButtonFont_REQUIRED_ARGC, uiFontButtonFont_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "fontButtonFont", mrb_UI_uiFontButtonFont, MRB_ARGS_ARG(uiFontButtonFont_REQUIRED_ARGC, uiFontButtonFont_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFontButtonOnChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFontButtonOnChanged", mrb_UI_uiFontButtonOnChanged, MRB_ARGS_ARG(uiFontButtonOnChanged_REQUIRED_ARGC, uiFontButtonOnChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "fontButtonOnChanged", mrb_UI_uiFontButtonOnChanged, MRB_ARGS_ARG(uiFontButtonOnChanged_REQUIRED_ARGC, uiFontButtonOnChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFormAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFormAppend", mrb_UI_uiFormAppend, MRB_ARGS_ARG(uiFormAppend_REQUIRED_ARGC, uiFormAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "formAppend", mrb_UI_uiFormAppend, MRB_ARGS_ARG(uiFormAppend_REQUIRED_ARGC, uiFormAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFormDelete_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFormDelete", mrb_UI_uiFormDelete, MRB_ARGS_ARG(uiFormDelete_REQUIRED_ARGC, uiFormDelete_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "formDelete", mrb_UI_uiFormDelete, MRB_ARGS_ARG(uiFormDelete_REQUIRED_ARGC, uiFormDelete_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFormPadded_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFormPadded", mrb_UI_uiFormPadded, MRB_ARGS_ARG(uiFormPadded_REQUIRED_ARGC, uiFormPadded_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "formPadded", mrb_UI_uiFormPadded, MRB_ARGS_ARG(uiFormPadded_REQUIRED_ARGC, uiFormPadded_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFormSetPadded_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFormSetPadded", mrb_UI_uiFormSetPadded, MRB_ARGS_ARG(uiFormSetPadded_REQUIRED_ARGC, uiFormSetPadded_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "formSetPadded", mrb_UI_uiFormSetPadded, MRB_ARGS_ARG(uiFormSetPadded_REQUIRED_ARGC, uiFormSetPadded_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFreeControl_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFreeControl", mrb_UI_uiFreeControl, MRB_ARGS_ARG(uiFreeControl_REQUIRED_ARGC, uiFreeControl_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "freeControl", mrb_UI_uiFreeControl, MRB_ARGS_ARG(uiFreeControl_REQUIRED_ARGC, uiFreeControl_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFreeInitError_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFreeInitError", mrb_UI_uiFreeInitError, MRB_ARGS_ARG(uiFreeInitError_REQUIRED_ARGC, uiFreeInitError_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "freeInitError", mrb_UI_uiFreeInitError, MRB_ARGS_ARG(uiFreeInitError_REQUIRED_ARGC, uiFreeInitError_OPTIONAL_ARGC));
 #endif
 #if BIND_uiFreeText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiFreeText", mrb_UI_uiFreeText, MRB_ARGS_ARG(uiFreeText_REQUIRED_ARGC, uiFreeText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "freeText", mrb_UI_uiFreeText, MRB_ARGS_ARG(uiFreeText_REQUIRED_ARGC, uiFreeText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGridAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGridAppend", mrb_UI_uiGridAppend, MRB_ARGS_ARG(uiGridAppend_REQUIRED_ARGC, uiGridAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "gridAppend", mrb_UI_uiGridAppend, MRB_ARGS_ARG(uiGridAppend_REQUIRED_ARGC, uiGridAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGridInsertAt_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGridInsertAt", mrb_UI_uiGridInsertAt, MRB_ARGS_ARG(uiGridInsertAt_REQUIRED_ARGC, uiGridInsertAt_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "gridInsertAt", mrb_UI_uiGridInsertAt, MRB_ARGS_ARG(uiGridInsertAt_REQUIRED_ARGC, uiGridInsertAt_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGridPadded_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGridPadded", mrb_UI_uiGridPadded, MRB_ARGS_ARG(uiGridPadded_REQUIRED_ARGC, uiGridPadded_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "gridPadded", mrb_UI_uiGridPadded, MRB_ARGS_ARG(uiGridPadded_REQUIRED_ARGC, uiGridPadded_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGridSetPadded_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGridSetPadded", mrb_UI_uiGridSetPadded, MRB_ARGS_ARG(uiGridSetPadded_REQUIRED_ARGC, uiGridSetPadded_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "gridSetPadded", mrb_UI_uiGridSetPadded, MRB_ARGS_ARG(uiGridSetPadded_REQUIRED_ARGC, uiGridSetPadded_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGroupMargined_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGroupMargined", mrb_UI_uiGroupMargined, MRB_ARGS_ARG(uiGroupMargined_REQUIRED_ARGC, uiGroupMargined_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "groupMargined", mrb_UI_uiGroupMargined, MRB_ARGS_ARG(uiGroupMargined_REQUIRED_ARGC, uiGroupMargined_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGroupSetChild_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGroupSetChild", mrb_UI_uiGroupSetChild, MRB_ARGS_ARG(uiGroupSetChild_REQUIRED_ARGC, uiGroupSetChild_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "groupSetChild", mrb_UI_uiGroupSetChild, MRB_ARGS_ARG(uiGroupSetChild_REQUIRED_ARGC, uiGroupSetChild_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGroupSetMargined_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGroupSetMargined", mrb_UI_uiGroupSetMargined, MRB_ARGS_ARG(uiGroupSetMargined_REQUIRED_ARGC, uiGroupSetMargined_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "groupSetMargined", mrb_UI_uiGroupSetMargined, MRB_ARGS_ARG(uiGroupSetMargined_REQUIRED_ARGC, uiGroupSetMargined_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGroupSetTitle_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGroupSetTitle", mrb_UI_uiGroupSetTitle, MRB_ARGS_ARG(uiGroupSetTitle_REQUIRED_ARGC, uiGroupSetTitle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "groupSetTitle", mrb_UI_uiGroupSetTitle, MRB_ARGS_ARG(uiGroupSetTitle_REQUIRED_ARGC, uiGroupSetTitle_OPTIONAL_ARGC));
 #endif
 #if BIND_uiGroupTitle_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiGroupTitle", mrb_UI_uiGroupTitle, MRB_ARGS_ARG(uiGroupTitle_REQUIRED_ARGC, uiGroupTitle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "groupTitle", mrb_UI_uiGroupTitle, MRB_ARGS_ARG(uiGroupTitle_REQUIRED_ARGC, uiGroupTitle_OPTIONAL_ARGC));
 #endif
 #if BIND_uiInit_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiInit", mrb_UI_uiInit, MRB_ARGS_ARG(uiInit_REQUIRED_ARGC, uiInit_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "init", mrb_UI_uiInit, MRB_ARGS_ARG(uiInit_REQUIRED_ARGC, uiInit_OPTIONAL_ARGC));
 #endif
 #if BIND_uiLabelSetText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiLabelSetText", mrb_UI_uiLabelSetText, MRB_ARGS_ARG(uiLabelSetText_REQUIRED_ARGC, uiLabelSetText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "labelSetText", mrb_UI_uiLabelSetText, MRB_ARGS_ARG(uiLabelSetText_REQUIRED_ARGC, uiLabelSetText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiLabelText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiLabelText", mrb_UI_uiLabelText, MRB_ARGS_ARG(uiLabelText_REQUIRED_ARGC, uiLabelText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "labelText", mrb_UI_uiLabelText, MRB_ARGS_ARG(uiLabelText_REQUIRED_ARGC, uiLabelText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMain_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMain", mrb_UI_uiMain, MRB_ARGS_ARG(uiMain_REQUIRED_ARGC, uiMain_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "main", mrb_UI_uiMain, MRB_ARGS_ARG(uiMain_REQUIRED_ARGC, uiMain_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMainStep_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMainStep", mrb_UI_uiMainStep, MRB_ARGS_ARG(uiMainStep_REQUIRED_ARGC, uiMainStep_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "mainStep", mrb_UI_uiMainStep, MRB_ARGS_ARG(uiMainStep_REQUIRED_ARGC, uiMainStep_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMainSteps_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMainSteps", mrb_UI_uiMainSteps, MRB_ARGS_ARG(uiMainSteps_REQUIRED_ARGC, uiMainSteps_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "mainSteps", mrb_UI_uiMainSteps, MRB_ARGS_ARG(uiMainSteps_REQUIRED_ARGC, uiMainSteps_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuAppendAboutItem_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuAppendAboutItem", mrb_UI_uiMenuAppendAboutItem, MRB_ARGS_ARG(uiMenuAppendAboutItem_REQUIRED_ARGC, uiMenuAppendAboutItem_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuAppendAboutItem", mrb_UI_uiMenuAppendAboutItem, MRB_ARGS_ARG(uiMenuAppendAboutItem_REQUIRED_ARGC, uiMenuAppendAboutItem_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuAppendCheckItem_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuAppendCheckItem", mrb_UI_uiMenuAppendCheckItem, MRB_ARGS_ARG(uiMenuAppendCheckItem_REQUIRED_ARGC, uiMenuAppendCheckItem_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuAppendCheckItem", mrb_UI_uiMenuAppendCheckItem, MRB_ARGS_ARG(uiMenuAppendCheckItem_REQUIRED_ARGC, uiMenuAppendCheckItem_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuAppendItem_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuAppendItem", mrb_UI_uiMenuAppendItem, MRB_ARGS_ARG(uiMenuAppendItem_REQUIRED_ARGC, uiMenuAppendItem_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuAppendItem", mrb_UI_uiMenuAppendItem, MRB_ARGS_ARG(uiMenuAppendItem_REQUIRED_ARGC, uiMenuAppendItem_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuAppendPreferencesItem_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuAppendPreferencesItem", mrb_UI_uiMenuAppendPreferencesItem, MRB_ARGS_ARG(uiMenuAppendPreferencesItem_REQUIRED_ARGC, uiMenuAppendPreferencesItem_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuAppendPreferencesItem", mrb_UI_uiMenuAppendPreferencesItem, MRB_ARGS_ARG(uiMenuAppendPreferencesItem_REQUIRED_ARGC, uiMenuAppendPreferencesItem_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuAppendQuitItem_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuAppendQuitItem", mrb_UI_uiMenuAppendQuitItem, MRB_ARGS_ARG(uiMenuAppendQuitItem_REQUIRED_ARGC, uiMenuAppendQuitItem_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuAppendQuitItem", mrb_UI_uiMenuAppendQuitItem, MRB_ARGS_ARG(uiMenuAppendQuitItem_REQUIRED_ARGC, uiMenuAppendQuitItem_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuAppendSeparator_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuAppendSeparator", mrb_UI_uiMenuAppendSeparator, MRB_ARGS_ARG(uiMenuAppendSeparator_REQUIRED_ARGC, uiMenuAppendSeparator_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuAppendSeparator", mrb_UI_uiMenuAppendSeparator, MRB_ARGS_ARG(uiMenuAppendSeparator_REQUIRED_ARGC, uiMenuAppendSeparator_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuItemChecked_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuItemChecked", mrb_UI_uiMenuItemChecked, MRB_ARGS_ARG(uiMenuItemChecked_REQUIRED_ARGC, uiMenuItemChecked_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuItemChecked", mrb_UI_uiMenuItemChecked, MRB_ARGS_ARG(uiMenuItemChecked_REQUIRED_ARGC, uiMenuItemChecked_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuItemDisable_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuItemDisable", mrb_UI_uiMenuItemDisable, MRB_ARGS_ARG(uiMenuItemDisable_REQUIRED_ARGC, uiMenuItemDisable_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuItemDisable", mrb_UI_uiMenuItemDisable, MRB_ARGS_ARG(uiMenuItemDisable_REQUIRED_ARGC, uiMenuItemDisable_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuItemEnable_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuItemEnable", mrb_UI_uiMenuItemEnable, MRB_ARGS_ARG(uiMenuItemEnable_REQUIRED_ARGC, uiMenuItemEnable_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuItemEnable", mrb_UI_uiMenuItemEnable, MRB_ARGS_ARG(uiMenuItemEnable_REQUIRED_ARGC, uiMenuItemEnable_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuItemOnClicked_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuItemOnClicked", mrb_UI_uiMenuItemOnClicked, MRB_ARGS_ARG(uiMenuItemOnClicked_REQUIRED_ARGC, uiMenuItemOnClicked_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuItemOnClicked", mrb_UI_uiMenuItemOnClicked, MRB_ARGS_ARG(uiMenuItemOnClicked_REQUIRED_ARGC, uiMenuItemOnClicked_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMenuItemSetChecked_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMenuItemSetChecked", mrb_UI_uiMenuItemSetChecked, MRB_ARGS_ARG(uiMenuItemSetChecked_REQUIRED_ARGC, uiMenuItemSetChecked_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "menuItemSetChecked", mrb_UI_uiMenuItemSetChecked, MRB_ARGS_ARG(uiMenuItemSetChecked_REQUIRED_ARGC, uiMenuItemSetChecked_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMsgBox_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMsgBox", mrb_UI_uiMsgBox, MRB_ARGS_ARG(uiMsgBox_REQUIRED_ARGC, uiMsgBox_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "msgBox", mrb_UI_uiMsgBox, MRB_ARGS_ARG(uiMsgBox_REQUIRED_ARGC, uiMsgBox_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMsgBoxError_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMsgBoxError", mrb_UI_uiMsgBoxError, MRB_ARGS_ARG(uiMsgBoxError_REQUIRED_ARGC, uiMsgBoxError_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "msgBoxError", mrb_UI_uiMsgBoxError, MRB_ARGS_ARG(uiMsgBoxError_REQUIRED_ARGC, uiMsgBoxError_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMultilineEntryAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMultilineEntryAppend", mrb_UI_uiMultilineEntryAppend, MRB_ARGS_ARG(uiMultilineEntryAppend_REQUIRED_ARGC, uiMultilineEntryAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "multilineEntryAppend", mrb_UI_uiMultilineEntryAppend, MRB_ARGS_ARG(uiMultilineEntryAppend_REQUIRED_ARGC, uiMultilineEntryAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMultilineEntryOnChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMultilineEntryOnChanged", mrb_UI_uiMultilineEntryOnChanged, MRB_ARGS_ARG(uiMultilineEntryOnChanged_REQUIRED_ARGC, uiMultilineEntryOnChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "multilineEntryOnChanged", mrb_UI_uiMultilineEntryOnChanged, MRB_ARGS_ARG(uiMultilineEntryOnChanged_REQUIRED_ARGC, uiMultilineEntryOnChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMultilineEntryReadOnly_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMultilineEntryReadOnly", mrb_UI_uiMultilineEntryReadOnly, MRB_ARGS_ARG(uiMultilineEntryReadOnly_REQUIRED_ARGC, uiMultilineEntryReadOnly_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "multilineEntryReadOnly", mrb_UI_uiMultilineEntryReadOnly, MRB_ARGS_ARG(uiMultilineEntryReadOnly_REQUIRED_ARGC, uiMultilineEntryReadOnly_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMultilineEntrySetReadOnly_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMultilineEntrySetReadOnly", mrb_UI_uiMultilineEntrySetReadOnly, MRB_ARGS_ARG(uiMultilineEntrySetReadOnly_REQUIRED_ARGC, uiMultilineEntrySetReadOnly_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "multilineEntrySetReadOnly", mrb_UI_uiMultilineEntrySetReadOnly, MRB_ARGS_ARG(uiMultilineEntrySetReadOnly_REQUIRED_ARGC, uiMultilineEntrySetReadOnly_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMultilineEntrySetText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMultilineEntrySetText", mrb_UI_uiMultilineEntrySetText, MRB_ARGS_ARG(uiMultilineEntrySetText_REQUIRED_ARGC, uiMultilineEntrySetText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "multilineEntrySetText", mrb_UI_uiMultilineEntrySetText, MRB_ARGS_ARG(uiMultilineEntrySetText_REQUIRED_ARGC, uiMultilineEntrySetText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiMultilineEntryText_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiMultilineEntryText", mrb_UI_uiMultilineEntryText, MRB_ARGS_ARG(uiMultilineEntryText_REQUIRED_ARGC, uiMultilineEntryText_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "multilineEntryText", mrb_UI_uiMultilineEntryText, MRB_ARGS_ARG(uiMultilineEntryText_REQUIRED_ARGC, uiMultilineEntryText_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewArea_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewArea", mrb_UI_uiNewArea, MRB_ARGS_ARG(uiNewArea_REQUIRED_ARGC, uiNewArea_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newArea", mrb_UI_uiNewArea, MRB_ARGS_ARG(uiNewArea_REQUIRED_ARGC, uiNewArea_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewButton_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewButton", mrb_UI_uiNewButton, MRB_ARGS_ARG(uiNewButton_REQUIRED_ARGC, uiNewButton_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newButton", mrb_UI_uiNewButton, MRB_ARGS_ARG(uiNewButton_REQUIRED_ARGC, uiNewButton_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewCheckbox_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewCheckbox", mrb_UI_uiNewCheckbox, MRB_ARGS_ARG(uiNewCheckbox_REQUIRED_ARGC, uiNewCheckbox_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newCheckbox", mrb_UI_uiNewCheckbox, MRB_ARGS_ARG(uiNewCheckbox_REQUIRED_ARGC, uiNewCheckbox_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewColorButton_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewColorButton", mrb_UI_uiNewColorButton, MRB_ARGS_ARG(uiNewColorButton_REQUIRED_ARGC, uiNewColorButton_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newColorButton", mrb_UI_uiNewColorButton, MRB_ARGS_ARG(uiNewColorButton_REQUIRED_ARGC, uiNewColorButton_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewCombobox_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewCombobox", mrb_UI_uiNewCombobox, MRB_ARGS_ARG(uiNewCombobox_REQUIRED_ARGC, uiNewCombobox_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newCombobox", mrb_UI_uiNewCombobox, MRB_ARGS_ARG(uiNewCombobox_REQUIRED_ARGC, uiNewCombobox_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewDatePicker_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewDatePicker", mrb_UI_uiNewDatePicker, MRB_ARGS_ARG(uiNewDatePicker_REQUIRED_ARGC, uiNewDatePicker_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newDatePicker", mrb_UI_uiNewDatePicker, MRB_ARGS_ARG(uiNewDatePicker_REQUIRED_ARGC, uiNewDatePicker_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewDateTimePicker_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewDateTimePicker", mrb_UI_uiNewDateTimePicker, MRB_ARGS_ARG(uiNewDateTimePicker_REQUIRED_ARGC, uiNewDateTimePicker_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newDateTimePicker", mrb_UI_uiNewDateTimePicker, MRB_ARGS_ARG(uiNewDateTimePicker_REQUIRED_ARGC, uiNewDateTimePicker_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewEditableCombobox_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewEditableCombobox", mrb_UI_uiNewEditableCombobox, MRB_ARGS_ARG(uiNewEditableCombobox_REQUIRED_ARGC, uiNewEditableCombobox_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newEditableCombobox", mrb_UI_uiNewEditableCombobox, MRB_ARGS_ARG(uiNewEditableCombobox_REQUIRED_ARGC, uiNewEditableCombobox_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewEntry_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewEntry", mrb_UI_uiNewEntry, MRB_ARGS_ARG(uiNewEntry_REQUIRED_ARGC, uiNewEntry_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newEntry", mrb_UI_uiNewEntry, MRB_ARGS_ARG(uiNewEntry_REQUIRED_ARGC, uiNewEntry_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewFontButton_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewFontButton", mrb_UI_uiNewFontButton, MRB_ARGS_ARG(uiNewFontButton_REQUIRED_ARGC, uiNewFontButton_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newFontButton", mrb_UI_uiNewFontButton, MRB_ARGS_ARG(uiNewFontButton_REQUIRED_ARGC, uiNewFontButton_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewForm_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewForm", mrb_UI_uiNewForm, MRB_ARGS_ARG(uiNewForm_REQUIRED_ARGC, uiNewForm_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newForm", mrb_UI_uiNewForm, MRB_ARGS_ARG(uiNewForm_REQUIRED_ARGC, uiNewForm_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewGrid_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewGrid", mrb_UI_uiNewGrid, MRB_ARGS_ARG(uiNewGrid_REQUIRED_ARGC, uiNewGrid_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newGrid", mrb_UI_uiNewGrid, MRB_ARGS_ARG(uiNewGrid_REQUIRED_ARGC, uiNewGrid_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewGroup_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewGroup", mrb_UI_uiNewGroup, MRB_ARGS_ARG(uiNewGroup_REQUIRED_ARGC, uiNewGroup_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newGroup", mrb_UI_uiNewGroup, MRB_ARGS_ARG(uiNewGroup_REQUIRED_ARGC, uiNewGroup_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewHorizontalBox_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewHorizontalBox", mrb_UI_uiNewHorizontalBox, MRB_ARGS_ARG(uiNewHorizontalBox_REQUIRED_ARGC, uiNewHorizontalBox_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newHorizontalBox", mrb_UI_uiNewHorizontalBox, MRB_ARGS_ARG(uiNewHorizontalBox_REQUIRED_ARGC, uiNewHorizontalBox_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewHorizontalSeparator_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewHorizontalSeparator", mrb_UI_uiNewHorizontalSeparator, MRB_ARGS_ARG(uiNewHorizontalSeparator_REQUIRED_ARGC, uiNewHorizontalSeparator_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newHorizontalSeparator", mrb_UI_uiNewHorizontalSeparator, MRB_ARGS_ARG(uiNewHorizontalSeparator_REQUIRED_ARGC, uiNewHorizontalSeparator_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewLabel_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewLabel", mrb_UI_uiNewLabel, MRB_ARGS_ARG(uiNewLabel_REQUIRED_ARGC, uiNewLabel_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newLabel", mrb_UI_uiNewLabel, MRB_ARGS_ARG(uiNewLabel_REQUIRED_ARGC, uiNewLabel_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewMenu_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewMenu", mrb_UI_uiNewMenu, MRB_ARGS_ARG(uiNewMenu_REQUIRED_ARGC, uiNewMenu_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newMenu", mrb_UI_uiNewMenu, MRB_ARGS_ARG(uiNewMenu_REQUIRED_ARGC, uiNewMenu_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewMultilineEntry_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewMultilineEntry", mrb_UI_uiNewMultilineEntry, MRB_ARGS_ARG(uiNewMultilineEntry_REQUIRED_ARGC, uiNewMultilineEntry_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newMultilineEntry", mrb_UI_uiNewMultilineEntry, MRB_ARGS_ARG(uiNewMultilineEntry_REQUIRED_ARGC, uiNewMultilineEntry_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewNonWrappingMultilineEntry_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewNonWrappingMultilineEntry", mrb_UI_uiNewNonWrappingMultilineEntry, MRB_ARGS_ARG(uiNewNonWrappingMultilineEntry_REQUIRED_ARGC, uiNewNonWrappingMultilineEntry_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newNonWrappingMultilineEntry", mrb_UI_uiNewNonWrappingMultilineEntry, MRB_ARGS_ARG(uiNewNonWrappingMultilineEntry_REQUIRED_ARGC, uiNewNonWrappingMultilineEntry_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewPasswordEntry_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewPasswordEntry", mrb_UI_uiNewPasswordEntry, MRB_ARGS_ARG(uiNewPasswordEntry_REQUIRED_ARGC, uiNewPasswordEntry_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newPasswordEntry", mrb_UI_uiNewPasswordEntry, MRB_ARGS_ARG(uiNewPasswordEntry_REQUIRED_ARGC, uiNewPasswordEntry_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewProgressBar_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewProgressBar", mrb_UI_uiNewProgressBar, MRB_ARGS_ARG(uiNewProgressBar_REQUIRED_ARGC, uiNewProgressBar_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newProgressBar", mrb_UI_uiNewProgressBar, MRB_ARGS_ARG(uiNewProgressBar_REQUIRED_ARGC, uiNewProgressBar_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewRadioButtons_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewRadioButtons", mrb_UI_uiNewRadioButtons, MRB_ARGS_ARG(uiNewRadioButtons_REQUIRED_ARGC, uiNewRadioButtons_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newRadioButtons", mrb_UI_uiNewRadioButtons, MRB_ARGS_ARG(uiNewRadioButtons_REQUIRED_ARGC, uiNewRadioButtons_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewScrollingArea_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewScrollingArea", mrb_UI_uiNewScrollingArea, MRB_ARGS_ARG(uiNewScrollingArea_REQUIRED_ARGC, uiNewScrollingArea_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newScrollingArea", mrb_UI_uiNewScrollingArea, MRB_ARGS_ARG(uiNewScrollingArea_REQUIRED_ARGC, uiNewScrollingArea_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewSearchEntry_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewSearchEntry", mrb_UI_uiNewSearchEntry, MRB_ARGS_ARG(uiNewSearchEntry_REQUIRED_ARGC, uiNewSearchEntry_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newSearchEntry", mrb_UI_uiNewSearchEntry, MRB_ARGS_ARG(uiNewSearchEntry_REQUIRED_ARGC, uiNewSearchEntry_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewSlider_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewSlider", mrb_UI_uiNewSlider, MRB_ARGS_ARG(uiNewSlider_REQUIRED_ARGC, uiNewSlider_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newSlider", mrb_UI_uiNewSlider, MRB_ARGS_ARG(uiNewSlider_REQUIRED_ARGC, uiNewSlider_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewSpinbox_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewSpinbox", mrb_UI_uiNewSpinbox, MRB_ARGS_ARG(uiNewSpinbox_REQUIRED_ARGC, uiNewSpinbox_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newSpinbox", mrb_UI_uiNewSpinbox, MRB_ARGS_ARG(uiNewSpinbox_REQUIRED_ARGC, uiNewSpinbox_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewTab_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewTab", mrb_UI_uiNewTab, MRB_ARGS_ARG(uiNewTab_REQUIRED_ARGC, uiNewTab_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newTab", mrb_UI_uiNewTab, MRB_ARGS_ARG(uiNewTab_REQUIRED_ARGC, uiNewTab_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewTimePicker_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewTimePicker", mrb_UI_uiNewTimePicker, MRB_ARGS_ARG(uiNewTimePicker_REQUIRED_ARGC, uiNewTimePicker_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newTimePicker", mrb_UI_uiNewTimePicker, MRB_ARGS_ARG(uiNewTimePicker_REQUIRED_ARGC, uiNewTimePicker_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewVerticalBox_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewVerticalBox", mrb_UI_uiNewVerticalBox, MRB_ARGS_ARG(uiNewVerticalBox_REQUIRED_ARGC, uiNewVerticalBox_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newVerticalBox", mrb_UI_uiNewVerticalBox, MRB_ARGS_ARG(uiNewVerticalBox_REQUIRED_ARGC, uiNewVerticalBox_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewVerticalSeparator_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewVerticalSeparator", mrb_UI_uiNewVerticalSeparator, MRB_ARGS_ARG(uiNewVerticalSeparator_REQUIRED_ARGC, uiNewVerticalSeparator_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newVerticalSeparator", mrb_UI_uiNewVerticalSeparator, MRB_ARGS_ARG(uiNewVerticalSeparator_REQUIRED_ARGC, uiNewVerticalSeparator_OPTIONAL_ARGC));
 #endif
 #if BIND_uiNewWindow_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiNewWindow", mrb_UI_uiNewWindow, MRB_ARGS_ARG(uiNewWindow_REQUIRED_ARGC, uiNewWindow_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "newWindow", mrb_UI_uiNewWindow, MRB_ARGS_ARG(uiNewWindow_REQUIRED_ARGC, uiNewWindow_OPTIONAL_ARGC));
 #endif
 #if BIND_uiOnShouldQuit_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiOnShouldQuit", mrb_UI_uiOnShouldQuit, MRB_ARGS_ARG(uiOnShouldQuit_REQUIRED_ARGC, uiOnShouldQuit_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "onShouldQuit", mrb_UI_uiOnShouldQuit, MRB_ARGS_ARG(uiOnShouldQuit_REQUIRED_ARGC, uiOnShouldQuit_OPTIONAL_ARGC));
 #endif
 #if BIND_uiOpenFile_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiOpenFile", mrb_UI_uiOpenFile, MRB_ARGS_ARG(uiOpenFile_REQUIRED_ARGC, uiOpenFile_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "openFile", mrb_UI_uiOpenFile, MRB_ARGS_ARG(uiOpenFile_REQUIRED_ARGC, uiOpenFile_OPTIONAL_ARGC));
 #endif
 #if BIND_uiProgressBarSetValue_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiProgressBarSetValue", mrb_UI_uiProgressBarSetValue, MRB_ARGS_ARG(uiProgressBarSetValue_REQUIRED_ARGC, uiProgressBarSetValue_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "progressBarSetValue", mrb_UI_uiProgressBarSetValue, MRB_ARGS_ARG(uiProgressBarSetValue_REQUIRED_ARGC, uiProgressBarSetValue_OPTIONAL_ARGC));
 #endif
 #if BIND_uiProgressBarValue_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiProgressBarValue", mrb_UI_uiProgressBarValue, MRB_ARGS_ARG(uiProgressBarValue_REQUIRED_ARGC, uiProgressBarValue_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "progressBarValue", mrb_UI_uiProgressBarValue, MRB_ARGS_ARG(uiProgressBarValue_REQUIRED_ARGC, uiProgressBarValue_OPTIONAL_ARGC));
 #endif
 #if BIND_uiQueueMain_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiQueueMain", mrb_UI_uiQueueMain, MRB_ARGS_ARG(uiQueueMain_REQUIRED_ARGC, uiQueueMain_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "queueMain", mrb_UI_uiQueueMain, MRB_ARGS_ARG(uiQueueMain_REQUIRED_ARGC, uiQueueMain_OPTIONAL_ARGC));
 #endif
 #if BIND_uiQuit_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiQuit", mrb_UI_uiQuit, MRB_ARGS_ARG(uiQuit_REQUIRED_ARGC, uiQuit_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "quit", mrb_UI_uiQuit, MRB_ARGS_ARG(uiQuit_REQUIRED_ARGC, uiQuit_OPTIONAL_ARGC));
 #endif
 #if BIND_uiRadioButtonsAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiRadioButtonsAppend", mrb_UI_uiRadioButtonsAppend, MRB_ARGS_ARG(uiRadioButtonsAppend_REQUIRED_ARGC, uiRadioButtonsAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "radioButtonsAppend", mrb_UI_uiRadioButtonsAppend, MRB_ARGS_ARG(uiRadioButtonsAppend_REQUIRED_ARGC, uiRadioButtonsAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiRadioButtonsOnSelected_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiRadioButtonsOnSelected", mrb_UI_uiRadioButtonsOnSelected, MRB_ARGS_ARG(uiRadioButtonsOnSelected_REQUIRED_ARGC, uiRadioButtonsOnSelected_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "radioButtonsOnSelected", mrb_UI_uiRadioButtonsOnSelected, MRB_ARGS_ARG(uiRadioButtonsOnSelected_REQUIRED_ARGC, uiRadioButtonsOnSelected_OPTIONAL_ARGC));
 #endif
 #if BIND_uiRadioButtonsSelected_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiRadioButtonsSelected", mrb_UI_uiRadioButtonsSelected, MRB_ARGS_ARG(uiRadioButtonsSelected_REQUIRED_ARGC, uiRadioButtonsSelected_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "radioButtonsSelected", mrb_UI_uiRadioButtonsSelected, MRB_ARGS_ARG(uiRadioButtonsSelected_REQUIRED_ARGC, uiRadioButtonsSelected_OPTIONAL_ARGC));
 #endif
 #if BIND_uiRadioButtonsSetSelected_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiRadioButtonsSetSelected", mrb_UI_uiRadioButtonsSetSelected, MRB_ARGS_ARG(uiRadioButtonsSetSelected_REQUIRED_ARGC, uiRadioButtonsSetSelected_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "radioButtonsSetSelected", mrb_UI_uiRadioButtonsSetSelected, MRB_ARGS_ARG(uiRadioButtonsSetSelected_REQUIRED_ARGC, uiRadioButtonsSetSelected_OPTIONAL_ARGC));
 #endif
 #if BIND_uiSaveFile_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiSaveFile", mrb_UI_uiSaveFile, MRB_ARGS_ARG(uiSaveFile_REQUIRED_ARGC, uiSaveFile_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "saveFile", mrb_UI_uiSaveFile, MRB_ARGS_ARG(uiSaveFile_REQUIRED_ARGC, uiSaveFile_OPTIONAL_ARGC));
 #endif
 #if BIND_uiSliderOnChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiSliderOnChanged", mrb_UI_uiSliderOnChanged, MRB_ARGS_ARG(uiSliderOnChanged_REQUIRED_ARGC, uiSliderOnChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "sliderOnChanged", mrb_UI_uiSliderOnChanged, MRB_ARGS_ARG(uiSliderOnChanged_REQUIRED_ARGC, uiSliderOnChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiSliderSetValue_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiSliderSetValue", mrb_UI_uiSliderSetValue, MRB_ARGS_ARG(uiSliderSetValue_REQUIRED_ARGC, uiSliderSetValue_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "sliderSetValue", mrb_UI_uiSliderSetValue, MRB_ARGS_ARG(uiSliderSetValue_REQUIRED_ARGC, uiSliderSetValue_OPTIONAL_ARGC));
 #endif
 #if BIND_uiSliderValue_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiSliderValue", mrb_UI_uiSliderValue, MRB_ARGS_ARG(uiSliderValue_REQUIRED_ARGC, uiSliderValue_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "sliderValue", mrb_UI_uiSliderValue, MRB_ARGS_ARG(uiSliderValue_REQUIRED_ARGC, uiSliderValue_OPTIONAL_ARGC));
 #endif
 #if BIND_uiSpinboxOnChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiSpinboxOnChanged", mrb_UI_uiSpinboxOnChanged, MRB_ARGS_ARG(uiSpinboxOnChanged_REQUIRED_ARGC, uiSpinboxOnChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "spinboxOnChanged", mrb_UI_uiSpinboxOnChanged, MRB_ARGS_ARG(uiSpinboxOnChanged_REQUIRED_ARGC, uiSpinboxOnChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiSpinboxSetValue_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiSpinboxSetValue", mrb_UI_uiSpinboxSetValue, MRB_ARGS_ARG(uiSpinboxSetValue_REQUIRED_ARGC, uiSpinboxSetValue_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "spinboxSetValue", mrb_UI_uiSpinboxSetValue, MRB_ARGS_ARG(uiSpinboxSetValue_REQUIRED_ARGC, uiSpinboxSetValue_OPTIONAL_ARGC));
 #endif
 #if BIND_uiSpinboxValue_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiSpinboxValue", mrb_UI_uiSpinboxValue, MRB_ARGS_ARG(uiSpinboxValue_REQUIRED_ARGC, uiSpinboxValue_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "spinboxValue", mrb_UI_uiSpinboxValue, MRB_ARGS_ARG(uiSpinboxValue_REQUIRED_ARGC, uiSpinboxValue_OPTIONAL_ARGC));
 #endif
 #if BIND_uiTabAppend_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiTabAppend", mrb_UI_uiTabAppend, MRB_ARGS_ARG(uiTabAppend_REQUIRED_ARGC, uiTabAppend_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "tabAppend", mrb_UI_uiTabAppend, MRB_ARGS_ARG(uiTabAppend_REQUIRED_ARGC, uiTabAppend_OPTIONAL_ARGC));
 #endif
 #if BIND_uiTabDelete_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiTabDelete", mrb_UI_uiTabDelete, MRB_ARGS_ARG(uiTabDelete_REQUIRED_ARGC, uiTabDelete_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "tabDelete", mrb_UI_uiTabDelete, MRB_ARGS_ARG(uiTabDelete_REQUIRED_ARGC, uiTabDelete_OPTIONAL_ARGC));
 #endif
 #if BIND_uiTabInsertAt_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiTabInsertAt", mrb_UI_uiTabInsertAt, MRB_ARGS_ARG(uiTabInsertAt_REQUIRED_ARGC, uiTabInsertAt_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "tabInsertAt", mrb_UI_uiTabInsertAt, MRB_ARGS_ARG(uiTabInsertAt_REQUIRED_ARGC, uiTabInsertAt_OPTIONAL_ARGC));
 #endif
 #if BIND_uiTabMargined_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiTabMargined", mrb_UI_uiTabMargined, MRB_ARGS_ARG(uiTabMargined_REQUIRED_ARGC, uiTabMargined_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "tabMargined", mrb_UI_uiTabMargined, MRB_ARGS_ARG(uiTabMargined_REQUIRED_ARGC, uiTabMargined_OPTIONAL_ARGC));
 #endif
 #if BIND_uiTabNumPages_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiTabNumPages", mrb_UI_uiTabNumPages, MRB_ARGS_ARG(uiTabNumPages_REQUIRED_ARGC, uiTabNumPages_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "tabNumPages", mrb_UI_uiTabNumPages, MRB_ARGS_ARG(uiTabNumPages_REQUIRED_ARGC, uiTabNumPages_OPTIONAL_ARGC));
 #endif
 #if BIND_uiTabSetMargined_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiTabSetMargined", mrb_UI_uiTabSetMargined, MRB_ARGS_ARG(uiTabSetMargined_REQUIRED_ARGC, uiTabSetMargined_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "tabSetMargined", mrb_UI_uiTabSetMargined, MRB_ARGS_ARG(uiTabSetMargined_REQUIRED_ARGC, uiTabSetMargined_OPTIONAL_ARGC));
 #endif
 #if BIND_uiUninit_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiUninit", mrb_UI_uiUninit, MRB_ARGS_ARG(uiUninit_REQUIRED_ARGC, uiUninit_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "uninit", mrb_UI_uiUninit, MRB_ARGS_ARG(uiUninit_REQUIRED_ARGC, uiUninit_OPTIONAL_ARGC));
 #endif
 #if BIND_uiUserBugCannotSetParentOnToplevel_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiUserBugCannotSetParentOnToplevel", mrb_UI_uiUserBugCannotSetParentOnToplevel, MRB_ARGS_ARG(uiUserBugCannotSetParentOnToplevel_REQUIRED_ARGC, uiUserBugCannotSetParentOnToplevel_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "userBugCannotSetParentOnToplevel", mrb_UI_uiUserBugCannotSetParentOnToplevel, MRB_ARGS_ARG(uiUserBugCannotSetParentOnToplevel_REQUIRED_ARGC, uiUserBugCannotSetParentOnToplevel_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowBorderless_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowBorderless", mrb_UI_uiWindowBorderless, MRB_ARGS_ARG(uiWindowBorderless_REQUIRED_ARGC, uiWindowBorderless_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowBorderless", mrb_UI_uiWindowBorderless, MRB_ARGS_ARG(uiWindowBorderless_REQUIRED_ARGC, uiWindowBorderless_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowContentSize_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowContentSize", mrb_UI_uiWindowContentSize, MRB_ARGS_ARG(uiWindowContentSize_REQUIRED_ARGC, uiWindowContentSize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowContentSize", mrb_UI_uiWindowContentSize, MRB_ARGS_ARG(uiWindowContentSize_REQUIRED_ARGC, uiWindowContentSize_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowFullscreen_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowFullscreen", mrb_UI_uiWindowFullscreen, MRB_ARGS_ARG(uiWindowFullscreen_REQUIRED_ARGC, uiWindowFullscreen_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowFullscreen", mrb_UI_uiWindowFullscreen, MRB_ARGS_ARG(uiWindowFullscreen_REQUIRED_ARGC, uiWindowFullscreen_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowMargined_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowMargined", mrb_UI_uiWindowMargined, MRB_ARGS_ARG(uiWindowMargined_REQUIRED_ARGC, uiWindowMargined_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowMargined", mrb_UI_uiWindowMargined, MRB_ARGS_ARG(uiWindowMargined_REQUIRED_ARGC, uiWindowMargined_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowOnClosing_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowOnClosing", mrb_UI_uiWindowOnClosing, MRB_ARGS_ARG(uiWindowOnClosing_REQUIRED_ARGC, uiWindowOnClosing_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowOnClosing", mrb_UI_uiWindowOnClosing, MRB_ARGS_ARG(uiWindowOnClosing_REQUIRED_ARGC, uiWindowOnClosing_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowOnContentSizeChanged_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowOnContentSizeChanged", mrb_UI_uiWindowOnContentSizeChanged, MRB_ARGS_ARG(uiWindowOnContentSizeChanged_REQUIRED_ARGC, uiWindowOnContentSizeChanged_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowOnContentSizeChanged", mrb_UI_uiWindowOnContentSizeChanged, MRB_ARGS_ARG(uiWindowOnContentSizeChanged_REQUIRED_ARGC, uiWindowOnContentSizeChanged_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowSetBorderless_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowSetBorderless", mrb_UI_uiWindowSetBorderless, MRB_ARGS_ARG(uiWindowSetBorderless_REQUIRED_ARGC, uiWindowSetBorderless_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowSetBorderless", mrb_UI_uiWindowSetBorderless, MRB_ARGS_ARG(uiWindowSetBorderless_REQUIRED_ARGC, uiWindowSetBorderless_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowSetChild_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowSetChild", mrb_UI_uiWindowSetChild, MRB_ARGS_ARG(uiWindowSetChild_REQUIRED_ARGC, uiWindowSetChild_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowSetChild", mrb_UI_uiWindowSetChild, MRB_ARGS_ARG(uiWindowSetChild_REQUIRED_ARGC, uiWindowSetChild_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowSetContentSize_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowSetContentSize", mrb_UI_uiWindowSetContentSize, MRB_ARGS_ARG(uiWindowSetContentSize_REQUIRED_ARGC, uiWindowSetContentSize_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowSetContentSize", mrb_UI_uiWindowSetContentSize, MRB_ARGS_ARG(uiWindowSetContentSize_REQUIRED_ARGC, uiWindowSetContentSize_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowSetFullscreen_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowSetFullscreen", mrb_UI_uiWindowSetFullscreen, MRB_ARGS_ARG(uiWindowSetFullscreen_REQUIRED_ARGC, uiWindowSetFullscreen_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowSetFullscreen", mrb_UI_uiWindowSetFullscreen, MRB_ARGS_ARG(uiWindowSetFullscreen_REQUIRED_ARGC, uiWindowSetFullscreen_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowSetMargined_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowSetMargined", mrb_UI_uiWindowSetMargined, MRB_ARGS_ARG(uiWindowSetMargined_REQUIRED_ARGC, uiWindowSetMargined_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowSetMargined", mrb_UI_uiWindowSetMargined, MRB_ARGS_ARG(uiWindowSetMargined_REQUIRED_ARGC, uiWindowSetMargined_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowSetTitle_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowSetTitle", mrb_UI_uiWindowSetTitle, MRB_ARGS_ARG(uiWindowSetTitle_REQUIRED_ARGC, uiWindowSetTitle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowSetTitle", mrb_UI_uiWindowSetTitle, MRB_ARGS_ARG(uiWindowSetTitle_REQUIRED_ARGC, uiWindowSetTitle_OPTIONAL_ARGC));
 #endif
 #if BIND_uiWindowTitle_FUNCTION
-  mrb_define_class_method(mrb, UI_module, "uiWindowTitle", mrb_UI_uiWindowTitle, MRB_ARGS_ARG(uiWindowTitle_REQUIRED_ARGC, uiWindowTitle_OPTIONAL_ARGC));
+  mrb_define_class_method(mrb, UI_module, "windowTitle", mrb_UI_uiWindowTitle, MRB_ARGS_ARG(uiWindowTitle_REQUIRED_ARGC, uiWindowTitle_OPTIONAL_ARGC));
 #endif
 /* MRUBY_BINDING_END */
 

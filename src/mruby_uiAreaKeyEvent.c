@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiAreaKeyEvent_TYPE
+#if BIND_AreaKeyEvent_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::initialize */
-/* sha: 4c600a482c6bbdc20e6c4b90ebaadc5a79faa7aa14d16156c8928e34388d000a */
-#if BIND_UiAreaKeyEvent_INITIALIZE
+/* MRUBY_BINDING: AreaKeyEvent::initialize */
+/* sha: 531aa13b1a989b9df1e8ef4774ef35c3c4233a9252bcb8c786486aaa5d7a4e46 */
+#if BIND_AreaKeyEvent_INITIALIZE
 mrb_value
-mrb_UI_UiAreaKeyEvent_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiAreaKeyEvent* native_object = (uiAreaKeyEvent*)calloc(1, sizeof(uiAreaKeyEvent));
@@ -31,11 +31,11 @@ mrb_UI_UiAreaKeyEvent_initialize(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Key_reader */
-/* sha: 278e6cd38679667af5c54dc01d84efcc88dd68cbd19d4efea97ed4515be2df2c */
-#if BIND_UiAreaKeyEvent_Key_FIELD_READER
+/* MRUBY_BINDING: AreaKeyEvent::Key_reader */
+/* sha: 020b4450e4a1b8744581979fcd33972ce3779b673ea0c8cdc4f0ccc2b88ff0a3 */
+#if BIND_AreaKeyEvent_Key_FIELD_READER
 mrb_value
-mrb_UI_UiAreaKeyEvent_get_Key(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_get_Key(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
 
   char native_Key = native_self->Key;
@@ -47,11 +47,11 @@ mrb_UI_UiAreaKeyEvent_get_Key(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Key_writer */
-/* sha: 4287010398cd9d49b1b18c6b4c486c823d59f271aa9191d584be0aa129ed6a8c */
-#if BIND_UiAreaKeyEvent_Key_FIELD_WRITER
+/* MRUBY_BINDING: AreaKeyEvent::Key_writer */
+/* sha: c8f76edb7d4f4127b05df5382e715c4dbeef97dea7720e098ed47efd0e0d0422 */
+#if BIND_AreaKeyEvent_Key_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaKeyEvent_set_Key(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_set_Key(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
   mrb_int native_Key;
 
@@ -66,11 +66,11 @@ mrb_UI_UiAreaKeyEvent_set_Key(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::ExtKey_reader */
-/* sha: 883ea57cd3cd3d557776a460323ddd92fff647561e868de898c73b90048d01a6 */
-#if BIND_UiAreaKeyEvent_ExtKey_FIELD_READER
+/* MRUBY_BINDING: AreaKeyEvent::ExtKey_reader */
+/* sha: 6ca4649dd5f0b790417ad3db2246b7a14d4909a5f8ea2d4ab1952646d80a65f1 */
+#if BIND_AreaKeyEvent_ExtKey_FIELD_READER
 mrb_value
-mrb_UI_UiAreaKeyEvent_get_ExtKey(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_get_ExtKey(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
 
   uiExtKey native_ExtKey = native_self->ExtKey;
@@ -82,11 +82,11 @@ mrb_UI_UiAreaKeyEvent_get_ExtKey(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::ExtKey_writer */
-/* sha: f1a80ed4599f52f8ac3dadeefb82fe63fd88cfcb452d4c1de798095d4b196229 */
-#if BIND_UiAreaKeyEvent_ExtKey_FIELD_WRITER
+/* MRUBY_BINDING: AreaKeyEvent::ExtKey_writer */
+/* sha: 96ffd4cf8963c7e5fdff485439a222a929a6a2e9c44ebeedcb36969d95bd7eca */
+#if BIND_AreaKeyEvent_ExtKey_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaKeyEvent_set_ExtKey(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_set_ExtKey(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
   mrb_value ExtKey;
 
@@ -106,11 +106,11 @@ mrb_UI_UiAreaKeyEvent_set_ExtKey(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Modifier_reader */
-/* sha: b55e78452c53202f5c93d49744589d9bed13e9540e54465175fbdea5c465b02a */
-#if BIND_UiAreaKeyEvent_Modifier_FIELD_READER
+/* MRUBY_BINDING: AreaKeyEvent::Modifier_reader */
+/* sha: df832375900cb2f8fda5bf5cdfb1d28768fa1141872e88c3eeb711dfca8b3158 */
+#if BIND_AreaKeyEvent_Modifier_FIELD_READER
 mrb_value
-mrb_UI_UiAreaKeyEvent_get_Modifier(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_get_Modifier(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
 
   uiModifiers native_Modifier = native_self->Modifier;
@@ -122,11 +122,11 @@ mrb_UI_UiAreaKeyEvent_get_Modifier(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Modifier_writer */
-/* sha: 66a693c37e518d8857b5f77e5989daf14c926cd7c93c8a60e72a5708f7b6cf6d */
-#if BIND_UiAreaKeyEvent_Modifier_FIELD_WRITER
+/* MRUBY_BINDING: AreaKeyEvent::Modifier_writer */
+/* sha: e57b2b508f7d8f56f2186435e993b6fa2070274d11ed680d529962bff6458e0c */
+#if BIND_AreaKeyEvent_Modifier_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaKeyEvent_set_Modifier(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_set_Modifier(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
   mrb_value Modifier;
 
@@ -146,11 +146,11 @@ mrb_UI_UiAreaKeyEvent_set_Modifier(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Modifiers_reader */
-/* sha: 3a5032c6713944771910be9a490a2364465dd765ad001293658aed72f2b05f23 */
-#if BIND_UiAreaKeyEvent_Modifiers_FIELD_READER
+/* MRUBY_BINDING: AreaKeyEvent::Modifiers_reader */
+/* sha: 0c77843d89da94511cf8b0b296d96178ea1acbbfbf263bbc5f0901a4bf931341 */
+#if BIND_AreaKeyEvent_Modifiers_FIELD_READER
 mrb_value
-mrb_UI_UiAreaKeyEvent_get_Modifiers(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_get_Modifiers(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
 
   uiModifiers native_Modifiers = native_self->Modifiers;
@@ -162,11 +162,11 @@ mrb_UI_UiAreaKeyEvent_get_Modifiers(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Modifiers_writer */
-/* sha: 64f2fc6a6175237091e39b10837810bc8ec063669efa7a6e0b7facce7c8a8c05 */
-#if BIND_UiAreaKeyEvent_Modifiers_FIELD_WRITER
+/* MRUBY_BINDING: AreaKeyEvent::Modifiers_writer */
+/* sha: 69ab599eff0fb54d10b4bb63d816b029647023b0f3818ac827b6984fce68f5e9 */
+#if BIND_AreaKeyEvent_Modifiers_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaKeyEvent_set_Modifiers(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_set_Modifiers(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
   mrb_value Modifiers;
 
@@ -186,11 +186,11 @@ mrb_UI_UiAreaKeyEvent_set_Modifiers(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Up_reader */
-/* sha: 83b77f3c36a1d4c4129257d011200b7f0b64670c5d82b62645dedf1328f769bd */
-#if BIND_UiAreaKeyEvent_Up_FIELD_READER
+/* MRUBY_BINDING: AreaKeyEvent::Up_reader */
+/* sha: 969844cfdbc7c9a12e6f57e60ae9c7d3b4866830a6743d85a2d537918a1254df */
+#if BIND_AreaKeyEvent_Up_FIELD_READER
 mrb_value
-mrb_UI_UiAreaKeyEvent_get_Up(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_get_Up(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
 
   int native_Up = native_self->Up;
@@ -202,11 +202,11 @@ mrb_UI_UiAreaKeyEvent_get_Up(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::Up_writer */
-/* sha: e54e3baf756cfd13246c30ee96fe6f463e16e3232a5c6e99893b3a863f9831d1 */
-#if BIND_UiAreaKeyEvent_Up_FIELD_WRITER
+/* MRUBY_BINDING: AreaKeyEvent::Up_writer */
+/* sha: 5e5d19eb6887a2480af33d0ed8bf9132ff1d62a2e0e1e1a7929b84906c2f792d */
+#if BIND_AreaKeyEvent_Up_FIELD_WRITER
 mrb_value
-mrb_UI_UiAreaKeyEvent_set_Up(mrb_state* mrb, mrb_value self) {
+mrb_UI_AreaKeyEvent_set_Up(mrb_state* mrb, mrb_value self) {
   uiAreaKeyEvent * native_self = mruby_unbox_uiAreaKeyEvent(self);
   mrb_int native_Up;
 
@@ -222,7 +222,7 @@ mrb_UI_UiAreaKeyEvent_set_Up(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiAreaKeyEvent_init(mrb_state* mrb) {
+void mrb_UI_AreaKeyEvent_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -232,68 +232,68 @@ void mrb_UI_UiAreaKeyEvent_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::class_definition */
-/* sha: aacc4498e9695cf64366f4fc820f082a4f60a953c943f3d74dc2242af77d2531 */
-  struct RClass* UiAreaKeyEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "UiAreaKeyEvent", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiAreaKeyEvent_class, MRB_TT_DATA);
+/* MRUBY_BINDING: AreaKeyEvent::class_definition */
+/* sha: 68e2ab1a52e332237a778eb84262f759ffa89adfcaefc2b209d1740f511ed83e */
+  struct RClass* AreaKeyEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaKeyEvent", mrb->object_class);
+  MRB_SET_INSTANCE_TT(AreaKeyEvent_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::pre_class_method_definitions */
+/* MRUBY_BINDING: AreaKeyEvent::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::class_method_definitions */
-/* sha: ed111f7159f06eae39b36cd291f163cac425400ae3d93f98bf67e770ec6d00e0 */
-#if BIND_UiAreaKeyEvent_INITIALIZE
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "initialize", mrb_UI_UiAreaKeyEvent_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: AreaKeyEvent::class_method_definitions */
+/* sha: 0e98c13b9b9b535f67f62367289fa7337fbaa79432d604c8f95916ed1c0cf1fd */
+#if BIND_AreaKeyEvent_INITIALIZE
+  mrb_define_method(mrb, AreaKeyEvent_class, "initialize", mrb_UI_AreaKeyEvent_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::pre_attr_definitions */
+/* MRUBY_BINDING: AreaKeyEvent::pre_attr_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiAreaKeyEvent::attr_definitions */
-/* sha: 742a12b36d501c968df2dd1cffdf3f2760de11cb193aca3d3137090e77da9081 */
+/* MRUBY_BINDING: AreaKeyEvent::attr_definitions */
+/* sha: 12884cc70821df219c53f24b50d3c47e6d7093f85fcaacafad571623daf446a6 */
   /*
    * Fields
    */
-#if BIND_UiAreaKeyEvent_Key_FIELD_READER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Key", mrb_UI_UiAreaKeyEvent_get_Key, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaKeyEvent_Key_FIELD_READER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Key", mrb_UI_AreaKeyEvent_get_Key, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaKeyEvent_Key_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Key=", mrb_UI_UiAreaKeyEvent_set_Key, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaKeyEvent_Key_FIELD_WRITER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Key=", mrb_UI_AreaKeyEvent_set_Key, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaKeyEvent_ExtKey_FIELD_READER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "ExtKey", mrb_UI_UiAreaKeyEvent_get_ExtKey, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaKeyEvent_ExtKey_FIELD_READER
+  mrb_define_method(mrb, AreaKeyEvent_class, "ExtKey", mrb_UI_AreaKeyEvent_get_ExtKey, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaKeyEvent_ExtKey_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "ExtKey=", mrb_UI_UiAreaKeyEvent_set_ExtKey, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaKeyEvent_ExtKey_FIELD_WRITER
+  mrb_define_method(mrb, AreaKeyEvent_class, "ExtKey=", mrb_UI_AreaKeyEvent_set_ExtKey, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaKeyEvent_Modifier_FIELD_READER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Modifier", mrb_UI_UiAreaKeyEvent_get_Modifier, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaKeyEvent_Modifier_FIELD_READER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Modifier", mrb_UI_AreaKeyEvent_get_Modifier, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaKeyEvent_Modifier_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Modifier=", mrb_UI_UiAreaKeyEvent_set_Modifier, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaKeyEvent_Modifier_FIELD_WRITER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Modifier=", mrb_UI_AreaKeyEvent_set_Modifier, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaKeyEvent_Modifiers_FIELD_READER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Modifiers", mrb_UI_UiAreaKeyEvent_get_Modifiers, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaKeyEvent_Modifiers_FIELD_READER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Modifiers", mrb_UI_AreaKeyEvent_get_Modifiers, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaKeyEvent_Modifiers_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Modifiers=", mrb_UI_UiAreaKeyEvent_set_Modifiers, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaKeyEvent_Modifiers_FIELD_WRITER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Modifiers=", mrb_UI_AreaKeyEvent_set_Modifiers, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiAreaKeyEvent_Up_FIELD_READER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Up", mrb_UI_UiAreaKeyEvent_get_Up, MRB_ARGS_ARG(0, 0));
+#if BIND_AreaKeyEvent_Up_FIELD_READER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Up", mrb_UI_AreaKeyEvent_get_Up, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiAreaKeyEvent_Up_FIELD_WRITER
-  mrb_define_method(mrb, UiAreaKeyEvent_class, "Up=", mrb_UI_UiAreaKeyEvent_set_Up, MRB_ARGS_ARG(1, 0));
+#if BIND_AreaKeyEvent_Up_FIELD_WRITER
+  mrb_define_method(mrb, AreaKeyEvent_class, "Up=", mrb_UI_AreaKeyEvent_set_Up, MRB_ARGS_ARG(1, 0));
 #endif
 /* MRUBY_BINDING_END */
 
 
-/* MRUBY_BINDING: UiAreaKeyEvent::post_class_definition */
+/* MRUBY_BINDING: AreaKeyEvent::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

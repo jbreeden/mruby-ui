@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiDrawBrush_TYPE
+#if BIND_DrawBrush_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::initialize */
-/* sha: dedefab0514c1fe53135c16db7cb9a0006951cab868e39f680e6961cd596874c */
-#if BIND_UiDrawBrush_INITIALIZE
+/* MRUBY_BINDING: DrawBrush::initialize */
+/* sha: bbddc7c103b9d88bb4fd5cfb576e810b579559bebfddbab0e34b414f6ad67c80 */
+#if BIND_DrawBrush_INITIALIZE
 mrb_value
-mrb_UI_UiDrawBrush_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiDrawBrush* native_object = (uiDrawBrush*)calloc(1, sizeof(uiDrawBrush));
@@ -31,11 +31,11 @@ mrb_UI_UiDrawBrush_initialize(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-/* MRUBY_BINDING: UiDrawBrush::Type_reader */
-/* sha: 0305875ee30924fcb6d0b4b1d473d84964c5517cf39bd31d522a4ed1d2bf3dac */
-#if BIND_UiDrawBrush_Type_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::Type_reader */
+/* sha: d5d46535a79e4d577a3d46f15a84dc43ae39b6883aba8f7bfe5aa6aa4d493efd */
+#if BIND_DrawBrush_Type_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_Type(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_Type(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   uiDrawBrushType native_Type = native_self->Type;
@@ -47,11 +47,11 @@ mrb_UI_UiDrawBrush_get_Type(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::Type_writer */
-/* sha: 12c5077fea7ad08989597c847cf4c8951a7edbec29651db608cfff848d369dbc */
-#if BIND_UiDrawBrush_Type_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::Type_writer */
+/* sha: 3b7a1e979a49295c3f651c3c71df5a83d538b762bc04f9037babbfa46eebf20a */
+#if BIND_DrawBrush_Type_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_Type(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_Type(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_value Type;
 
@@ -71,11 +71,11 @@ mrb_UI_UiDrawBrush_set_Type(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::R_reader */
-/* sha: fd7ea1b0fceaf6cad07c61e9f93914d0b99b306af7cad838639d3021dfd43afd */
-#if BIND_UiDrawBrush_R_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::R_reader */
+/* sha: 97d44e247f089eb725a33b2f529506aedf744d058a1a5d341ffb781026c1ea1c */
+#if BIND_DrawBrush_R_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_R(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_R(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_R = native_self->R;
@@ -87,11 +87,11 @@ mrb_UI_UiDrawBrush_get_R(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::R_writer */
-/* sha: 2ffa9e353b76c58df780dc72a28bdb51e37b5530c6dbd34fd645ffeda2153ab2 */
-#if BIND_UiDrawBrush_R_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::R_writer */
+/* sha: 837225615913e14b021f56b97c5b0f172cbad89c6928279c145d3708edfe0979 */
+#if BIND_DrawBrush_R_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_R(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_R(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_R;
 
@@ -106,11 +106,11 @@ mrb_UI_UiDrawBrush_set_R(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::G_reader */
-/* sha: 0bc230ce86df6e90eceb8ce26e647df022519f6f22011abf733e69c20e02c5e7 */
-#if BIND_UiDrawBrush_G_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::G_reader */
+/* sha: 1e54e382a5067c0572c31611761d9a2632be1e4b0e0e381ea3009198ad072977 */
+#if BIND_DrawBrush_G_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_G(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_G(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_G = native_self->G;
@@ -122,11 +122,11 @@ mrb_UI_UiDrawBrush_get_G(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::G_writer */
-/* sha: ec29e2cab505688941cf6c4df70779bb6013a47f7dd79b487851627af1dc2359 */
-#if BIND_UiDrawBrush_G_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::G_writer */
+/* sha: 41a7162004d3a526c16ca492217433b06a1d22e8e9bf6ed79412387dda30352e */
+#if BIND_DrawBrush_G_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_G(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_G(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_G;
 
@@ -141,11 +141,11 @@ mrb_UI_UiDrawBrush_set_G(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::B_reader */
-/* sha: d2d13a5da276f6a9053eae1f1c97938bc0462cd8a8d05978608e422262105c9d */
-#if BIND_UiDrawBrush_B_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::B_reader */
+/* sha: 9678aaa84067feb33ffbfcd2d959c5a699856393dee8c55357fcbd3ebc370cdc */
+#if BIND_DrawBrush_B_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_B(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_B(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_B = native_self->B;
@@ -157,11 +157,11 @@ mrb_UI_UiDrawBrush_get_B(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::B_writer */
-/* sha: 0edc0ce003349b679003a7f37d7816348790a884cf6055c9f2ca66ea723a1745 */
-#if BIND_UiDrawBrush_B_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::B_writer */
+/* sha: 0bb103139e7d607b2d4ca2f1eb84fc66a2135a1688e47db19f2432d4c0af8ae1 */
+#if BIND_DrawBrush_B_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_B(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_B(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_B;
 
@@ -176,11 +176,11 @@ mrb_UI_UiDrawBrush_set_B(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::A_reader */
-/* sha: 57ab9912983e3ee1d4965ad07fc30aa41d70f5d9cbda2742b39f020b3e450f08 */
-#if BIND_UiDrawBrush_A_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::A_reader */
+/* sha: f3feafc4a0169402d54a7c30a2c317606adfe478a5db9f077f00011e1988deea */
+#if BIND_DrawBrush_A_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_A(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_A(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_A = native_self->A;
@@ -192,11 +192,11 @@ mrb_UI_UiDrawBrush_get_A(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::A_writer */
-/* sha: 8fff61847aad1528645057ca868c98767de5e61a8263829ad152559cfea05b79 */
-#if BIND_UiDrawBrush_A_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::A_writer */
+/* sha: 250f83d2673efd5615732afe7f635ab35c271af054dd4d9f7f5de80ed8bc1f7c */
+#if BIND_DrawBrush_A_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_A(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_A(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_A;
 
@@ -211,11 +211,11 @@ mrb_UI_UiDrawBrush_set_A(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::X0_reader */
-/* sha: ef1eb13d59a86e31bdedc856cd46a2258e174eb786818998af29483a5207c2c1 */
-#if BIND_UiDrawBrush_X0_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::X0_reader */
+/* sha: 27dee999058f0c5de2d5e52e2d9cfc563ef4a5e7d2ae3e1f56e01ffc59bec528 */
+#if BIND_DrawBrush_X0_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_X0(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_X0(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_X0 = native_self->X0;
@@ -227,11 +227,11 @@ mrb_UI_UiDrawBrush_get_X0(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::X0_writer */
-/* sha: 0fcb855167bce620dcf9a1e97b49c7a72fb37f71f68d95b5dad0e5c392918fff */
-#if BIND_UiDrawBrush_X0_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::X0_writer */
+/* sha: df7842743e5492c46c7f60258cfe931f163c047566a8bd851b668d19ce45ceed */
+#if BIND_DrawBrush_X0_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_X0(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_X0(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_X0;
 
@@ -246,11 +246,11 @@ mrb_UI_UiDrawBrush_set_X0(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::Y0_reader */
-/* sha: 96aa4fba813760084bb9c0a70d9d170c1542df3013fd3dcac68c62c2b8abe14d */
-#if BIND_UiDrawBrush_Y0_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::Y0_reader */
+/* sha: a42a67533db456aa04cc96dc5b30342223d7a2495476877b393d6812a729091e */
+#if BIND_DrawBrush_Y0_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_Y0(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_Y0(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_Y0 = native_self->Y0;
@@ -262,11 +262,11 @@ mrb_UI_UiDrawBrush_get_Y0(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::Y0_writer */
-/* sha: 3ced432ac922ffb093ae32b9054815064671a0efc4b85521d1090c84f4206e78 */
-#if BIND_UiDrawBrush_Y0_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::Y0_writer */
+/* sha: 540321fad288ca04c76eb057234d23b496ab772bb25e5fe0bdac3c66c2e3b16f */
+#if BIND_DrawBrush_Y0_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_Y0(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_Y0(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_Y0;
 
@@ -281,11 +281,11 @@ mrb_UI_UiDrawBrush_set_Y0(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::X1_reader */
-/* sha: cded4e21c60ee63dda66b22da9517af08245967a4f13365bb697d00fb7a2afc2 */
-#if BIND_UiDrawBrush_X1_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::X1_reader */
+/* sha: 69be41c99139889f1d959ea13d66b7355b115b2a1f669559b173871295d6298b */
+#if BIND_DrawBrush_X1_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_X1(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_X1(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_X1 = native_self->X1;
@@ -297,11 +297,11 @@ mrb_UI_UiDrawBrush_get_X1(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::X1_writer */
-/* sha: 87ab0b0a8e5d3605f9975ec71291f7f843e874914c098d2eecc733a96660e881 */
-#if BIND_UiDrawBrush_X1_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::X1_writer */
+/* sha: 24cdedd0b7574499581010f707674d9aaa07b95ce7b063694cc2e9d848770733 */
+#if BIND_DrawBrush_X1_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_X1(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_X1(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_X1;
 
@@ -316,11 +316,11 @@ mrb_UI_UiDrawBrush_set_X1(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::Y1_reader */
-/* sha: 84802e21d001e6fbd027ba5d10b6529951844136fa48fcef84ca7269f0a4eff2 */
-#if BIND_UiDrawBrush_Y1_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::Y1_reader */
+/* sha: 1ea699629314ec4b4a5a729fbf2db90439638e98f6e0d34704b37287b5d3a700 */
+#if BIND_DrawBrush_Y1_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_Y1(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_Y1(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_Y1 = native_self->Y1;
@@ -332,11 +332,11 @@ mrb_UI_UiDrawBrush_get_Y1(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::Y1_writer */
-/* sha: 854a10ae1bec41d602a8c264fa50334cb7c070ef5970ac866b67ddd631aa9dd7 */
-#if BIND_UiDrawBrush_Y1_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::Y1_writer */
+/* sha: deb78aa63d172e4f130cd1a7bd9d1ec427982e1905e044800e72e7fda38d2b0c */
+#if BIND_DrawBrush_Y1_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_Y1(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_Y1(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_Y1;
 
@@ -351,11 +351,11 @@ mrb_UI_UiDrawBrush_set_Y1(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::OuterRadius_reader */
-/* sha: 48f9ef13dca77c32912302d9557e6ff678f7453a568e97c14abf7c4f09858ff1 */
-#if BIND_UiDrawBrush_OuterRadius_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::OuterRadius_reader */
+/* sha: 3b62ae882ad269f31bb9eb3e94a33215a8d8469c7a29f30a7f2290174df40f54 */
+#if BIND_DrawBrush_OuterRadius_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_OuterRadius(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_OuterRadius(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   double native_OuterRadius = native_self->OuterRadius;
@@ -367,11 +367,11 @@ mrb_UI_UiDrawBrush_get_OuterRadius(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::OuterRadius_writer */
-/* sha: 4d02425d7a695c997ac438f6a645ba2316c813f9ab513814f331db9bc922d889 */
-#if BIND_UiDrawBrush_OuterRadius_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::OuterRadius_writer */
+/* sha: 3c75c3ea154e0d7d6aa89401b0a120552b0f7ca5701a8a6c0394da7a7be2e9dd */
+#if BIND_DrawBrush_OuterRadius_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_OuterRadius(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_OuterRadius(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_float native_OuterRadius;
 
@@ -386,11 +386,11 @@ mrb_UI_UiDrawBrush_set_OuterRadius(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::Stops_reader */
-/* sha: 9bc98faff7aef07cc867c1d66447d0d48f293f6ad4b7d7527028ade9b3195cac */
-#if BIND_UiDrawBrush_Stops_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::Stops_reader */
+/* sha: a484e598c694a17ebe314950643755ea5e873bdfb4f5a625db4635b5465f7de9 */
+#if BIND_DrawBrush_Stops_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_Stops(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_Stops(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   uiDrawBrushGradientStop * native_Stops = native_self->Stops;
@@ -402,19 +402,19 @@ mrb_UI_UiDrawBrush_get_Stops(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::Stops_writer */
-/* sha: e51478c842867c7174f50833579a933dfc274062874302a473b0b62ae7096303 */
-#if BIND_UiDrawBrush_Stops_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::Stops_writer */
+/* sha: f5b7def7a6579c2e8f275788844084b0b62894f7b79837691a30bb155b22e84f */
+#if BIND_DrawBrush_Stops_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_Stops(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_Stops(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_value Stops;
 
   mrb_get_args(mrb, "o", &Stops);
 
   /* type checking */
-  if (!mrb_obj_is_kind_of(mrb, Stops, UiDrawBrushGradientStop_class(mrb))) {
-    mrb_raise(mrb, E_TYPE_ERROR, "UiDrawBrushGradientStop expected");
+  if (!mrb_obj_is_kind_of(mrb, Stops, DrawBrushGradientStop_class(mrb))) {
+    mrb_raise(mrb, E_TYPE_ERROR, "DrawBrushGradientStop expected");
     return mrb_nil_value();
   }
 
@@ -429,11 +429,11 @@ mrb_UI_UiDrawBrush_set_Stops(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::NumStops_reader */
-/* sha: cd411c76f90e6480df8ce1085f3930e5c1a8b7d863243348b0ad6ec90aee013c */
-#if BIND_UiDrawBrush_NumStops_FIELD_READER
+/* MRUBY_BINDING: DrawBrush::NumStops_reader */
+/* sha: 2cf03a86ee52f7245fe695ff7f4fdd22902bd5a82ce223c17825b62b41c798a7 */
+#if BIND_DrawBrush_NumStops_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrush_get_NumStops(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_get_NumStops(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
 
   int native_NumStops = native_self->NumStops;
@@ -445,11 +445,11 @@ mrb_UI_UiDrawBrush_get_NumStops(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::NumStops_writer */
-/* sha: fec762b8044b3a1b8851c4c20079ba298ccc75d18e1f6c13d359275ab8262a61 */
-#if BIND_UiDrawBrush_NumStops_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrush::NumStops_writer */
+/* sha: f353fbf1cac2edae96fc0d34daa2acf214e8ca47ce0168e489d27671cb8c825f */
+#if BIND_DrawBrush_NumStops_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrush_set_NumStops(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrush_set_NumStops(mrb_state* mrb, mrb_value self) {
   uiDrawBrush * native_self = mruby_unbox_uiDrawBrush(self);
   mrb_int native_NumStops;
 
@@ -465,7 +465,7 @@ mrb_UI_UiDrawBrush_set_NumStops(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiDrawBrush_init(mrb_state* mrb) {
+void mrb_UI_DrawBrush_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -475,110 +475,110 @@ void mrb_UI_UiDrawBrush_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::class_definition */
-/* sha: 53b0357a8705ff37757b16b98ee6e2ba04627354e963e6050a71ad6b88c79c9c */
-  struct RClass* UiDrawBrush_class = mrb_define_class_under(mrb, UI_module(mrb), "UiDrawBrush", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiDrawBrush_class, MRB_TT_DATA);
+/* MRUBY_BINDING: DrawBrush::class_definition */
+/* sha: 49c22f2f061852e9c3524bb3473ecf76a26711d312753409c9ae0b23f974ad8b */
+  struct RClass* DrawBrush_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawBrush", mrb->object_class);
+  MRB_SET_INSTANCE_TT(DrawBrush_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::pre_class_method_definitions */
+/* MRUBY_BINDING: DrawBrush::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::class_method_definitions */
-/* sha: 615bd35df5f2bd385283af9b42d168aab2f9dad031443f6fbb7d1de39282fd04 */
-#if BIND_UiDrawBrush_INITIALIZE
-  mrb_define_method(mrb, UiDrawBrush_class, "initialize", mrb_UI_UiDrawBrush_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: DrawBrush::class_method_definitions */
+/* sha: 9e277b6917ef08870bb7ca5acbd4354550cb31d40a8bca6e79be6e769b8c3e23 */
+#if BIND_DrawBrush_INITIALIZE
+  mrb_define_method(mrb, DrawBrush_class, "initialize", mrb_UI_DrawBrush_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::pre_attr_definitions */
+/* MRUBY_BINDING: DrawBrush::pre_attr_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrush::attr_definitions */
-/* sha: 1cb3281adf717b442f0e078fb8814b2326d38c2db42634735723f88b725c0944 */
+/* MRUBY_BINDING: DrawBrush::attr_definitions */
+/* sha: 346b423b0f3fd0e045bc2b1c853ffa8c9b81abf21703849b42691784841a1f43 */
   /*
    * Fields
    */
-#if BIND_UiDrawBrush_Type_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "Type", mrb_UI_UiDrawBrush_get_Type, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_Type_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "Type", mrb_UI_DrawBrush_get_Type, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_Type_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "Type=", mrb_UI_UiDrawBrush_set_Type, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_Type_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "Type=", mrb_UI_DrawBrush_set_Type, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_R_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "R", mrb_UI_UiDrawBrush_get_R, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_R_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "R", mrb_UI_DrawBrush_get_R, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_R_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "R=", mrb_UI_UiDrawBrush_set_R, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_R_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "R=", mrb_UI_DrawBrush_set_R, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_G_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "G", mrb_UI_UiDrawBrush_get_G, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_G_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "G", mrb_UI_DrawBrush_get_G, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_G_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "G=", mrb_UI_UiDrawBrush_set_G, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_G_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "G=", mrb_UI_DrawBrush_set_G, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_B_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "B", mrb_UI_UiDrawBrush_get_B, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_B_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "B", mrb_UI_DrawBrush_get_B, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_B_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "B=", mrb_UI_UiDrawBrush_set_B, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_B_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "B=", mrb_UI_DrawBrush_set_B, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_A_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "A", mrb_UI_UiDrawBrush_get_A, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_A_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "A", mrb_UI_DrawBrush_get_A, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_A_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "A=", mrb_UI_UiDrawBrush_set_A, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_A_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "A=", mrb_UI_DrawBrush_set_A, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_X0_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "X0", mrb_UI_UiDrawBrush_get_X0, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_X0_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "X0", mrb_UI_DrawBrush_get_X0, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_X0_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "X0=", mrb_UI_UiDrawBrush_set_X0, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_X0_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "X0=", mrb_UI_DrawBrush_set_X0, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_Y0_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "Y0", mrb_UI_UiDrawBrush_get_Y0, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_Y0_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "Y0", mrb_UI_DrawBrush_get_Y0, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_Y0_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "Y0=", mrb_UI_UiDrawBrush_set_Y0, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_Y0_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "Y0=", mrb_UI_DrawBrush_set_Y0, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_X1_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "X1", mrb_UI_UiDrawBrush_get_X1, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_X1_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "X1", mrb_UI_DrawBrush_get_X1, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_X1_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "X1=", mrb_UI_UiDrawBrush_set_X1, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_X1_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "X1=", mrb_UI_DrawBrush_set_X1, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_Y1_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "Y1", mrb_UI_UiDrawBrush_get_Y1, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_Y1_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "Y1", mrb_UI_DrawBrush_get_Y1, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_Y1_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "Y1=", mrb_UI_UiDrawBrush_set_Y1, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_Y1_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "Y1=", mrb_UI_DrawBrush_set_Y1, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_OuterRadius_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "OuterRadius", mrb_UI_UiDrawBrush_get_OuterRadius, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_OuterRadius_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "OuterRadius", mrb_UI_DrawBrush_get_OuterRadius, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_OuterRadius_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "OuterRadius=", mrb_UI_UiDrawBrush_set_OuterRadius, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_OuterRadius_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "OuterRadius=", mrb_UI_DrawBrush_set_OuterRadius, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_Stops_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "Stops", mrb_UI_UiDrawBrush_get_Stops, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_Stops_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "Stops", mrb_UI_DrawBrush_get_Stops, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_Stops_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "Stops=", mrb_UI_UiDrawBrush_set_Stops, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_Stops_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "Stops=", mrb_UI_DrawBrush_set_Stops, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrush_NumStops_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrush_class, "NumStops", mrb_UI_UiDrawBrush_get_NumStops, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrush_NumStops_FIELD_READER
+  mrb_define_method(mrb, DrawBrush_class, "NumStops", mrb_UI_DrawBrush_get_NumStops, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrush_NumStops_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrush_class, "NumStops=", mrb_UI_UiDrawBrush_set_NumStops, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrush_NumStops_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrush_class, "NumStops=", mrb_UI_DrawBrush_set_NumStops, MRB_ARGS_ARG(1, 0));
 #endif
 /* MRUBY_BINDING_END */
 
 
-/* MRUBY_BINDING: UiDrawBrush::post_class_definition */
+/* MRUBY_BINDING: DrawBrush::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

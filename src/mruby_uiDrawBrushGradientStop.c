@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiDrawBrushGradientStop_TYPE
+#if BIND_DrawBrushGradientStop_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::initialize */
-/* sha: f013958b0814dead89fab94b6079e0be637696fd8931e0b232fd008107344c4d */
-#if BIND_UiDrawBrushGradientStop_INITIALIZE
+/* MRUBY_BINDING: DrawBrushGradientStop::initialize */
+/* sha: 5140f942c7d3f797046cb111588ed7cd24ac37094072d48af904e76842f7fce3 */
+#if BIND_DrawBrushGradientStop_INITIALIZE
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiDrawBrushGradientStop* native_object = (uiDrawBrushGradientStop*)calloc(1, sizeof(uiDrawBrushGradientStop));
@@ -31,11 +31,11 @@ mrb_UI_UiDrawBrushGradientStop_initialize(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::Pos_reader */
-/* sha: 343a0b02fe47ebd412926a6d2371c7dd6431c80cca445e8426d5d19b4fc11d5a */
-#if BIND_UiDrawBrushGradientStop_Pos_FIELD_READER
+/* MRUBY_BINDING: DrawBrushGradientStop::Pos_reader */
+/* sha: f46b3f4fa9590ebcda419b0495076edf6d392a9fe8876d9413ce05bae52d56e0 */
+#if BIND_DrawBrushGradientStop_Pos_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_get_Pos(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_get_Pos(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
 
   double native_Pos = native_self->Pos;
@@ -47,11 +47,11 @@ mrb_UI_UiDrawBrushGradientStop_get_Pos(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::Pos_writer */
-/* sha: fcd8439be3cdcfadd9640e0f366f635665dd7eaf1cfb870fcfb3fd828581745f */
-#if BIND_UiDrawBrushGradientStop_Pos_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrushGradientStop::Pos_writer */
+/* sha: 1b4cdc327432e02ab6c76258c3af0514bdd9fc881ec6eddde6c46afea6d4fb32 */
+#if BIND_DrawBrushGradientStop_Pos_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_set_Pos(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_set_Pos(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
   mrb_float native_Pos;
 
@@ -66,11 +66,11 @@ mrb_UI_UiDrawBrushGradientStop_set_Pos(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::R_reader */
-/* sha: d8060e7e0246af7329c78542b0a5d83489a101b3a8f76a7542d30c50242a95bc */
-#if BIND_UiDrawBrushGradientStop_R_FIELD_READER
+/* MRUBY_BINDING: DrawBrushGradientStop::R_reader */
+/* sha: 989a9871eba8a276de9d2e6c7df46320d3e7ff7d824b94e05f8cb28dae03f49b */
+#if BIND_DrawBrushGradientStop_R_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_get_R(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_get_R(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
 
   double native_R = native_self->R;
@@ -82,11 +82,11 @@ mrb_UI_UiDrawBrushGradientStop_get_R(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::R_writer */
-/* sha: 30cab0bce7eb6e0c8edba310ff66f5c151488b9bb76aa092aeb2a08d41aa3f43 */
-#if BIND_UiDrawBrushGradientStop_R_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrushGradientStop::R_writer */
+/* sha: 029801f70f8236e0ffd74ba657b0fc0e89547a1ae68e5ddf9c1fc6a5ef8b8e1c */
+#if BIND_DrawBrushGradientStop_R_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_set_R(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_set_R(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
   mrb_float native_R;
 
@@ -101,11 +101,11 @@ mrb_UI_UiDrawBrushGradientStop_set_R(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::G_reader */
-/* sha: a9863d58a3c8cfdf6010317911248778ec47ade183bcb744e835131ee38ab6f5 */
-#if BIND_UiDrawBrushGradientStop_G_FIELD_READER
+/* MRUBY_BINDING: DrawBrushGradientStop::G_reader */
+/* sha: 473536c9e4cb51b9c460c6580843a5b94e26456f420506b706dce9da72014921 */
+#if BIND_DrawBrushGradientStop_G_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_get_G(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_get_G(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
 
   double native_G = native_self->G;
@@ -117,11 +117,11 @@ mrb_UI_UiDrawBrushGradientStop_get_G(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::G_writer */
-/* sha: c312dc9151359c6bf38030a3d600c47dbf0b7fd73ce10c2c85845b730c0cf515 */
-#if BIND_UiDrawBrushGradientStop_G_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrushGradientStop::G_writer */
+/* sha: aabd4b7a65732c5c559edd7761091f3305cf18a81b33aa279e4533881443c52e */
+#if BIND_DrawBrushGradientStop_G_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_set_G(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_set_G(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
   mrb_float native_G;
 
@@ -136,11 +136,11 @@ mrb_UI_UiDrawBrushGradientStop_set_G(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::B_reader */
-/* sha: 5a9886991b4a168acf970c88fabbd40274a65aff7e9244ad5912412be2f69f14 */
-#if BIND_UiDrawBrushGradientStop_B_FIELD_READER
+/* MRUBY_BINDING: DrawBrushGradientStop::B_reader */
+/* sha: 7c80b3f043b04f60b7d2d7cd1dfa34d6e057a3381fe3b2e41872ad830d217c9d */
+#if BIND_DrawBrushGradientStop_B_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_get_B(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_get_B(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
 
   double native_B = native_self->B;
@@ -152,11 +152,11 @@ mrb_UI_UiDrawBrushGradientStop_get_B(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::B_writer */
-/* sha: a72d565ca2641464bad3577c675885f2ab94cfe9c8b1f252ea91dc99714763b0 */
-#if BIND_UiDrawBrushGradientStop_B_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrushGradientStop::B_writer */
+/* sha: c364d329fd0f748d3bbe56b9b13cd5f19f000a29d68056a7307e1a58664cb9ba */
+#if BIND_DrawBrushGradientStop_B_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_set_B(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_set_B(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
   mrb_float native_B;
 
@@ -171,11 +171,11 @@ mrb_UI_UiDrawBrushGradientStop_set_B(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::A_reader */
-/* sha: 651193fd856eecdf7baa2adad516d9447f13f00a6a6fd7264e9a1722d7b28886 */
-#if BIND_UiDrawBrushGradientStop_A_FIELD_READER
+/* MRUBY_BINDING: DrawBrushGradientStop::A_reader */
+/* sha: 0c5c8c64d53c004ad2614b7b7eb2596a4629ba454cf962e4936ed1c2401cdb54 */
+#if BIND_DrawBrushGradientStop_A_FIELD_READER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_get_A(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_get_A(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
 
   double native_A = native_self->A;
@@ -187,11 +187,11 @@ mrb_UI_UiDrawBrushGradientStop_get_A(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::A_writer */
-/* sha: f33e8f3038f0125040deb1b1726bae795ad60f4fd4848b7bc6144863334b240f */
-#if BIND_UiDrawBrushGradientStop_A_FIELD_WRITER
+/* MRUBY_BINDING: DrawBrushGradientStop::A_writer */
+/* sha: 4ef6eb62024f303d0ea8bfcddbf3db570b2b6a87b38be636ee1d147083dd3500 */
+#if BIND_DrawBrushGradientStop_A_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawBrushGradientStop_set_A(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawBrushGradientStop_set_A(mrb_state* mrb, mrb_value self) {
   uiDrawBrushGradientStop * native_self = mruby_unbox_uiDrawBrushGradientStop(self);
   mrb_float native_A;
 
@@ -207,7 +207,7 @@ mrb_UI_UiDrawBrushGradientStop_set_A(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiDrawBrushGradientStop_init(mrb_state* mrb) {
+void mrb_UI_DrawBrushGradientStop_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -217,68 +217,68 @@ void mrb_UI_UiDrawBrushGradientStop_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::class_definition */
-/* sha: 1d91a983daacea6502ad06f03d645f66e3e5d88a6ebe76736cc68285825b9ef1 */
-  struct RClass* UiDrawBrushGradientStop_class = mrb_define_class_under(mrb, UI_module(mrb), "UiDrawBrushGradientStop", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiDrawBrushGradientStop_class, MRB_TT_DATA);
+/* MRUBY_BINDING: DrawBrushGradientStop::class_definition */
+/* sha: dc249582b47a353b2d0139521421f99cdab8f8acfb22eec050828506be13a38b */
+  struct RClass* DrawBrushGradientStop_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawBrushGradientStop", mrb->object_class);
+  MRB_SET_INSTANCE_TT(DrawBrushGradientStop_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::pre_class_method_definitions */
+/* MRUBY_BINDING: DrawBrushGradientStop::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::class_method_definitions */
-/* sha: 66379e5cd3627b2336c258cfcd8a305e40baa7a87193920d632f0e6f4553d7ff */
-#if BIND_UiDrawBrushGradientStop_INITIALIZE
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "initialize", mrb_UI_UiDrawBrushGradientStop_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: DrawBrushGradientStop::class_method_definitions */
+/* sha: a9add2ed27ae8a0afb542b733ef52e502855499d233af93288668108a6af0050 */
+#if BIND_DrawBrushGradientStop_INITIALIZE
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "initialize", mrb_UI_DrawBrushGradientStop_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::pre_attr_definitions */
+/* MRUBY_BINDING: DrawBrushGradientStop::pre_attr_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::attr_definitions */
-/* sha: ae416e213dae143a6cff709d1daae0a4b0cad740dee8bd217d0aa0f6edac0cd9 */
+/* MRUBY_BINDING: DrawBrushGradientStop::attr_definitions */
+/* sha: 6ef619fe82a427c9ec9feb627bd62bd9bea15b1f2ec7684ab7a21dd4b0e4694e */
   /*
    * Fields
    */
-#if BIND_UiDrawBrushGradientStop_Pos_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "Pos", mrb_UI_UiDrawBrushGradientStop_get_Pos, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrushGradientStop_Pos_FIELD_READER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "Pos", mrb_UI_DrawBrushGradientStop_get_Pos, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_Pos_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "Pos=", mrb_UI_UiDrawBrushGradientStop_set_Pos, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrushGradientStop_Pos_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "Pos=", mrb_UI_DrawBrushGradientStop_set_Pos, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_R_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "R", mrb_UI_UiDrawBrushGradientStop_get_R, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrushGradientStop_R_FIELD_READER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "R", mrb_UI_DrawBrushGradientStop_get_R, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_R_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "R=", mrb_UI_UiDrawBrushGradientStop_set_R, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrushGradientStop_R_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "R=", mrb_UI_DrawBrushGradientStop_set_R, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_G_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "G", mrb_UI_UiDrawBrushGradientStop_get_G, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrushGradientStop_G_FIELD_READER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "G", mrb_UI_DrawBrushGradientStop_get_G, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_G_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "G=", mrb_UI_UiDrawBrushGradientStop_set_G, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrushGradientStop_G_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "G=", mrb_UI_DrawBrushGradientStop_set_G, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_B_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "B", mrb_UI_UiDrawBrushGradientStop_get_B, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrushGradientStop_B_FIELD_READER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "B", mrb_UI_DrawBrushGradientStop_get_B, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_B_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "B=", mrb_UI_UiDrawBrushGradientStop_set_B, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrushGradientStop_B_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "B=", mrb_UI_DrawBrushGradientStop_set_B, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_A_FIELD_READER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "A", mrb_UI_UiDrawBrushGradientStop_get_A, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawBrushGradientStop_A_FIELD_READER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "A", mrb_UI_DrawBrushGradientStop_get_A, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawBrushGradientStop_A_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawBrushGradientStop_class, "A=", mrb_UI_UiDrawBrushGradientStop_set_A, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawBrushGradientStop_A_FIELD_WRITER
+  mrb_define_method(mrb, DrawBrushGradientStop_class, "A=", mrb_UI_DrawBrushGradientStop_set_A, MRB_ARGS_ARG(1, 0));
 #endif
 /* MRUBY_BINDING_END */
 
 
-/* MRUBY_BINDING: UiDrawBrushGradientStop::post_class_definition */
+/* MRUBY_BINDING: DrawBrushGradientStop::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */

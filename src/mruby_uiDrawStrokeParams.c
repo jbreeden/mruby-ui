@@ -5,18 +5,18 @@
 
 #include "mruby_UI.h"
 
-#if BIND_UiDrawStrokeParams_TYPE
+#if BIND_DrawStrokeParams_TYPE
 
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::initialize */
-/* sha: 224c0cab5f541511c89ce79130b0e8f85cd611d317fd38c9cb1ccffa947713d0 */
-#if BIND_UiDrawStrokeParams_INITIALIZE
+/* MRUBY_BINDING: DrawStrokeParams::initialize */
+/* sha: 28d546919d6e92a55b9985ac3c99720546813335bedfeb9ef42c02f40930149b */
+#if BIND_DrawStrokeParams_INITIALIZE
 mrb_value
-mrb_UI_UiDrawStrokeParams_initialize(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_initialize(mrb_state* mrb, mrb_value self) {
   mrb_raise(mrb, E_NOMETHOD_ERROR, "No initializer defined");
 /* 
   uiDrawStrokeParams* native_object = (uiDrawStrokeParams*)calloc(1, sizeof(uiDrawStrokeParams));
@@ -31,11 +31,11 @@ mrb_UI_UiDrawStrokeParams_initialize(mrb_state* mrb, mrb_value self) {
  * Fields
  */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Cap_reader */
-/* sha: d7e04446589f8d356c44b7afeeeba742ccdaae82c9f7d9901aa5e18868414fb8 */
-#if BIND_UiDrawStrokeParams_Cap_FIELD_READER
+/* MRUBY_BINDING: DrawStrokeParams::Cap_reader */
+/* sha: 89559c5226a9976bc164b4ac2b75fbdefa550bdd5f9e8e7f45e71c5c75ca6644 */
+#if BIND_DrawStrokeParams_Cap_FIELD_READER
 mrb_value
-mrb_UI_UiDrawStrokeParams_get_Cap(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_get_Cap(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
 
   uiDrawLineCap native_Cap = native_self->Cap;
@@ -47,11 +47,11 @@ mrb_UI_UiDrawStrokeParams_get_Cap(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Cap_writer */
-/* sha: e98beeac2510a847a33ea4fb0c175c4a4d33a8a725665ead87a23d1a95a02ebd */
-#if BIND_UiDrawStrokeParams_Cap_FIELD_WRITER
+/* MRUBY_BINDING: DrawStrokeParams::Cap_writer */
+/* sha: 87d01eafb13d41fcff45300e300a26f1c4bc50a8d12af1daa635c712730498a0 */
+#if BIND_DrawStrokeParams_Cap_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawStrokeParams_set_Cap(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_set_Cap(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
   mrb_value Cap;
 
@@ -71,11 +71,11 @@ mrb_UI_UiDrawStrokeParams_set_Cap(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Join_reader */
-/* sha: 521cd8842cb92e02cd4863befbf6b2011fcb11e84b4b886deb5fba559fe5f7d1 */
-#if BIND_UiDrawStrokeParams_Join_FIELD_READER
+/* MRUBY_BINDING: DrawStrokeParams::Join_reader */
+/* sha: 9f7030c386078dbd332748f8afe8c5e0dd5e98ce5b6ad63b9dd20c7cfa13ca77 */
+#if BIND_DrawStrokeParams_Join_FIELD_READER
 mrb_value
-mrb_UI_UiDrawStrokeParams_get_Join(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_get_Join(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
 
   uiDrawLineJoin native_Join = native_self->Join;
@@ -87,11 +87,11 @@ mrb_UI_UiDrawStrokeParams_get_Join(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Join_writer */
-/* sha: 7b37ad0f93da335daa95976d429aebf4300a258bf35d875485fe9726df256226 */
-#if BIND_UiDrawStrokeParams_Join_FIELD_WRITER
+/* MRUBY_BINDING: DrawStrokeParams::Join_writer */
+/* sha: b5bdbc64ec909b926e93a6442772f92ac71c2c2d3681ff000fe11a1731f55d26 */
+#if BIND_DrawStrokeParams_Join_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawStrokeParams_set_Join(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_set_Join(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
   mrb_value Join;
 
@@ -111,11 +111,11 @@ mrb_UI_UiDrawStrokeParams_set_Join(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Thickness_reader */
-/* sha: 4f92b7b3a8f4dd09ac5ae5f7a3af4690dbd084ca4141bf4ffaf38c3e06501dd4 */
-#if BIND_UiDrawStrokeParams_Thickness_FIELD_READER
+/* MRUBY_BINDING: DrawStrokeParams::Thickness_reader */
+/* sha: bc652e72ce1f4907a54872f433f928a6210166498a1b3d8d40e47811cf687456 */
+#if BIND_DrawStrokeParams_Thickness_FIELD_READER
 mrb_value
-mrb_UI_UiDrawStrokeParams_get_Thickness(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_get_Thickness(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
 
   double native_Thickness = native_self->Thickness;
@@ -127,11 +127,11 @@ mrb_UI_UiDrawStrokeParams_get_Thickness(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Thickness_writer */
-/* sha: 5df9afb48b3aff8fb389197ed56962c07c1b4cc56bd40c1932b3cdaa96907377 */
-#if BIND_UiDrawStrokeParams_Thickness_FIELD_WRITER
+/* MRUBY_BINDING: DrawStrokeParams::Thickness_writer */
+/* sha: 82d56897a020d58e6cf8bf5e8312af1285357dfc488043e1936fd8af969e1ebb */
+#if BIND_DrawStrokeParams_Thickness_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawStrokeParams_set_Thickness(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_set_Thickness(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
   mrb_float native_Thickness;
 
@@ -146,11 +146,11 @@ mrb_UI_UiDrawStrokeParams_set_Thickness(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::MiterLimit_reader */
-/* sha: ed66d7148349240532d9ff56a189bec73b7b09564e6b09d05f964b1bbf2899c1 */
-#if BIND_UiDrawStrokeParams_MiterLimit_FIELD_READER
+/* MRUBY_BINDING: DrawStrokeParams::MiterLimit_reader */
+/* sha: d6b033af857f9e5eef634c3c8253f0c60f7a7a0f8a689c34e502e4b0f891d56a */
+#if BIND_DrawStrokeParams_MiterLimit_FIELD_READER
 mrb_value
-mrb_UI_UiDrawStrokeParams_get_MiterLimit(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_get_MiterLimit(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
 
   double native_MiterLimit = native_self->MiterLimit;
@@ -162,11 +162,11 @@ mrb_UI_UiDrawStrokeParams_get_MiterLimit(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::MiterLimit_writer */
-/* sha: 8d2c49b2dcfa962e4f338ac3e7e23716ae72b62e630073542be6d39240bd0a52 */
-#if BIND_UiDrawStrokeParams_MiterLimit_FIELD_WRITER
+/* MRUBY_BINDING: DrawStrokeParams::MiterLimit_writer */
+/* sha: 7fc8ae41ca3ac3db8ac43a4002b3adadb45e48643a30df43e2a552bbafd3ef40 */
+#if BIND_DrawStrokeParams_MiterLimit_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawStrokeParams_set_MiterLimit(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_set_MiterLimit(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
   mrb_float native_MiterLimit;
 
@@ -181,11 +181,11 @@ mrb_UI_UiDrawStrokeParams_set_MiterLimit(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Dashes_reader */
-/* sha: 5307a406f1e2df9a852bba6c26ed19e29b414f602bcccf8b04dc0a0f68d68b78 */
-#if BIND_UiDrawStrokeParams_Dashes_FIELD_READER
+/* MRUBY_BINDING: DrawStrokeParams::Dashes_reader */
+/* sha: 426d97bfc8e7d2efbd8e84f4c431fc704015b940a7dbbb2e699ee5955b720de5 */
+#if BIND_DrawStrokeParams_Dashes_FIELD_READER
 mrb_value
-mrb_UI_UiDrawStrokeParams_get_Dashes(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_get_Dashes(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
 
   double * native_Dashes = native_self->Dashes;
@@ -197,11 +197,11 @@ mrb_UI_UiDrawStrokeParams_get_Dashes(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::Dashes_writer */
-/* sha: cf03ea8152319917122465666b6d94612107dbcd2548e625149bd25bc8ce83ad */
-#if BIND_UiDrawStrokeParams_Dashes_FIELD_WRITER
+/* MRUBY_BINDING: DrawStrokeParams::Dashes_writer */
+/* sha: 70ef13cbe6cd6bf96da4e51dbcd304cbe733f9c44a0f69f0abed7c84a81b2c4c */
+#if BIND_DrawStrokeParams_Dashes_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawStrokeParams_set_Dashes(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_set_Dashes(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
   mrb_value Dashes;
 
@@ -221,11 +221,11 @@ mrb_UI_UiDrawStrokeParams_set_Dashes(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::NumDashes_reader */
-/* sha: fda1e5de757301cc0597f91c8f85d79478ab02208d0b8a7d3f04549c9712ec87 */
-#if BIND_UiDrawStrokeParams_NumDashes_FIELD_READER
+/* MRUBY_BINDING: DrawStrokeParams::NumDashes_reader */
+/* sha: 7925e1cb88ca45b5aa28c56a3149846fb76e15fa320703652bd22eac23797ed2 */
+#if BIND_DrawStrokeParams_NumDashes_FIELD_READER
 mrb_value
-mrb_UI_UiDrawStrokeParams_get_NumDashes(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_get_NumDashes(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
 
   int native_NumDashes = native_self->NumDashes;
@@ -237,11 +237,11 @@ mrb_UI_UiDrawStrokeParams_get_NumDashes(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::NumDashes_writer */
-/* sha: 3b243e4e7274e86fbf5a6fc63b6564c11bdbaf6e6e0fb7059d2661d8ba840daa */
-#if BIND_UiDrawStrokeParams_NumDashes_FIELD_WRITER
+/* MRUBY_BINDING: DrawStrokeParams::NumDashes_writer */
+/* sha: 67e4887f7bada2061d4f749cab54a5ee427e0c7904d8c95d490ee87389ba3bf4 */
+#if BIND_DrawStrokeParams_NumDashes_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawStrokeParams_set_NumDashes(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_set_NumDashes(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
   mrb_int native_NumDashes;
 
@@ -256,11 +256,11 @@ mrb_UI_UiDrawStrokeParams_set_NumDashes(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::DashPhase_reader */
-/* sha: 261f3797f9d4688dd7d31df94727b0d8a3118708b6425bb557e6d4ef2d785df8 */
-#if BIND_UiDrawStrokeParams_DashPhase_FIELD_READER
+/* MRUBY_BINDING: DrawStrokeParams::DashPhase_reader */
+/* sha: b6d6dfde3042ba5702dcfcdc9684373039da0f44290a5a08d0afa14db9dc0569 */
+#if BIND_DrawStrokeParams_DashPhase_FIELD_READER
 mrb_value
-mrb_UI_UiDrawStrokeParams_get_DashPhase(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_get_DashPhase(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
 
   double native_DashPhase = native_self->DashPhase;
@@ -272,11 +272,11 @@ mrb_UI_UiDrawStrokeParams_get_DashPhase(mrb_state* mrb, mrb_value self) {
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::DashPhase_writer */
-/* sha: 8a9ab72c0b357b3c282855789e1fd8276e8b0717acc356e676b89fd150c7fec7 */
-#if BIND_UiDrawStrokeParams_DashPhase_FIELD_WRITER
+/* MRUBY_BINDING: DrawStrokeParams::DashPhase_writer */
+/* sha: 574fc8ef0ffecac53600e1701cf6ed4740b43fd048539120bf6fb77fcadd3340 */
+#if BIND_DrawStrokeParams_DashPhase_FIELD_WRITER
 mrb_value
-mrb_UI_UiDrawStrokeParams_set_DashPhase(mrb_state* mrb, mrb_value self) {
+mrb_UI_DrawStrokeParams_set_DashPhase(mrb_state* mrb, mrb_value self) {
   uiDrawStrokeParams * native_self = mruby_unbox_uiDrawStrokeParams(self);
   mrb_float native_DashPhase;
 
@@ -292,7 +292,7 @@ mrb_UI_UiDrawStrokeParams_set_DashPhase(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING_END */
 
 
-void mrb_UI_UiDrawStrokeParams_init(mrb_state* mrb) {
+void mrb_UI_DrawStrokeParams_init(mrb_state* mrb) {
   static int initialized = 0;
   if (initialized) return;
   else initialized = 1;
@@ -302,80 +302,80 @@ void mrb_UI_UiDrawStrokeParams_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::class_definition */
-/* sha: a1c1eb5c5ad281e35cf9771f2136fed3d8f6edef0ce41442ca86e365e494a7bc */
-  struct RClass* UiDrawStrokeParams_class = mrb_define_class_under(mrb, UI_module(mrb), "UiDrawStrokeParams", mrb->object_class);
-  MRB_SET_INSTANCE_TT(UiDrawStrokeParams_class, MRB_TT_DATA);
+/* MRUBY_BINDING: DrawStrokeParams::class_definition */
+/* sha: 7177906701d9806d41ea55cec7da494f36c7360a944188ac3ece49a9e9499b52 */
+  struct RClass* DrawStrokeParams_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawStrokeParams", mrb->object_class);
+  MRB_SET_INSTANCE_TT(DrawStrokeParams_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::pre_class_method_definitions */
+/* MRUBY_BINDING: DrawStrokeParams::pre_class_method_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::class_method_definitions */
-/* sha: 906263be7420b602c5fa5124f716278d1fc7f0d62184b5dfed7046f45a622b96 */
-#if BIND_UiDrawStrokeParams_INITIALIZE
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "initialize", mrb_UI_UiDrawStrokeParams_initialize, MRB_ARGS_NONE());
+/* MRUBY_BINDING: DrawStrokeParams::class_method_definitions */
+/* sha: 8f1e853b836f22ed2a4388dcc08d09dec5bf5a601c63ea7e4efae3f58b15074d */
+#if BIND_DrawStrokeParams_INITIALIZE
+  mrb_define_method(mrb, DrawStrokeParams_class, "initialize", mrb_UI_DrawStrokeParams_initialize, MRB_ARGS_NONE());
 #endif
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::pre_attr_definitions */
+/* MRUBY_BINDING: DrawStrokeParams::pre_attr_definitions */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
 
-/* MRUBY_BINDING: UiDrawStrokeParams::attr_definitions */
-/* sha: c18d4c66a218f795359b97624684217a28b7c0d55153a11d6c4040022977de03 */
+/* MRUBY_BINDING: DrawStrokeParams::attr_definitions */
+/* sha: 7bf4a0276738896f85ba6a339a0bc77ea43057f9770866b151be85dcf675bfb4 */
   /*
    * Fields
    */
-#if BIND_UiDrawStrokeParams_Cap_FIELD_READER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Cap", mrb_UI_UiDrawStrokeParams_get_Cap, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawStrokeParams_Cap_FIELD_READER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Cap", mrb_UI_DrawStrokeParams_get_Cap, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawStrokeParams_Cap_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Cap=", mrb_UI_UiDrawStrokeParams_set_Cap, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawStrokeParams_Cap_FIELD_WRITER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Cap=", mrb_UI_DrawStrokeParams_set_Cap, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawStrokeParams_Join_FIELD_READER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Join", mrb_UI_UiDrawStrokeParams_get_Join, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawStrokeParams_Join_FIELD_READER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Join", mrb_UI_DrawStrokeParams_get_Join, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawStrokeParams_Join_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Join=", mrb_UI_UiDrawStrokeParams_set_Join, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawStrokeParams_Join_FIELD_WRITER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Join=", mrb_UI_DrawStrokeParams_set_Join, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawStrokeParams_Thickness_FIELD_READER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Thickness", mrb_UI_UiDrawStrokeParams_get_Thickness, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawStrokeParams_Thickness_FIELD_READER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Thickness", mrb_UI_DrawStrokeParams_get_Thickness, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawStrokeParams_Thickness_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Thickness=", mrb_UI_UiDrawStrokeParams_set_Thickness, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawStrokeParams_Thickness_FIELD_WRITER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Thickness=", mrb_UI_DrawStrokeParams_set_Thickness, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawStrokeParams_MiterLimit_FIELD_READER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "MiterLimit", mrb_UI_UiDrawStrokeParams_get_MiterLimit, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawStrokeParams_MiterLimit_FIELD_READER
+  mrb_define_method(mrb, DrawStrokeParams_class, "MiterLimit", mrb_UI_DrawStrokeParams_get_MiterLimit, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawStrokeParams_MiterLimit_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "MiterLimit=", mrb_UI_UiDrawStrokeParams_set_MiterLimit, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawStrokeParams_MiterLimit_FIELD_WRITER
+  mrb_define_method(mrb, DrawStrokeParams_class, "MiterLimit=", mrb_UI_DrawStrokeParams_set_MiterLimit, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawStrokeParams_Dashes_FIELD_READER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Dashes", mrb_UI_UiDrawStrokeParams_get_Dashes, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawStrokeParams_Dashes_FIELD_READER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Dashes", mrb_UI_DrawStrokeParams_get_Dashes, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawStrokeParams_Dashes_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "Dashes=", mrb_UI_UiDrawStrokeParams_set_Dashes, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawStrokeParams_Dashes_FIELD_WRITER
+  mrb_define_method(mrb, DrawStrokeParams_class, "Dashes=", mrb_UI_DrawStrokeParams_set_Dashes, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawStrokeParams_NumDashes_FIELD_READER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "NumDashes", mrb_UI_UiDrawStrokeParams_get_NumDashes, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawStrokeParams_NumDashes_FIELD_READER
+  mrb_define_method(mrb, DrawStrokeParams_class, "NumDashes", mrb_UI_DrawStrokeParams_get_NumDashes, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawStrokeParams_NumDashes_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "NumDashes=", mrb_UI_UiDrawStrokeParams_set_NumDashes, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawStrokeParams_NumDashes_FIELD_WRITER
+  mrb_define_method(mrb, DrawStrokeParams_class, "NumDashes=", mrb_UI_DrawStrokeParams_set_NumDashes, MRB_ARGS_ARG(1, 0));
 #endif
-#if BIND_UiDrawStrokeParams_DashPhase_FIELD_READER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "DashPhase", mrb_UI_UiDrawStrokeParams_get_DashPhase, MRB_ARGS_ARG(0, 0));
+#if BIND_DrawStrokeParams_DashPhase_FIELD_READER
+  mrb_define_method(mrb, DrawStrokeParams_class, "DashPhase", mrb_UI_DrawStrokeParams_get_DashPhase, MRB_ARGS_ARG(0, 0));
 #endif
-#if BIND_UiDrawStrokeParams_DashPhase_FIELD_WRITER
-  mrb_define_method(mrb, UiDrawStrokeParams_class, "DashPhase=", mrb_UI_UiDrawStrokeParams_set_DashPhase, MRB_ARGS_ARG(1, 0));
+#if BIND_DrawStrokeParams_DashPhase_FIELD_WRITER
+  mrb_define_method(mrb, DrawStrokeParams_class, "DashPhase=", mrb_UI_DrawStrokeParams_set_DashPhase, MRB_ARGS_ARG(1, 0));
 #endif
 /* MRUBY_BINDING_END */
 
 
-/* MRUBY_BINDING: UiDrawStrokeParams::post_class_definition */
+/* MRUBY_BINDING: DrawStrokeParams::post_class_definition */
 /* sha: user_defined */
 
 /* MRUBY_BINDING_END */
