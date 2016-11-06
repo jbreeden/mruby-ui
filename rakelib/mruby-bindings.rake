@@ -5,7 +5,7 @@ namespace :bindings do
   task :scrape do
     File.delete('declarations.json') if File.exists?('declarations.json')
     
-    headers = []
+    headers = ["~/projects/libui/ui.h"]
     
     if headers.length == 0
       $stderr.puts 'No headers defined. Please update rakelib/mruby-bindings.rake'
