@@ -1,58 +1,8 @@
 #ifndef MRUBY_UI_CLASSES_HEADER
 #define MRUBY_UI_CLASSES_HEADER
 
-#define BIND_Form_TYPE TRUE
-#define BIND_Form_INITIALIZE TRUE
-
-#define BIND_Combobox_TYPE TRUE
-#define BIND_Combobox_INITIALIZE TRUE
-
-#define BIND_InitOptions_TYPE TRUE
-#define BIND_InitOptions_INITIALIZE TRUE
-#define BIND_InitOptions_Size_FIELD_READER TRUE
-#define BIND_InitOptions_Size_FIELD_WRITER TRUE
-
-#define BIND_Tab_TYPE TRUE
-#define BIND_Tab_INITIALIZE TRUE
-
-#define BIND_AreaMouseEvent_TYPE TRUE
-#define BIND_AreaMouseEvent_INITIALIZE TRUE
-#define BIND_AreaMouseEvent_X_FIELD_READER TRUE
-#define BIND_AreaMouseEvent_X_FIELD_WRITER TRUE
-#define BIND_AreaMouseEvent_Y_FIELD_READER TRUE
-#define BIND_AreaMouseEvent_Y_FIELD_WRITER TRUE
-#define BIND_AreaMouseEvent_AreaWidth_FIELD_READER TRUE
-#define BIND_AreaMouseEvent_AreaWidth_FIELD_WRITER TRUE
-#define BIND_AreaMouseEvent_AreaHeight_FIELD_READER TRUE
-#define BIND_AreaMouseEvent_AreaHeight_FIELD_WRITER TRUE
-#define BIND_AreaMouseEvent_Down_FIELD_READER TRUE
-#define BIND_AreaMouseEvent_Down_FIELD_WRITER TRUE
-#define BIND_AreaMouseEvent_Up_FIELD_READER TRUE
-#define BIND_AreaMouseEvent_Up_FIELD_WRITER TRUE
-#define BIND_AreaMouseEvent_Count_FIELD_READER TRUE
-#define BIND_AreaMouseEvent_Count_FIELD_WRITER TRUE
-#define BIND_AreaMouseEvent_Modifiers_FIELD_READER FALSE
-#define BIND_AreaMouseEvent_Modifiers_FIELD_WRITER FALSE
-#define BIND_AreaMouseEvent_Held1To64_FIELD_READER FALSE
-#define BIND_AreaMouseEvent_Held1To64_FIELD_WRITER FALSE
-
-#define BIND_Slider_TYPE TRUE
-#define BIND_Slider_INITIALIZE TRUE
-
-#define BIND_DateTimePicker_TYPE TRUE
-#define BIND_DateTimePicker_INITIALIZE TRUE
-
-#define BIND_DrawContext_TYPE TRUE
-#define BIND_DrawContext_INITIALIZE TRUE
-
-#define BIND_Checkbox_TYPE TRUE
-#define BIND_Checkbox_INITIALIZE TRUE
-
 #define BIND_DrawPath_TYPE TRUE
 #define BIND_DrawPath_INITIALIZE TRUE
-
-#define BIND_MultilineEntry_TYPE TRUE
-#define BIND_MultilineEntry_INITIALIZE TRUE
 
 #define BIND_DrawBrush_TYPE TRUE
 #define BIND_DrawBrush_INITIALIZE TRUE
@@ -81,64 +31,121 @@
 #define BIND_DrawBrush_NumStops_FIELD_READER TRUE
 #define BIND_DrawBrush_NumStops_FIELD_WRITER TRUE
 
+#define BIND_Separator_TYPE TRUE
+#define BIND_Separator_INITIALIZE TRUE
+
+#define BIND_ProgressBar_TYPE TRUE
+#define BIND_ProgressBar_INITIALIZE TRUE
+
+#define BIND_DrawBrushGradientStop_TYPE TRUE
+#define BIND_DrawBrushGradientStop_INITIALIZE TRUE
+#define BIND_DrawBrushGradientStop_Pos_FIELD_READER TRUE
+#define BIND_DrawBrushGradientStop_Pos_FIELD_WRITER TRUE
+#define BIND_DrawBrushGradientStop_R_FIELD_READER TRUE
+#define BIND_DrawBrushGradientStop_R_FIELD_WRITER TRUE
+#define BIND_DrawBrushGradientStop_G_FIELD_READER TRUE
+#define BIND_DrawBrushGradientStop_G_FIELD_WRITER TRUE
+#define BIND_DrawBrushGradientStop_B_FIELD_READER TRUE
+#define BIND_DrawBrushGradientStop_B_FIELD_WRITER TRUE
+#define BIND_DrawBrushGradientStop_A_FIELD_READER TRUE
+#define BIND_DrawBrushGradientStop_A_FIELD_WRITER TRUE
+
 #define BIND_Button_TYPE TRUE
 #define BIND_Button_INITIALIZE TRUE
 
-#define BIND_DrawTextFont_TYPE TRUE
-#define BIND_DrawTextFont_INITIALIZE TRUE
+#define BIND_EditableCombobox_TYPE TRUE
+#define BIND_EditableCombobox_INITIALIZE TRUE
 
-#define BIND_Menu_TYPE TRUE
-#define BIND_Menu_INITIALIZE TRUE
+#define BIND_MenuItem_TYPE TRUE
+#define BIND_MenuItem_INITIALIZE TRUE
+
+#define BIND_Slider_TYPE TRUE
+#define BIND_Slider_INITIALIZE TRUE
+
+#define BIND_MultilineEntry_TYPE TRUE
+#define BIND_MultilineEntry_INITIALIZE TRUE
+
+#define BIND_Area_TYPE TRUE
+#define BIND_Area_INITIALIZE TRUE
+
+#define BIND_Checkbox_TYPE TRUE
+#define BIND_Checkbox_INITIALIZE TRUE
 
 #define BIND_Box_TYPE TRUE
 #define BIND_Box_INITIALIZE TRUE
 
-#define BIND_Separator_TYPE TRUE
-#define BIND_Separator_INITIALIZE TRUE
+#define BIND_InitOptions_TYPE TRUE
+#define BIND_InitOptions_INITIALIZE TRUE
+#define BIND_InitOptions_Size_FIELD_READER TRUE
+#define BIND_InitOptions_Size_FIELD_WRITER TRUE
 
-#define BIND_DrawMatrix_TYPE TRUE
-#define BIND_DrawMatrix_INITIALIZE TRUE
-#define BIND_DrawMatrix_M11_FIELD_READER TRUE
-#define BIND_DrawMatrix_M11_FIELD_WRITER TRUE
-#define BIND_DrawMatrix_M12_FIELD_READER TRUE
-#define BIND_DrawMatrix_M12_FIELD_WRITER TRUE
-#define BIND_DrawMatrix_M21_FIELD_READER TRUE
-#define BIND_DrawMatrix_M21_FIELD_WRITER TRUE
-#define BIND_DrawMatrix_M22_FIELD_READER TRUE
-#define BIND_DrawMatrix_M22_FIELD_WRITER TRUE
-#define BIND_DrawMatrix_M31_FIELD_READER TRUE
-#define BIND_DrawMatrix_M31_FIELD_WRITER TRUE
-#define BIND_DrawMatrix_M32_FIELD_READER TRUE
-#define BIND_DrawMatrix_M32_FIELD_WRITER TRUE
+#define BIND_FontButton_TYPE TRUE
+#define BIND_FontButton_INITIALIZE TRUE
 
-#define BIND_AreaHandler_TYPE TRUE
-#define BIND_AreaHandler_INITIALIZE TRUE
-#define BIND_AreaHandler_Draw_FIELD_READER FALSE
-#define BIND_AreaHandler_Draw_FIELD_WRITER FALSE
-#define BIND_AreaHandler_MouseEvent_FIELD_READER FALSE
-#define BIND_AreaHandler_MouseEvent_FIELD_WRITER FALSE
-#define BIND_AreaHandler_MouseCrossed_FIELD_READER FALSE
-#define BIND_AreaHandler_MouseCrossed_FIELD_WRITER FALSE
-#define BIND_AreaHandler_DragBroken_FIELD_READER FALSE
-#define BIND_AreaHandler_DragBroken_FIELD_WRITER FALSE
-#define BIND_AreaHandler_KeyEvent_FIELD_READER FALSE
-#define BIND_AreaHandler_KeyEvent_FIELD_WRITER FALSE
+#define BIND_RadioButtons_TYPE TRUE
+#define BIND_RadioButtons_INITIALIZE TRUE
 
-#define BIND_DrawTextFontDescriptor_TYPE TRUE
-#define BIND_DrawTextFontDescriptor_INITIALIZE TRUE
-#define BIND_DrawTextFontDescriptor_Family_FIELD_READER TRUE
-#define BIND_DrawTextFontDescriptor_Family_FIELD_WRITER TRUE
-#define BIND_DrawTextFontDescriptor_Size_FIELD_READER TRUE
-#define BIND_DrawTextFontDescriptor_Size_FIELD_WRITER TRUE
-#define BIND_DrawTextFontDescriptor_Weight_FIELD_READER FALSE
-#define BIND_DrawTextFontDescriptor_Weight_FIELD_WRITER FALSE
-#define BIND_DrawTextFontDescriptor_Italic_FIELD_READER FALSE
-#define BIND_DrawTextFontDescriptor_Italic_FIELD_WRITER FALSE
-#define BIND_DrawTextFontDescriptor_Stretch_FIELD_READER FALSE
-#define BIND_DrawTextFontDescriptor_Stretch_FIELD_WRITER FALSE
+#define BIND_Tab_TYPE TRUE
+#define BIND_Tab_INITIALIZE TRUE
 
-#define BIND_Group_TYPE TRUE
-#define BIND_Group_INITIALIZE TRUE
+#define BIND_AreaKeyEvent_TYPE TRUE
+#define BIND_AreaKeyEvent_INITIALIZE TRUE
+#define BIND_AreaKeyEvent_Key_FIELD_READER TRUE
+#define BIND_AreaKeyEvent_Key_FIELD_WRITER TRUE
+#define BIND_AreaKeyEvent_ExtKey_FIELD_READER FALSE
+#define BIND_AreaKeyEvent_ExtKey_FIELD_WRITER FALSE
+#define BIND_AreaKeyEvent_Modifier_FIELD_READER FALSE
+#define BIND_AreaKeyEvent_Modifier_FIELD_WRITER FALSE
+#define BIND_AreaKeyEvent_Modifiers_FIELD_READER FALSE
+#define BIND_AreaKeyEvent_Modifiers_FIELD_WRITER FALSE
+#define BIND_AreaKeyEvent_Up_FIELD_READER TRUE
+#define BIND_AreaKeyEvent_Up_FIELD_WRITER TRUE
+
+#define BIND_DrawTextLayout_TYPE TRUE
+#define BIND_DrawTextLayout_INITIALIZE TRUE
+
+#define BIND_Form_TYPE TRUE
+#define BIND_Form_INITIALIZE TRUE
+
+#define BIND_Combobox_TYPE TRUE
+#define BIND_Combobox_INITIALIZE TRUE
+
+#define BIND_DrawTextFontMetrics_TYPE TRUE
+#define BIND_DrawTextFontMetrics_INITIALIZE TRUE
+#define BIND_DrawTextFontMetrics_Ascent_FIELD_READER TRUE
+#define BIND_DrawTextFontMetrics_Ascent_FIELD_WRITER TRUE
+#define BIND_DrawTextFontMetrics_Descent_FIELD_READER TRUE
+#define BIND_DrawTextFontMetrics_Descent_FIELD_WRITER TRUE
+#define BIND_DrawTextFontMetrics_Leading_FIELD_READER TRUE
+#define BIND_DrawTextFontMetrics_Leading_FIELD_WRITER TRUE
+#define BIND_DrawTextFontMetrics_UnderlinePos_FIELD_READER TRUE
+#define BIND_DrawTextFontMetrics_UnderlinePos_FIELD_WRITER TRUE
+#define BIND_DrawTextFontMetrics_UnderlineThickness_FIELD_READER TRUE
+#define BIND_DrawTextFontMetrics_UnderlineThickness_FIELD_WRITER TRUE
+
+#define BIND_DateTimePicker_TYPE TRUE
+#define BIND_DateTimePicker_INITIALIZE TRUE
+
+#define BIND_Window_TYPE TRUE
+#define BIND_Window_INITIALIZE TRUE
+
+#define BIND_Grid_TYPE TRUE
+#define BIND_Grid_INITIALIZE TRUE
+
+#define BIND_Entry_TYPE TRUE
+#define BIND_Entry_INITIALIZE TRUE
+
+#define BIND_Spinbox_TYPE TRUE
+#define BIND_Spinbox_INITIALIZE TRUE
+
+#define BIND_Menu_TYPE TRUE
+#define BIND_Menu_INITIALIZE TRUE
+
+#define BIND_DrawFontFamilies_TYPE TRUE
+#define BIND_DrawFontFamilies_INITIALIZE TRUE
+
+#define BIND_DrawContext_TYPE TRUE
+#define BIND_DrawContext_INITIALIZE TRUE
 
 #define BIND_AreaDrawParams_TYPE TRUE
 #define BIND_AreaDrawParams_INITIALIZE TRUE
@@ -157,69 +164,11 @@
 #define BIND_AreaDrawParams_ClipHeight_FIELD_READER TRUE
 #define BIND_AreaDrawParams_ClipHeight_FIELD_WRITER TRUE
 
-#define BIND_EditableCombobox_TYPE TRUE
-#define BIND_EditableCombobox_INITIALIZE TRUE
+#define BIND_Label_TYPE TRUE
+#define BIND_Label_INITIALIZE TRUE
 
-#define BIND_DrawTextLayout_TYPE TRUE
-#define BIND_DrawTextLayout_INITIALIZE TRUE
-
-#define BIND_Spinbox_TYPE TRUE
-#define BIND_Spinbox_INITIALIZE TRUE
-
-#define BIND_Entry_TYPE TRUE
-#define BIND_Entry_INITIALIZE TRUE
-
-#define BIND_RadioButtons_TYPE TRUE
-#define BIND_RadioButtons_INITIALIZE TRUE
-
-#define BIND_DrawTextFontMetrics_TYPE TRUE
-#define BIND_DrawTextFontMetrics_INITIALIZE TRUE
-#define BIND_DrawTextFontMetrics_Ascent_FIELD_READER TRUE
-#define BIND_DrawTextFontMetrics_Ascent_FIELD_WRITER TRUE
-#define BIND_DrawTextFontMetrics_Descent_FIELD_READER TRUE
-#define BIND_DrawTextFontMetrics_Descent_FIELD_WRITER TRUE
-#define BIND_DrawTextFontMetrics_Leading_FIELD_READER TRUE
-#define BIND_DrawTextFontMetrics_Leading_FIELD_WRITER TRUE
-#define BIND_DrawTextFontMetrics_UnderlinePos_FIELD_READER TRUE
-#define BIND_DrawTextFontMetrics_UnderlinePos_FIELD_WRITER TRUE
-#define BIND_DrawTextFontMetrics_UnderlineThickness_FIELD_READER TRUE
-#define BIND_DrawTextFontMetrics_UnderlineThickness_FIELD_WRITER TRUE
-
-#define BIND_FontButton_TYPE TRUE
-#define BIND_FontButton_INITIALIZE TRUE
-
-#define BIND_AreaKeyEvent_TYPE TRUE
-#define BIND_AreaKeyEvent_INITIALIZE TRUE
-#define BIND_AreaKeyEvent_Key_FIELD_READER TRUE
-#define BIND_AreaKeyEvent_Key_FIELD_WRITER TRUE
-#define BIND_AreaKeyEvent_ExtKey_FIELD_READER FALSE
-#define BIND_AreaKeyEvent_ExtKey_FIELD_WRITER FALSE
-#define BIND_AreaKeyEvent_Modifier_FIELD_READER FALSE
-#define BIND_AreaKeyEvent_Modifier_FIELD_WRITER FALSE
-#define BIND_AreaKeyEvent_Modifiers_FIELD_READER FALSE
-#define BIND_AreaKeyEvent_Modifiers_FIELD_WRITER FALSE
-#define BIND_AreaKeyEvent_Up_FIELD_READER TRUE
-#define BIND_AreaKeyEvent_Up_FIELD_WRITER TRUE
-
-#define BIND_DrawStrokeParams_TYPE TRUE
-#define BIND_DrawStrokeParams_INITIALIZE TRUE
-#define BIND_DrawStrokeParams_Cap_FIELD_READER FALSE
-#define BIND_DrawStrokeParams_Cap_FIELD_WRITER FALSE
-#define BIND_DrawStrokeParams_Join_FIELD_READER FALSE
-#define BIND_DrawStrokeParams_Join_FIELD_WRITER FALSE
-#define BIND_DrawStrokeParams_Thickness_FIELD_READER TRUE
-#define BIND_DrawStrokeParams_Thickness_FIELD_WRITER TRUE
-#define BIND_DrawStrokeParams_MiterLimit_FIELD_READER TRUE
-#define BIND_DrawStrokeParams_MiterLimit_FIELD_WRITER TRUE
-#define BIND_DrawStrokeParams_Dashes_FIELD_READER FALSE
-#define BIND_DrawStrokeParams_Dashes_FIELD_WRITER FALSE
-#define BIND_DrawStrokeParams_NumDashes_FIELD_READER TRUE
-#define BIND_DrawStrokeParams_NumDashes_FIELD_WRITER TRUE
-#define BIND_DrawStrokeParams_DashPhase_FIELD_READER TRUE
-#define BIND_DrawStrokeParams_DashPhase_FIELD_WRITER TRUE
-
-#define BIND_Grid_TYPE TRUE
-#define BIND_Grid_INITIALIZE TRUE
+#define BIND_DrawTextFont_TYPE TRUE
+#define BIND_DrawTextFont_INITIALIZE TRUE
 
 #define BIND_Control_TYPE TRUE
 #define BIND_Control_INITIALIZE TRUE
@@ -252,38 +201,89 @@
 #define BIND_Control_Disable_FIELD_READER FALSE
 #define BIND_Control_Disable_FIELD_WRITER FALSE
 
-#define BIND_Label_TYPE TRUE
-#define BIND_Label_INITIALIZE TRUE
-
-#define BIND_ProgressBar_TYPE TRUE
-#define BIND_ProgressBar_INITIALIZE TRUE
-
-#define BIND_Area_TYPE TRUE
-#define BIND_Area_INITIALIZE TRUE
-
-#define BIND_MenuItem_TYPE TRUE
-#define BIND_MenuItem_INITIALIZE TRUE
-
-#define BIND_DrawFontFamilies_TYPE TRUE
-#define BIND_DrawFontFamilies_INITIALIZE TRUE
-
-#define BIND_Window_TYPE TRUE
-#define BIND_Window_INITIALIZE TRUE
-
-#define BIND_DrawBrushGradientStop_TYPE TRUE
-#define BIND_DrawBrushGradientStop_INITIALIZE TRUE
-#define BIND_DrawBrushGradientStop_Pos_FIELD_READER TRUE
-#define BIND_DrawBrushGradientStop_Pos_FIELD_WRITER TRUE
-#define BIND_DrawBrushGradientStop_R_FIELD_READER TRUE
-#define BIND_DrawBrushGradientStop_R_FIELD_WRITER TRUE
-#define BIND_DrawBrushGradientStop_G_FIELD_READER TRUE
-#define BIND_DrawBrushGradientStop_G_FIELD_WRITER TRUE
-#define BIND_DrawBrushGradientStop_B_FIELD_READER TRUE
-#define BIND_DrawBrushGradientStop_B_FIELD_WRITER TRUE
-#define BIND_DrawBrushGradientStop_A_FIELD_READER TRUE
-#define BIND_DrawBrushGradientStop_A_FIELD_WRITER TRUE
-
 #define BIND_ColorButton_TYPE TRUE
 #define BIND_ColorButton_INITIALIZE TRUE
+
+#define BIND_DrawMatrix_TYPE TRUE
+#define BIND_DrawMatrix_INITIALIZE TRUE
+#define BIND_DrawMatrix_M11_FIELD_READER TRUE
+#define BIND_DrawMatrix_M11_FIELD_WRITER TRUE
+#define BIND_DrawMatrix_M12_FIELD_READER TRUE
+#define BIND_DrawMatrix_M12_FIELD_WRITER TRUE
+#define BIND_DrawMatrix_M21_FIELD_READER TRUE
+#define BIND_DrawMatrix_M21_FIELD_WRITER TRUE
+#define BIND_DrawMatrix_M22_FIELD_READER TRUE
+#define BIND_DrawMatrix_M22_FIELD_WRITER TRUE
+#define BIND_DrawMatrix_M31_FIELD_READER TRUE
+#define BIND_DrawMatrix_M31_FIELD_WRITER TRUE
+#define BIND_DrawMatrix_M32_FIELD_READER TRUE
+#define BIND_DrawMatrix_M32_FIELD_WRITER TRUE
+
+#define BIND_Group_TYPE TRUE
+#define BIND_Group_INITIALIZE TRUE
+
+#define BIND_AreaMouseEvent_TYPE TRUE
+#define BIND_AreaMouseEvent_INITIALIZE TRUE
+#define BIND_AreaMouseEvent_X_FIELD_READER TRUE
+#define BIND_AreaMouseEvent_X_FIELD_WRITER TRUE
+#define BIND_AreaMouseEvent_Y_FIELD_READER TRUE
+#define BIND_AreaMouseEvent_Y_FIELD_WRITER TRUE
+#define BIND_AreaMouseEvent_AreaWidth_FIELD_READER TRUE
+#define BIND_AreaMouseEvent_AreaWidth_FIELD_WRITER TRUE
+#define BIND_AreaMouseEvent_AreaHeight_FIELD_READER TRUE
+#define BIND_AreaMouseEvent_AreaHeight_FIELD_WRITER TRUE
+#define BIND_AreaMouseEvent_Down_FIELD_READER TRUE
+#define BIND_AreaMouseEvent_Down_FIELD_WRITER TRUE
+#define BIND_AreaMouseEvent_Up_FIELD_READER TRUE
+#define BIND_AreaMouseEvent_Up_FIELD_WRITER TRUE
+#define BIND_AreaMouseEvent_Count_FIELD_READER TRUE
+#define BIND_AreaMouseEvent_Count_FIELD_WRITER TRUE
+#define BIND_AreaMouseEvent_Modifiers_FIELD_READER FALSE
+#define BIND_AreaMouseEvent_Modifiers_FIELD_WRITER FALSE
+#define BIND_AreaMouseEvent_Held1To64_FIELD_READER FALSE
+#define BIND_AreaMouseEvent_Held1To64_FIELD_WRITER FALSE
+
+#define BIND_DrawTextFontDescriptor_TYPE TRUE
+#define BIND_DrawTextFontDescriptor_INITIALIZE TRUE
+#define BIND_DrawTextFontDescriptor_Family_FIELD_READER TRUE
+#define BIND_DrawTextFontDescriptor_Family_FIELD_WRITER TRUE
+#define BIND_DrawTextFontDescriptor_Size_FIELD_READER TRUE
+#define BIND_DrawTextFontDescriptor_Size_FIELD_WRITER TRUE
+#define BIND_DrawTextFontDescriptor_Weight_FIELD_READER FALSE
+#define BIND_DrawTextFontDescriptor_Weight_FIELD_WRITER FALSE
+#define BIND_DrawTextFontDescriptor_Italic_FIELD_READER FALSE
+#define BIND_DrawTextFontDescriptor_Italic_FIELD_WRITER FALSE
+#define BIND_DrawTextFontDescriptor_Stretch_FIELD_READER FALSE
+#define BIND_DrawTextFontDescriptor_Stretch_FIELD_WRITER FALSE
+
+#define BIND_DrawStrokeParams_TYPE TRUE
+#define BIND_DrawStrokeParams_INITIALIZE TRUE
+#define BIND_DrawStrokeParams_Cap_FIELD_READER FALSE
+#define BIND_DrawStrokeParams_Cap_FIELD_WRITER FALSE
+#define BIND_DrawStrokeParams_Join_FIELD_READER FALSE
+#define BIND_DrawStrokeParams_Join_FIELD_WRITER FALSE
+#define BIND_DrawStrokeParams_Thickness_FIELD_READER TRUE
+#define BIND_DrawStrokeParams_Thickness_FIELD_WRITER TRUE
+#define BIND_DrawStrokeParams_MiterLimit_FIELD_READER TRUE
+#define BIND_DrawStrokeParams_MiterLimit_FIELD_WRITER TRUE
+#define BIND_DrawStrokeParams_Dashes_FIELD_READER FALSE
+#define BIND_DrawStrokeParams_Dashes_FIELD_WRITER FALSE
+#define BIND_DrawStrokeParams_NumDashes_FIELD_READER TRUE
+#define BIND_DrawStrokeParams_NumDashes_FIELD_WRITER TRUE
+#define BIND_DrawStrokeParams_DashPhase_FIELD_READER TRUE
+#define BIND_DrawStrokeParams_DashPhase_FIELD_WRITER TRUE
+
+#define BIND_AreaHandler_TYPE TRUE
+#define BIND_AreaHandler_INITIALIZE TRUE
+#define BIND_AreaHandler_Draw_FIELD_READER FALSE
+#define BIND_AreaHandler_Draw_FIELD_WRITER FALSE
+#define BIND_AreaHandler_MouseEvent_FIELD_READER FALSE
+#define BIND_AreaHandler_MouseEvent_FIELD_WRITER FALSE
+#define BIND_AreaHandler_MouseCrossed_FIELD_READER FALSE
+#define BIND_AreaHandler_MouseCrossed_FIELD_WRITER FALSE
+#define BIND_AreaHandler_DragBroken_FIELD_READER FALSE
+#define BIND_AreaHandler_DragBroken_FIELD_WRITER FALSE
+#define BIND_AreaHandler_KeyEvent_FIELD_READER FALSE
+#define BIND_AreaHandler_KeyEvent_FIELD_WRITER FALSE
 
 #endif

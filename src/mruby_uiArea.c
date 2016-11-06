@@ -40,7 +40,7 @@ void mrb_UI_Area_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Area::class_definition */
 /* sha: d25977bcededf1b553e3eb0d512f52ecde5fa576c02e26a6d2a03546c03f8e92 */
-  struct RClass* Area_class = mrb_define_class_under(mrb, UI_module(mrb), "Area", mrb->object_class);
+  struct RClass* Area_class = mrb_define_class_under(mrb, UI_module(mrb), "Area", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Area_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

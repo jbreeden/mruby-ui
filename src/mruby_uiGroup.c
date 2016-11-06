@@ -40,7 +40,7 @@ void mrb_UI_Group_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Group::class_definition */
 /* sha: ad84c6592500dc86bd7652d639fef79d6c718d4ca4bf2c3ee7345230426325ae */
-  struct RClass* Group_class = mrb_define_class_under(mrb, UI_module(mrb), "Group", mrb->object_class);
+  struct RClass* Group_class = mrb_define_class_under(mrb, UI_module(mrb), "Group", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Group_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

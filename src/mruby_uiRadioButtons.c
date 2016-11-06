@@ -40,7 +40,7 @@ void mrb_UI_RadioButtons_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: RadioButtons::class_definition */
 /* sha: 439a8704a145f66b9bdcb537d1d64c31af607d78c8a469dac10ef5f83b625798 */
-  struct RClass* RadioButtons_class = mrb_define_class_under(mrb, UI_module(mrb), "RadioButtons", mrb->object_class);
+  struct RClass* RadioButtons_class = mrb_define_class_under(mrb, UI_module(mrb), "RadioButtons", Control_class(mrb));
   MRB_SET_INSTANCE_TT(RadioButtons_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

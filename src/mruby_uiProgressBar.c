@@ -40,7 +40,7 @@ void mrb_UI_ProgressBar_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: ProgressBar::class_definition */
 /* sha: 4ffb961dd02d4e544662defc1fa266a03a0fe59acdb3ab9d58b9ee2d26cb3275 */
-  struct RClass* ProgressBar_class = mrb_define_class_under(mrb, UI_module(mrb), "ProgressBar", mrb->object_class);
+  struct RClass* ProgressBar_class = mrb_define_class_under(mrb, UI_module(mrb), "ProgressBar", Control_class(mrb));
   MRB_SET_INSTANCE_TT(ProgressBar_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

@@ -40,7 +40,7 @@ void mrb_UI_Box_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Box::class_definition */
 /* sha: 9a0b6f12cdba4b23cff7d5d387117c8e5899aed137ae6c4cb43869d8daed1691 */
-  struct RClass* Box_class = mrb_define_class_under(mrb, UI_module(mrb), "Box", mrb->object_class);
+  struct RClass* Box_class = mrb_define_class_under(mrb, UI_module(mrb), "Box", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Box_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

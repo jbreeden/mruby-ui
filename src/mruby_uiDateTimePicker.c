@@ -40,7 +40,7 @@ void mrb_UI_DateTimePicker_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: DateTimePicker::class_definition */
 /* sha: ea8ec858ddecbd52a5392689aa417d61e23134af923eb7d550ab1fd23cc26118 */
-  struct RClass* DateTimePicker_class = mrb_define_class_under(mrb, UI_module(mrb), "DateTimePicker", mrb->object_class);
+  struct RClass* DateTimePicker_class = mrb_define_class_under(mrb, UI_module(mrb), "DateTimePicker", Control_class(mrb));
   MRB_SET_INSTANCE_TT(DateTimePicker_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

@@ -40,7 +40,7 @@ void mrb_UI_Entry_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Entry::class_definition */
 /* sha: 8600a7e2268a4e6db38731ffc9cc8578df56efdb076410f958d10f905a9c09e2 */
-  struct RClass* Entry_class = mrb_define_class_under(mrb, UI_module(mrb), "Entry", mrb->object_class);
+  struct RClass* Entry_class = mrb_define_class_under(mrb, UI_module(mrb), "Entry", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Entry_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

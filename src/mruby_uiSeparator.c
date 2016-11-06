@@ -40,7 +40,7 @@ void mrb_UI_Separator_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Separator::class_definition */
 /* sha: a8e87b8e02728eaec4d1b2f88181ef95ad27279eec3dff876f3aacc2bf430a96 */
-  struct RClass* Separator_class = mrb_define_class_under(mrb, UI_module(mrb), "Separator", mrb->object_class);
+  struct RClass* Separator_class = mrb_define_class_under(mrb, UI_module(mrb), "Separator", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Separator_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

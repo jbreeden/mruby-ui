@@ -40,7 +40,7 @@ void mrb_UI_EditableCombobox_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: EditableCombobox::class_definition */
 /* sha: e5ae32de5ff5c834f4e28b7c3f8b86ad3950842f4196c7daa4361d1f1e2babe9 */
-  struct RClass* EditableCombobox_class = mrb_define_class_under(mrb, UI_module(mrb), "EditableCombobox", mrb->object_class);
+  struct RClass* EditableCombobox_class = mrb_define_class_under(mrb, UI_module(mrb), "EditableCombobox", Control_class(mrb));
   MRB_SET_INSTANCE_TT(EditableCombobox_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

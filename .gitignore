@@ -1,0 +1,8 @@
+.bundle/
+vendor/
+build/
+bindings/
+Gemfile.lock
+tags
+declarations.json
+mruby-bindings.out

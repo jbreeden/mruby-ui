@@ -40,7 +40,7 @@ void mrb_UI_MultilineEntry_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: MultilineEntry::class_definition */
 /* sha: bb9e98a404028e8a5f3d5064ee8f017451aec3f4cb7ac8c6e54a355f2d596890 */
-  struct RClass* MultilineEntry_class = mrb_define_class_under(mrb, UI_module(mrb), "MultilineEntry", mrb->object_class);
+  struct RClass* MultilineEntry_class = mrb_define_class_under(mrb, UI_module(mrb), "MultilineEntry", Control_class(mrb));
   MRB_SET_INSTANCE_TT(MultilineEntry_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

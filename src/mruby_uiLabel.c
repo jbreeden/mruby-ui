@@ -40,7 +40,7 @@ void mrb_UI_Label_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Label::class_definition */
 /* sha: 03aa2f8cce9ba6fb47ea21fceddc6cf96f5cfabd36b9df7599bb7e70d9078cb7 */
-  struct RClass* Label_class = mrb_define_class_under(mrb, UI_module(mrb), "Label", mrb->object_class);
+  struct RClass* Label_class = mrb_define_class_under(mrb, UI_module(mrb), "Label", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Label_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

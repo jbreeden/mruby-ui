@@ -40,7 +40,7 @@ void mrb_UI_Form_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Form::class_definition */
 /* sha: a3aec8bdef4f83c873d5b42ddd55c617b192ce8b81a09d6e915e1268d9b3e3c7 */
-  struct RClass* Form_class = mrb_define_class_under(mrb, UI_module(mrb), "Form", mrb->object_class);
+  struct RClass* Form_class = mrb_define_class_under(mrb, UI_module(mrb), "Form", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Form_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

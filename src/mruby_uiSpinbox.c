@@ -40,7 +40,7 @@ void mrb_UI_Spinbox_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Spinbox::class_definition */
 /* sha: a22a4da980431d59faf0af3feeee2daf204ec44043241f1611fbc035c4cbecce */
-  struct RClass* Spinbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Spinbox", mrb->object_class);
+  struct RClass* Spinbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Spinbox", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Spinbox_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

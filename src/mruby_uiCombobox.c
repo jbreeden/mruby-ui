@@ -40,7 +40,7 @@ void mrb_UI_Combobox_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Combobox::class_definition */
 /* sha: 7ab49a7d91fdccbed3bed3c783e476cea480da3cd0d476dc2794d8895c5d7a34 */
-  struct RClass* Combobox_class = mrb_define_class_under(mrb, UI_module(mrb), "Combobox", mrb->object_class);
+  struct RClass* Combobox_class = mrb_define_class_under(mrb, UI_module(mrb), "Combobox", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Combobox_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

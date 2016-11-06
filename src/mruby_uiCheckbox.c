@@ -40,7 +40,7 @@ void mrb_UI_Checkbox_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Checkbox::class_definition */
 /* sha: 6db29be05fb8d13bffda85af80da7ded339c2a13e617241dff3e7f4609b6c459 */
-  struct RClass* Checkbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Checkbox", mrb->object_class);
+  struct RClass* Checkbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Checkbox", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Checkbox_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

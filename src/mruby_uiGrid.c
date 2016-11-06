@@ -40,7 +40,7 @@ void mrb_UI_Grid_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Grid::class_definition */
 /* sha: c4e4828669ca82c92b16cc17eeae3f086556013025b5f9d14d032d26c8ee9068 */
-  struct RClass* Grid_class = mrb_define_class_under(mrb, UI_module(mrb), "Grid", mrb->object_class);
+  struct RClass* Grid_class = mrb_define_class_under(mrb, UI_module(mrb), "Grid", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Grid_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

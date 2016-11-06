@@ -40,7 +40,7 @@ void mrb_UI_FontButton_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: FontButton::class_definition */
 /* sha: 40c4378db8fbf1cae9eb8a0fa481ca59f9b74c68f0f461e5ae3116d400594cbd */
-  struct RClass* FontButton_class = mrb_define_class_under(mrb, UI_module(mrb), "FontButton", mrb->object_class);
+  struct RClass* FontButton_class = mrb_define_class_under(mrb, UI_module(mrb), "FontButton", Control_class(mrb));
   MRB_SET_INSTANCE_TT(FontButton_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

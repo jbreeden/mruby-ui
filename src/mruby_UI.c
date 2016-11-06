@@ -3,6 +3,101 @@
 /* MRUBY_BINDING: header */
 /* sha: user_defined */
 
+/**
+ * Hash of native -> ruby control objects.
+ */
+
+const char* MRUBY_CONTROL_LOOKUP_GLOBAL = "Test";
+
+//HACK
+mrb_state *gui_mrb = NULL;
+
+void
+mrb_ui_init_control_lookup(mrb_state* mrb)
+{
+  //fprintf(stdout, "Initing control lookup\n");
+  mrb_value lookup = mrb_hash_new(mrb); 
+  mrb_gv_set(mrb, mrb_intern_cstr(mrb, MRUBY_CONTROL_LOOKUP_GLOBAL), lookup);
+}
+
+mrb_value
+mrb_ui_control_lookup_fetch(mrb_state* mrb, uiControl* native_control)
+{
+  char control_hash_key[100] = {0};
+  sprintf(control_hash_key, "%p", native_control);
+
+  //fprintf(stdout, "Fetching control: %p %s\n", native_control, control_hash_key);
+
+  mrb_value lookup = mrb_gv_get(mrb, mrb_intern_cstr(mrb, MRUBY_CONTROL_LOOKUP_GLOBAL));
+  mrb_value rb_control = mrb_hash_get(mrb, lookup, mrb_str_new_cstr(mrb, control_hash_key));
+
+  return rb_control;
+}
+
+void
+mrb_ui_control_lookup_set(mrb_state* mrb, uiControl* native_control, mrb_value rb_control)
+{
+  if (!gui_mrb) {
+    gui_mrb = mrb;
+  }
+
+  char control_hash_key[100] = {0};
+  sprintf(control_hash_key, "%p", native_control);
+
+  //fprintf(stdout, "Setting control: %p %s\n", native_control, control_hash_key);
+
+  mrb_value lookup = mrb_gv_get(mrb, mrb_intern_cstr(mrb, MRUBY_CONTROL_LOOKUP_GLOBAL));
+  mrb_hash_set(mrb, lookup, mrb_str_new_cstr(mrb, control_hash_key), rb_control);
+}
+
+void
+mrb_ui_control_lookup_delete(mrb_state* mrb, uiControl* native_control)
+{
+  char control_hash_key[100] = {0};
+  sprintf(control_hash_key, "%p", native_control);
+
+  //fprintf(stdout, "Deleting control: %p %s\n", native_control, control_hash_key);
+
+  mrb_value lookup = mrb_gv_get(mrb, mrb_intern_cstr(mrb, MRUBY_CONTROL_LOOKUP_GLOBAL));
+  mrb_hash_set(mrb, lookup, mrb_str_new_cstr(mrb, control_hash_key), mrb_nil_value());
+}
+
+/**
+ * Thunks
+ */
+
+void
+mrb_ui_thunk(uiControl* native_control, void* data)
+{
+  char* event_name = (char*)data;
+  mrb_value rb_control;
+  mrb_value callback;
+
+  //fprintf(stdout, "In thunk\n");
+
+  rb_control = mrb_ui_control_lookup_fetch(gui_mrb, native_control);
+
+  if (!mrb_test(rb_control)) {
+    //fprintf(stdout, "No control for %p\n", native_control);
+    // Control has been destroyed. Ignore this event.
+    return;
+  }
+
+  callback = mrb_iv_get(gui_mrb, rb_control, mrb_intern_cstr(gui_mrb, event_name));
+  
+  mrb_funcall(gui_mrb, callback, "call", 1, rb_control);
+}
+
+void
+mrb_ui_thunk_prep(
+    mrb_state* mrb,
+    mrb_value rb_control,
+    const char* event_name,
+    mrb_value callback)
+{
+  mrb_iv_set(mrb, rb_control, mrb_intern_cstr(mrb, event_name), callback);
+}
+
 /* MRUBY_BINDING_END */
 
 #ifdef __cplusplus
@@ -344,37 +439,31 @@ mrb_UI_uiBoxSetPadded(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiButtonOnClicked */
 /* sha: 71fc1748e2726bb1d1840ffadb071e3fda918fa57044346628b76dde2e26305a */
 #if BIND_uiButtonOnClicked_FUNCTION
-#define uiButtonOnClicked_REQUIRED_ARGC 3
+#define uiButtonOnClicked_REQUIRED_ARGC 1
 #define uiButtonOnClicked_OPTIONAL_ARGC 0
 /* void uiButtonOnClicked(uiButton * b, void (*)(uiButton *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiButtonOnClicked(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_clicked";
   mrb_value b;
   mrb_value f;
-  mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &b, &f, &data);
+  mrb_get_args(mrb, "o&", &b, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, b, Button_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Button expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiButton_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: b */
   uiButton * native_b = (mrb_nil_p(b) ? NULL : mruby_unbox_uiButton(b));
 
-  /* Unbox param: f */
-  void (*native_f)(uiButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiButton_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
 
   /* Invocation */
-  uiButtonOnClicked(native_b, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, b, event_name, f); 
+  uiButtonOnClicked(native_b, (void *)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -481,37 +570,30 @@ mrb_UI_uiCheckboxChecked(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiCheckboxOnToggled */
 /* sha: 389d321c44177642769305bd405bacfd4bfb6b5044f1835fdc009650f28fad60 */
 #if BIND_uiCheckboxOnToggled_FUNCTION
-#define uiCheckboxOnToggled_REQUIRED_ARGC 3
+#define uiCheckboxOnToggled_REQUIRED_ARGC 1
 #define uiCheckboxOnToggled_OPTIONAL_ARGC 0
 /* void uiCheckboxOnToggled(uiCheckbox * c, void (*)(uiCheckbox *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiCheckboxOnToggled(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_toggled";
   mrb_value c;
   mrb_value f;
-  mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &c, &f, &data);
+  mrb_get_args(mrb, "o&", &c, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, c, Checkbox_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiCheckbox_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: c */
   uiCheckbox * native_c = (mrb_nil_p(c) ? NULL : mruby_unbox_uiCheckbox(c));
 
-  /* Unbox param: f */
-  void (*native_f)(uiCheckbox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiCheckbox_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiCheckboxOnToggled(native_c, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, c, event_name, f);
+  uiCheckboxOnToggled(native_c, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -666,37 +748,31 @@ mrb_UI_uiColorButtonColor(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiColorButtonOnChanged */
 /* sha: 471bba5e0ecc3730d8c9df7d6ec3dcb4e08e02b8bd19bf7dade24cad2fc6b54b */
 #if BIND_uiColorButtonOnChanged_FUNCTION
-#define uiColorButtonOnChanged_REQUIRED_ARGC 3
+#define uiColorButtonOnChanged_REQUIRED_ARGC 1
 #define uiColorButtonOnChanged_OPTIONAL_ARGC 0
 /* void uiColorButtonOnChanged(uiColorButton * b, void (*)(uiColorButton *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiColorButtonOnChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_changed";
   mrb_value b;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &b, &f, &data);
+  mrb_get_args(mrb, "o&", &b, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, b, ColorButton_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiColorButton_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: b */
   uiColorButton * native_b = (mrb_nil_p(b) ? NULL : mruby_unbox_uiColorButton(b));
 
-  /* Unbox param: f */
-  void (*native_f)(uiColorButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiColorButton_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiColorButtonOnChanged(native_b, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, b, event_name, f);
+  uiColorButtonOnChanged(native_b, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -771,37 +847,31 @@ mrb_UI_uiComboboxAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiComboboxOnSelected */
 /* sha: 7a564a85b5242abb6c171acc8f248d328d6f65a1a787b98daa95104d2a5e241b */
 #if BIND_uiComboboxOnSelected_FUNCTION
-#define uiComboboxOnSelected_REQUIRED_ARGC 3
+#define uiComboboxOnSelected_REQUIRED_ARGC 1
 #define uiComboboxOnSelected_OPTIONAL_ARGC 0
 /* void uiComboboxOnSelected(uiCombobox * c, void (*)(uiCombobox *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiComboboxOnSelected(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_selected";
   mrb_value c;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &c, &f, &data);
+  mrb_get_args(mrb, "o&", &c, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, c, Combobox_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiCombobox_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: c */
   uiCombobox * native_c = (mrb_nil_p(c) ? NULL : mruby_unbox_uiCombobox(c));
 
-  /* Unbox param: f */
-  void (*native_f)(uiCombobox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiCombobox_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiComboboxOnSelected(native_c, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, c, event_name, f);
+  uiComboboxOnSelected(native_c, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -896,6 +966,8 @@ mrb_UI_uiControlDestroy(mrb_state* mrb, mrb_value self) {
 
   /* Invocation */
   uiControlDestroy(native_arg1);
+
+  mrb_ui_control_lookup_delete(mrb, native_arg1);
 
   return mrb_nil_value();
 }
@@ -2739,37 +2811,31 @@ mrb_UI_uiEditableComboboxAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiEditableComboboxOnChanged */
 /* sha: f6de95f3b0dc08d27fe2590ad75cfc72225b9f4c13a64a5d793b79255777152d */
 #if BIND_uiEditableComboboxOnChanged_FUNCTION
-#define uiEditableComboboxOnChanged_REQUIRED_ARGC 3
+#define uiEditableComboboxOnChanged_REQUIRED_ARGC 1
 #define uiEditableComboboxOnChanged_OPTIONAL_ARGC 0
 /* void uiEditableComboboxOnChanged(uiEditableCombobox * c, void (*)(uiEditableCombobox *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiEditableComboboxOnChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_changed";
   mrb_value c;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &c, &f, &data);
+  mrb_get_args(mrb, "o&", &c, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, c, EditableCombobox_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiEditableCombobox_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: c */
   uiEditableCombobox * native_c = (mrb_nil_p(c) ? NULL : mruby_unbox_uiEditableCombobox(c));
 
-  /* Unbox param: f */
-  void (*native_f)(uiEditableCombobox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiEditableCombobox_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiEditableComboboxOnChanged(native_c, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, c, event_name, f);
+  uiEditableComboboxOnChanged(native_c, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -2843,37 +2909,31 @@ mrb_UI_uiEditableComboboxText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiEntryOnChanged */
 /* sha: bdc5f2780553c434dac6ef2bd83b9b7b952a0f3c42a30463b6a1210928ed7af0 */
 #if BIND_uiEntryOnChanged_FUNCTION
-#define uiEntryOnChanged_REQUIRED_ARGC 3
+#define uiEntryOnChanged_REQUIRED_ARGC 1
 #define uiEntryOnChanged_OPTIONAL_ARGC 0
 /* void uiEntryOnChanged(uiEntry * e, void (*)(uiEntry *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiEntryOnChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_changed";
   mrb_value e;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &e, &f, &data);
+  mrb_get_args(mrb, "o&", &e, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, e, Entry_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiEntry_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: e */
   uiEntry * native_e = (mrb_nil_p(e) ? NULL : mruby_unbox_uiEntry(e));
 
-  /* Unbox param: f */
-  void (*native_f)(uiEntry *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiEntry_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiEntryOnChanged(native_e, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, e, event_name, f);
+  uiEntryOnChanged(native_e, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -3044,37 +3104,31 @@ mrb_UI_uiFontButtonFont(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiFontButtonOnChanged */
 /* sha: c200be35f3dbe91b4377ff09b478b3358f8f21ad32ca5933e25b2618bda137b1 */
 #if BIND_uiFontButtonOnChanged_FUNCTION
-#define uiFontButtonOnChanged_REQUIRED_ARGC 3
+#define uiFontButtonOnChanged_REQUIRED_ARGC 1
 #define uiFontButtonOnChanged_OPTIONAL_ARGC 0
 /* void uiFontButtonOnChanged(uiFontButton * b, void (*)(uiFontButton *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiFontButtonOnChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_changed";
   mrb_value b;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &b, &f, &data);
+  mrb_get_args(mrb, "o&", &b, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, b, FontButton_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "FontButton expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiFontButton_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: b */
   uiFontButton * native_b = (mrb_nil_p(b) ? NULL : mruby_unbox_uiFontButton(b));
 
-  /* Unbox param: f */
-  void (*native_f)(uiFontButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiFontButton_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiFontButtonOnChanged(native_b, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, b, event_name, f);
+  uiFontButtonOnChanged(native_b, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -4089,37 +4143,31 @@ mrb_UI_uiMenuItemEnable(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiMenuItemOnClicked */
 /* sha: 857fe60e1d05859b1018744be89bf10fc0b82e4c63bded76874809c115bbffe9 */
 #if BIND_uiMenuItemOnClicked_FUNCTION
-#define uiMenuItemOnClicked_REQUIRED_ARGC 3
+#define uiMenuItemOnClicked_REQUIRED_ARGC 1
 #define uiMenuItemOnClicked_OPTIONAL_ARGC 0
 /* void uiMenuItemOnClicked(uiMenuItem * m, void (*)(uiMenuItem *, uiWindow *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiMenuItemOnClicked(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_clicked";
   mrb_value m;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &m, &f, &data);
+  mrb_get_args(mrb, "o&", &m, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, m, MenuItem_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiMenuItem_PTR_COMMA_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: m */
   uiMenuItem * native_m = (mrb_nil_p(m) ? NULL : mruby_unbox_uiMenuItem(m));
 
-  /* Unbox param: f */
-  void (*native_f)(uiMenuItem *, uiWindow *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiMenuItem_PTR_COMMA_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiMenuItemOnClicked(native_m, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, m, event_name, f);
+  uiMenuItemOnClicked(native_m, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -4255,37 +4303,31 @@ mrb_UI_uiMultilineEntryAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiMultilineEntryOnChanged */
 /* sha: 059b3e36504f99d7c6d58fa80a848761fbaad7e4a8f6747217d0be16fd9c234c */
 #if BIND_uiMultilineEntryOnChanged_FUNCTION
-#define uiMultilineEntryOnChanged_REQUIRED_ARGC 3
+#define uiMultilineEntryOnChanged_REQUIRED_ARGC 1
 #define uiMultilineEntryOnChanged_OPTIONAL_ARGC 0
 /* void uiMultilineEntryOnChanged(uiMultilineEntry * e, void (*)(uiMultilineEntry *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiMultilineEntryOnChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_changed";
   mrb_value e;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &e, &f, &data);
+  mrb_get_args(mrb, "o&", &e, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, e, MultilineEntry_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiMultilineEntry_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: e */
   uiMultilineEntry * native_e = (mrb_nil_p(e) ? NULL : mruby_unbox_uiMultilineEntry(e));
 
-  /* Unbox param: f */
-  void (*native_f)(uiMultilineEntry *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiMultilineEntry_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiMultilineEntryOnChanged(native_e, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, e, event_name, f);
+  uiMultilineEntryOnChanged(native_e, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -4447,6 +4489,8 @@ mrb_UI_uiNewArea(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiArea(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4471,6 +4515,8 @@ mrb_UI_uiNewButton(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiButton(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4496,6 +4542,8 @@ mrb_UI_uiNewCheckbox(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiCheckbox(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4514,6 +4562,8 @@ mrb_UI_uiNewColorButton(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiColorButton(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4533,6 +4583,8 @@ mrb_UI_uiNewCombobox(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiCombobox(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4553,6 +4605,8 @@ mrb_UI_uiNewDatePicker(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiDateTimePicker(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4572,6 +4626,8 @@ mrb_UI_uiNewDateTimePicker(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiDateTimePicker(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4590,6 +4646,8 @@ mrb_UI_uiNewEditableCombobox(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiEditableCombobox(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4609,7 +4667,9 @@ mrb_UI_uiNewEntry(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiEntry(mrb, native_return_value));
-  
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4628,6 +4688,8 @@ mrb_UI_uiNewFontButton(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiFontButton(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4647,6 +4709,8 @@ mrb_UI_uiNewForm(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiForm(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4666,6 +4730,8 @@ mrb_UI_uiNewGrid(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiGrid(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4690,6 +4756,8 @@ mrb_UI_uiNewGroup(mrb_state* mrb, mrb_value self) {
 
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiGroup(mrb, native_return_value));
+
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
   
   return return_value;
 }
@@ -4710,6 +4778,8 @@ mrb_UI_uiNewHorizontalBox(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiBox(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4729,6 +4799,8 @@ mrb_UI_uiNewHorizontalSeparator(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiSeparator(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4753,6 +4825,8 @@ mrb_UI_uiNewLabel(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiLabel(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4777,6 +4851,8 @@ mrb_UI_uiNewMenu(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiMenu(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4796,6 +4872,8 @@ mrb_UI_uiNewMultilineEntry(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiMultilineEntry(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4815,6 +4893,8 @@ mrb_UI_uiNewNonWrappingMultilineEntry(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiMultilineEntry(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4834,6 +4914,8 @@ mrb_UI_uiNewPasswordEntry(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiEntry(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4853,6 +4935,8 @@ mrb_UI_uiNewProgressBar(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiProgressBar(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4872,6 +4956,8 @@ mrb_UI_uiNewRadioButtons(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiRadioButtons(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4907,6 +4993,8 @@ mrb_UI_uiNewScrollingArea(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiArea(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4926,6 +5014,8 @@ mrb_UI_uiNewSearchEntry(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiEntry(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4951,6 +5041,8 @@ mrb_UI_uiNewSlider(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiSlider(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4976,6 +5068,8 @@ mrb_UI_uiNewSpinbox(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiSpinbox(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -4995,6 +5089,8 @@ mrb_UI_uiNewTab(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiTab(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -5014,6 +5110,8 @@ mrb_UI_uiNewTimePicker(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiDateTimePicker(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -5033,6 +5131,8 @@ mrb_UI_uiNewVerticalBox(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiBox(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -5052,6 +5152,8 @@ mrb_UI_uiNewVerticalSeparator(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiSeparator(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -5079,6 +5181,8 @@ mrb_UI_uiNewWindow(mrb_state* mrb, mrb_value self) {
   /* Box the return value */
   mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_box_uiWindow(mrb, native_return_value));
   
+  mrb_ui_control_lookup_set(mrb, uiControl(native_return_value), return_value);
+
   return return_value;
 }
 #endif
@@ -5295,37 +5399,31 @@ mrb_UI_uiRadioButtonsAppend(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiRadioButtonsOnSelected */
 /* sha: 9b4beb8f8f0238a309b9a590ef4e5c6eb6eada4a7f791713afb0808e27743138 */
 #if BIND_uiRadioButtonsOnSelected_FUNCTION
-#define uiRadioButtonsOnSelected_REQUIRED_ARGC 3
+#define uiRadioButtonsOnSelected_REQUIRED_ARGC 1
 #define uiRadioButtonsOnSelected_OPTIONAL_ARGC 0
 /* void uiRadioButtonsOnSelected(uiRadioButtons * r, void (*)(uiRadioButtons *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiRadioButtonsOnSelected(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_selected";
   mrb_value r;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &r, &f, &data);
+  mrb_get_args(mrb, "o&", &r, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, r, RadioButtons_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiRadioButtons_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: r */
   uiRadioButtons * native_r = (mrb_nil_p(r) ? NULL : mruby_unbox_uiRadioButtons(r));
 
-  /* Unbox param: f */
-  void (*native_f)(uiRadioButtons *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiRadioButtons_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiRadioButtonsOnSelected(native_r, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, r, event_name, f);
+  uiRadioButtonsOnSelected(native_r, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -5432,37 +5530,31 @@ mrb_UI_uiSaveFile(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiSliderOnChanged */
 /* sha: 90c4f779831aeaf385586100445c73fee214228e16156944707f95fddcaceeb6 */
 #if BIND_uiSliderOnChanged_FUNCTION
-#define uiSliderOnChanged_REQUIRED_ARGC 3
+#define uiSliderOnChanged_REQUIRED_ARGC 1
 #define uiSliderOnChanged_OPTIONAL_ARGC 0
 /* void uiSliderOnChanged(uiSlider * s, void (*)(uiSlider *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiSliderOnChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_changed";
   mrb_value s;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &s, &f, &data);
+  mrb_get_args(mrb, "o&", &s, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, s, Slider_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Slider expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiSlider_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: s */
   uiSlider * native_s = (mrb_nil_p(s) ? NULL : mruby_unbox_uiSlider(s));
 
-  /* Unbox param: f */
-  void (*native_f)(uiSlider *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiSlider_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiSliderOnChanged(native_s, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, s, event_name, f);
+  uiSliderOnChanged(native_s, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -5536,37 +5628,31 @@ mrb_UI_uiSliderValue(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiSpinboxOnChanged */
 /* sha: fc005a75803fd3942a9be463558b5bfc7fa82eca7f2f5e60be802970fd1af61e */
 #if BIND_uiSpinboxOnChanged_FUNCTION
-#define uiSpinboxOnChanged_REQUIRED_ARGC 3
+#define uiSpinboxOnChanged_REQUIRED_ARGC 1
 #define uiSpinboxOnChanged_OPTIONAL_ARGC 0
 /* void uiSpinboxOnChanged(uiSpinbox * s, void (*)(uiSpinbox *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiSpinboxOnChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_changed";
   mrb_value s;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &s, &f, &data);
+  mrb_get_args(mrb, "o&", &s, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, s, Spinbox_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Spinbox expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiSpinbox_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: s */
   uiSpinbox * native_s = (mrb_nil_p(s) ? NULL : mruby_unbox_uiSpinbox(s));
 
-  /* Unbox param: f */
-  void (*native_f)(uiSpinbox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiSpinbox_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiSpinboxOnChanged(native_s, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, s, event_name, f);
+  uiSpinboxOnChanged(native_s, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -6025,37 +6111,30 @@ mrb_UI_uiWindowMargined(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiWindowOnClosing */
 /* sha: 085447abd748d73e245df45cc50e93ad74c7187f8e9fc40b23922a74c085df58 */
 #if BIND_uiWindowOnClosing_FUNCTION
-#define uiWindowOnClosing_REQUIRED_ARGC 3
+#define uiWindowOnClosing_REQUIRED_ARGC 1
 #define uiWindowOnClosing_OPTIONAL_ARGC 0
 /* void uiWindowOnClosing(uiWindow * w, int (*)(uiWindow *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiWindowOnClosing(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_closing";
   mrb_value w;
   mrb_value f;
-  mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &w, &f, &data);
+  mrb_get_args(mrb, "o&", &w, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
-  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: w */
   uiWindow * native_w = (mrb_nil_p(w) ? NULL : mruby_unbox_uiWindow(w));
 
-  /* Unbox param: f */
-  int (*native_f)(uiWindow *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiWindowOnClosing(native_w, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, w, event_name, f); 
+  uiWindowOnClosing(native_w, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -6065,37 +6144,31 @@ mrb_UI_uiWindowOnClosing(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiWindowOnContentSizeChanged */
 /* sha: 880ea6079aa870b0d4aaa2e365bc4f6c046cd197d3fbaf1391549eab5fc0bf8b */
 #if BIND_uiWindowOnContentSizeChanged_FUNCTION
-#define uiWindowOnContentSizeChanged_REQUIRED_ARGC 3
+#define uiWindowOnContentSizeChanged_REQUIRED_ARGC 1
 #define uiWindowOnContentSizeChanged_OPTIONAL_ARGC 0
 /* void uiWindowOnContentSizeChanged(uiWindow * w, void (*)(uiWindow *, void *) f, void * data) */
 mrb_value
 mrb_UI_uiWindowOnContentSizeChanged(mrb_state* mrb, mrb_value self) {
+  static const char* event_name = "on_content_size_changed";
   mrb_value w;
   mrb_value f;
   mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &w, &f, &data);
+  mrb_get_args(mrb, "o&", &w, &f);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
-  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
 
   /* Unbox param: w */
   uiWindow * native_w = (mrb_nil_p(w) ? NULL : mruby_unbox_uiWindow(w));
 
-  /* Unbox param: f */
-  void (*native_f)(uiWindow *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
-
   /* Invocation */
-  uiWindowOnContentSizeChanged(native_w, native_f, native_data);
+  mrb_ui_thunk_prep(mrb, w, event_name, f);
+  uiWindowOnContentSizeChanged(native_w, (void*)mrb_ui_thunk, (char*)event_name);
 
   return mrb_nil_value();
 }
@@ -6342,7 +6415,9 @@ void mrb_mruby_ui_gem_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: pre_class_initializations */
 /* sha: user_defined */
-
+  // Do this early so we can subclass it later.
+  // (The *_init function are idempotent by default)
+  mrb_UI_Control_init(mrb);
 /* MRUBY_BINDING_END */
 
 /* MRUBY_BINDING: class_initializations */
@@ -7086,6 +7161,7 @@ void mrb_mruby_ui_gem_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: post_module_definition */
 /* sha: user_defined */
+  mrb_ui_init_control_lookup(mrb);
 
 /* MRUBY_BINDING_END */
 }

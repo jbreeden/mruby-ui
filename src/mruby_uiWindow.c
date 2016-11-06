@@ -40,7 +40,7 @@ void mrb_UI_Window_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Window::class_definition */
 /* sha: 0fd19380d9c1561a5976301c00dd63ee2c1c7f720d72c0eaf1f6eb9de5c4e078 */
-  struct RClass* Window_class = mrb_define_class_under(mrb, UI_module(mrb), "Window", mrb->object_class);
+  struct RClass* Window_class = mrb_define_class_under(mrb, UI_module(mrb), "Window", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Window_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

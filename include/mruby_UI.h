@@ -31,6 +31,7 @@
 #include "mruby/string.h"
 #include "mruby/value.h"
 #include "mruby/variable.h"
+#include "mruby/hash.h"
 
 #include "ui.h"
 

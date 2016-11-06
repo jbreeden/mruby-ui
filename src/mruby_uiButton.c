@@ -40,7 +40,7 @@ void mrb_UI_Button_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Button::class_definition */
 /* sha: 82a6e3ed012b03d3465c41fc80d28e0de59a0d7671b748c86c0cc41eb36bfee1 */
-  struct RClass* Button_class = mrb_define_class_under(mrb, UI_module(mrb), "Button", mrb->object_class);
+  struct RClass* Button_class = mrb_define_class_under(mrb, UI_module(mrb), "Button", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Button_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

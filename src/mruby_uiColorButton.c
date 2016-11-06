@@ -40,7 +40,7 @@ void mrb_UI_ColorButton_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: ColorButton::class_definition */
 /* sha: 85f2f4640111d069899924b63259a9e1e809259e972aaa2d0454a5b28ec5a4b5 */
-  struct RClass* ColorButton_class = mrb_define_class_under(mrb, UI_module(mrb), "ColorButton", mrb->object_class);
+  struct RClass* ColorButton_class = mrb_define_class_under(mrb, UI_module(mrb), "ColorButton", Control_class(mrb));
   MRB_SET_INSTANCE_TT(ColorButton_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

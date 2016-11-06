@@ -40,7 +40,7 @@ void mrb_UI_Slider_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Slider::class_definition */
 /* sha: 0a889ea91e369b44cc672d5dab92c514cabc6a720e5e1de139177c69cd5ba9f1 */
-  struct RClass* Slider_class = mrb_define_class_under(mrb, UI_module(mrb), "Slider", mrb->object_class);
+  struct RClass* Slider_class = mrb_define_class_under(mrb, UI_module(mrb), "Slider", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Slider_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 

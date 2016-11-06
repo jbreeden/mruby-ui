@@ -40,7 +40,7 @@ void mrb_UI_Tab_init(mrb_state* mrb) {
 
 /* MRUBY_BINDING: Tab::class_definition */
 /* sha: bf27124ae650584eb34e195b85d00fed8d15118cfd959cf0f671bf4c749e2aaa */
-  struct RClass* Tab_class = mrb_define_class_under(mrb, UI_module(mrb), "Tab", mrb->object_class);
+  struct RClass* Tab_class = mrb_define_class_under(mrb, UI_module(mrb), "Tab", Control_class(mrb));
   MRB_SET_INSTANCE_TT(Tab_class, MRB_TT_DATA);
 /* MRUBY_BINDING_END */
 
