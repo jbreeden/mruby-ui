@@ -22,34 +22,28 @@ MRuby::Build.new do |conf|
   conf.gembox 'full-core'
   conf.gem '../mruby-ui'
 
-  # C compiler settings
   conf.cc do |cc|
   #   cc.command = ENV['CC'] || 'gcc'
   #   cc.flags = [ENV['CFLAGS'] || %w()]
-    cc.include_paths = ["~/projects/libui"]
+    cc.include_paths << ["/home/jbreeden/projects/libui/"]
   #   cc.defines = %w(DISABLE_GEMS)
   #   cc.option_include_path = '-I%s'
   #   cc.option_define = '-D%s'
   #   cc.compile_options = "%{flags} -MMD -o %{outfile} -c %{infile}"
   end
 
-  # mrbc settings
-  # conf.mrbc do |mrbc|
-  #   mrbc.compile_options = "-g -B%{funcname} -o-" # The -g option is required for line numbers
-  # end
-
   # Linker settings
-  # conf.linker do |linker|
+  conf.linker do |linker|
   #   linker.command = ENV['LD'] || 'gcc'
   #   linker.flags = [ENV['LDFLAGS'] || []]
   #   linker.flags_before_libraries = []
-  #   linker.libraries = %w()
+    linker.libraries << %w(ui)
   #   linker.flags_after_libraries = []
   #   linker.library_paths = []
   #   linker.option_library = '-l%s'
   #   linker.option_library_path = '-L%s'
   #   linker.link_options = "%{flags} -o %{outfile} %{objs} %{libs}"
-  # end
+  end
 
   # Archiver settings
   # conf.archiver do |archiver|
