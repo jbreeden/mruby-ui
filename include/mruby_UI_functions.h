@@ -18,8 +18,8 @@
 #define BIND_uiCheckboxOnToggled_FUNCTION TRUE
 #define BIND_uiCheckboxSetChecked_FUNCTION TRUE
 #define BIND_uiCheckboxSetText_FUNCTION TRUE
-#define BIND_uiCheckboxText_FUNCTION FALSE
-#define BIND_uiColorButtonColor_FUNCTION FALSE
+#define BIND_uiCheckboxText_FUNCTION TRUE
+#define BIND_uiColorButtonColor_FUNCTION TRUE
 #define BIND_uiColorButtonOnChanged_FUNCTION TRUE
 #define BIND_uiColorButtonSetColor_FUNCTION TRUE
 #define BIND_uiComboboxAppend_FUNCTION TRUE
@@ -41,7 +41,7 @@
 #define BIND_uiControlVisible_FUNCTION TRUE
 #define BIND_uiDrawClip_FUNCTION TRUE
 #define BIND_uiDrawFill_FUNCTION TRUE
-#define BIND_uiDrawFontFamiliesFamily_FUNCTION FALSE
+#define BIND_uiDrawFontFamiliesFamily_FUNCTION TRUE
 #define BIND_uiDrawFontFamiliesNumFamilies_FUNCTION TRUE
 #define BIND_uiDrawFreeFontFamilies_FUNCTION TRUE
 #define BIND_uiDrawFreePath_FUNCTION TRUE
@@ -83,7 +83,7 @@
 #define BIND_uiEditableComboboxAppend_FUNCTION TRUE
 #define BIND_uiEditableComboboxOnChanged_FUNCTION TRUE
 #define BIND_uiEditableComboboxSetText_FUNCTION TRUE
-#define BIND_uiEditableComboboxText_FUNCTION FALSE
+#define BIND_uiEditableComboboxText_FUNCTION TRUE
 #define BIND_uiEntryOnChanged_FUNCTION TRUE
 #define BIND_uiEntryReadOnly_FUNCTION TRUE
 #define BIND_uiEntrySetReadOnly_FUNCTION TRUE
@@ -98,15 +98,15 @@
 #define BIND_uiFreeControl_FUNCTION TRUE
 #define BIND_uiFreeInitError_FUNCTION TRUE
 #define BIND_uiFreeText_FUNCTION FALSE
-#define BIND_uiGridAppend_FUNCTION FALSE
-#define BIND_uiGridInsertAt_FUNCTION FALSE
+#define BIND_uiGridAppend_FUNCTION TRUE
+#define BIND_uiGridInsertAt_FUNCTION TRUE
 #define BIND_uiGridPadded_FUNCTION TRUE
 #define BIND_uiGridSetPadded_FUNCTION TRUE
 #define BIND_uiGroupMargined_FUNCTION TRUE
 #define BIND_uiGroupSetChild_FUNCTION TRUE
 #define BIND_uiGroupSetMargined_FUNCTION TRUE
 #define BIND_uiGroupSetTitle_FUNCTION TRUE
-#define BIND_uiGroupTitle_FUNCTION FALSE
+#define BIND_uiGroupTitle_FUNCTION TRUE
 #define BIND_uiInit_FUNCTION TRUE
 #define BIND_uiLabelSetText_FUNCTION TRUE
 #define BIND_uiLabelText_FUNCTION TRUE
@@ -163,8 +163,8 @@
 #define BIND_uiNewVerticalBox_FUNCTION TRUE
 #define BIND_uiNewVerticalSeparator_FUNCTION TRUE
 #define BIND_uiNewWindow_FUNCTION TRUE
-#define BIND_uiOnShouldQuit_FUNCTION FALSE
-#define BIND_uiOpenFile_FUNCTION FALSE
+#define BIND_uiOnShouldQuit_FUNCTION TRUE
+#define BIND_uiOpenFile_FUNCTION TRUE
 #define BIND_uiProgressBarSetValue_FUNCTION TRUE
 #define BIND_uiProgressBarValue_FUNCTION TRUE
 #define BIND_uiQueueMain_FUNCTION FALSE
@@ -173,7 +173,7 @@
 #define BIND_uiRadioButtonsOnSelected_FUNCTION TRUE
 #define BIND_uiRadioButtonsSelected_FUNCTION TRUE
 #define BIND_uiRadioButtonsSetSelected_FUNCTION TRUE
-#define BIND_uiSaveFile_FUNCTION FALSE
+#define BIND_uiSaveFile_FUNCTION TRUE
 #define BIND_uiSliderOnChanged_FUNCTION TRUE
 #define BIND_uiSliderSetValue_FUNCTION TRUE
 #define BIND_uiSliderValue_FUNCTION TRUE
@@ -189,7 +189,7 @@
 #define BIND_uiUninit_FUNCTION TRUE
 #define BIND_uiUserBugCannotSetParentOnToplevel_FUNCTION TRUE
 #define BIND_uiWindowBorderless_FUNCTION TRUE
-#define BIND_uiWindowContentSize_FUNCTION FALSE
+#define BIND_uiWindowContentSize_FUNCTION TRUE
 #define BIND_uiWindowFullscreen_FUNCTION TRUE
 #define BIND_uiWindowMargined_FUNCTION TRUE
 #define BIND_uiWindowOnClosing_FUNCTION TRUE
@@ -200,5 +200,5 @@
 #define BIND_uiWindowSetFullscreen_FUNCTION TRUE
 #define BIND_uiWindowSetMargined_FUNCTION TRUE
 #define BIND_uiWindowSetTitle_FUNCTION TRUE
-#define BIND_uiWindowTitle_FUNCTION FALSE
+#define BIND_uiWindowTitle_FUNCTION TRUE
 #endif

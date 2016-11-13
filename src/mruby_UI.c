@@ -527,8 +527,11 @@ mrb_UI_uiButtonText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiButtonText(native_b);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -689,8 +692,11 @@ mrb_UI_uiCheckboxText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiCheckboxText(native_c);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -700,49 +706,37 @@ mrb_UI_uiCheckboxText(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiColorButtonColor */
 /* sha: e223810cdb740f626f700857082975eee217f407ab3afdba4ddc1486ae2fcc61 */
 #if BIND_uiColorButtonColor_FUNCTION
-#define uiColorButtonColor_REQUIRED_ARGC 5
+#define uiColorButtonColor_REQUIRED_ARGC 1
 #define uiColorButtonColor_OPTIONAL_ARGC 0
 /* void uiColorButtonColor(uiColorButton * b, double * r, double * g, double * bl, double * a) */
 mrb_value
 mrb_UI_uiColorButtonColor(mrb_state* mrb, mrb_value self) {
   mrb_value b;
-  mrb_value r;
-  mrb_value g;
-  mrb_value bl;
-  mrb_value a;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooooo", &b, &r, &g, &bl, &a);
+  mrb_get_args(mrb, "o", &b);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, b, ColorButton_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
     return mrb_nil_value();
   }
-  TODO_type_check_double_PTR(r);
-  TODO_type_check_double_PTR(g);
-  TODO_type_check_double_PTR(bl);
-  TODO_type_check_double_PTR(a);
 
   /* Unbox param: b */
   uiColorButton * native_b = (mrb_nil_p(b) ? NULL : mruby_unbox_uiColorButton(b));
 
-  /* Unbox param: r */
-  double * native_r = TODO_mruby_unbox_double_PTR(r);
+  double native_r = 0;
+  double native_g = 0;
+  double native_bl = 0;
+  double native_a = 0;
+  uiColorButtonColor(native_b, &native_r, &native_g, &native_bl, &native_a);
 
-  /* Unbox param: g */
-  double * native_g = TODO_mruby_unbox_double_PTR(g);
-
-  /* Unbox param: bl */
-  double * native_bl = TODO_mruby_unbox_double_PTR(bl);
-
-  /* Unbox param: a */
-  double * native_a = TODO_mruby_unbox_double_PTR(a);
-
-  /* Invocation */
-  uiColorButtonColor(native_b, native_r, native_g, native_bl, native_a);
-
-  return mrb_nil_value();
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_ary_push(mrb, results, mrb_float_value(mrb, native_r));
+  mrb_ary_push(mrb, results, mrb_float_value(mrb, native_g));
+  mrb_ary_push(mrb, results, mrb_float_value(mrb, native_bl));
+  mrb_ary_push(mrb, results, mrb_float_value(mrb, native_a));
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -1481,7 +1475,11 @@ mrb_UI_uiDrawFontFamiliesFamily(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiDrawFontFamiliesFamily(native_ff, native_n);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -2901,8 +2899,11 @@ mrb_UI_uiEditableComboboxText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiEditableComboboxText(native_c);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -3064,8 +3065,11 @@ mrb_UI_uiEntryText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiEntryText(native_e);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -3367,12 +3371,12 @@ mrb_UI_uiGridAppend(mrb_state* mrb, mrb_value self) {
   mrb_int native_xspan;
   mrb_int native_yspan;
   mrb_int native_hexpand;
-  mrb_value halign;
+  mrb_int native_halign;
   mrb_int native_vexpand;
-  mrb_value valign;
+  mrb_int native_valign;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooiiiiioio", &g, &c, &native_left, &native_top, &native_xspan, &native_yspan, &native_hexpand, &halign, &native_vexpand, &valign);
+  mrb_get_args(mrb, "ooiiiiiiii", &g, &c, &native_left, &native_top, &native_xspan, &native_yspan, &native_hexpand, &native_halign, &native_vexpand, &native_valign);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, g, Grid_class(mrb))) {
@@ -3383,20 +3387,12 @@ mrb_UI_uiGridAppend(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  TODO_type_check_uiAlign(halign);
-  TODO_type_check_uiAlign(valign);
-
+  
   /* Unbox param: g */
   uiGrid * native_g = (mrb_nil_p(g) ? NULL : mruby_unbox_uiGrid(g));
 
   /* Unbox param: c */
   uiControl * native_c = (mrb_nil_p(c) ? NULL : mruby_unbox_uiControl(c));
-
-  /* Unbox param: halign */
-  uiAlign native_halign = TODO_mruby_unbox_uiAlign(halign);
-
-  /* Unbox param: valign */
-  uiAlign native_valign = TODO_mruby_unbox_uiAlign(valign);
 
   /* Invocation */
   uiGridAppend(native_g, native_c, native_left, native_top, native_xspan, native_yspan, native_hexpand, native_halign, native_vexpand, native_valign);
@@ -3417,16 +3413,16 @@ mrb_UI_uiGridInsertAt(mrb_state* mrb, mrb_value self) {
   mrb_value g;
   mrb_value c;
   mrb_value existing;
-  mrb_value at;
+  mrb_int native_at;
   mrb_int native_xspan;
   mrb_int native_yspan;
   mrb_int native_hexpand;
-  mrb_value halign;
+  mrb_int native_halign;
   mrb_int native_vexpand;
-  mrb_value valign;
+  mrb_int native_valign;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooooiiioio", &g, &c, &existing, &at, &native_xspan, &native_yspan, &native_hexpand, &halign, &native_vexpand, &valign);
+  mrb_get_args(mrb, "oooiiiiiii", &g, &c, &existing, &native_at, &native_xspan, &native_yspan, &native_hexpand, &native_halign, &native_vexpand, &native_valign);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, g, Grid_class(mrb))) {
@@ -3441,10 +3437,6 @@ mrb_UI_uiGridInsertAt(mrb_state* mrb, mrb_value self) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  TODO_type_check_uiAt(at);
-  TODO_type_check_uiAlign(halign);
-  TODO_type_check_uiAlign(valign);
-
   /* Unbox param: g */
   uiGrid * native_g = (mrb_nil_p(g) ? NULL : mruby_unbox_uiGrid(g));
 
@@ -3453,15 +3445,6 @@ mrb_UI_uiGridInsertAt(mrb_state* mrb, mrb_value self) {
 
   /* Unbox param: existing */
   uiControl * native_existing = (mrb_nil_p(existing) ? NULL : mruby_unbox_uiControl(existing));
-
-  /* Unbox param: at */
-  uiAt native_at = TODO_mruby_unbox_uiAt(at);
-
-  /* Unbox param: halign */
-  uiAlign native_halign = TODO_mruby_unbox_uiAlign(halign);
-
-  /* Unbox param: valign */
-  uiAlign native_valign = TODO_mruby_unbox_uiAlign(valign);
 
   /* Invocation */
   uiGridInsertAt(native_g, native_c, native_existing, native_at, native_xspan, native_yspan, native_hexpand, native_halign, native_vexpand, native_valign);
@@ -3694,7 +3677,11 @@ mrb_UI_uiGroupTitle(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiGroupTitle(native_g);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -3727,8 +3714,10 @@ mrb_UI_uiInit(mrb_state* mrb, mrb_value self) {
   const char * native_return_value = uiInit(native_options);
 
   /* Box the return value */
-  mrb_value return_value = native_return_value == NULL ? mrb_nil_value() : mrb_str_new_cstr(mrb, native_return_value);
-  
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+  }
   return return_value;
 }
 #endif
@@ -3791,8 +3780,11 @@ mrb_UI_uiLabelText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiLabelText(native_l);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -4460,8 +4452,11 @@ mrb_UI_uiMultilineEntryText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiMultilineEntryText(native_e);
 
   /* Box the return value */
-  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
-  free(native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -5200,6 +5195,22 @@ mrb_UI_uiNewWindow(mrb_state* mrb, mrb_value self) {
 #define uiOnShouldQuit_REQUIRED_ARGC 0
 #define uiOnShouldQuit_OPTIONAL_ARGC 0
 /* void uiOnShouldQuit(int (*)(void *) f, void * data) */
+typedef struct {
+  mrb_state * mrb;
+  mrb_value callback;
+} mrb_ui_quit_thunk_context;
+
+int mrb_ui_on_should_quit_thunk(void* data)
+{
+  mrb_ui_quit_thunk_context *context = (mrb_ui_quit_thunk_context*)data;
+  mrb_value return_value = mrb_funcall(context->mrb, context->callback, "call", 0);
+  if (mrb_fixnum_p(return_value)) {
+    return mrb_fixnum(return_value);
+  } else {
+    return 0;
+  }
+}
+
 mrb_value
 mrb_UI_uiOnShouldQuit(mrb_state* mrb, mrb_value self) {
   mrb_value f;
@@ -5208,9 +5219,11 @@ mrb_UI_uiOnShouldQuit(mrb_state* mrb, mrb_value self) {
   mrb_get_args(mrb, "&", &f);
 
   /* Invocation */
-  uiOnShouldQuit(native_f, native_data);
-
-  // TODO...
+  mrb_ui_quit_thunk_context *thunk_context = 
+    (mrb_ui_quit_thunk_context*)calloc(1, sizeof(mrb_ui_quit_thunk_context));
+  thunk_context->mrb = mrb;
+  thunk_context->callback = f;
+  uiOnShouldQuit(mrb_ui_on_should_quit_thunk, thunk_context);
 
   return mrb_nil_value();
 }
@@ -5243,7 +5256,11 @@ mrb_UI_uiOpenFile(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiOpenFile(native_parent);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -5517,7 +5534,11 @@ mrb_UI_uiSaveFile(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiSaveFile(native_parent);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
@@ -6002,7 +6023,7 @@ mrb_UI_uiWindowBorderless(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiWindowContentSize */
 /* sha: 551ad1d50f32a0fd08c1b153c20a16b648df6a9019719406b6bbc4bd42cd12fe */
 #if BIND_uiWindowContentSize_FUNCTION
-#define uiWindowContentSize_REQUIRED_ARGC 3
+#define uiWindowContentSize_REQUIRED_ARGC 1
 #define uiWindowContentSize_OPTIONAL_ARGC 0
 /* void uiWindowContentSize(uiWindow * w, int * width, int * height) */
 mrb_value
@@ -6012,29 +6033,27 @@ mrb_UI_uiWindowContentSize(mrb_state* mrb, mrb_value self) {
   mrb_value height;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "ooo", &w, &width, &height);
+  mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
   if (!mrb_obj_is_kind_of(mrb, w, Window_class(mrb))) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
-  TODO_type_check_int_PTR(width);
-  TODO_type_check_int_PTR(height);
 
   /* Unbox param: w */
   uiWindow * native_w = (mrb_nil_p(w) ? NULL : mruby_unbox_uiWindow(w));
 
-  /* Unbox param: width */
-  int * native_width = TODO_mruby_unbox_int_PTR(width);
-
-  /* Unbox param: height */
-  int * native_height = TODO_mruby_unbox_int_PTR(height);
+  int native_width = 0;
+  int native_height = 0;
 
   /* Invocation */
-  uiWindowContentSize(native_w, native_width, native_height);
+  uiWindowContentSize(native_w, &native_width, &native_height);
 
-  return mrb_nil_value();
+  mrb_value results = mrb_ary_new(mrb);
+  mrb_ary_push(mrb, results, mrb_fixnum_value(native_width));
+  mrb_ary_push(mrb, results, mrb_fixnum_value(native_height));
+  return results;
 }
 #endif
 /* MRUBY_BINDING_END */
@@ -6392,7 +6411,11 @@ mrb_UI_uiWindowTitle(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiWindowTitle(native_w);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_nil_value();
+  if (NULL != native_return_value) {
+    return_value = mrb_str_new_cstr(mrb, native_return_value);
+    free(native_return_value);
+  }
   
   return return_value;
 }
