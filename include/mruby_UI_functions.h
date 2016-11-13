@@ -13,7 +13,7 @@
 #define BIND_uiBoxSetPadded_FUNCTION TRUE
 #define BIND_uiButtonOnClicked_FUNCTION TRUE
 #define BIND_uiButtonSetText_FUNCTION TRUE
-#define BIND_uiButtonText_FUNCTION FALSE
+#define BIND_uiButtonText_FUNCTION TRUE
 #define BIND_uiCheckboxChecked_FUNCTION TRUE
 #define BIND_uiCheckboxOnToggled_FUNCTION TRUE
 #define BIND_uiCheckboxSetChecked_FUNCTION TRUE
@@ -88,7 +88,7 @@
 #define BIND_uiEntryReadOnly_FUNCTION TRUE
 #define BIND_uiEntrySetReadOnly_FUNCTION TRUE
 #define BIND_uiEntrySetText_FUNCTION TRUE
-#define BIND_uiEntryText_FUNCTION FALSE
+#define BIND_uiEntryText_FUNCTION TRUE
 #define BIND_uiFontButtonFont_FUNCTION TRUE
 #define BIND_uiFontButtonOnChanged_FUNCTION TRUE
 #define BIND_uiFormAppend_FUNCTION TRUE
@@ -109,7 +109,7 @@
 #define BIND_uiGroupTitle_FUNCTION FALSE
 #define BIND_uiInit_FUNCTION TRUE
 #define BIND_uiLabelSetText_FUNCTION TRUE
-#define BIND_uiLabelText_FUNCTION FALSE
+#define BIND_uiLabelText_FUNCTION TRUE
 #define BIND_uiMain_FUNCTION TRUE
 #define BIND_uiMainStep_FUNCTION TRUE
 #define BIND_uiMainSteps_FUNCTION TRUE
@@ -131,7 +131,7 @@
 #define BIND_uiMultilineEntryReadOnly_FUNCTION TRUE
 #define BIND_uiMultilineEntrySetReadOnly_FUNCTION TRUE
 #define BIND_uiMultilineEntrySetText_FUNCTION TRUE
-#define BIND_uiMultilineEntryText_FUNCTION FALSE
+#define BIND_uiMultilineEntryText_FUNCTION TRUE
 #define BIND_uiNewArea_FUNCTION TRUE
 #define BIND_uiNewButton_FUNCTION TRUE
 #define BIND_uiNewCheckbox_FUNCTION TRUE

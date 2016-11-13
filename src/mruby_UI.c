@@ -527,7 +527,8 @@ mrb_UI_uiButtonText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiButtonText(native_b);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  free(native_return_value);
   
   return return_value;
 }
@@ -688,7 +689,8 @@ mrb_UI_uiCheckboxText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiCheckboxText(native_c);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  free(native_return_value);
   
   return return_value;
 }
@@ -2899,7 +2901,8 @@ mrb_UI_uiEditableComboboxText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiEditableComboboxText(native_c);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  free(native_return_value);
   
   return return_value;
 }
@@ -3061,7 +3064,8 @@ mrb_UI_uiEntryText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiEntryText(native_e);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  free(native_return_value);
   
   return return_value;
 }
@@ -3787,7 +3791,8 @@ mrb_UI_uiLabelText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiLabelText(native_l);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  free(native_return_value);
   
   return return_value;
 }
@@ -4455,7 +4460,8 @@ mrb_UI_uiMultilineEntryText(mrb_state* mrb, mrb_value self) {
   char * native_return_value = uiMultilineEntryText(native_e);
 
   /* Box the return value */
-  mrb_value return_value = TODO_mruby_box_char_PTR(mrb, native_return_value);
+  mrb_value return_value = mrb_str_new_cstr(mrb, native_return_value);
+  free(native_return_value);
   
   return return_value;
 }
@@ -5191,29 +5197,20 @@ mrb_UI_uiNewWindow(mrb_state* mrb, mrb_value self) {
 /* MRUBY_BINDING: uiOnShouldQuit */
 /* sha: 9607770336db49f80f7f12bbddc8f029313c0e30644b89fc1a96057d5a0e242e */
 #if BIND_uiOnShouldQuit_FUNCTION
-#define uiOnShouldQuit_REQUIRED_ARGC 2
+#define uiOnShouldQuit_REQUIRED_ARGC 0
 #define uiOnShouldQuit_OPTIONAL_ARGC 0
 /* void uiOnShouldQuit(int (*)(void *) f, void * data) */
 mrb_value
 mrb_UI_uiOnShouldQuit(mrb_state* mrb, mrb_value self) {
   mrb_value f;
-  mrb_value data;
 
   /* Fetch the args */
-  mrb_get_args(mrb, "oo", &f, &data);
-
-  /* Type checking */
-  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
-  TODO_type_check_void_PTR(data);
-
-  /* Unbox param: f */
-  int (*native_f)(void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
-
-  /* Unbox param: data */
-  void * native_data = TODO_mruby_unbox_void_PTR(data);
+  mrb_get_args(mrb, "&", &f);
 
   /* Invocation */
   uiOnShouldQuit(native_f, native_data);
+
+  // TODO...
 
   return mrb_nil_value();
 }
