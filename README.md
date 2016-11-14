@@ -25,6 +25,10 @@ These screenshots are from the control gallery example, which was ported from C 
 - `bundle install` to pull down development dependencies.
 - You'll need to compile/install [libui](https://github.com/andlabs/libui) yourself.
 - `make build` to build mruby with mruby-ui.
+  + Note that the default `build_config.rb` assumes this gem will be checked out next to mruby (both in the same folder).
+    This won't affect you if you're building mruby-ui into another project, only when using `make build` in this repo.
+    It also expects to find libui headers at `../../libui` for now, but this can all be changed in `build_config.rb`.
+    (My directory structure includes `~/projects/libui`, `~/projects/mruby.d/mruby`, & `~/projects/mruby.d/mruby-ui`).
 - After your build is finished, try running `./build/bin/mruby ./examples/controlgallery.rb` to test it.
 
 Note: So far I'm only developing on Linux, but it should work the same across platforms. Though, you may
