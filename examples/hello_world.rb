@@ -1,33 +1,33 @@
 UI.init(UI::InitOptions.new)
 
-w = UI.newWindow("Hello", 320, 240, 0)
-UI.windowSetMargined(w, 1)
+w = UI::Window.new("Hello", 320, 240, 0)
+w.setMargined(1)
 
-UI.windowOnClosing(w) do
+w.onClosing do
   UI.quit
 end
 
-b = UI.newVerticalBox()
-UI.boxSetPadded(b, 1)
-UI.windowSetChild(w, b)
+b = UI::Box.newVertical()
+b.setPadded(1)
+w.setChild(b)
 
-e = UI.newMultilineEntry()
-UI.multilineEntryAppend(e, "test\n")
-UI.multilineEntryAppend(e, "test1\n")
-UI.multilineEntryAppend(e, "test2\n")
+e = UI::MultilineEntry.new()
+e.append("test\n")
+e.append("test1\n")
+e.append("test2\n")
 
-UI.multilineEntryOnChanged(e) { puts "changed!" }
+e.onChanged { puts "changed!" }
 
-UI.multilineEntrySetReadOnly(e, 0)
+e.setReadOnly(0)
 
-btn = UI.newButton("Say something")
-UI.boxAppend(b, btn, 0)
-UI.buttonOnClicked(btn) do
-    UI.multilineEntryAppend(e, "Saying something\n")
-end
+btn = UI::Button.new("Say something")
+b.append(btn, 0)
+btn.onClicked {
+    e.append("Saying something\n")
+}
 
-UI.boxAppend(b, e, 1)
+b.append(e, 1)
 
-UI.controlShow(w)
-UI.main()
+w.show
+UI.main
 

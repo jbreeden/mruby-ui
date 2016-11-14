@@ -1,42 +1,32 @@
-$onClosing = proc {
-  UI.quit
-  1
-}
-
-$onShouldQuit = proc {
-  puts "Destorying window"
-  UI.controlDestroy(mainwin)
-  1
-}
-
 def makeBasicControlsPage
-  vbox = UI.newVerticalBox()
-  UI.boxSetPadded(vbox, 1)
+  vbox = UI::Box.newVertical
+  vbox.setPadded(1)
 
-  hbox = UI.newHorizontalBox()
-  UI.boxSetPadded(hbox, 1)
-  UI.boxAppend(vbox, hbox, 0)
+  hbox = UI::Box.newHorizontal
+  hbox.setPadded(1)
 
-  UI.boxAppend(hbox, UI.newButton("Button"), 0)
-  UI.boxAppend(hbox, UI.newCheckbox("Checkbox"), 0)
+  vbox.append(hbox, 0)
 
-  UI.boxAppend(vbox, UI.newLabel("This is a label. Right now, labels can only span one line."), 0)
+  hbox.append(UI::Button.new("Button"), 0)
+  hbox.append(UI::Checkbox.new("Checkbox"), 0)
 
-  UI.boxAppend(vbox, UI.newHorizontalSeparator(), 0)
+  vbox.append(UI::Label.new("This is a label. Right now, labels can only span one line."), 0)
 
-  group = UI.newGroup("Entries")
-  UI.groupSetMargined(group, 1)
-  UI.boxAppend(vbox, group, 1)
+  vbox.append(UI::Separator.newHorizontal, 0)
 
-  entryForm = UI.newForm()
-  UI.formSetPadded(entryForm, 1)
-  UI.groupSetChild(group, entryForm)
+  group = UI::Group.new("Entries")
+  group.setMargined(1)
+  vbox.append(group, 1)
 
-  UI.formAppend(entryForm, "Entry", UI.newEntry(), 0)
-  UI.formAppend(entryForm, "Password Entry", UI.newPasswordEntry(), 0)
-  UI.formAppend(entryForm, "Search Entry", UI.newSearchEntry(), 0)
-  UI.formAppend(entryForm, "Multiline Entry", UI.newMultilineEntry(), 1)
-  UI.formAppend(entryForm, "Multiline Entry No Wrap", UI.newNonWrappingMultilineEntry(), 1)
+  entryForm = UI::Form.new
+  entryForm.setPadded(1)
+  group.setChild(entryForm)
+
+  entryForm.append("Entry", UI::Entry.new, 0)
+  entryForm.append("Password Entry", UI::Entry.newPassword, 0)
+  entryForm.append("Search Entry", UI::Entry.newSearch, 0)
+  entryForm.append("Multiline Entry", UI::MultilineEntry.new, 1)
+  entryForm.append("Multiline Entry No Wrap", UI::MultilineEntry.newNonWrapping, 1)
 
   vbox
 end
@@ -45,174 +35,156 @@ $spinbox = nil
 $slider = nil
 $pbar = nil
 
-$onSpinboxChanged = proc { |s|
-  UI.sliderSetValue($slider, UI.spinboxValue(s))
-  UI.progressBarSetValue($pbar, UI.spinboxValue(s))
-}
-
-$onSliderChanged = proc { |s|
-  UI.spinboxSetValue($spinbox, UI.sliderValue(s))
-  UI.progressBarSetValue($pbar, UI.sliderValue(s))
-}
-
 def makeNumbersPage()
-  hbox = UI.newHorizontalBox()
-  UI.boxSetPadded(hbox, 1)
+  hbox = UI::Box.newHorizontal
+  hbox.setPadded(1)
 
-  group = UI.newGroup("Numbers")
-  UI.groupSetMargined(group, 1)
-  UI.boxAppend(hbox, group, 1)
+  group = UI::Group.new("Numbers")
+  group.setMargined(1)
+  hbox.append(group, 1)
 
-  vbox = UI.newVerticalBox()
-  UI.boxSetPadded(vbox, 1)
-  UI.groupSetChild(group, vbox)
+  vbox = UI::Box.newVertical()
+  vbox.setPadded(1)
+  group.setChild(vbox)
 
-  $spinbox = UI.newSpinbox(0, 100)
-  $slider = UI.newSlider(0, 100)
-  $pbar = UI.newProgressBar()
-  UI.spinboxOnChanged($spinbox, &$onSpinboxChanged)
-  UI.sliderOnChanged($slider, &$onSliderChanged)
-  UI.boxAppend(vbox, $spinbox, 0)
-  UI.boxAppend(vbox, $slider, 0)
-  UI.boxAppend(vbox, $pbar, 0)
+  $spinbox = UI::Spinbox.new(0, 100)
+  $slider = UI::Slider.new(0, 100)
+  $pbar = UI::ProgressBar.new
 
-  ip = UI.newProgressBar()
-  UI.progressBarSetValue(ip, -1)
-  UI.boxAppend(vbox, ip, 0)
+  $spinbox.onChanged {
+    $slider.setValue($spinbox.value)
+    $pbar.setValue($spinbox.value)
+  }
 
-  group = UI.newGroup("Lists")
-  UI.groupSetMargined(group, 1)
-  UI.boxAppend(hbox, group, 1)
+  $slider.onChanged {
+    $spinbox.setValue($slider.value)
+    $pbar.setValue($slider.value)
+  }
+  vbox.append($spinbox, 0)
+  vbox.append($slider, 0)
+  vbox.append($pbar, 0)
 
-  vbox = UI.newVerticalBox()
-  UI.boxSetPadded(vbox, 1)
-  UI.groupSetChild(group, vbox)
+  ip = UI::ProgressBar.new()
+  ip.setValue(-1)
+  vbox.append(ip, 0)
 
-  cbox = UI.newCombobox()
-  UI.comboboxAppend(cbox, "Combobox Item 1")
-  UI.comboboxAppend(cbox, "Combobox Item 2")
-  UI.comboboxAppend(cbox, "Combobox Item 3")
-  UI.boxAppend(vbox, cbox, 0)
+  group = UI::Group.new("Lists")
+  group.setMargined(1)
+  hbox.append(group, 1)
 
-  ecbox = UI.newEditableCombobox()
-  UI.editableComboboxAppend(ecbox, "Editable Item 1")
-  UI.editableComboboxAppend(ecbox, "Editable Item 2")
-  UI.editableComboboxAppend(ecbox, "Editable Item 3")
+  vbox = UI::Box.newVertical
+  vbox.setPadded(1)
+  group.setChild(vbox)
+
+  cbox = UI::Combobox.new
+  cbox.append("Combobox Item 1")
+  cbox.append("Combobox Item 2")
+  cbox.append("Combobox Item 3")
+  vbox.append(cbox, 0)
+
+  ecbox = UI::EditableCombobox.new
+  ecbox.append("Editable Item 1")
+  ecbox.append("Editable Item 2")
+  ecbox.append("Editable Item 3")
   UI.boxAppend(vbox, ecbox, 0)
 
-  rb = UI.newRadioButtons()
-  UI.radioButtonsAppend(rb, "Radio Button 1")
-  UI.radioButtonsAppend(rb, "Radio Button 2")
-  UI.radioButtonsAppend(rb, "Radio Button 3")
-  UI.boxAppend(vbox, rb, 0)
+  rb = UI::RadioButtons.new
+  rb.append("Radio Button 1")
+  rb.append("Radio Button 2")
+  rb.append("Radio Button 3")
+  vbox.append(rb, 0)
 
   hbox
 end
 
-mainwin = nil
-
-$onOpenFileClicked = proc { |b|
-  # TODO TODO TODO TODO
-  entry = b.instance_variable_get(:@entry)
-
-  filename = UI.openFile(mainwin)
-  if filename.nil?
-    UI.entrySetText(entry, "(cancelled)")
-  else
-    UI.entrySetText(entry, filename)
-  end
-}
-
-$onSaveFileClicked = proc { |b|
-  # TODO TODO TODO
-  entry = b.instance_variable_get(:@entry)
-
-  filename = UI.saveFile(mainwin)
-  if filename.nil?
-    UI.entrySetText(entry, "(cancelled)")
-  else
-    UI.entrySetText(entry, filename)
-  end
-}
-
-$onMsgBoxClicked = proc { |b|
-  UI.msgBox(mainwin,
-    "This is a normal message box.",
-    "More detailed information can be shown here.")
-}
-
-$onMsgBoxErrorClicked = proc { |b|
-  UI.msgBoxError(mainwin,
-    "This message box describes an error.",
-    "More detailed information can be shown here.")
-}
+$mainwin = nil
 
 def makeDataChoosersPage()
-  hbox = UI.newHorizontalBox()
-  UI.boxSetPadded(hbox, 1)
+  hbox = UI::Box.newHorizontal
+  hbox.setPadded(1)
 
-  vbox = UI.newVerticalBox()
-  UI.boxSetPadded(vbox, 1)
-  UI.boxAppend(hbox, vbox, 0)
+  vbox = UI::Box.newVertical
+  vbox.setPadded(1)
+  hbox.append(vbox, 0)
 
-  UI.boxAppend(vbox, UI.newDatePicker(), 0)
-  UI.boxAppend(vbox, UI.newTimePicker(), 0)
-  UI.boxAppend(vbox, UI.newDateTimePicker(), 0)
+  vbox.append(UI::DateTimePicker.newDatePicker, 0)
+  vbox.append(UI::DateTimePicker.newTimePicker, 0)
+  vbox.append(UI::DateTimePicker.new, 0)
 
-  UI.boxAppend(vbox, UI.newFontButton(), 0)
-  UI.boxAppend(vbox, UI.newColorButton(), 0)
+  vbox.append(UI::FontButton.new, 0)
+  vbox.append(UI::ColorButton.new, 0)
 
-  UI.boxAppend(hbox, UI.newVerticalSeparator(), 0)
+  hbox.append(UI::Separator.newVertical, 0)
 
-  vbox = UI.newVerticalBox()
-  UI.boxSetPadded(vbox, 1)
-  UI.boxAppend(hbox, vbox, 1)
+  vbox = UI::Box.newVertical
+  vbox.setPadded(1)
+  hbox.append(vbox, 1)
 
-  grid = UI.newGrid()
-  UI.gridSetPadded(grid, 1)
-  UI.boxAppend(vbox, grid, 0)
+  grid = UI::Grid.new
+  grid.setPadded(1)
+  vbox.append(grid, 0)
 
-  button = UI.newButton("Open File")
-  entry = UI.newEntry()
-  UI.entrySetReadOnly(entry, 1)
-  # TODO TODO TODO TODO TODO TODO TODO TODO TODO
-  button.instance_variable_set(:@entry, entry)
-  UI.buttonOnClicked(button, &$onOpenFileClicked)
-  UI.gridAppend(grid, button,
+  button = UI::Button.new("Open File")
+  open_file_entry = UI::Entry.new
+  open_file_entry.setReadOnly(1)
+  button.onClicked {
+    filename = UI.openFile($mainwin)
+    if filename.nil?
+      UI.entrySetText(open_file_entry, "(cancelled)")
+    else
+      UI.entrySetText(open_file_entry, filename)
+    end
+  }
+
+  grid.append(button,
     0, 0, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
-  UI.gridAppend(grid, entry,
+  grid.append(open_file_entry,
     1, 0, 1, 1,
     1, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
 
-  button = UI.newButton("Save File")
-  entry = UI.newEntry()
-  UI.entrySetReadOnly(entry, 1)
+  button = UI::Button.new("Save File")
+  save_file_entry = UI::Entry.new
+  save_file_entry.setReadOnly(1)
 
-  button.instance_variable_set(:@entry, entry)
-  UI.buttonOnClicked(button, &$onSaveFileClicked)
+  button.onClicked {
+    filename = UI.saveFile($mainwin)
+    if filename.nil?
+      UI.entrySetText(save_file_entry, "(cancelled)")
+    else
+      UI.entrySetText(save_file_entry, filename)
+    end
+  }
 
-  UI.gridAppend(grid, button,
+  grid.append(button,
     0, 1, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
-  UI.gridAppend(grid, entry,
+  grid.append(save_file_entry,
     1, 1, 1, 1,
     1, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
 
-  msggrid = UI.newGrid()
-  UI.gridSetPadded(msggrid, 1)
-  UI.gridAppend(grid, msggrid,
+  msggrid = UI::Grid.new
+  msggrid.setPadded(1)
+  grid.append(msggrid,
     0, 2, 2, 1,
     0, UI::ALIGN_CENTER, 0, UI::ALIGN_START)
 
-  button = UI.newButton("Message Box")
-  UI.buttonOnClicked(button, &$onMsgBoxClicked)
-  UI.gridAppend(msggrid, button,
+  button = UI::Button.new("Message Box")
+  button.onClicked {
+    UI.msgBox($mainwin,
+              "This is a normal message box.",
+              "More detailed information can be shown here.")
+  }
+  msggrid.append(button,
     0, 0, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
-  button = UI.newButton("Error Box")
-  UI.buttonOnClicked(button, &$onMsgBoxErrorClicked)
-  UI.gridAppend(msggrid, button,
+  button = UI::Button.new("Error Box")
+  button.onClicked {
+    UI.msgBoxError($mainwin,
+                   "This message box describes an error.",
+                   "More detailed information can be shown here.")
+  }
+  msggrid.append(button,
     1, 0, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
 
@@ -223,27 +195,32 @@ options = UI::InitOptions.new
 
 err = UI.init(options)
 if !err.nil?
-  fprintf(stderr, "error initializing libui: %s", err)
-  UI.freeInitError(err)
-  return 1
+  raise "Error initializing libui: #{err}"
 end
 
-mainwin = UI.newWindow("libui Control Gallery", 640, 480, 1)
-UI.windowOnClosing(mainwin, &$onClosing)
-UI.onShouldQuit(&$onShouldQuit)
+$mainwin = UI::Window.new("libui Control Gallery", 640, 480, 1)
+$mainwin.onClosing {
+  UI.quit
+  1
+}
 
-tab = UI.newTab()
-UI.windowSetChild(mainwin, tab)
-UI.windowSetMargined(mainwin, 1)
+UI.onShouldQuit {
+  UI.controlDestroy($mainwin)
+  1
+}
 
-UI.tabAppend(tab, "Basic Controls", makeBasicControlsPage())
-UI.tabSetMargined(tab, 0, 1)
+tab = UI::Tab.new
+$mainwin.setChild(tab)
+$mainwin.setMargined(0)
 
-UI.tabAppend(tab, "Numbers and Lists", makeNumbersPage())
-UI.tabSetMargined(tab, 1, 1)
+tab.append("Basic Controls", makeBasicControlsPage())
+tab.setMargined(0, 1)
 
-UI.tabAppend(tab, "Data Choosers", makeDataChoosersPage())
-UI.tabSetMargined(tab, 2, 1)
+tab.append("Numbers and Lists", makeNumbersPage())
+tab.setMargined(1, 1)
 
-UI.controlShow(mainwin)
+tab.append("Data Choosers", makeDataChoosersPage())
+tab.setMargined(2, 1)
+
+$mainwin.show
 UI.main()

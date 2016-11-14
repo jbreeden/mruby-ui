@@ -3,7 +3,7 @@
 
 #define BIND_uiAllocControl_FUNCTION FALSE
 #define BIND_uiAreaBeginUserWindowMove_FUNCTION TRUE
-#define BIND_uiAreaBeginUserWindowResize_FUNCTION FALSE
+#define BIND_uiAreaBeginUserWindowResize_FUNCTION TRUE
 #define BIND_uiAreaQueueRedrawAll_FUNCTION TRUE
 #define BIND_uiAreaScrollTo_FUNCTION TRUE
 #define BIND_uiAreaSetSize_FUNCTION TRUE
@@ -56,10 +56,10 @@
 #define BIND_uiDrawMatrixScale_FUNCTION TRUE
 #define BIND_uiDrawMatrixSetIdentity_FUNCTION TRUE
 #define BIND_uiDrawMatrixSkew_FUNCTION TRUE
-#define BIND_uiDrawMatrixTransformPoint_FUNCTION FALSE
-#define BIND_uiDrawMatrixTransformSize_FUNCTION FALSE
+#define BIND_uiDrawMatrixTransformPoint_FUNCTION TRUE
+#define BIND_uiDrawMatrixTransformSize_FUNCTION TRUE
 #define BIND_uiDrawMatrixTranslate_FUNCTION TRUE
-#define BIND_uiDrawNewPath_FUNCTION FALSE
+#define BIND_uiDrawNewPath_FUNCTION TRUE
 #define BIND_uiDrawNewTextLayout_FUNCTION TRUE
 #define BIND_uiDrawPathAddRectangle_FUNCTION TRUE
 #define BIND_uiDrawPathArcTo_FUNCTION TRUE
@@ -76,7 +76,7 @@
 #define BIND_uiDrawTextFontDescribe_FUNCTION TRUE
 #define BIND_uiDrawTextFontGetMetrics_FUNCTION TRUE
 #define BIND_uiDrawTextFontHandle_FUNCTION FALSE
-#define BIND_uiDrawTextLayoutExtents_FUNCTION FALSE
+#define BIND_uiDrawTextLayoutExtents_FUNCTION TRUE
 #define BIND_uiDrawTextLayoutSetColor_FUNCTION TRUE
 #define BIND_uiDrawTextLayoutSetWidth_FUNCTION TRUE
 #define BIND_uiDrawTransform_FUNCTION TRUE
@@ -167,7 +167,7 @@
 #define BIND_uiOpenFile_FUNCTION TRUE
 #define BIND_uiProgressBarSetValue_FUNCTION TRUE
 #define BIND_uiProgressBarValue_FUNCTION TRUE
-#define BIND_uiQueueMain_FUNCTION FALSE
+#define BIND_uiQueueMain_FUNCTION TRUE
 #define BIND_uiQuit_FUNCTION TRUE
 #define BIND_uiRadioButtonsAppend_FUNCTION TRUE
 #define BIND_uiRadioButtonsOnSelected_FUNCTION TRUE
