@@ -1,7 +1,7 @@
 module UI
   def self.delegate(klass, method, target)
     if !UI.respond_to?(target)
-      raise "Attempting to delegate to method that doesn't exist: #{target}"
+      raise "Attempting to delegate to function that doesn't exist: #{target}"
     end
     klass.class_eval {
       define_method(method) { |*args, &block|
@@ -10,17 +10,18 @@ module UI
     }
   end
 
-  def self.constructor(klass, constructor, constructor_name = nil)
-    if !UI.respond_to?(constructor)
-      raise "Attempting to use a constructor that doesn't exist: #{constructor}"
+  def self.class_delegate(klass, method, target)
+    if !UI.respond_to?(target)
+      raise "Attempting to delegate to a function that doesn't exist: #{target}"
     end
-    klass.define_singleton_method(constructor_name || :new) { |*args, &block|
-      UI.send(constructor, *args, &block)
+    klass.define_singleton_method(method) { |*args, &block|
+      UI.send(target, *args, &block)
     }
   end
 
   #class:	Area
-  constructor Area, :newScrollingArea
+  class_delegate Area, :new, :newArea
+  class_delegate Area, :newScrolling, :newScrollingArea 
   delegate Area, :beginUserWindowMove, :areaBeginUserWindowMove
   #TODO: UI.beginUserWindowResize is not yet bound
   delegate Area, :beginUserWindowResize, :areaBeginUserWindowResize
@@ -35,21 +36,21 @@ module UI
   #class:	AreaMouseEvent
 
   #class:	Box
-  constructor Box, :newHorizontalBox, :newHorizontal
-  constructor Box, :newVerticalBox, :newVertical
+  class_delegate Box, :newHorizontal, :newHorizontalBox
+  class_delegate Box, :newVertical, :newVerticalBox
   delegate Box, :append, :boxAppend
   delegate Box, :delete, :boxDelete
   delegate Box, :padded, :boxPadded
   delegate Box, :setPadded, :boxSetPadded
 
   #class:	Button
-  constructor Button, :newButton
+  class_delegate Button, :new, :newButton
   delegate Button, :onClicked, :buttonOnClicked
   delegate Button, :setText, :buttonSetText
   delegate Button, :text, :buttonText
 
   #class:	Checkbox
-  constructor Checkbox, :newCheckbox
+  class_delegate Checkbox, :new, :newCheckbox
   delegate Checkbox, :checked, :checkboxChecked
   delegate Checkbox, :onToggled, :checkboxOnToggled
   delegate Checkbox, :setChecked, :checkboxSetChecked
@@ -57,13 +58,13 @@ module UI
   delegate Checkbox, :text, :checkboxText
 
   #class:	ColorButton
-  constructor ColorButton, :newColorButton
+  class_delegate ColorButton, :new, :newColorButton
   delegate ColorButton, :color, :colorButtonColor
   delegate ColorButton, :onChanged, :colorButtonOnChanged
   delegate ColorButton, :setColor, :colorButtonSetColor
 
   #class:	Combobox
-  constructor Combobox, :newCombobox
+  class_delegate Combobox, :new, :newCombobox
   delegate Combobox, :append, :comboboxAppend
   delegate Combobox, :onSelected, :comboboxOnSelected
   delegate Combobox, :selected, :comboboxSelected
@@ -86,18 +87,14 @@ module UI
   delegate Control, :visible, :controlVisible
   
   #class:	DatePicker
-  constructor DateTimePicker, :newDatePicker, :newDatePicker
+  class_delegate DateTimePicker, :newDatePicker, :newDatePicker
 
   #class:	TimePicker
-  constructor DateTimePicker, :newTimePicker, :newTimePicker
+  class_delegate DateTimePicker, :newTimePicker, :newTimePicker
 
   #class:	DateTimePicker
-  constructor DateTimePicker, :newDateTimePicker
-  DateTimePicker.class_eval {
-    def self.newDatetimePicker(*args, &block)
-      self.new(*args, &block)
-    end
-  }
+  class_delegate DateTimePicker, :new, :newDateTimePicker
+  class_delegate DateTimePicker, :newDateTimePicker, :newDateTimePicker
 
   #class:	DrawBrush
   #class:	DrawBrushGradientStop
@@ -164,16 +161,16 @@ module UI
   #function:  DrawTransform
 
   #class:	EditableCombobox
-  constructor EditableCombobox, :newEditableCombobox
+  class_delegate EditableCombobox, :new, :newEditableCombobox
   delegate EditableCombobox, :append, :editableComboboxAppend
   delegate EditableCombobox, :onChanged, :editableComboboxOnChanged
   delegate EditableCombobox, :setText, :editableComboboxSetText
   delegate EditableCombobox, :text, :editableComboboxText
 
   #class:	Entry
-  constructor Entry, :newEntry
-  constructor Entry, :newPasswordEntry, :newPassword
-  constructor Entry, :newSearchEntry, :newSearch
+  class_delegate Entry, :new, :newEntry
+  class_delegate Entry, :newPassword, :newPasswordEntry
+  class_delegate Entry, :newSearch, :newSearchEntry
   delegate Entry, :onChanged, :entryOnChanged
   delegate Entry, :readOnly, :entryReadOnly
   delegate Entry, :setReadOnly, :entrySetReadOnly
@@ -181,12 +178,12 @@ module UI
   delegate Entry, :text, :entryText
 
   #class:	FontButton
-  constructor FontButton, :newFontButton
+  class_delegate FontButton, :new, :newFontButton
   delegate FontButton, :font, :fontButtonFont
   delegate FontButton, :onChanged, :fontButtonOnChanged
 
   #class:	Form
-  constructor Form, :newForm
+  class_delegate Form, :new, :newForm
   delegate Form, :append, :formAppend
   delegate Form, :delete, :formDelete
   delegate Form, :padded, :formPadded
@@ -197,18 +194,18 @@ module UI
   #function:  FreeText
 
   #class: Separator
-  constructor Separator, :newHorizontalSeparator, :newHorizontal
-  constructor Separator, :newVerticalSeparator, :newVertical
+  class_delegate Separator, :newHorizontal, :newHorizontalSeparator
+  class_delegate Separator, :newVertical, :newVerticalSeparator
 
   #class:	Grid
-  constructor Grid, :newGrid
+  class_delegate Grid, :new, :newGrid
   delegate Grid, :append, :gridAppend
   delegate Grid, :insertAt, :gridInsertAt
   delegate Grid, :padded, :gridPadded
   delegate Grid, :setPadded, :gridSetPadded
 
   #class:	Group
-  constructor Group, :newGroup
+  class_delegate Group, :new, :newGroup
   delegate Group, :margined, :groupMargined
   delegate Group, :setChild, :groupSetChild
   delegate Group, :setMargined, :groupSetMargined
@@ -219,7 +216,7 @@ module UI
   #class:	InitOptions
 
   #class:	Label
-  constructor Label, :newLabel
+  class_delegate Label, :new, :newLabel
   delegate Label, :setText, :labelSetText
   delegate Label, :text, :labelText
 
@@ -228,7 +225,7 @@ module UI
   #function:  MainSteps
 
   #class:	Menu
-  constructor Menu, :newMenu
+  class_delegate Menu, :new, :newMenu
   delegate Menu, :appendAboutItem, :menuAppendAboutItem
   delegate Menu, :appendCheckItem, :menuAppendCheckItem
   delegate Menu, :appendItem, :menuAppendItem
@@ -247,8 +244,8 @@ module UI
   #function:  MsgBoxError
 
   #class:	MultilineEntry
-  constructor MultilineEntry, :newMultilineEntry
-  constructor MultilineEntry, :newNonWrappingMultilineEntry, :newNonWrapping
+  class_delegate MultilineEntry, :new, :newMultilineEntry
+  class_delegate MultilineEntry, :newNonWrapping, :newNonWrappingMultilineEntry
   delegate MultilineEntry, :append, :multilineEntryAppend
   delegate MultilineEntry, :onChanged, :multilineEntryOnChanged
   delegate MultilineEntry, :readOnly, :multilineEntryReadOnly
@@ -261,7 +258,7 @@ module UI
   #function:  OpenFile
 
   #class:	ProgressBar
-  constructor ProgressBar, :newProgressBar
+  class_delegate ProgressBar, :new, :newProgressBar
   delegate ProgressBar, :setValue, :progressBarSetValue
   delegate ProgressBar, :value, :progressBarValue
 
@@ -269,7 +266,7 @@ module UI
   #function:  Quit
 
   #class:	RadioButtons
-  constructor RadioButtons, :newRadioButtons
+  class_delegate RadioButtons, :new, :newRadioButtons
   delegate RadioButtons, :append, :radioButtonsAppend
   delegate RadioButtons, :onSelected, :radioButtonsOnSelected
   delegate RadioButtons, :selected, :radioButtonsSelected
@@ -278,19 +275,19 @@ module UI
   #function:  SaveFile
 
   #class:	Slider
-  constructor Slider, :newSlider
+  class_delegate Slider, :new, :newSlider
   delegate Slider, :onChanged, :sliderOnChanged
   delegate Slider, :setValue, :sliderSetValue
   delegate Slider, :value, :sliderValue
 
   #class:	Spinbox
-  constructor Spinbox, :newSpinbox
+  class_delegate Spinbox, :new, :newSpinbox
   delegate Spinbox, :onChanged, :spinboxOnChanged
   delegate Spinbox, :setValue, :spinboxSetValue
   delegate Spinbox, :value, :spinboxValue
 
   #class:	Tab
-  constructor Tab, :newTab
+  class_delegate Tab, :new, :newTab
   delegate Tab, :append, :tabAppend
   delegate Tab, :delete, :tabDelete
   delegate Tab, :insertAt, :tabInsertAt
@@ -302,7 +299,7 @@ module UI
   #function:  UserBugCannotSetParentOnToplevel
 
   #class:	Window
-  constructor Window, :newWindow
+  class_delegate Window, :new, :newWindow
   delegate Window, :borderless, :windowBorderless
   delegate Window, :contentSize, :windowContentSize
   delegate Window, :fullscreen, :windowFullscreen
