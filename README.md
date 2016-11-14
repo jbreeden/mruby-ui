@@ -2,7 +2,7 @@
 
 Bindings to [libui](https://github.com/andlabs/libui) for MRuby.
 
-The api should be up to date & complete with repect to libui's master branch. Still, this is certainly "pre-release" software,
+The api should be up to date & complete with respect to libui's master branch. Still, this is certainly "pre-release" software,
 at best. Libui itself is still in alpha as well.
 
 See the [class_bindigns.rb](https://github.com/jbreeden/mruby-ui/blob/master/mrblib/class_mappings.rb)
