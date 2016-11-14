@@ -6,7 +6,8 @@ The api should be up to date & complete with respect to libui's master branch. S
 at best. Libui itself is still in alpha as well.
 
 See the [class_bindings.rb](https://github.com/jbreeden/mruby-ui/blob/master/mrblib/class_mappings.rb)
-to get an overview of the classes and methods available. Or checkout some of the [examples](https://github.com/jbreeden/mruby-ui/tree/master/examples).
+to get an overview of the classes and methods available (note that not all functions are defined there, many
+are defined in [mruby_UI.c](https://github.com/jbreeden/mruby-ui/blob/master/src/mruby_UI.c) on the `UI` module itself). Or checkout some of the [examples](https://github.com/jbreeden/mruby-ui/tree/master/examples).
 
 ## Screenshots
 
