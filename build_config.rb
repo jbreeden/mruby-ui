@@ -20,7 +20,7 @@ MRuby::Build.new do |conf|
   # conf.gem :git => 'git@github.com:masuidrive/mrbgems-example.git', :branch => 'master', :options => '-v'
 
   conf.gembox 'full-core'
-  conf.gem '../mruby-ui'
+  conf.gem '../mruby-ui-new'
 
   conf.cc do |cc|
   #   cc.command = ENV['CC'] || 'gcc'
@@ -44,26 +44,4 @@ MRuby::Build.new do |conf|
   #   linker.option_library_path = '-L%s'
   #   linker.link_options = "%{flags} -o %{outfile} %{objs} %{libs}"
   end
-
-  # Archiver settings
-  # conf.archiver do |archiver|
-  #   archiver.command = ENV['AR'] || 'ar'
-  #   archiver.archive_options = 'rs %{outfile} %{objs}'
-  # end
-
-  # gperf settings
-  # conf.gperf do |gperf|
-  #   gperf.command = 'gperf'
-  #   gperf.compile_options = '-L ANSI-C -C -p -j1 -i 1 -g -o -t -N mrb_reserved_word -k"1,3,$" %{infile} > %{outfile}'
-  # end
-
-  # file extensions
-  # conf.exts do |exts|
-  #   exts.object = '.o'
-  #   exts.executable = '' # '.exe' if Windows
-  #   exts.library = '.a'
-  # end
-
-  # bintest
-  # conf.enable_bintest
 end
