@@ -1,3 +1,7 @@
+/**
+ * Boxing/Freeing Functions
+ */
+
 static void
 free_UI_void_ptr(mrb_state* mrb, void* ptr)
 {
@@ -11,12 +15,6 @@ static const
 mrb_data_type UI_void_ptr_data_type = {
    "mruby_UI_void_ptr", free_UI_void_ptr
 };
-
-void mrb_UI_VoidPtr_init(mrb_state* mrb)
-{
-  struct RClass* VoidPtr_class = mrb_define_class_under(mrb, UI_module(mrb), "VoidPtr", mrb->object_class);
-  MRB_SET_INSTANCE_TT(VoidPtr_class, MRB_TT_DATA);
-}
 
 int
 mruby_UI_typecheck_void_ptr(mrb_state *mrb, mrb_value value, const char * underlying_type) {
@@ -65,4 +63,43 @@ void *
 mruby_UI_unbox_void_ptr(mrb_value boxed)
 {
   return (void *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
+}
+
+/**
+ * Instance Methods
+ */
+
+mrb_value
+mruby_UI_VoidPtr_is_null(mrb_state *mrb, mrb_value self)
+{
+  char* cstr = mruby_UI_unbox_void_ptr(self);
+  if (cstr == NULL) {
+    return mrb_true_value();
+  } else {
+    return mrb_false_value();
+  }
+}
+
+mrb_value
+mruby_UI_VoidPtr_read_cstr(mrb_state *mrb, mrb_value self)
+{
+  char* cstr = mruby_UI_unbox_void_ptr(self);
+  if (cstr == NULL) {
+    return mrb_nil_value();
+  } else {
+    return mrb_str_new_cstr(mrb, cstr);
+  }
+}
+
+/**
+ * Initialization Function
+ */
+
+void mrb_UI_VoidPtr_init(mrb_state* mrb)
+{
+  struct RClass* VoidPtr_class = mrb_define_class_under(mrb, UI_module(mrb), "VoidPtr", mrb->object_class);
+  MRB_SET_INSTANCE_TT(VoidPtr_class, MRB_TT_DATA);
+
+  mrb_define_method(mrb, VoidPtr_class, "null?", mruby_UI_VoidPtr_is_null, MRB_ARGS_ARG(0, 0));
+  mrb_define_method(mrb, VoidPtr_class, "read_cstr", mruby_UI_VoidPtr_read_cstr, MRB_ARGS_ARG(0, 0));
 }

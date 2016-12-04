@@ -1,25 +1,26 @@
 def makeBasicControlsPage
   vbox = UI::Box.newVertical
-  vbox.setPadded(1)
+  vbox.setPadded(true)
 
   hbox = UI::Box.newHorizontal
-  hbox.setPadded(1)
+  hbox.setPadded(true)
 
   vbox.append(hbox, 0)
 
   hbox.append(UI::Button.new("Button"), 0)
-  hbox.append(UI::Checkbox.new("Checkbox"), 0)
+  checkbox = UI::Checkbox.new("Checkbox")
+  hbox.append(checkbox, 0)
 
   vbox.append(UI::Label.new("This is a label. Right now, labels can only span one line."), 0)
 
   vbox.append(UI::Separator.newHorizontal, 0)
 
   group = UI::Group.new("Entries")
-  group.setMargined(1)
+  group.setMargined(true)
   vbox.append(group, 1)
 
   entryForm = UI::Form.new
-  entryForm.setPadded(1)
+  entryForm.setPadded(true)
   group.setChild(entryForm)
 
   entryForm.append("Entry", UI::Entry.new, 0)
@@ -37,14 +38,14 @@ $pbar = nil
 
 def makeNumbersPage()
   hbox = UI::Box.newHorizontal
-  hbox.setPadded(1)
+  hbox.setPadded(true)
 
   group = UI::Group.new("Numbers")
-  group.setMargined(1)
+  group.setMargined(true)
   hbox.append(group, 1)
 
   vbox = UI::Box.newVertical()
-  vbox.setPadded(1)
+  vbox.setPadded(true)
   group.setChild(vbox)
 
   $spinbox = UI::Spinbox.new(0, 100)
@@ -69,11 +70,11 @@ def makeNumbersPage()
   vbox.append(ip, 0)
 
   group = UI::Group.new("Lists")
-  group.setMargined(1)
+  group.setMargined(true)
   hbox.append(group, 1)
 
   vbox = UI::Box.newVertical
-  vbox.setPadded(1)
+  vbox.setPadded(true)
   group.setChild(vbox)
 
   cbox = UI::Combobox.new
@@ -101,10 +102,10 @@ $mainwin = nil
 
 def makeDataChoosersPage()
   hbox = UI::Box.newHorizontal
-  hbox.setPadded(1)
+  hbox.setPadded(true)
 
   vbox = UI::Box.newVertical
-  vbox.setPadded(1)
+  vbox.setPadded(true)
   hbox.append(vbox, 0)
 
   vbox.append(UI::DateTimePicker.newDatePicker, 0)
@@ -117,16 +118,16 @@ def makeDataChoosersPage()
   hbox.append(UI::Separator.newVertical, 0)
 
   vbox = UI::Box.newVertical
-  vbox.setPadded(1)
+  vbox.setPadded(true)
   hbox.append(vbox, 1)
 
   grid = UI::Grid.new
-  grid.setPadded(1)
+  grid.setPadded(true)
   vbox.append(grid, 0)
 
   button = UI::Button.new("Open File")
   open_file_entry = UI::Entry.new
-  open_file_entry.setReadOnly(1)
+  open_file_entry.setReadOnly(true)
   button.onClicked {
     filename = UI.openFile($mainwin)
     if filename.nil?
@@ -164,7 +165,7 @@ def makeDataChoosersPage()
     1, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
 
   msggrid = UI::Grid.new
-  msggrid.setPadded(1)
+  msggrid.setPadded(true)
   grid.append(msggrid,
     0, 2, 2, 1,
     0, UI::ALIGN_CENTER, 0, UI::ALIGN_START)
@@ -211,16 +212,16 @@ UI.onShouldQuit {
 
 tab = UI::Tab.new
 $mainwin.setChild(tab)
-$mainwin.setMargined(0)
+$mainwin.setMargined(false)
 
 tab.append("Basic Controls", makeBasicControlsPage())
-tab.setMargined(0, 1)
+tab.setMargined(0, true)
 
 tab.append("Numbers and Lists", makeNumbersPage())
-tab.setMargined(1, 1)
+tab.setMargined(1, true)
 
 tab.append("Data Choosers", makeDataChoosersPage())
-tab.setMargined(2, 1)
+tab.setMargined(2, true)
 
 $mainwin.show
 UI.main()

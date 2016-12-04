@@ -12,13 +12,11 @@ mrb_ui_thunk(uiControl* native_control, void* data)
   mrb_value rb_control;
   mrb_value callback;
 
-  //fprintf(stdout, "In thunk\n");
-
   mrb_value control_lookup = mrb_iv_get(gui_mrb, mrb_obj_value(UI_module(gui_mrb)), mrb_intern_cstr(gui_mrb, "@control_lookup"));
   rb_control = mrb_funcall(gui_mrb, control_lookup, "[]", 1, mruby_UI_ptr_to_string(gui_mrb, native_control));
 
   if (!mrb_test(rb_control)) {
-    printf("No control for %p\n", native_control);
+    printf("WARNING! [IN THUNK] No control for %p\n", native_control);
     // Control has been destroyed. Ignore this event.
     return;
   }
@@ -36,7 +34,6 @@ mrb_ui_thunk_prep(
     mrb_value callback)
 {
   if (!gui_mrb) {
-    printf("Set gui_mrb\n");
     gui_mrb = mrb;
   }
   mrb_iv_set(mrb, rb_control, mrb_intern_cstr(mrb, event_name), callback);
