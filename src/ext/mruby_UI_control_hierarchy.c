@@ -2,9 +2,12 @@
   struct RClass *Control_class = mrb_define_class_under(mrb, UI_module(mrb), "Control", mrb->object_class);
   MRB_SET_INSTANCE_TT(Control_class, MRB_TT_DATA);
 
+  // Pre-declaring, so we can include in the types we define below.
+  mrb_define_module_under(mrb, UI_module(mrb), "Pointer");
+
 #define CONTROL_SUBCLASS(name) \
   { struct RClass* subclass = mrb_define_class_under(mrb, UI_module(mrb), #name, Control_class); \
-    mrb_include_module(mrb, subclass, UI_NativeObject_module(mrb)); }
+    mrb_include_module(mrb, subclass, UI_Pointer_module(mrb)); }
 
   CONTROL_SUBCLASS(Area)
   CONTROL_SUBCLASS(Box)

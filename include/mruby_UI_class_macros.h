@@ -1,8 +1,8 @@
 #define UI_module(mrb) mrb_module_get(mrb, "UI")
 
-#define UI_NativeObject_module(mrb) mrb_module_get_under(mrb, UI_module(mrb), "NativeObject")
+#define UI_Pointer_module(mrb) mrb_module_get_under(mrb, UI_module(mrb), "Pointer")
 
-#define UI_VoidPtr_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "VoidPtr")
+#define UI_VoidPointer_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "VoidPointer")
 
 #define UI_Area_class(mrb) mrb_class_get_under(mrb, UI_module(mrb), "Area")
 

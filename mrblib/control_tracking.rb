@@ -8,7 +8,7 @@ module UI
           lookup = {}
           UI.instance_variable_set(:@control_lookup, lookup)
         end
-        lookup[control.native_addr] = control
+        lookup[control.ptr_addr] = control
         control
       end
     end

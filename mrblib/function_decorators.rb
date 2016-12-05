@@ -73,6 +73,47 @@ module UI
     def tabSetMargined(tab, page, margined)
       super(tab, page, margined ? 1 : 0)
     end
+
+
+    ## May not be able to rely on GC for these.
+    #def self.giftwrap(name)
+    #  self.define_method(name) do |*args|
+    #    result = super(*args)
+    #    result.ptr_managed = true
+    #    result
+    #  end
+    #end
+    #giftwrap :newArea
+    #giftwrap :newButton
+    #giftwrap :newCheckbox
+    #giftwrap :newColorButton
+    #giftwrap :newCombobox
+    #giftwrap :newDatePicker
+    #giftwrap :newDateTimePicker
+    #giftwrap :newEditableCombobox
+    #giftwrap :newEntry
+    #giftwrap :newFontButton
+    #giftwrap :newForm
+    #giftwrap :newGrid
+    #giftwrap :newGroup
+    #giftwrap :newHorizontalBox
+    #giftwrap :newHorizontalSeparator
+    #giftwrap :newLabel
+    #giftwrap :newMenu
+    #giftwrap :newMultilineEntry
+    #giftwrap :newNonWrappingMultilineEntry
+    #giftwrap :newPasswordEntry
+    #giftwrap :newProgressBar
+    #giftwrap :newRadioButtons
+    #giftwrap :newScrollingArea
+    #giftwrap :newSearchEntry
+    #giftwrap :newSlider
+    #giftwrap :newSpinbox
+    #giftwrap :newTab
+    #giftwrap :newTimePicker
+    #giftwrap :newVerticalBox
+    #giftwrap :newVerticalSeparator
+    #giftwrap :newWindow
   end
 
   class << self

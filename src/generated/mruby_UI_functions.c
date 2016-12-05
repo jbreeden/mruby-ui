@@ -43,7 +43,7 @@ mrb_UI_areaBeginUserWindowMove(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UI_Area_class(mrb))) {
+  if (!mruby_UI_typecheck_Area(mrb, a)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
@@ -75,7 +75,7 @@ mrb_UI_areaBeginUserWindowResize(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &a, &native_edge);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UI_Area_class(mrb))) {
+  if (!mruby_UI_typecheck_Area(mrb, a)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
@@ -106,7 +106,7 @@ mrb_UI_areaQueueRedrawAll(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UI_Area_class(mrb))) {
+  if (!mruby_UI_typecheck_Area(mrb, a)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
@@ -141,7 +141,7 @@ mrb_UI_areaScrollTo(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offff", &a, &native_x, &native_y, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UI_Area_class(mrb))) {
+  if (!mruby_UI_typecheck_Area(mrb, a)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
@@ -174,7 +174,7 @@ mrb_UI_areaSetSize(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oii", &a, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, a, UI_Area_class(mrb))) {
+  if (!mruby_UI_typecheck_Area(mrb, a)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Area expected");
     return mrb_nil_value();
   }
@@ -207,11 +207,11 @@ mrb_UI_boxAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooi", &b, &child, &native_stretchy);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_Box_class(mrb))) {
+  if (!mruby_UI_typecheck_Box(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, child, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, child)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -245,7 +245,7 @@ mrb_UI_boxDelete(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &b, &native_index);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_Box_class(mrb))) {
+  if (!mruby_UI_typecheck_Box(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
@@ -276,7 +276,7 @@ mrb_UI_boxPadded(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_Box_class(mrb))) {
+  if (!mruby_UI_typecheck_Box(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
@@ -311,7 +311,7 @@ mrb_UI_boxSetPadded(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &b, &native_padded);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_Box_class(mrb))) {
+  if (!mruby_UI_typecheck_Box(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Box expected");
     return mrb_nil_value();
   }
@@ -344,12 +344,12 @@ mrb_UI_boxSetPadded(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &b, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, b, UI_Button_class(mrb))) {
+//  if (!mruby_UI_typecheck_Button(mrb, b)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Button expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiButton_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -358,7 +358,7 @@ mrb_UI_boxSetPadded(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiButton_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiButtonOnClicked(native_b, native_f, native_data);
@@ -384,7 +384,7 @@ mrb_UI_buttonSetText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &b, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_Button_class(mrb))) {
+  if (!mruby_UI_typecheck_Button(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Button expected");
     return mrb_nil_value();
   }
@@ -415,7 +415,7 @@ mrb_UI_buttonText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_Button_class(mrb))) {
+  if (!mruby_UI_typecheck_Button(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Button expected");
     return mrb_nil_value();
   }
@@ -427,7 +427,7 @@ mrb_UI_buttonText(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiButtonText(native_b);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -449,7 +449,7 @@ mrb_UI_checkboxChecked(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Checkbox_class(mrb))) {
+  if (!mruby_UI_typecheck_Checkbox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
@@ -485,12 +485,12 @@ mrb_UI_checkboxChecked(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &c, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, c, UI_Checkbox_class(mrb))) {
+//  if (!mruby_UI_typecheck_Checkbox(mrb, c)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiCheckbox_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -499,7 +499,7 @@ mrb_UI_checkboxChecked(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiCheckbox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiCheckbox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiCheckboxOnToggled(native_c, native_f, native_data);
@@ -525,7 +525,7 @@ mrb_UI_checkboxSetChecked(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &c, &native_checked);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Checkbox_class(mrb))) {
+  if (!mruby_UI_typecheck_Checkbox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
@@ -557,7 +557,7 @@ mrb_UI_checkboxSetText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Checkbox_class(mrb))) {
+  if (!mruby_UI_typecheck_Checkbox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
@@ -588,7 +588,7 @@ mrb_UI_checkboxText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Checkbox_class(mrb))) {
+  if (!mruby_UI_typecheck_Checkbox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Checkbox expected");
     return mrb_nil_value();
   }
@@ -600,7 +600,7 @@ mrb_UI_checkboxText(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiCheckboxText(native_c);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -626,33 +626,33 @@ mrb_UI_colorButtonColor(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooooo", &b, &r, &g, &bl, &a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_ColorButton_class(mrb))) {
+  if (!mruby_UI_typecheck_ColorButton(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, r, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, r, "double *")) {
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, g, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, g, "double *")) {
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, bl, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, bl, "double *")) {
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, a, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, a, "double *")) {
     return mrb_nil_value();
   }
 
   /* Unbox params */
   uiColorButton * native_b = (mrb_nil_p(b) ? NULL : mruby_UI_unbox_uiColorButton(b));
 
-  void * native_r = (mrb_nil_p(r) ? NULL : mruby_UI_unbox_void_ptr(r));
+  void * native_r = (mrb_nil_p(r) ? NULL : mruby_UI_unbox_void_pointer(r));
 
-  void * native_g = (mrb_nil_p(g) ? NULL : mruby_UI_unbox_void_ptr(g));
+  void * native_g = (mrb_nil_p(g) ? NULL : mruby_UI_unbox_void_pointer(g));
 
-  void * native_bl = (mrb_nil_p(bl) ? NULL : mruby_UI_unbox_void_ptr(bl));
+  void * native_bl = (mrb_nil_p(bl) ? NULL : mruby_UI_unbox_void_pointer(bl));
 
-  void * native_a = (mrb_nil_p(a) ? NULL : mruby_UI_unbox_void_ptr(a));
+  void * native_a = (mrb_nil_p(a) ? NULL : mruby_UI_unbox_void_pointer(a));
 
   /* Invocation */
   uiColorButtonColor(native_b, native_r, native_g, native_bl, native_a);
@@ -679,12 +679,12 @@ mrb_UI_colorButtonColor(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &b, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, b, UI_ColorButton_class(mrb))) {
+//  if (!mruby_UI_typecheck_ColorButton(mrb, b)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiColorButton_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -693,7 +693,7 @@ mrb_UI_colorButtonColor(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiColorButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiColorButton_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiColorButtonOnChanged(native_b, native_f, native_data);
@@ -722,7 +722,7 @@ mrb_UI_colorButtonSetColor(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offff", &b, &native_r, &native_g, &native_bl, &native_a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_ColorButton_class(mrb))) {
+  if (!mruby_UI_typecheck_ColorButton(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "ColorButton expected");
     return mrb_nil_value();
   }
@@ -754,7 +754,7 @@ mrb_UI_comboboxAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Combobox_class(mrb))) {
+  if (!mruby_UI_typecheck_Combobox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
@@ -787,12 +787,12 @@ mrb_UI_comboboxAppend(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &c, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, c, UI_Combobox_class(mrb))) {
+//  if (!mruby_UI_typecheck_Combobox(mrb, c)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiCombobox_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -801,7 +801,7 @@ mrb_UI_comboboxAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiCombobox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiCombobox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiComboboxOnSelected(native_c, native_f, native_data);
@@ -826,7 +826,7 @@ mrb_UI_comboboxSelected(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Combobox_class(mrb))) {
+  if (!mruby_UI_typecheck_Combobox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
@@ -861,7 +861,7 @@ mrb_UI_comboboxSetSelected(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &c, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Combobox_class(mrb))) {
+  if (!mruby_UI_typecheck_Combobox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Combobox expected");
     return mrb_nil_value();
   }
@@ -892,7 +892,7 @@ mrb_UI_controlDestroy(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -923,7 +923,7 @@ mrb_UI_controlDisable(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -954,7 +954,7 @@ mrb_UI_controlEnable(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -985,7 +985,7 @@ mrb_UI_controlEnabled(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1019,7 +1019,7 @@ mrb_UI_controlEnabledToUser(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1053,7 +1053,7 @@ mrb_UI_controlEnabledToUser(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "o", &arg1);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+//  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
 //    return mrb_nil_value();
 //  }
@@ -1087,7 +1087,7 @@ mrb_UI_controlHide(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1118,7 +1118,7 @@ mrb_UI_controlParent(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1153,11 +1153,11 @@ mrb_UI_controlSetParent(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &arg1, &arg2);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, arg2, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg2)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1190,7 +1190,7 @@ mrb_UI_controlShow(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1221,7 +1221,7 @@ mrb_UI_controlToplevel(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1256,11 +1256,11 @@ mrb_UI_controlVerifySetParent(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &arg1, &arg2);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, arg2, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg2)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1293,7 +1293,7 @@ mrb_UI_controlVisible(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -1328,11 +1328,11 @@ mrb_UI_drawClip(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &c, &path);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_DrawContext_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawContext(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, path, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, path)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -1367,15 +1367,15 @@ mrb_UI_drawFill(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooo", &c, &path, &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_DrawContext_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawContext(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, path, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, path)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, b, UI_DrawBrush_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawBrush(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawBrush expected");
     return mrb_nil_value();
   }
@@ -1411,7 +1411,7 @@ mrb_UI_drawFontFamiliesFamily(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &ff, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ff, UI_DrawFontFamilies_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawFontFamilies(mrb, ff)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawFontFamilies expected");
     return mrb_nil_value();
   }
@@ -1423,7 +1423,7 @@ mrb_UI_drawFontFamiliesFamily(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiDrawFontFamiliesFamily(native_ff, native_n);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -1445,7 +1445,7 @@ mrb_UI_drawFontFamiliesNumFamilies(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &ff);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ff, UI_DrawFontFamilies_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawFontFamilies(mrb, ff)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawFontFamilies expected");
     return mrb_nil_value();
   }
@@ -1479,7 +1479,7 @@ mrb_UI_drawFreeFontFamilies(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &ff);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ff, UI_DrawFontFamilies_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawFontFamilies(mrb, ff)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawFontFamilies expected");
     return mrb_nil_value();
   }
@@ -1510,7 +1510,7 @@ mrb_UI_drawFreePath(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -1541,7 +1541,7 @@ mrb_UI_drawFreeTextFont(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &font);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, font, UI_DrawTextFont_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextFont(mrb, font)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
@@ -1572,7 +1572,7 @@ mrb_UI_drawFreeTextLayout(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &layout);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UI_DrawTextLayout_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextLayout(mrb, layout)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
@@ -1623,7 +1623,7 @@ mrb_UI_drawLoadClosestFont(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &desc);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, desc, UI_DrawTextFontDescriptor_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextFontDescriptor(mrb, desc)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFontDescriptor expected");
     return mrb_nil_value();
   }
@@ -1657,7 +1657,7 @@ mrb_UI_drawMatrixInvert(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -1691,7 +1691,7 @@ mrb_UI_drawMatrixInvertible(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -1726,11 +1726,11 @@ mrb_UI_drawMatrixMultiply(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &dest, &src);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, dest, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, dest)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, src, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, src)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -1766,7 +1766,7 @@ mrb_UI_drawMatrixRotate(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offf", &m, &native_x, &native_y, &native_amount);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -1801,7 +1801,7 @@ mrb_UI_drawMatrixScale(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offff", &m, &native_xCenter, &native_yCenter, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -1832,7 +1832,7 @@ mrb_UI_drawMatrixSetIdentity(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -1867,7 +1867,7 @@ mrb_UI_drawMatrixSkew(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offff", &m, &native_x, &native_y, &native_xamount, &native_yamount);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -1900,23 +1900,23 @@ mrb_UI_drawMatrixTransformPoint(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooo", &m, &x, &y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, x, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, x, "double *")) {
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, y, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, y, "double *")) {
     return mrb_nil_value();
   }
 
   /* Unbox params */
   uiDrawMatrix * native_m = (mrb_nil_p(m) ? NULL : mruby_UI_unbox_uiDrawMatrix(m));
 
-  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_ptr(x));
+  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_pointer(x));
 
-  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_ptr(y));
+  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_pointer(y));
 
   /* Invocation */
   uiDrawMatrixTransformPoint(native_m, native_x, native_y);
@@ -1943,23 +1943,23 @@ mrb_UI_drawMatrixTransformSize(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooo", &m, &x, &y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, x, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, x, "double *")) {
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, y, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, y, "double *")) {
     return mrb_nil_value();
   }
 
   /* Unbox params */
   uiDrawMatrix * native_m = (mrb_nil_p(m) ? NULL : mruby_UI_unbox_uiDrawMatrix(m));
 
-  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_ptr(x));
+  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_pointer(x));
 
-  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_ptr(y));
+  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_pointer(y));
 
   /* Invocation */
   uiDrawMatrixTransformSize(native_m, native_x, native_y);
@@ -1986,7 +1986,7 @@ mrb_UI_drawMatrixTranslate(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "off", &m, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -2044,7 +2044,7 @@ mrb_UI_drawNewTextLayout(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "zof", &native_text, &defaultFont, &native_width);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, defaultFont, UI_DrawTextFont_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextFont(mrb, defaultFont)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
@@ -2082,7 +2082,7 @@ mrb_UI_drawPathAddRectangle(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offff", &p, &native_x, &native_y, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2119,7 +2119,7 @@ mrb_UI_drawPathArcTo(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offfffi", &p, &native_xCenter, &native_yCenter, &native_radius, &native_startAngle, &native_sweep, &native_negative);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2156,7 +2156,7 @@ mrb_UI_drawPathBezierTo(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offffff", &p, &native_c1x, &native_c1y, &native_c2x, &native_c2y, &native_endX, &native_endY);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2187,7 +2187,7 @@ mrb_UI_drawPathCloseFigure(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2218,7 +2218,7 @@ mrb_UI_drawPathEnd(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2251,7 +2251,7 @@ mrb_UI_drawPathLineTo(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "off", &p, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2284,7 +2284,7 @@ mrb_UI_drawPathNewFigure(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "off", &p, &native_x, &native_y);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2321,7 +2321,7 @@ mrb_UI_drawPathNewFigureWithArc(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offfffi", &p, &native_xCenter, &native_yCenter, &native_radius, &native_startAngle, &native_sweep, &native_negative);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
@@ -2352,7 +2352,7 @@ mrb_UI_drawRestore(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_DrawContext_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawContext(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
@@ -2383,7 +2383,7 @@ mrb_UI_drawSave(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_DrawContext_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawContext(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
@@ -2417,19 +2417,19 @@ mrb_UI_drawStroke(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oooo", &c, &path, &b, &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_DrawContext_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawContext(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, path, UI_DrawPath_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawPath(mrb, path)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawPath expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, b, UI_DrawBrush_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawBrush(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawBrush expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, p, UI_DrawStrokeParams_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawStrokeParams(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawStrokeParams expected");
     return mrb_nil_value();
   }
@@ -2469,11 +2469,11 @@ mrb_UI_drawText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "offo", &c, &native_x, &native_y, &layout);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_DrawContext_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawContext(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, layout, UI_DrawTextLayout_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextLayout(mrb, layout)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
@@ -2507,11 +2507,11 @@ mrb_UI_drawTextFontDescribe(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &font, &desc);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, font, UI_DrawTextFont_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextFont(mrb, font)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, desc, UI_DrawTextFontDescriptor_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextFontDescriptor(mrb, desc)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFontDescriptor expected");
     return mrb_nil_value();
   }
@@ -2545,11 +2545,11 @@ mrb_UI_drawTextFontGetMetrics(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &font, &metrics);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, font, UI_DrawTextFont_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextFont(mrb, font)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, metrics, UI_DrawTextFontMetrics_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextFontMetrics(mrb, metrics)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFontMetrics expected");
     return mrb_nil_value();
   }
@@ -2582,7 +2582,7 @@ mrb_UI_drawTextFontGetMetrics(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "o", &font);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, font, UI_DrawTextFont_class(mrb))) {
+//  if (!mruby_UI_typecheck_DrawTextFont(mrb, font)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "DrawTextFont expected");
 //    return mrb_nil_value();
 //  }
@@ -2618,23 +2618,23 @@ mrb_UI_drawTextLayoutExtents(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooo", &layout, &width, &height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UI_DrawTextLayout_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextLayout(mrb, layout)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, width, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, width, "double *")) {
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, height, "double *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, height, "double *")) {
     return mrb_nil_value();
   }
 
   /* Unbox params */
   uiDrawTextLayout * native_layout = (mrb_nil_p(layout) ? NULL : mruby_UI_unbox_uiDrawTextLayout(layout));
 
-  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_ptr(width));
+  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_pointer(width));
 
-  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_ptr(height));
+  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_pointer(height));
 
   /* Invocation */
   uiDrawTextLayoutExtents(native_layout, native_width, native_height);
@@ -2665,7 +2665,7 @@ mrb_UI_drawTextLayoutSetColor(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oiiffff", &layout, &native_startChar, &native_endChar, &native_r, &native_g, &native_b, &native_a);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UI_DrawTextLayout_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextLayout(mrb, layout)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
@@ -2697,7 +2697,7 @@ mrb_UI_drawTextLayoutSetWidth(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "of", &layout, &native_width);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, layout, UI_DrawTextLayout_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawTextLayout(mrb, layout)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawTextLayout expected");
     return mrb_nil_value();
   }
@@ -2729,11 +2729,11 @@ mrb_UI_drawTransform(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &c, &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_DrawContext_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawContext(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawContext expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, m, UI_DrawMatrix_class(mrb))) {
+  if (!mruby_UI_typecheck_DrawMatrix(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "DrawMatrix expected");
     return mrb_nil_value();
   }
@@ -2767,7 +2767,7 @@ mrb_UI_editableComboboxAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_EditableCombobox_class(mrb))) {
+  if (!mruby_UI_typecheck_EditableCombobox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
@@ -2800,12 +2800,12 @@ mrb_UI_editableComboboxAppend(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &c, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, c, UI_EditableCombobox_class(mrb))) {
+//  if (!mruby_UI_typecheck_EditableCombobox(mrb, c)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiEditableCombobox_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -2814,7 +2814,7 @@ mrb_UI_editableComboboxAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiEditableCombobox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiEditableCombobox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiEditableComboboxOnChanged(native_c, native_f, native_data);
@@ -2840,7 +2840,7 @@ mrb_UI_editableComboboxSetText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &c, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_EditableCombobox_class(mrb))) {
+  if (!mruby_UI_typecheck_EditableCombobox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
@@ -2871,7 +2871,7 @@ mrb_UI_editableComboboxText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, c, UI_EditableCombobox_class(mrb))) {
+  if (!mruby_UI_typecheck_EditableCombobox(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "EditableCombobox expected");
     return mrb_nil_value();
   }
@@ -2883,7 +2883,7 @@ mrb_UI_editableComboboxText(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiEditableComboboxText(native_c);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -2907,12 +2907,12 @@ mrb_UI_editableComboboxText(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &e, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, e, UI_Entry_class(mrb))) {
+//  if (!mruby_UI_typecheck_Entry(mrb, e)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiEntry_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -2921,7 +2921,7 @@ mrb_UI_editableComboboxText(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiEntry *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiEntry_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiEntryOnChanged(native_e, native_f, native_data);
@@ -2946,7 +2946,7 @@ mrb_UI_entryReadOnly(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_Entry_class(mrb))) {
+  if (!mruby_UI_typecheck_Entry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
@@ -2981,7 +2981,7 @@ mrb_UI_entrySetReadOnly(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &e, &native_readonly);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_Entry_class(mrb))) {
+  if (!mruby_UI_typecheck_Entry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
@@ -3013,7 +3013,7 @@ mrb_UI_entrySetText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &e, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_Entry_class(mrb))) {
+  if (!mruby_UI_typecheck_Entry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
@@ -3044,7 +3044,7 @@ mrb_UI_entryText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_Entry_class(mrb))) {
+  if (!mruby_UI_typecheck_Entry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Entry expected");
     return mrb_nil_value();
   }
@@ -3056,7 +3056,7 @@ mrb_UI_entryText(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiEntryText(native_e);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -3078,7 +3078,7 @@ mrb_UI_fontButtonFont(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &b);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, b, UI_FontButton_class(mrb))) {
+  if (!mruby_UI_typecheck_FontButton(mrb, b)) {
     mrb_raise(mrb, E_TYPE_ERROR, "FontButton expected");
     return mrb_nil_value();
   }
@@ -3114,12 +3114,12 @@ mrb_UI_fontButtonFont(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &b, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, b, UI_FontButton_class(mrb))) {
+//  if (!mruby_UI_typecheck_FontButton(mrb, b)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "FontButton expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiFontButton_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -3128,7 +3128,7 @@ mrb_UI_fontButtonFont(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiFontButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiFontButton_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiFontButtonOnChanged(native_b, native_f, native_data);
@@ -3156,11 +3156,11 @@ mrb_UI_formAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ozoi", &f, &native_label, &c, &native_stretchy);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UI_Form_class(mrb))) {
+  if (!mruby_UI_typecheck_Form(mrb, f)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -3194,7 +3194,7 @@ mrb_UI_formDelete(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &f, &native_index);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UI_Form_class(mrb))) {
+  if (!mruby_UI_typecheck_Form(mrb, f)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
@@ -3225,7 +3225,7 @@ mrb_UI_formPadded(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &f);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UI_Form_class(mrb))) {
+  if (!mruby_UI_typecheck_Form(mrb, f)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
@@ -3260,7 +3260,7 @@ mrb_UI_formSetPadded(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &f, &native_padded);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, f, UI_Form_class(mrb))) {
+  if (!mruby_UI_typecheck_Form(mrb, f)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Form expected");
     return mrb_nil_value();
   }
@@ -3291,7 +3291,7 @@ mrb_UI_freeControl(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &arg1);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, arg1, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, arg1)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -3344,12 +3344,12 @@ mrb_UI_freeText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &text);
 
   /* Type checking */
-  if (!mruby_UI_typecheck_void_ptr(mrb, text, "char *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, text, "char *")) {
     return mrb_nil_value();
   }
 
   /* Unbox params */
-  void * native_text = (mrb_nil_p(text) ? NULL : mruby_UI_unbox_void_ptr(text));
+  void * native_text = (mrb_nil_p(text) ? NULL : mruby_UI_unbox_void_pointer(text));
 
   /* Invocation */
   uiFreeText(native_text);
@@ -3383,11 +3383,11 @@ mrb_UI_gridAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooiiiiiiii", &g, &c, &native_left, &native_top, &native_xspan, &native_yspan, &native_hexpand, &native_halign, &native_vexpand, &native_valign);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Grid_class(mrb))) {
+  if (!mruby_UI_typecheck_Grid(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -3429,15 +3429,15 @@ mrb_UI_gridInsertAt(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oooiiiiiii", &g, &c, &existing, &native_at, &native_xspan, &native_yspan, &native_hexpand, &native_halign, &native_vexpand, &native_valign);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Grid_class(mrb))) {
+  if (!mruby_UI_typecheck_Grid(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, existing, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, existing)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -3472,7 +3472,7 @@ mrb_UI_gridPadded(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &g);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Grid_class(mrb))) {
+  if (!mruby_UI_typecheck_Grid(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
@@ -3507,7 +3507,7 @@ mrb_UI_gridSetPadded(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &g, &native_padded);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Grid_class(mrb))) {
+  if (!mruby_UI_typecheck_Grid(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Grid expected");
     return mrb_nil_value();
   }
@@ -3538,7 +3538,7 @@ mrb_UI_groupMargined(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &g);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Group_class(mrb))) {
+  if (!mruby_UI_typecheck_Group(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
@@ -3573,11 +3573,11 @@ mrb_UI_groupSetChild(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &g, &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Group_class(mrb))) {
+  if (!mruby_UI_typecheck_Group(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -3611,7 +3611,7 @@ mrb_UI_groupSetMargined(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &g, &native_margined);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Group_class(mrb))) {
+  if (!mruby_UI_typecheck_Group(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
@@ -3643,7 +3643,7 @@ mrb_UI_groupSetTitle(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &g, &native_title);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Group_class(mrb))) {
+  if (!mruby_UI_typecheck_Group(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
@@ -3674,7 +3674,7 @@ mrb_UI_groupTitle(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &g);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, g, UI_Group_class(mrb))) {
+  if (!mruby_UI_typecheck_Group(mrb, g)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Group expected");
     return mrb_nil_value();
   }
@@ -3686,7 +3686,7 @@ mrb_UI_groupTitle(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiGroupTitle(native_g);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -3708,7 +3708,7 @@ mrb_UI_init(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &options);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, options, UI_InitOptions_class(mrb))) {
+  if (!mruby_UI_typecheck_InitOptions(mrb, options)) {
     mrb_raise(mrb, E_TYPE_ERROR, "InitOptions expected");
     return mrb_nil_value();
   }
@@ -3743,7 +3743,7 @@ mrb_UI_labelSetText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &l, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, l, UI_Label_class(mrb))) {
+  if (!mruby_UI_typecheck_Label(mrb, l)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Label expected");
     return mrb_nil_value();
   }
@@ -3774,7 +3774,7 @@ mrb_UI_labelText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &l);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, l, UI_Label_class(mrb))) {
+  if (!mruby_UI_typecheck_Label(mrb, l)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Label expected");
     return mrb_nil_value();
   }
@@ -3786,7 +3786,7 @@ mrb_UI_labelText(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiLabelText(native_l);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -3867,7 +3867,7 @@ mrb_UI_menuAppendAboutItem(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_Menu_class(mrb))) {
+  if (!mruby_UI_typecheck_Menu(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
@@ -3902,7 +3902,7 @@ mrb_UI_menuAppendCheckItem(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &m, &native_name);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_Menu_class(mrb))) {
+  if (!mruby_UI_typecheck_Menu(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
@@ -3937,7 +3937,7 @@ mrb_UI_menuAppendItem(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &m, &native_name);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_Menu_class(mrb))) {
+  if (!mruby_UI_typecheck_Menu(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
@@ -3971,7 +3971,7 @@ mrb_UI_menuAppendPreferencesItem(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_Menu_class(mrb))) {
+  if (!mruby_UI_typecheck_Menu(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
@@ -4005,7 +4005,7 @@ mrb_UI_menuAppendQuitItem(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_Menu_class(mrb))) {
+  if (!mruby_UI_typecheck_Menu(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
@@ -4039,7 +4039,7 @@ mrb_UI_menuAppendSeparator(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_Menu_class(mrb))) {
+  if (!mruby_UI_typecheck_Menu(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Menu expected");
     return mrb_nil_value();
   }
@@ -4070,7 +4070,7 @@ mrb_UI_menuItemChecked(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_MenuItem_class(mrb))) {
+  if (!mruby_UI_typecheck_MenuItem(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
@@ -4104,7 +4104,7 @@ mrb_UI_menuItemDisable(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_MenuItem_class(mrb))) {
+  if (!mruby_UI_typecheck_MenuItem(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
@@ -4135,7 +4135,7 @@ mrb_UI_menuItemEnable(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &m);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_MenuItem_class(mrb))) {
+  if (!mruby_UI_typecheck_MenuItem(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
@@ -4168,12 +4168,12 @@ mrb_UI_menuItemEnable(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &m, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, m, UI_MenuItem_class(mrb))) {
+//  if (!mruby_UI_typecheck_MenuItem(mrb, m)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiMenuItem_PTR_COMMA_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -4182,7 +4182,7 @@ mrb_UI_menuItemEnable(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiMenuItem *, uiWindow *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiMenuItem_PTR_COMMA_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiMenuItemOnClicked(native_m, native_f, native_data);
@@ -4208,7 +4208,7 @@ mrb_UI_menuItemSetChecked(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &m, &native_checked);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, m, UI_MenuItem_class(mrb))) {
+  if (!mruby_UI_typecheck_MenuItem(mrb, m)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MenuItem expected");
     return mrb_nil_value();
   }
@@ -4241,7 +4241,7 @@ mrb_UI_msgBox(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ozz", &parent, &native_title, &native_description);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, parent)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -4274,7 +4274,7 @@ mrb_UI_msgBoxError(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ozz", &parent, &native_title, &native_description);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, parent)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -4306,7 +4306,7 @@ mrb_UI_multilineEntryAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &e, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_MultilineEntry_class(mrb))) {
+  if (!mruby_UI_typecheck_MultilineEntry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
@@ -4339,12 +4339,12 @@ mrb_UI_multilineEntryAppend(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &e, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, e, UI_MultilineEntry_class(mrb))) {
+//  if (!mruby_UI_typecheck_MultilineEntry(mrb, e)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiMultilineEntry_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -4353,7 +4353,7 @@ mrb_UI_multilineEntryAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiMultilineEntry *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiMultilineEntry_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiMultilineEntryOnChanged(native_e, native_f, native_data);
@@ -4378,7 +4378,7 @@ mrb_UI_multilineEntryReadOnly(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_MultilineEntry_class(mrb))) {
+  if (!mruby_UI_typecheck_MultilineEntry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
@@ -4413,7 +4413,7 @@ mrb_UI_multilineEntrySetReadOnly(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &e, &native_readonly);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_MultilineEntry_class(mrb))) {
+  if (!mruby_UI_typecheck_MultilineEntry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
@@ -4445,7 +4445,7 @@ mrb_UI_multilineEntrySetText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &e, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_MultilineEntry_class(mrb))) {
+  if (!mruby_UI_typecheck_MultilineEntry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
@@ -4476,7 +4476,7 @@ mrb_UI_multilineEntryText(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &e);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, e, UI_MultilineEntry_class(mrb))) {
+  if (!mruby_UI_typecheck_MultilineEntry(mrb, e)) {
     mrb_raise(mrb, E_TYPE_ERROR, "MultilineEntry expected");
     return mrb_nil_value();
   }
@@ -4488,7 +4488,7 @@ mrb_UI_multilineEntryText(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiMultilineEntryText(native_e);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -4510,7 +4510,7 @@ mrb_UI_newArea(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &ah);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ah, UI_AreaHandler_class(mrb))) {
+  if (!mruby_UI_typecheck_AreaHandler(mrb, ah)) {
     mrb_raise(mrb, E_TYPE_ERROR, "AreaHandler expected");
     return mrb_nil_value();
   }
@@ -4991,7 +4991,7 @@ mrb_UI_newScrollingArea(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oii", &ah, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, ah, UI_AreaHandler_class(mrb))) {
+  if (!mruby_UI_typecheck_AreaHandler(mrb, ah)) {
     mrb_raise(mrb, E_TYPE_ERROR, "AreaHandler expected");
     return mrb_nil_value();
   }
@@ -5207,14 +5207,14 @@ mrb_UI_newWindow(mrb_state* mrb, mrb_value self)
 //
 //  /* Type checking */
 //  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
 //  /* Unbox params */
 //  int (*native_f)(void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiOnShouldQuit(native_f, native_data);
@@ -5239,7 +5239,7 @@ mrb_UI_openFile(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &parent);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, parent)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -5251,7 +5251,7 @@ mrb_UI_openFile(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiOpenFile(native_parent);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -5274,7 +5274,7 @@ mrb_UI_progressBarSetValue(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &p, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_ProgressBar_class(mrb))) {
+  if (!mruby_UI_typecheck_ProgressBar(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "ProgressBar expected");
     return mrb_nil_value();
   }
@@ -5305,7 +5305,7 @@ mrb_UI_progressBarValue(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &p);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, p, UI_ProgressBar_class(mrb))) {
+  if (!mruby_UI_typecheck_ProgressBar(mrb, p)) {
     mrb_raise(mrb, E_TYPE_ERROR, "ProgressBar expected");
     return mrb_nil_value();
   }
@@ -5341,14 +5341,14 @@ mrb_UI_progressBarValue(mrb_state* mrb, mrb_value self)
 //
 //  /* Type checking */
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
 //  /* Unbox params */
 //  void (*native_f)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiQueueMain(native_f, native_data);
@@ -5391,7 +5391,7 @@ mrb_UI_radioButtonsAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &r, &native_text);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, r, UI_RadioButtons_class(mrb))) {
+  if (!mruby_UI_typecheck_RadioButtons(mrb, r)) {
     mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
@@ -5424,12 +5424,12 @@ mrb_UI_radioButtonsAppend(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &r, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, r, UI_RadioButtons_class(mrb))) {
+//  if (!mruby_UI_typecheck_RadioButtons(mrb, r)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiRadioButtons_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -5438,7 +5438,7 @@ mrb_UI_radioButtonsAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiRadioButtons *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiRadioButtons_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiRadioButtonsOnSelected(native_r, native_f, native_data);
@@ -5463,7 +5463,7 @@ mrb_UI_radioButtonsSelected(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &r);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, r, UI_RadioButtons_class(mrb))) {
+  if (!mruby_UI_typecheck_RadioButtons(mrb, r)) {
     mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
@@ -5498,7 +5498,7 @@ mrb_UI_radioButtonsSetSelected(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &r, &native_n);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, r, UI_RadioButtons_class(mrb))) {
+  if (!mruby_UI_typecheck_RadioButtons(mrb, r)) {
     mrb_raise(mrb, E_TYPE_ERROR, "RadioButtons expected");
     return mrb_nil_value();
   }
@@ -5529,7 +5529,7 @@ mrb_UI_saveFile(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &parent);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, parent, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, parent)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -5541,7 +5541,7 @@ mrb_UI_saveFile(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiSaveFile(native_parent);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }
@@ -5565,12 +5565,12 @@ mrb_UI_saveFile(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &s, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, s, UI_Slider_class(mrb))) {
+//  if (!mruby_UI_typecheck_Slider(mrb, s)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Slider expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiSlider_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -5579,7 +5579,7 @@ mrb_UI_saveFile(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiSlider *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiSlider_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiSliderOnChanged(native_s, native_f, native_data);
@@ -5605,7 +5605,7 @@ mrb_UI_sliderSetValue(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &s, &native_value);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UI_Slider_class(mrb))) {
+  if (!mruby_UI_typecheck_Slider(mrb, s)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Slider expected");
     return mrb_nil_value();
   }
@@ -5636,7 +5636,7 @@ mrb_UI_sliderValue(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &s);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UI_Slider_class(mrb))) {
+  if (!mruby_UI_typecheck_Slider(mrb, s)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Slider expected");
     return mrb_nil_value();
   }
@@ -5672,12 +5672,12 @@ mrb_UI_sliderValue(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &s, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, s, UI_Spinbox_class(mrb))) {
+//  if (!mruby_UI_typecheck_Spinbox(mrb, s)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Spinbox expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiSpinbox_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -5686,7 +5686,7 @@ mrb_UI_sliderValue(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiSpinbox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiSpinbox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiSpinboxOnChanged(native_s, native_f, native_data);
@@ -5712,7 +5712,7 @@ mrb_UI_spinboxSetValue(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &s, &native_value);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UI_Spinbox_class(mrb))) {
+  if (!mruby_UI_typecheck_Spinbox(mrb, s)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Spinbox expected");
     return mrb_nil_value();
   }
@@ -5743,7 +5743,7 @@ mrb_UI_spinboxValue(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &s);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, s, UI_Spinbox_class(mrb))) {
+  if (!mruby_UI_typecheck_Spinbox(mrb, s)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Spinbox expected");
     return mrb_nil_value();
   }
@@ -5779,11 +5779,11 @@ mrb_UI_tabAppend(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ozo", &t, &native_name, &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UI_Tab_class(mrb))) {
+  if (!mruby_UI_typecheck_Tab(mrb, t)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -5817,7 +5817,7 @@ mrb_UI_tabDelete(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &t, &native_index);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UI_Tab_class(mrb))) {
+  if (!mruby_UI_typecheck_Tab(mrb, t)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
@@ -5851,11 +5851,11 @@ mrb_UI_tabInsertAt(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ozio", &t, &native_name, &native_before, &c);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UI_Tab_class(mrb))) {
+  if (!mruby_UI_typecheck_Tab(mrb, t)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, c, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, c)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -5889,7 +5889,7 @@ mrb_UI_tabMargined(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &t, &native_page);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UI_Tab_class(mrb))) {
+  if (!mruby_UI_typecheck_Tab(mrb, t)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
@@ -5923,7 +5923,7 @@ mrb_UI_tabNumPages(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &t);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UI_Tab_class(mrb))) {
+  if (!mruby_UI_typecheck_Tab(mrb, t)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
@@ -5959,7 +5959,7 @@ mrb_UI_tabSetMargined(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oii", &t, &native_page, &native_margined);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, t, UI_Tab_class(mrb))) {
+  if (!mruby_UI_typecheck_Tab(mrb, t)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Tab expected");
     return mrb_nil_value();
   }
@@ -6029,7 +6029,7 @@ mrb_UI_windowBorderless(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6065,23 +6065,23 @@ mrb_UI_windowContentSize(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "ooo", &w, &width, &height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, width, "int *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, width, "int *")) {
     return mrb_nil_value();
   }
-  if (!mruby_UI_typecheck_void_ptr(mrb, height, "int *")) {
+  if (!mruby_UI_typecheck_void_pointer(mrb, height, "int *")) {
     return mrb_nil_value();
   }
 
   /* Unbox params */
   uiWindow * native_w = (mrb_nil_p(w) ? NULL : mruby_UI_unbox_uiWindow(w));
 
-  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_ptr(width));
+  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_pointer(width));
 
-  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_ptr(height));
+  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_pointer(height));
 
   /* Invocation */
   uiWindowContentSize(native_w, native_width, native_height);
@@ -6106,7 +6106,7 @@ mrb_UI_windowFullscreen(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6140,7 +6140,7 @@ mrb_UI_windowMargined(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6176,12 +6176,12 @@ mrb_UI_windowMargined(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &w, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+//  if (!mruby_UI_typecheck_Window(mrb, w)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_int_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -6190,7 +6190,7 @@ mrb_UI_windowMargined(mrb_state* mrb, mrb_value self)
 //
 //  int (*native_f)(uiWindow *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiWindowOnClosing(native_w, native_f, native_data);
@@ -6217,12 +6217,12 @@ mrb_UI_windowMargined(mrb_state* mrb, mrb_value self)
 //  mrb_get_args(mrb, "ooo", &w, &f, &data);
 //
 //  /* Type checking */
-//  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+//  if (!mruby_UI_typecheck_Window(mrb, w)) {
 //    mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
 //    return mrb_nil_value();
 //  }
 //  TODO_type_check_void_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
-//  if (!mruby_UI_typecheck_void_ptr(mrb, data, "void *")) {
+//  if (!mruby_UI_typecheck_void_pointer(mrb, data, "void *")) {
 //    return mrb_nil_value();
 //  }
 //
@@ -6231,7 +6231,7 @@ mrb_UI_windowMargined(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiWindow *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_ptr(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
 //
 //  /* Invocation */
 //  uiWindowOnContentSizeChanged(native_w, native_f, native_data);
@@ -6257,7 +6257,7 @@ mrb_UI_windowSetBorderless(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &w, &native_borderless);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6289,11 +6289,11 @@ mrb_UI_windowSetChild(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oo", &w, &child);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
-  if (!mrb_obj_is_kind_of(mrb, child, UI_Control_class(mrb))) {
+  if (!mruby_UI_typecheck_Control(mrb, child)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Control expected");
     return mrb_nil_value();
   }
@@ -6328,7 +6328,7 @@ mrb_UI_windowSetContentSize(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oii", &w, &native_width, &native_height);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6360,7 +6360,7 @@ mrb_UI_windowSetFullscreen(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &w, &native_fullscreen);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6392,7 +6392,7 @@ mrb_UI_windowSetMargined(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oi", &w, &native_margined);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6424,7 +6424,7 @@ mrb_UI_windowSetTitle(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "oz", &w, &native_title);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6455,7 +6455,7 @@ mrb_UI_windowTitle(mrb_state* mrb, mrb_value self)
   mrb_get_args(mrb, "o", &w);
 
   /* Type checking */
-  if (!mrb_obj_is_kind_of(mrb, w, UI_Window_class(mrb))) {
+  if (!mruby_UI_typecheck_Window(mrb, w)) {
     mrb_raise(mrb, E_TYPE_ERROR, "Window expected");
     return mrb_nil_value();
   }
@@ -6467,7 +6467,7 @@ mrb_UI_windowTitle(mrb_state* mrb, mrb_value self)
   char * native_return_value = uiWindowTitle(native_w);
 
   /* Box the return value */
-  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_ptr(mrb, native_return_value));
+  mrb_value return_value = (native_return_value == NULL ? mrb_nil_value() : mruby_UI_box_void_pointer(mrb, native_return_value));
 
   return return_value;
 }

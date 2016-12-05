@@ -15,9 +15,11 @@
 
 #include "ui.h"
 
+#include "mruby_UI_free_macros.h"
+
 #include "mruby_UI_class_macros.h"
-#include "generated/mruby_UI_native_object.c"
-#include "generated/mruby_UI_void_ptr.c"
+#include "generated/mruby_UI_pointer.c"
+#include "generated/mruby_UI_void_pointer.c"
 #include "generated/mruby_UI_classes.c"
 #include "generated/mruby_UI_functions.c"
 
@@ -35,7 +37,6 @@ void
 mrb_mruby_ui_gem_init(mrb_state* mrb)
 {
   mrb_define_module(mrb, "UI");
-  mruby_UI_NativeObject_init(mrb);
 
   #include "./ext/mruby_UI_control_hierarchy.c"
 

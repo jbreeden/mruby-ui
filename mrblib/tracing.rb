@@ -5,8 +5,8 @@ module UI
         self.define_method(m) do |*args, &block|
           if args.length > 0
             target = args[0]
-            if target.kind_of?(UI::NativeObject)
-              puts "Calling #{m} with #{target.class} #{target.native_addr}"
+            if target.kind_of?(UI::Pointer)
+              puts "Calling #{m} with #{target.class} #{target.ptr_addr}"
             else
               puts "Calling #{m} with #{target.class}"
             end

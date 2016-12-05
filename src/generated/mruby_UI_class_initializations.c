@@ -1,84 +1,86 @@
-mrb_UI_VoidPtr_init(mrb);
+mruby_UI_Pointer_init(mrb);
 
-mrb_UI_Area_init(mrb);
+mruby_UI_VoidPointer_init(mrb);
 
-mrb_UI_AreaDrawParams_init(mrb);
+mruby_UI_Area_init(mrb);
 
-mrb_UI_AreaHandler_init(mrb);
+mruby_UI_AreaDrawParams_init(mrb);
 
-mrb_UI_AreaKeyEvent_init(mrb);
+mruby_UI_AreaHandler_init(mrb);
 
-mrb_UI_AreaMouseEvent_init(mrb);
+mruby_UI_AreaKeyEvent_init(mrb);
 
-mrb_UI_Box_init(mrb);
+mruby_UI_AreaMouseEvent_init(mrb);
 
-mrb_UI_Button_init(mrb);
+mruby_UI_Box_init(mrb);
 
-mrb_UI_Checkbox_init(mrb);
+mruby_UI_Button_init(mrb);
 
-mrb_UI_ColorButton_init(mrb);
+mruby_UI_Checkbox_init(mrb);
 
-mrb_UI_Combobox_init(mrb);
+mruby_UI_ColorButton_init(mrb);
 
-mrb_UI_Control_init(mrb);
+mruby_UI_Combobox_init(mrb);
 
-mrb_UI_DateTimePicker_init(mrb);
+mruby_UI_Control_init(mrb);
 
-mrb_UI_DrawBrush_init(mrb);
+mruby_UI_DateTimePicker_init(mrb);
 
-mrb_UI_DrawBrushGradientStop_init(mrb);
+mruby_UI_DrawBrush_init(mrb);
 
-mrb_UI_DrawContext_init(mrb);
+mruby_UI_DrawBrushGradientStop_init(mrb);
 
-mrb_UI_DrawFontFamilies_init(mrb);
+mruby_UI_DrawContext_init(mrb);
 
-mrb_UI_DrawMatrix_init(mrb);
+mruby_UI_DrawFontFamilies_init(mrb);
 
-mrb_UI_DrawPath_init(mrb);
+mruby_UI_DrawMatrix_init(mrb);
 
-mrb_UI_DrawStrokeParams_init(mrb);
+mruby_UI_DrawPath_init(mrb);
 
-mrb_UI_DrawTextFont_init(mrb);
+mruby_UI_DrawStrokeParams_init(mrb);
 
-mrb_UI_DrawTextFontDescriptor_init(mrb);
+mruby_UI_DrawTextFont_init(mrb);
 
-mrb_UI_DrawTextFontMetrics_init(mrb);
+mruby_UI_DrawTextFontDescriptor_init(mrb);
 
-mrb_UI_DrawTextLayout_init(mrb);
+mruby_UI_DrawTextFontMetrics_init(mrb);
 
-mrb_UI_EditableCombobox_init(mrb);
+mruby_UI_DrawTextLayout_init(mrb);
 
-mrb_UI_Entry_init(mrb);
+mruby_UI_EditableCombobox_init(mrb);
 
-mrb_UI_FontButton_init(mrb);
+mruby_UI_Entry_init(mrb);
 
-mrb_UI_Form_init(mrb);
+mruby_UI_FontButton_init(mrb);
 
-mrb_UI_Grid_init(mrb);
+mruby_UI_Form_init(mrb);
 
-mrb_UI_Group_init(mrb);
+mruby_UI_Grid_init(mrb);
 
-mrb_UI_InitOptions_init(mrb);
+mruby_UI_Group_init(mrb);
 
-mrb_UI_Label_init(mrb);
+mruby_UI_InitOptions_init(mrb);
 
-mrb_UI_Menu_init(mrb);
+mruby_UI_Label_init(mrb);
 
-mrb_UI_MenuItem_init(mrb);
+mruby_UI_Menu_init(mrb);
 
-mrb_UI_MultilineEntry_init(mrb);
+mruby_UI_MenuItem_init(mrb);
 
-mrb_UI_ProgressBar_init(mrb);
+mruby_UI_MultilineEntry_init(mrb);
 
-mrb_UI_RadioButtons_init(mrb);
+mruby_UI_ProgressBar_init(mrb);
 
-mrb_UI_Separator_init(mrb);
+mruby_UI_RadioButtons_init(mrb);
 
-mrb_UI_Slider_init(mrb);
+mruby_UI_Separator_init(mrb);
 
-mrb_UI_Spinbox_init(mrb);
+mruby_UI_Slider_init(mrb);
 
-mrb_UI_Tab_init(mrb);
+mruby_UI_Spinbox_init(mrb);
 
-mrb_UI_Window_init(mrb);
+mruby_UI_Tab_init(mrb);
+
+mruby_UI_Window_init(mrb);
 
