@@ -11,13 +11,13 @@
 #include "mruby/proc.h"
 #include "mruby/data.h"
 
-#include "mruby_to_native_ref.h"
+#include "generated/mruby_to_native_ref.h"
 
 #include "ui.h"
 
 #include "mruby_UI_free_macros.h"
 
-#include "mruby_UI_class_macros.h"
+#include "generated/mruby_UI_class_macros.h"
 #include "generated/mruby_UI_pointer.c"
 #include "generated/mruby_UI_void_pointer.c"
 #include "generated/mruby_UI_classes.c"

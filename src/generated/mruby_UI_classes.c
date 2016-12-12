@@ -27,12 +27,14 @@ mrb_data_type uiArea_data_type = {
 
 void mruby_UI_Area_init(mrb_state* mrb)
 {
+  struct RClass* Area_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Area"))) {
-    struct RClass* Area_class = mrb_define_class_under(mrb, UI_module(mrb), "Area", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Area_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Area_class, UI_Pointer_module(mrb));
+    Area_class = mrb_define_class_under(mrb, UI_module(mrb), "Area", mrb->object_class);
+  } else {
+    Area_class = mrb_class_get_under(mrb, UI_module(mrb), "Area");
   }
+  MRB_SET_INSTANCE_TT(Area_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Area_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -109,12 +111,14 @@ mrb_data_type uiAreaDrawParams_data_type = {
 
 void mruby_UI_AreaDrawParams_init(mrb_state* mrb)
 {
+  struct RClass* AreaDrawParams_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "AreaDrawParams"))) {
-    struct RClass* AreaDrawParams_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaDrawParams", mrb->object_class);
-    MRB_SET_INSTANCE_TT(AreaDrawParams_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, AreaDrawParams_class, UI_Pointer_module(mrb));
+    AreaDrawParams_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaDrawParams", mrb->object_class);
+  } else {
+    AreaDrawParams_class = mrb_class_get_under(mrb, UI_module(mrb), "AreaDrawParams");
   }
+  MRB_SET_INSTANCE_TT(AreaDrawParams_class, MRB_TT_DATA);
+  mrb_include_module(mrb, AreaDrawParams_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -191,12 +195,14 @@ mrb_data_type uiAreaHandler_data_type = {
 
 void mruby_UI_AreaHandler_init(mrb_state* mrb)
 {
+  struct RClass* AreaHandler_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "AreaHandler"))) {
-    struct RClass* AreaHandler_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaHandler", mrb->object_class);
-    MRB_SET_INSTANCE_TT(AreaHandler_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, AreaHandler_class, UI_Pointer_module(mrb));
+    AreaHandler_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaHandler", mrb->object_class);
+  } else {
+    AreaHandler_class = mrb_class_get_under(mrb, UI_module(mrb), "AreaHandler");
   }
+  MRB_SET_INSTANCE_TT(AreaHandler_class, MRB_TT_DATA);
+  mrb_include_module(mrb, AreaHandler_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -273,12 +279,14 @@ mrb_data_type uiAreaKeyEvent_data_type = {
 
 void mruby_UI_AreaKeyEvent_init(mrb_state* mrb)
 {
+  struct RClass* AreaKeyEvent_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "AreaKeyEvent"))) {
-    struct RClass* AreaKeyEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaKeyEvent", mrb->object_class);
-    MRB_SET_INSTANCE_TT(AreaKeyEvent_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, AreaKeyEvent_class, UI_Pointer_module(mrb));
+    AreaKeyEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaKeyEvent", mrb->object_class);
+  } else {
+    AreaKeyEvent_class = mrb_class_get_under(mrb, UI_module(mrb), "AreaKeyEvent");
   }
+  MRB_SET_INSTANCE_TT(AreaKeyEvent_class, MRB_TT_DATA);
+  mrb_include_module(mrb, AreaKeyEvent_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -355,12 +363,14 @@ mrb_data_type uiAreaMouseEvent_data_type = {
 
 void mruby_UI_AreaMouseEvent_init(mrb_state* mrb)
 {
+  struct RClass* AreaMouseEvent_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "AreaMouseEvent"))) {
-    struct RClass* AreaMouseEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaMouseEvent", mrb->object_class);
-    MRB_SET_INSTANCE_TT(AreaMouseEvent_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, AreaMouseEvent_class, UI_Pointer_module(mrb));
+    AreaMouseEvent_class = mrb_define_class_under(mrb, UI_module(mrb), "AreaMouseEvent", mrb->object_class);
+  } else {
+    AreaMouseEvent_class = mrb_class_get_under(mrb, UI_module(mrb), "AreaMouseEvent");
   }
+  MRB_SET_INSTANCE_TT(AreaMouseEvent_class, MRB_TT_DATA);
+  mrb_include_module(mrb, AreaMouseEvent_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -437,12 +447,14 @@ mrb_data_type uiBox_data_type = {
 
 void mruby_UI_Box_init(mrb_state* mrb)
 {
+  struct RClass* Box_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Box"))) {
-    struct RClass* Box_class = mrb_define_class_under(mrb, UI_module(mrb), "Box", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Box_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Box_class, UI_Pointer_module(mrb));
+    Box_class = mrb_define_class_under(mrb, UI_module(mrb), "Box", mrb->object_class);
+  } else {
+    Box_class = mrb_class_get_under(mrb, UI_module(mrb), "Box");
   }
+  MRB_SET_INSTANCE_TT(Box_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Box_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -519,12 +531,14 @@ mrb_data_type uiButton_data_type = {
 
 void mruby_UI_Button_init(mrb_state* mrb)
 {
+  struct RClass* Button_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Button"))) {
-    struct RClass* Button_class = mrb_define_class_under(mrb, UI_module(mrb), "Button", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Button_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Button_class, UI_Pointer_module(mrb));
+    Button_class = mrb_define_class_under(mrb, UI_module(mrb), "Button", mrb->object_class);
+  } else {
+    Button_class = mrb_class_get_under(mrb, UI_module(mrb), "Button");
   }
+  MRB_SET_INSTANCE_TT(Button_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Button_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -601,12 +615,14 @@ mrb_data_type uiCheckbox_data_type = {
 
 void mruby_UI_Checkbox_init(mrb_state* mrb)
 {
+  struct RClass* Checkbox_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Checkbox"))) {
-    struct RClass* Checkbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Checkbox", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Checkbox_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Checkbox_class, UI_Pointer_module(mrb));
+    Checkbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Checkbox", mrb->object_class);
+  } else {
+    Checkbox_class = mrb_class_get_under(mrb, UI_module(mrb), "Checkbox");
   }
+  MRB_SET_INSTANCE_TT(Checkbox_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Checkbox_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -683,12 +699,14 @@ mrb_data_type uiColorButton_data_type = {
 
 void mruby_UI_ColorButton_init(mrb_state* mrb)
 {
+  struct RClass* ColorButton_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "ColorButton"))) {
-    struct RClass* ColorButton_class = mrb_define_class_under(mrb, UI_module(mrb), "ColorButton", mrb->object_class);
-    MRB_SET_INSTANCE_TT(ColorButton_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, ColorButton_class, UI_Pointer_module(mrb));
+    ColorButton_class = mrb_define_class_under(mrb, UI_module(mrb), "ColorButton", mrb->object_class);
+  } else {
+    ColorButton_class = mrb_class_get_under(mrb, UI_module(mrb), "ColorButton");
   }
+  MRB_SET_INSTANCE_TT(ColorButton_class, MRB_TT_DATA);
+  mrb_include_module(mrb, ColorButton_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -765,12 +783,14 @@ mrb_data_type uiCombobox_data_type = {
 
 void mruby_UI_Combobox_init(mrb_state* mrb)
 {
+  struct RClass* Combobox_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Combobox"))) {
-    struct RClass* Combobox_class = mrb_define_class_under(mrb, UI_module(mrb), "Combobox", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Combobox_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Combobox_class, UI_Pointer_module(mrb));
+    Combobox_class = mrb_define_class_under(mrb, UI_module(mrb), "Combobox", mrb->object_class);
+  } else {
+    Combobox_class = mrb_class_get_under(mrb, UI_module(mrb), "Combobox");
   }
+  MRB_SET_INSTANCE_TT(Combobox_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Combobox_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -847,12 +867,14 @@ mrb_data_type uiControl_data_type = {
 
 void mruby_UI_Control_init(mrb_state* mrb)
 {
+  struct RClass* Control_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Control"))) {
-    struct RClass* Control_class = mrb_define_class_under(mrb, UI_module(mrb), "Control", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Control_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Control_class, UI_Pointer_module(mrb));
+    Control_class = mrb_define_class_under(mrb, UI_module(mrb), "Control", mrb->object_class);
+  } else {
+    Control_class = mrb_class_get_under(mrb, UI_module(mrb), "Control");
   }
+  MRB_SET_INSTANCE_TT(Control_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Control_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -929,12 +951,14 @@ mrb_data_type uiDateTimePicker_data_type = {
 
 void mruby_UI_DateTimePicker_init(mrb_state* mrb)
 {
+  struct RClass* DateTimePicker_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DateTimePicker"))) {
-    struct RClass* DateTimePicker_class = mrb_define_class_under(mrb, UI_module(mrb), "DateTimePicker", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DateTimePicker_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DateTimePicker_class, UI_Pointer_module(mrb));
+    DateTimePicker_class = mrb_define_class_under(mrb, UI_module(mrb), "DateTimePicker", mrb->object_class);
+  } else {
+    DateTimePicker_class = mrb_class_get_under(mrb, UI_module(mrb), "DateTimePicker");
   }
+  MRB_SET_INSTANCE_TT(DateTimePicker_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DateTimePicker_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1011,12 +1035,14 @@ mrb_data_type uiDrawBrush_data_type = {
 
 void mruby_UI_DrawBrush_init(mrb_state* mrb)
 {
+  struct RClass* DrawBrush_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawBrush"))) {
-    struct RClass* DrawBrush_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawBrush", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawBrush_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawBrush_class, UI_Pointer_module(mrb));
+    DrawBrush_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawBrush", mrb->object_class);
+  } else {
+    DrawBrush_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawBrush");
   }
+  MRB_SET_INSTANCE_TT(DrawBrush_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawBrush_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1093,12 +1119,14 @@ mrb_data_type uiDrawBrushGradientStop_data_type = {
 
 void mruby_UI_DrawBrushGradientStop_init(mrb_state* mrb)
 {
+  struct RClass* DrawBrushGradientStop_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawBrushGradientStop"))) {
-    struct RClass* DrawBrushGradientStop_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawBrushGradientStop", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawBrushGradientStop_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawBrushGradientStop_class, UI_Pointer_module(mrb));
+    DrawBrushGradientStop_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawBrushGradientStop", mrb->object_class);
+  } else {
+    DrawBrushGradientStop_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawBrushGradientStop");
   }
+  MRB_SET_INSTANCE_TT(DrawBrushGradientStop_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawBrushGradientStop_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1175,12 +1203,14 @@ mrb_data_type uiDrawContext_data_type = {
 
 void mruby_UI_DrawContext_init(mrb_state* mrb)
 {
+  struct RClass* DrawContext_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawContext"))) {
-    struct RClass* DrawContext_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawContext", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawContext_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawContext_class, UI_Pointer_module(mrb));
+    DrawContext_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawContext", mrb->object_class);
+  } else {
+    DrawContext_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawContext");
   }
+  MRB_SET_INSTANCE_TT(DrawContext_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawContext_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1257,12 +1287,14 @@ mrb_data_type uiDrawFontFamilies_data_type = {
 
 void mruby_UI_DrawFontFamilies_init(mrb_state* mrb)
 {
+  struct RClass* DrawFontFamilies_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawFontFamilies"))) {
-    struct RClass* DrawFontFamilies_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawFontFamilies", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawFontFamilies_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawFontFamilies_class, UI_Pointer_module(mrb));
+    DrawFontFamilies_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawFontFamilies", mrb->object_class);
+  } else {
+    DrawFontFamilies_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawFontFamilies");
   }
+  MRB_SET_INSTANCE_TT(DrawFontFamilies_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawFontFamilies_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1339,12 +1371,14 @@ mrb_data_type uiDrawMatrix_data_type = {
 
 void mruby_UI_DrawMatrix_init(mrb_state* mrb)
 {
+  struct RClass* DrawMatrix_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawMatrix"))) {
-    struct RClass* DrawMatrix_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawMatrix", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawMatrix_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawMatrix_class, UI_Pointer_module(mrb));
+    DrawMatrix_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawMatrix", mrb->object_class);
+  } else {
+    DrawMatrix_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawMatrix");
   }
+  MRB_SET_INSTANCE_TT(DrawMatrix_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawMatrix_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1421,12 +1455,14 @@ mrb_data_type uiDrawPath_data_type = {
 
 void mruby_UI_DrawPath_init(mrb_state* mrb)
 {
+  struct RClass* DrawPath_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawPath"))) {
-    struct RClass* DrawPath_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawPath", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawPath_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawPath_class, UI_Pointer_module(mrb));
+    DrawPath_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawPath", mrb->object_class);
+  } else {
+    DrawPath_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawPath");
   }
+  MRB_SET_INSTANCE_TT(DrawPath_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawPath_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1503,12 +1539,14 @@ mrb_data_type uiDrawStrokeParams_data_type = {
 
 void mruby_UI_DrawStrokeParams_init(mrb_state* mrb)
 {
+  struct RClass* DrawStrokeParams_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawStrokeParams"))) {
-    struct RClass* DrawStrokeParams_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawStrokeParams", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawStrokeParams_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawStrokeParams_class, UI_Pointer_module(mrb));
+    DrawStrokeParams_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawStrokeParams", mrb->object_class);
+  } else {
+    DrawStrokeParams_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawStrokeParams");
   }
+  MRB_SET_INSTANCE_TT(DrawStrokeParams_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawStrokeParams_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1585,12 +1623,14 @@ mrb_data_type uiDrawTextFont_data_type = {
 
 void mruby_UI_DrawTextFont_init(mrb_state* mrb)
 {
+  struct RClass* DrawTextFont_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawTextFont"))) {
-    struct RClass* DrawTextFont_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextFont", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawTextFont_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawTextFont_class, UI_Pointer_module(mrb));
+    DrawTextFont_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextFont", mrb->object_class);
+  } else {
+    DrawTextFont_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawTextFont");
   }
+  MRB_SET_INSTANCE_TT(DrawTextFont_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawTextFont_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1667,12 +1707,14 @@ mrb_data_type uiDrawTextFontDescriptor_data_type = {
 
 void mruby_UI_DrawTextFontDescriptor_init(mrb_state* mrb)
 {
+  struct RClass* DrawTextFontDescriptor_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawTextFontDescriptor"))) {
-    struct RClass* DrawTextFontDescriptor_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextFontDescriptor", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawTextFontDescriptor_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawTextFontDescriptor_class, UI_Pointer_module(mrb));
+    DrawTextFontDescriptor_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextFontDescriptor", mrb->object_class);
+  } else {
+    DrawTextFontDescriptor_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawTextFontDescriptor");
   }
+  MRB_SET_INSTANCE_TT(DrawTextFontDescriptor_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawTextFontDescriptor_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1749,12 +1791,14 @@ mrb_data_type uiDrawTextFontMetrics_data_type = {
 
 void mruby_UI_DrawTextFontMetrics_init(mrb_state* mrb)
 {
+  struct RClass* DrawTextFontMetrics_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawTextFontMetrics"))) {
-    struct RClass* DrawTextFontMetrics_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextFontMetrics", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawTextFontMetrics_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawTextFontMetrics_class, UI_Pointer_module(mrb));
+    DrawTextFontMetrics_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextFontMetrics", mrb->object_class);
+  } else {
+    DrawTextFontMetrics_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawTextFontMetrics");
   }
+  MRB_SET_INSTANCE_TT(DrawTextFontMetrics_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawTextFontMetrics_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1831,12 +1875,14 @@ mrb_data_type uiDrawTextLayout_data_type = {
 
 void mruby_UI_DrawTextLayout_init(mrb_state* mrb)
 {
+  struct RClass* DrawTextLayout_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "DrawTextLayout"))) {
-    struct RClass* DrawTextLayout_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextLayout", mrb->object_class);
-    MRB_SET_INSTANCE_TT(DrawTextLayout_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, DrawTextLayout_class, UI_Pointer_module(mrb));
+    DrawTextLayout_class = mrb_define_class_under(mrb, UI_module(mrb), "DrawTextLayout", mrb->object_class);
+  } else {
+    DrawTextLayout_class = mrb_class_get_under(mrb, UI_module(mrb), "DrawTextLayout");
   }
+  MRB_SET_INSTANCE_TT(DrawTextLayout_class, MRB_TT_DATA);
+  mrb_include_module(mrb, DrawTextLayout_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1913,12 +1959,14 @@ mrb_data_type uiEditableCombobox_data_type = {
 
 void mruby_UI_EditableCombobox_init(mrb_state* mrb)
 {
+  struct RClass* EditableCombobox_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "EditableCombobox"))) {
-    struct RClass* EditableCombobox_class = mrb_define_class_under(mrb, UI_module(mrb), "EditableCombobox", mrb->object_class);
-    MRB_SET_INSTANCE_TT(EditableCombobox_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, EditableCombobox_class, UI_Pointer_module(mrb));
+    EditableCombobox_class = mrb_define_class_under(mrb, UI_module(mrb), "EditableCombobox", mrb->object_class);
+  } else {
+    EditableCombobox_class = mrb_class_get_under(mrb, UI_module(mrb), "EditableCombobox");
   }
+  MRB_SET_INSTANCE_TT(EditableCombobox_class, MRB_TT_DATA);
+  mrb_include_module(mrb, EditableCombobox_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -1995,12 +2043,14 @@ mrb_data_type uiEntry_data_type = {
 
 void mruby_UI_Entry_init(mrb_state* mrb)
 {
+  struct RClass* Entry_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Entry"))) {
-    struct RClass* Entry_class = mrb_define_class_under(mrb, UI_module(mrb), "Entry", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Entry_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Entry_class, UI_Pointer_module(mrb));
+    Entry_class = mrb_define_class_under(mrb, UI_module(mrb), "Entry", mrb->object_class);
+  } else {
+    Entry_class = mrb_class_get_under(mrb, UI_module(mrb), "Entry");
   }
+  MRB_SET_INSTANCE_TT(Entry_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Entry_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2077,12 +2127,14 @@ mrb_data_type uiFontButton_data_type = {
 
 void mruby_UI_FontButton_init(mrb_state* mrb)
 {
+  struct RClass* FontButton_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "FontButton"))) {
-    struct RClass* FontButton_class = mrb_define_class_under(mrb, UI_module(mrb), "FontButton", mrb->object_class);
-    MRB_SET_INSTANCE_TT(FontButton_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, FontButton_class, UI_Pointer_module(mrb));
+    FontButton_class = mrb_define_class_under(mrb, UI_module(mrb), "FontButton", mrb->object_class);
+  } else {
+    FontButton_class = mrb_class_get_under(mrb, UI_module(mrb), "FontButton");
   }
+  MRB_SET_INSTANCE_TT(FontButton_class, MRB_TT_DATA);
+  mrb_include_module(mrb, FontButton_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2159,12 +2211,14 @@ mrb_data_type uiForm_data_type = {
 
 void mruby_UI_Form_init(mrb_state* mrb)
 {
+  struct RClass* Form_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Form"))) {
-    struct RClass* Form_class = mrb_define_class_under(mrb, UI_module(mrb), "Form", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Form_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Form_class, UI_Pointer_module(mrb));
+    Form_class = mrb_define_class_under(mrb, UI_module(mrb), "Form", mrb->object_class);
+  } else {
+    Form_class = mrb_class_get_under(mrb, UI_module(mrb), "Form");
   }
+  MRB_SET_INSTANCE_TT(Form_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Form_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2241,12 +2295,14 @@ mrb_data_type uiGrid_data_type = {
 
 void mruby_UI_Grid_init(mrb_state* mrb)
 {
+  struct RClass* Grid_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Grid"))) {
-    struct RClass* Grid_class = mrb_define_class_under(mrb, UI_module(mrb), "Grid", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Grid_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Grid_class, UI_Pointer_module(mrb));
+    Grid_class = mrb_define_class_under(mrb, UI_module(mrb), "Grid", mrb->object_class);
+  } else {
+    Grid_class = mrb_class_get_under(mrb, UI_module(mrb), "Grid");
   }
+  MRB_SET_INSTANCE_TT(Grid_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Grid_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2323,12 +2379,14 @@ mrb_data_type uiGroup_data_type = {
 
 void mruby_UI_Group_init(mrb_state* mrb)
 {
+  struct RClass* Group_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Group"))) {
-    struct RClass* Group_class = mrb_define_class_under(mrb, UI_module(mrb), "Group", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Group_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Group_class, UI_Pointer_module(mrb));
+    Group_class = mrb_define_class_under(mrb, UI_module(mrb), "Group", mrb->object_class);
+  } else {
+    Group_class = mrb_class_get_under(mrb, UI_module(mrb), "Group");
   }
+  MRB_SET_INSTANCE_TT(Group_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Group_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2405,12 +2463,14 @@ mrb_data_type uiInitOptions_data_type = {
 
 void mruby_UI_InitOptions_init(mrb_state* mrb)
 {
+  struct RClass* InitOptions_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "InitOptions"))) {
-    struct RClass* InitOptions_class = mrb_define_class_under(mrb, UI_module(mrb), "InitOptions", mrb->object_class);
-    MRB_SET_INSTANCE_TT(InitOptions_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, InitOptions_class, UI_Pointer_module(mrb));
+    InitOptions_class = mrb_define_class_under(mrb, UI_module(mrb), "InitOptions", mrb->object_class);
+  } else {
+    InitOptions_class = mrb_class_get_under(mrb, UI_module(mrb), "InitOptions");
   }
+  MRB_SET_INSTANCE_TT(InitOptions_class, MRB_TT_DATA);
+  mrb_include_module(mrb, InitOptions_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2487,12 +2547,14 @@ mrb_data_type uiLabel_data_type = {
 
 void mruby_UI_Label_init(mrb_state* mrb)
 {
+  struct RClass* Label_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Label"))) {
-    struct RClass* Label_class = mrb_define_class_under(mrb, UI_module(mrb), "Label", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Label_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Label_class, UI_Pointer_module(mrb));
+    Label_class = mrb_define_class_under(mrb, UI_module(mrb), "Label", mrb->object_class);
+  } else {
+    Label_class = mrb_class_get_under(mrb, UI_module(mrb), "Label");
   }
+  MRB_SET_INSTANCE_TT(Label_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Label_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2569,12 +2631,14 @@ mrb_data_type uiMenu_data_type = {
 
 void mruby_UI_Menu_init(mrb_state* mrb)
 {
+  struct RClass* Menu_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Menu"))) {
-    struct RClass* Menu_class = mrb_define_class_under(mrb, UI_module(mrb), "Menu", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Menu_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Menu_class, UI_Pointer_module(mrb));
+    Menu_class = mrb_define_class_under(mrb, UI_module(mrb), "Menu", mrb->object_class);
+  } else {
+    Menu_class = mrb_class_get_under(mrb, UI_module(mrb), "Menu");
   }
+  MRB_SET_INSTANCE_TT(Menu_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Menu_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2651,12 +2715,14 @@ mrb_data_type uiMenuItem_data_type = {
 
 void mruby_UI_MenuItem_init(mrb_state* mrb)
 {
+  struct RClass* MenuItem_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "MenuItem"))) {
-    struct RClass* MenuItem_class = mrb_define_class_under(mrb, UI_module(mrb), "MenuItem", mrb->object_class);
-    MRB_SET_INSTANCE_TT(MenuItem_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, MenuItem_class, UI_Pointer_module(mrb));
+    MenuItem_class = mrb_define_class_under(mrb, UI_module(mrb), "MenuItem", mrb->object_class);
+  } else {
+    MenuItem_class = mrb_class_get_under(mrb, UI_module(mrb), "MenuItem");
   }
+  MRB_SET_INSTANCE_TT(MenuItem_class, MRB_TT_DATA);
+  mrb_include_module(mrb, MenuItem_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2733,12 +2799,14 @@ mrb_data_type uiMultilineEntry_data_type = {
 
 void mruby_UI_MultilineEntry_init(mrb_state* mrb)
 {
+  struct RClass* MultilineEntry_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "MultilineEntry"))) {
-    struct RClass* MultilineEntry_class = mrb_define_class_under(mrb, UI_module(mrb), "MultilineEntry", mrb->object_class);
-    MRB_SET_INSTANCE_TT(MultilineEntry_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, MultilineEntry_class, UI_Pointer_module(mrb));
+    MultilineEntry_class = mrb_define_class_under(mrb, UI_module(mrb), "MultilineEntry", mrb->object_class);
+  } else {
+    MultilineEntry_class = mrb_class_get_under(mrb, UI_module(mrb), "MultilineEntry");
   }
+  MRB_SET_INSTANCE_TT(MultilineEntry_class, MRB_TT_DATA);
+  mrb_include_module(mrb, MultilineEntry_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2815,12 +2883,14 @@ mrb_data_type uiProgressBar_data_type = {
 
 void mruby_UI_ProgressBar_init(mrb_state* mrb)
 {
+  struct RClass* ProgressBar_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "ProgressBar"))) {
-    struct RClass* ProgressBar_class = mrb_define_class_under(mrb, UI_module(mrb), "ProgressBar", mrb->object_class);
-    MRB_SET_INSTANCE_TT(ProgressBar_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, ProgressBar_class, UI_Pointer_module(mrb));
+    ProgressBar_class = mrb_define_class_under(mrb, UI_module(mrb), "ProgressBar", mrb->object_class);
+  } else {
+    ProgressBar_class = mrb_class_get_under(mrb, UI_module(mrb), "ProgressBar");
   }
+  MRB_SET_INSTANCE_TT(ProgressBar_class, MRB_TT_DATA);
+  mrb_include_module(mrb, ProgressBar_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2897,12 +2967,14 @@ mrb_data_type uiRadioButtons_data_type = {
 
 void mruby_UI_RadioButtons_init(mrb_state* mrb)
 {
+  struct RClass* RadioButtons_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "RadioButtons"))) {
-    struct RClass* RadioButtons_class = mrb_define_class_under(mrb, UI_module(mrb), "RadioButtons", mrb->object_class);
-    MRB_SET_INSTANCE_TT(RadioButtons_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, RadioButtons_class, UI_Pointer_module(mrb));
+    RadioButtons_class = mrb_define_class_under(mrb, UI_module(mrb), "RadioButtons", mrb->object_class);
+  } else {
+    RadioButtons_class = mrb_class_get_under(mrb, UI_module(mrb), "RadioButtons");
   }
+  MRB_SET_INSTANCE_TT(RadioButtons_class, MRB_TT_DATA);
+  mrb_include_module(mrb, RadioButtons_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -2979,12 +3051,14 @@ mrb_data_type uiSeparator_data_type = {
 
 void mruby_UI_Separator_init(mrb_state* mrb)
 {
+  struct RClass* Separator_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Separator"))) {
-    struct RClass* Separator_class = mrb_define_class_under(mrb, UI_module(mrb), "Separator", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Separator_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Separator_class, UI_Pointer_module(mrb));
+    Separator_class = mrb_define_class_under(mrb, UI_module(mrb), "Separator", mrb->object_class);
+  } else {
+    Separator_class = mrb_class_get_under(mrb, UI_module(mrb), "Separator");
   }
+  MRB_SET_INSTANCE_TT(Separator_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Separator_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -3061,12 +3135,14 @@ mrb_data_type uiSlider_data_type = {
 
 void mruby_UI_Slider_init(mrb_state* mrb)
 {
+  struct RClass* Slider_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Slider"))) {
-    struct RClass* Slider_class = mrb_define_class_under(mrb, UI_module(mrb), "Slider", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Slider_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Slider_class, UI_Pointer_module(mrb));
+    Slider_class = mrb_define_class_under(mrb, UI_module(mrb), "Slider", mrb->object_class);
+  } else {
+    Slider_class = mrb_class_get_under(mrb, UI_module(mrb), "Slider");
   }
+  MRB_SET_INSTANCE_TT(Slider_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Slider_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -3143,12 +3219,14 @@ mrb_data_type uiSpinbox_data_type = {
 
 void mruby_UI_Spinbox_init(mrb_state* mrb)
 {
+  struct RClass* Spinbox_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Spinbox"))) {
-    struct RClass* Spinbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Spinbox", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Spinbox_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Spinbox_class, UI_Pointer_module(mrb));
+    Spinbox_class = mrb_define_class_under(mrb, UI_module(mrb), "Spinbox", mrb->object_class);
+  } else {
+    Spinbox_class = mrb_class_get_under(mrb, UI_module(mrb), "Spinbox");
   }
+  MRB_SET_INSTANCE_TT(Spinbox_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Spinbox_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -3225,12 +3303,14 @@ mrb_data_type uiTab_data_type = {
 
 void mruby_UI_Tab_init(mrb_state* mrb)
 {
+  struct RClass* Tab_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Tab"))) {
-    struct RClass* Tab_class = mrb_define_class_under(mrb, UI_module(mrb), "Tab", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Tab_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Tab_class, UI_Pointer_module(mrb));
+    Tab_class = mrb_define_class_under(mrb, UI_module(mrb), "Tab", mrb->object_class);
+  } else {
+    Tab_class = mrb_class_get_under(mrb, UI_module(mrb), "Tab");
   }
+  MRB_SET_INSTANCE_TT(Tab_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Tab_class, UI_Pointer_module(mrb));
 }
 
 unsigned char
@@ -3307,12 +3387,14 @@ mrb_data_type uiWindow_data_type = {
 
 void mruby_UI_Window_init(mrb_state* mrb)
 {
+  struct RClass* Window_class;
   if (!mrb_const_defined(mrb, mrb_obj_value(UI_module(mrb)), mrb_intern_cstr(mrb, "Window"))) {
-    struct RClass* Window_class = mrb_define_class_under(mrb, UI_module(mrb), "Window", mrb->object_class);
-    MRB_SET_INSTANCE_TT(Window_class, MRB_TT_DATA);
-
-    mrb_include_module(mrb, Window_class, UI_Pointer_module(mrb));
+    Window_class = mrb_define_class_under(mrb, UI_module(mrb), "Window", mrb->object_class);
+  } else {
+    Window_class = mrb_class_get_under(mrb, UI_module(mrb), "Window");
   }
+  MRB_SET_INSTANCE_TT(Window_class, MRB_TT_DATA);
+  mrb_include_module(mrb, Window_class, UI_Pointer_module(mrb));
 }
 
 unsigned char

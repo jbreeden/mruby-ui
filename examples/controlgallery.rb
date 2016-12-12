@@ -125,10 +125,10 @@ def makeDataChoosersPage()
   grid.setPadded(true)
   vbox.append(grid, 0)
 
-  button = UI::Button.new("Open File")
+  open_file_button = UI::Button.new("Open File")
   open_file_entry = UI::Entry.new
   open_file_entry.setReadOnly(true)
-  button.onClicked {
+  open_file_button.onClicked {
     filename = UI.openFile($mainwin)
     if filename.nil?
       UI.entrySetText(open_file_entry, "(cancelled)")
@@ -137,18 +137,18 @@ def makeDataChoosersPage()
     end
   }
 
-  grid.append(button,
+  grid.append(open_file_button,
     0, 0, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
   grid.append(open_file_entry,
     1, 0, 1, 1,
     1, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
 
-  button = UI::Button.new("Save File")
+  save_file_button = UI::Button.new("Save File")
   save_file_entry = UI::Entry.new
   save_file_entry.setReadOnly(1)
 
-  button.onClicked {
+  save_file_button.onClicked {
     filename = UI.saveFile($mainwin)
     if filename.nil?
       UI.entrySetText(save_file_entry, "(cancelled)")
@@ -157,7 +157,7 @@ def makeDataChoosersPage()
     end
   }
 
-  grid.append(button,
+  grid.append(save_file_button,
     0, 1, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
   grid.append(save_file_entry,
@@ -170,22 +170,23 @@ def makeDataChoosersPage()
     0, 2, 2, 1,
     0, UI::ALIGN_CENTER, 0, UI::ALIGN_START)
 
-  button = UI::Button.new("Message Box")
-  button.onClicked {
+  message_button = UI::Button.new("Message Box")
+  message_button.onClicked {
     UI.msgBox($mainwin,
               "This is a normal message box.",
               "More detailed information can be shown here.")
   }
-  msggrid.append(button,
+  msggrid.append(message_button,
     0, 0, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
-  button = UI::Button.new("Error Box")
-  button.onClicked {
+
+  error_button = UI::Button.new("Error Box")
+  error_button.onClicked {
     UI.msgBoxError($mainwin,
                    "This message box describes an error.",
                    "More detailed information can be shown here.")
   }
-  msggrid.append(button,
+  msggrid.append(error_button,
     1, 0, 1, 1,
     0, UI::ALIGN_FILL, 0, UI::ALIGN_FILL)
 
@@ -200,15 +201,16 @@ if !err.nil?
 end
 
 $mainwin = UI::Window.new("libui Control Gallery", 640, 480, 1)
+
 $mainwin.onClosing {
   UI.quit
   1
 }
 
-UI.onShouldQuit {
+UI.onShouldQuit do
   UI.controlDestroy($mainwin)
   1
-}
+end
 
 tab = UI::Tab.new
 $mainwin.setChild(tab)

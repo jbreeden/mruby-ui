@@ -1,5 +1,13 @@
 module UI
   module FunctionDecorators
+    def controlDestroy(control)
+      lookup = UI.instance_variable_get(:@control_lookup)
+      unless lookup.nil?
+        lookup.delete(control.ptr_addr)
+      end
+      super
+    end
+
     def self.returns_cstr(name)
       self.define_method(name) do |*args|
         void_ptr = super(*args)
@@ -73,7 +81,6 @@ module UI
     def tabSetMargined(tab, page, margined)
       super(tab, page, margined ? 1 : 0)
     end
-
 
     ## May not be able to rely on GC for these.
     #def self.giftwrap(name)
