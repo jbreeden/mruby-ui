@@ -1,4 +1,4 @@
-require 'mruby_bindings'
+require 'mruby/bindings'
 
 namespace :bindings do
   desc 'Extract type information from C files'
@@ -17,14 +17,6 @@ namespace :bindings do
     end
   end
   
-  desc 'Inspect all declarations in an interactive Pry shell (require pry gem)'
-  task :pry do
-    require 'pry'
-    MRubyBindings.read_declarations("declarations.json") do |lib|
-      binding.pry
-    end
-  end
-
   desc 'Generate bindings'
   task :generate do
     cmd = ['mrbind generate']

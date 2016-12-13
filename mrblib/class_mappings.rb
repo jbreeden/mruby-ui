@@ -1,7 +1,7 @@
 module UI
   def self.delegate(klass, method, target)
     if !UI.respond_to?(target)
-      raise "Attempting to delegate to function that doesn't exist: #{target}"
+      #raise "Attempting to delegate to function that doesn't exist: #{target}"
     end
     klass.class_eval {
       define_method(method) { |*args, &block|
@@ -299,6 +299,9 @@ module UI
   #function:  UserBugCannotSetParentOnToplevel
 
   #class:	Window
+  class Window
+    #include Control
+  end
   class_delegate Window, :new, :newWindow
   delegate Window, :borderless, :windowBorderless
   delegate Window, :contentSize, :windowContentSize
