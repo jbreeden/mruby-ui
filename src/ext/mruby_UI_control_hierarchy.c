@@ -1,6 +1,6 @@
 {
   struct RClass *Control_class = mrb_define_class_under(mrb, UI_module(mrb), "Control", mrb->object_class);
-#define CONTROL_SUBCLASS(name) { struct RClass* subclass = mrb_define_class_under(mrb, UI_module(mrb), #name, Control_class); }
+#define CONTROL_SUBCLASS(name) { mrb_define_class_under(mrb, UI_module(mrb), #name, Control_class); }
   CONTROL_SUBCLASS(Area)
   CONTROL_SUBCLASS(Box)
   CONTROL_SUBCLASS(Button)
