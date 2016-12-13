@@ -40,10 +40,8 @@ Next:
 - Make sure you have Bundler installed: `gem install bundler`
 - Pull down dependencies: `bundle install`
 - Compile & install [libui](https://github.com/andlabs/libui)
-- Build: `bundle exec rake mruby:build`
-  + You may need to configure the CFLAGS & LDFLAGS environment variables for this command,
-    if you haven't installed the built libui files & header files into known
-    system directories (or otherwise placed them on the appropriate paths).
+- Update the `env` script to point to your local libui checkout.
+- Clean & build MRuby: `./env bundle exec rake mruby:clean mruby:build`
 
 After your build is finished, try running `./build/bin/mruby ./examples/controlgallery.rb` to test it.
 

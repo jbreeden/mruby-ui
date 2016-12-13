@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: https://github.com/jbreeden/mruby-rake-tasks
-  revision: f5432c03df62795a2193df958adb7bc48eea3cf4
+  revision: bf3a9003f471c77200eb7beacf3c08daea367e82
   specs:
     mruby-rake-tasks (0.0.0)
 
