@@ -1,0 +1,35 @@
+GIT
+  remote: https://github.com/jbreeden/mruby-bindings
+  revision: d5c46287d184b6195d523f853cd87558f53e0fed
+  specs:
+    mruby-bindings (0.1.0)
+
+GIT
+  remote: https://github.com/jbreeden/mruby-rake-tasks
+  revision: f5432c03df62795a2193df958adb7bc48eea3cf4
+  specs:
+    mruby-rake-tasks (0.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.1)
+    method_source (0.8.2)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rake (12.0.0)
+    slop (3.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mruby-bindings!
+  mruby-rake-tasks!
+  pry
+  rake
+
+BUNDLED WITH
+   1.13.6

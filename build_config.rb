@@ -25,7 +25,7 @@ MRuby::Build.new do |conf|
   conf.cc do |cc|
   #   cc.command = ENV['CC'] || 'gcc'
   #   cc.flags = [ENV['CFLAGS'] || %w()]
-    cc.include_paths << ["/home/jbreeden/projects/libui/"]
+  #   cc.include_paths << %w() 
   #   cc.defines = %w(DISABLE_GEMS)
   #   cc.option_include_path = '-I%s'
   #   cc.option_define = '-D%s'
