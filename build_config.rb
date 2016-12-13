@@ -20,7 +20,7 @@ MRuby::Build.new do |conf|
   # conf.gem :git => 'git@github.com:masuidrive/mrbgems-example.git', :branch => 'master', :options => '-v'
 
   conf.gembox 'full-core'
-  conf.gem '../mruby-ui-new'
+  conf.gem '../mruby-ui'
 
   conf.cc do |cc|
   #   cc.command = ENV['CC'] || 'gcc'

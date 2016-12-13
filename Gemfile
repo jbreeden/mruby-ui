@@ -2,5 +2,6 @@
 source "https://rubygems.org"
 
 gem 'pry'
-gem "mruby-bindings", path: "/home/jbreeden/projects/mruby.d/mruby-bindings-new"
-gem "mruby-rake-tasks", path: "/home/jbreeden/projects/mruby.d/mruby-rake-tasks"
+gem 'rake'
+gem "mruby-bindings", path: "~/projects/mruby.d/mruby-bindings"
+gem "mruby-rake-tasks", path: "~/projects/mruby.d/mruby-rake-tasks"

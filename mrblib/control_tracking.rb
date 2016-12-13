@@ -1,3 +1,5 @@
+# TODO: Could this be implemented in some sort of weak ref hash?
+# I don't think we can rely on destroy calls (from ruby) for each control.
 module UI
   module ControlTracking
     def self.wrap(name)
@@ -44,6 +46,16 @@ module UI
     wrap :newVerticalBox
     wrap :newVerticalSeparator
     wrap :newWindow
+  end
+
+  # Removes the control from the lookup when it's destroyed.
+  # (TODO: What about child controls that may be destroyed implicitly?)
+  def controlDestroy(control)
+    lookup = UI.instance_variable_get(:@control_lookup)
+    unless lookup.nil?
+      lookup.delete(control.ptr_addr)
+    end
+    super
   end
 
   class << self

@@ -1,13 +1,5 @@
 module UI
   module FunctionDecorators
-    def controlDestroy(control)
-      lookup = UI.instance_variable_get(:@control_lookup)
-      unless lookup.nil?
-        lookup.delete(control.ptr_addr)
-      end
-      super
-    end
-
     def self.returns_cstr(name)
       self.define_method(name) do |*args|
         void_ptr = super(*args)
@@ -57,7 +49,6 @@ module UI
     returns_bool :windowFullscreen
     returns_bool :windowMargined
 
-    
     def self.expects_bool(name)
       self.define_method(name) do |obj, bool|
         super(obj, bool ? 1 : 0)
