@@ -299,9 +299,6 @@ module UI
   #function:  UserBugCannotSetParentOnToplevel
 
   #class:	Window
-  class Window
-    #include Control
-  end
   class_delegate Window, :new, :newWindow
   delegate Window, :borderless, :windowBorderless
   delegate Window, :contentSize, :windowContentSize
