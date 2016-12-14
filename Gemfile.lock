@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jbreeden/mruby-bindings
-  revision: d5c46287d184b6195d523f853cd87558f53e0fed
+  revision: b665b914a834f871c60e958a95b06b7b0f273879
   specs:
     mruby-bindings (0.1.0)
 

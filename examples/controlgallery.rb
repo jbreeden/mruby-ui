@@ -5,29 +5,29 @@ def makeBasicControlsPage
   hbox = UI::Box.newHorizontal
   hbox.setPadded(true)
 
-  vbox.append(hbox, 0)
+  vbox.append(hbox, false)
 
-  hbox.append(UI::Button.new("Button"), 0)
+  hbox.append(UI::Button.new("Button"), false)
   checkbox = UI::Checkbox.new("Checkbox")
-  hbox.append(checkbox, 0)
+  hbox.append(checkbox, false)
 
   vbox.append(UI::Label.new("This is a label. Right now, labels can only span one line."), 0)
 
-  vbox.append(UI::Separator.newHorizontal, 0)
+  vbox.append(UI::Separator.newHorizontal, false)
 
   group = UI::Group.new("Entries")
   group.setMargined(true)
-  vbox.append(group, 1)
+  vbox.append(group, true)
 
   entryForm = UI::Form.new
   entryForm.setPadded(true)
   group.setChild(entryForm)
 
-  entryForm.append("Entry", UI::Entry.new, 0)
-  entryForm.append("Password Entry", UI::Entry.newPassword, 0)
-  entryForm.append("Search Entry", UI::Entry.newSearch, 0)
-  entryForm.append("Multiline Entry", UI::MultilineEntry.new, 1)
-  entryForm.append("Multiline Entry No Wrap", UI::MultilineEntry.newNonWrapping, 1)
+  entryForm.append("Entry", UI::Entry.new, false)
+  entryForm.append("Password Entry", UI::Entry.newPassword, false)
+  entryForm.append("Search Entry", UI::Entry.newSearch, false)
+  entryForm.append("Multiline Entry", UI::MultilineEntry.new, true)
+  entryForm.append("Multiline Entry No Wrap", UI::MultilineEntry.newNonWrapping, true)
 
   vbox
 end
@@ -42,7 +42,7 @@ def makeNumbersPage()
 
   group = UI::Group.new("Numbers")
   group.setMargined(true)
-  hbox.append(group, 1)
+  hbox.append(group, true)
 
   vbox = UI::Box.newVertical()
   vbox.setPadded(true)
@@ -61,17 +61,17 @@ def makeNumbersPage()
     $spinbox.setValue($slider.value)
     $pbar.setValue($slider.value)
   }
-  vbox.append($spinbox, 0)
-  vbox.append($slider, 0)
-  vbox.append($pbar, 0)
+  vbox.append($spinbox, false)
+  vbox.append($slider, false)
+  vbox.append($pbar, false)
 
   ip = UI::ProgressBar.new()
   ip.setValue(-1)
-  vbox.append(ip, 0)
+  vbox.append(ip, false)
 
   group = UI::Group.new("Lists")
   group.setMargined(true)
-  hbox.append(group, 1)
+  hbox.append(group, true)
 
   vbox = UI::Box.newVertical
   vbox.setPadded(true)
@@ -81,19 +81,19 @@ def makeNumbersPage()
   cbox.append("Combobox Item 1")
   cbox.append("Combobox Item 2")
   cbox.append("Combobox Item 3")
-  vbox.append(cbox, 0)
+  vbox.append(cbox, false)
 
   ecbox = UI::EditableCombobox.new
   ecbox.append("Editable Item 1")
   ecbox.append("Editable Item 2")
   ecbox.append("Editable Item 3")
-  UI.boxAppend(vbox, ecbox, 0)
+  UI.boxAppend(vbox, ecbox, false)
 
   rb = UI::RadioButtons.new
   rb.append("Radio Button 1")
   rb.append("Radio Button 2")
   rb.append("Radio Button 3")
-  vbox.append(rb, 0)
+  vbox.append(rb, false)
 
   hbox
 end
@@ -106,24 +106,24 @@ def makeDataChoosersPage()
 
   vbox = UI::Box.newVertical
   vbox.setPadded(true)
-  hbox.append(vbox, 0)
+  hbox.append(vbox, false)
 
-  vbox.append(UI::DateTimePicker.newDatePicker, 0)
-  vbox.append(UI::DateTimePicker.newTimePicker, 0)
-  vbox.append(UI::DateTimePicker.new, 0)
+  vbox.append(UI::DateTimePicker.newDatePicker, false)
+  vbox.append(UI::DateTimePicker.newTimePicker, false)
+  vbox.append(UI::DateTimePicker.new, false)
 
-  vbox.append(UI::FontButton.new, 0)
-  vbox.append(UI::ColorButton.new, 0)
+  vbox.append(UI::FontButton.new, false)
+  vbox.append(UI::ColorButton.new, false)
 
-  hbox.append(UI::Separator.newVertical, 0)
+  hbox.append(UI::Separator.newVertical, false)
 
   vbox = UI::Box.newVertical
   vbox.setPadded(true)
-  hbox.append(vbox, 1)
+  hbox.append(vbox, true)
 
   grid = UI::Grid.new
   grid.setPadded(true)
-  vbox.append(grid, 0)
+  vbox.append(grid, false)
 
   open_file_button = UI::Button.new("Open File")
   open_file_entry = UI::Entry.new

@@ -358,7 +358,7 @@ mrb_UI_boxSetPadded(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiButton_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiButtonOnClicked(native_b, native_f, native_data);
@@ -499,7 +499,7 @@ mrb_UI_checkboxChecked(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiCheckbox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiCheckbox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiCheckboxOnToggled(native_c, native_f, native_data);
@@ -646,13 +646,13 @@ mrb_UI_colorButtonColor(mrb_state* mrb, mrb_value self)
   /* Unbox params */
   uiColorButton * native_b = (mrb_nil_p(b) ? NULL : mruby_UI_unbox_uiColorButton(b));
 
-  void * native_r = (mrb_nil_p(r) ? NULL : mruby_UI_unbox_void_pointer(r));
+  void * native_r = (mrb_nil_p(r) ? NULL : mruby_UI_unbox_void_pointer(mrb, r));
 
-  void * native_g = (mrb_nil_p(g) ? NULL : mruby_UI_unbox_void_pointer(g));
+  void * native_g = (mrb_nil_p(g) ? NULL : mruby_UI_unbox_void_pointer(mrb, g));
 
-  void * native_bl = (mrb_nil_p(bl) ? NULL : mruby_UI_unbox_void_pointer(bl));
+  void * native_bl = (mrb_nil_p(bl) ? NULL : mruby_UI_unbox_void_pointer(mrb, bl));
 
-  void * native_a = (mrb_nil_p(a) ? NULL : mruby_UI_unbox_void_pointer(a));
+  void * native_a = (mrb_nil_p(a) ? NULL : mruby_UI_unbox_void_pointer(mrb, a));
 
   /* Invocation */
   uiColorButtonColor(native_b, native_r, native_g, native_bl, native_a);
@@ -693,7 +693,7 @@ mrb_UI_colorButtonColor(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiColorButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiColorButton_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiColorButtonOnChanged(native_b, native_f, native_data);
@@ -801,7 +801,7 @@ mrb_UI_comboboxAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiCombobox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiCombobox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiComboboxOnSelected(native_c, native_f, native_data);
@@ -1914,9 +1914,9 @@ mrb_UI_drawMatrixTransformPoint(mrb_state* mrb, mrb_value self)
   /* Unbox params */
   uiDrawMatrix * native_m = (mrb_nil_p(m) ? NULL : mruby_UI_unbox_uiDrawMatrix(m));
 
-  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_pointer(x));
+  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_pointer(mrb, x));
 
-  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_pointer(y));
+  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_pointer(mrb, y));
 
   /* Invocation */
   uiDrawMatrixTransformPoint(native_m, native_x, native_y);
@@ -1957,9 +1957,9 @@ mrb_UI_drawMatrixTransformSize(mrb_state* mrb, mrb_value self)
   /* Unbox params */
   uiDrawMatrix * native_m = (mrb_nil_p(m) ? NULL : mruby_UI_unbox_uiDrawMatrix(m));
 
-  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_pointer(x));
+  void * native_x = (mrb_nil_p(x) ? NULL : mruby_UI_unbox_void_pointer(mrb, x));
 
-  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_pointer(y));
+  void * native_y = (mrb_nil_p(y) ? NULL : mruby_UI_unbox_void_pointer(mrb, y));
 
   /* Invocation */
   uiDrawMatrixTransformSize(native_m, native_x, native_y);
@@ -2632,9 +2632,9 @@ mrb_UI_drawTextLayoutExtents(mrb_state* mrb, mrb_value self)
   /* Unbox params */
   uiDrawTextLayout * native_layout = (mrb_nil_p(layout) ? NULL : mruby_UI_unbox_uiDrawTextLayout(layout));
 
-  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_pointer(width));
+  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_pointer(mrb, width));
 
-  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_pointer(height));
+  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_pointer(mrb, height));
 
   /* Invocation */
   uiDrawTextLayoutExtents(native_layout, native_width, native_height);
@@ -2814,7 +2814,7 @@ mrb_UI_editableComboboxAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiEditableCombobox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiEditableCombobox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiEditableComboboxOnChanged(native_c, native_f, native_data);
@@ -2921,7 +2921,7 @@ mrb_UI_editableComboboxText(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiEntry *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiEntry_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiEntryOnChanged(native_e, native_f, native_data);
@@ -3128,7 +3128,7 @@ mrb_UI_fontButtonFont(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiFontButton *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiFontButton_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiFontButtonOnChanged(native_b, native_f, native_data);
@@ -3349,7 +3349,7 @@ mrb_UI_freeText(mrb_state* mrb, mrb_value self)
   }
 
   /* Unbox params */
-  void * native_text = (mrb_nil_p(text) ? NULL : mruby_UI_unbox_void_pointer(text));
+  void * native_text = (mrb_nil_p(text) ? NULL : mruby_UI_unbox_void_pointer(mrb, text));
 
   /* Invocation */
   uiFreeText(native_text);
@@ -4182,7 +4182,7 @@ mrb_UI_menuItemEnable(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiMenuItem *, uiWindow *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiMenuItem_PTR_COMMA_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiMenuItemOnClicked(native_m, native_f, native_data);
@@ -4353,7 +4353,7 @@ mrb_UI_multilineEntryAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiMultilineEntry *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiMultilineEntry_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiMultilineEntryOnChanged(native_e, native_f, native_data);
@@ -5214,7 +5214,7 @@ mrb_UI_newWindow(mrb_state* mrb, mrb_value self)
 //  /* Unbox params */
 //  int (*native_f)(void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiOnShouldQuit(native_f, native_data);
@@ -5348,7 +5348,7 @@ mrb_UI_progressBarValue(mrb_state* mrb, mrb_value self)
 //  /* Unbox params */
 //  void (*native_f)(void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiQueueMain(native_f, native_data);
@@ -5438,7 +5438,7 @@ mrb_UI_radioButtonsAppend(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiRadioButtons *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiRadioButtons_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiRadioButtonsOnSelected(native_r, native_f, native_data);
@@ -5579,7 +5579,7 @@ mrb_UI_saveFile(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiSlider *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiSlider_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiSliderOnChanged(native_s, native_f, native_data);
@@ -5686,7 +5686,7 @@ mrb_UI_sliderValue(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiSpinbox *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiSpinbox_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiSpinboxOnChanged(native_s, native_f, native_data);
@@ -6079,9 +6079,9 @@ mrb_UI_windowContentSize(mrb_state* mrb, mrb_value self)
   /* Unbox params */
   uiWindow * native_w = (mrb_nil_p(w) ? NULL : mruby_UI_unbox_uiWindow(w));
 
-  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_pointer(width));
+  void * native_width = (mrb_nil_p(width) ? NULL : mruby_UI_unbox_void_pointer(mrb, width));
 
-  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_pointer(height));
+  void * native_height = (mrb_nil_p(height) ? NULL : mruby_UI_unbox_void_pointer(mrb, height));
 
   /* Invocation */
   uiWindowContentSize(native_w, native_width, native_height);
@@ -6190,7 +6190,7 @@ mrb_UI_windowMargined(mrb_state* mrb, mrb_value self)
 //
 //  int (*native_f)(uiWindow *, void *) = TODO_mruby_unbox_int_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiWindowOnClosing(native_w, native_f, native_data);
@@ -6231,7 +6231,7 @@ mrb_UI_windowMargined(mrb_state* mrb, mrb_value self)
 //
 //  void (*native_f)(uiWindow *, void *) = TODO_mruby_unbox_void_LPAREN_PTR_RPAREN_LPAREN_uiWindow_PTR_COMMA_void_PTR_RPAREN(f);
 //
-//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(data));
+//  void * native_data = (mrb_nil_p(data) ? NULL : mruby_UI_unbox_void_pointer(mrb, data));
 //
 //  /* Invocation */
 //  uiWindowOnContentSizeChanged(native_w, native_f, native_data);

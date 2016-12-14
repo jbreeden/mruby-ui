@@ -72,6 +72,15 @@ module UI
 
   #class:	Control
   delegate Control, :destroy, :controlDestroy
+  class Control
+    def setParent(p)
+      if p.nil?
+        UI.controlSetParent(VoidPointer.null)
+      else
+        UI.controlSetParent(p)
+      end
+    end
+  end
   delegate Control, :disable, :controlDisable
   delegate Control, :enable, :controlEnable
   delegate Control, :enabled, :controlEnabled

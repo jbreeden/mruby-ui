@@ -18,9 +18,7 @@ mrb_data_type UI_void_pointer_data_type = {
 
 int
 mruby_UI_typecheck_void_pointer(mrb_state *mrb, mrb_value value, const char * underlying_type) {
-	// TODO: Some kind of actual check...
-	// Perhaps look for the module name in the TT_TYPE name for the value's class?
-	return 1;
+  return mrb_nil_p(value) || mrb_obj_is_kind_of(mrb, value, UI_Pointer_module(mrb));
 }
 
 mrb_value
@@ -60,9 +58,26 @@ mruby_UI_gift_void_pointer_data_ptr(mrb_value obj, void *unboxed)
 }
 
 void *
-mruby_UI_unbox_void_pointer(mrb_value boxed)
+mruby_UI_unbox_void_pointer(mrb_state* mrb, mrb_value boxed)
 {
+  if (mrb_nil_p(boxed)) {
+    return NULL;
+  }
+  if (!mrb_obj_is_kind_of(mrb, boxed, UI_Pointer_module(mrb))) {
+    mrb_raise(mrb, mrb->eStandardError_class, "Expected some kind of Pointer");
+    return NULL;
+  }
   return (void *)((mruby_to_native_ref *)DATA_PTR(boxed))->obj;
+}
+
+/**
+ * Class Methods
+ */
+
+mrb_value
+mruby_UI_VoidPointer_null(mrb_state *mrb, mrb_value self)
+{
+  return mruby_UI_box_void_pointer(mrb, NULL);
 }
 
 /**
@@ -72,7 +87,7 @@ mruby_UI_unbox_void_pointer(mrb_value boxed)
 mrb_value
 mruby_UI_VoidPointer_is_null(mrb_state *mrb, mrb_value self)
 {
-  char* cstr = mruby_UI_unbox_void_pointer(self);
+  char* cstr = mruby_UI_unbox_void_pointer(mrb, self);
   if (cstr == NULL) {
     return mrb_true_value();
   } else {
@@ -83,7 +98,7 @@ mruby_UI_VoidPointer_is_null(mrb_state *mrb, mrb_value self)
 mrb_value
 mruby_UI_VoidPointer_read_cstr(mrb_state *mrb, mrb_value self)
 {
-  char* cstr = mruby_UI_unbox_void_pointer(self);
+  char* cstr = mruby_UI_unbox_void_pointer(mrb, self);
   if (cstr == NULL) {
     return mrb_nil_value();
   } else {
@@ -99,6 +114,9 @@ void mruby_UI_VoidPointer_init(mrb_state* mrb)
 {
   struct RClass* VoidPointer_class = mrb_define_class_under(mrb, UI_module(mrb), "VoidPointer", mrb->object_class);
   MRB_SET_INSTANCE_TT(VoidPointer_class, MRB_TT_DATA);
+  mrb_include_module(mrb, VoidPointer_class, UI_Pointer_module(mrb));
+
+  mrb_define_class_method(mrb, VoidPointer_class, "null", mruby_UI_VoidPointer_null, MRB_ARGS_ARG(0, 0));
 
   mrb_define_method(mrb, VoidPointer_class, "null?", mruby_UI_VoidPointer_is_null, MRB_ARGS_ARG(0, 0));
   mrb_define_method(mrb, VoidPointer_class, "read_cstr", mruby_UI_VoidPointer_read_cstr, MRB_ARGS_ARG(0, 0));

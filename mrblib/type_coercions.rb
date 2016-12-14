@@ -58,7 +58,14 @@ module UI
     module ExpectsBool
       def self.expects_bool(name)
         self.define_method(name) do |obj, bool|
-          super(obj, bool ? 1 : 0)
+          bool = case bool
+          when false, nil, 0
+            0
+          else
+            1
+          end
+
+          super(obj, bool)
         end
       end
       
@@ -79,7 +86,12 @@ module UI
       def self.expects_bool_at(name, pos)
         zeroed_index = pos - 1
         self.define_method(name) do |*args|
-          args[zeroed_index] = args[zeroed_index] ? 1 : 0
+          args[zeroed_index] = case args[zeroed_index]
+          when false, nil, 0
+            0
+          else
+            1
+          end
           super(*args)
         end
       end
